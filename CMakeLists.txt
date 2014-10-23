@@ -11,6 +11,9 @@ include(GNUInstallDirs)
 
 option(INSTALL_TESTS "Install the tests on make install" on)
 option(CLICK_MODE "Installs to a contained location" on)
+option(USE_XVFB "Use XVFB to run qml tests" on)
+
+enable_testing()
 
 set(APP_NAME reminders)
 set(DESKTOP_FILE "${PROJECT_NAME}.desktop")
@@ -105,9 +108,6 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE} DESTINATION ${DESKTOP_
 
 configure_file(${APPLICATION_FILE}.in ${CMAKE_CURRENT_BINARY_DIR}/${APPLICATION_FILE})
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${APPLICATION_FILE} DESTINATION ${APPLICATION_DIR})
- 
-# Tests
-enable_testing()
 
 add_subdirectory(po)
 add_subdirectory(tests)

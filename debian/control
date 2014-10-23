@@ -9,8 +9,12 @@ Build-Depends: cmake,
                libboost-dev,
                libssl-dev,
                python3-all,
+               qml-module-qttest,
                qt5-default,
-               qtdeclarative5-dev
+               qtdeclarative5-dev,
+               qtdeclarative5-dev-tools,
+               qtdeclarative5-ubuntu-ui-toolkit-plugin,
+               xvfb,
 Standards-Version: 3.9.5
 Section: misc
 Homepage: https://launchpad.net/reminders-app
