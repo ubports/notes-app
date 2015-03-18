@@ -69,7 +69,6 @@ Item {
         when: windowShown
 
         function init() {
-            waitForRendering(notebooksListView)
         }
 
         function test_unpublishedNotebookMustDisplayPrivateLabel() {

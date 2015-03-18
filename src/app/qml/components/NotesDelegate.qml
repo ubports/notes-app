@@ -20,22 +20,63 @@ import QtQuick 2.3
 import QtQuick.Layouts 1.0
 import Ubuntu.Components 1.1
 import Ubuntu.Components.ListItems 1.0
+import Evernote 0.1
 
-Empty {
+ListItemWithActions {
     id: root
     height: units.gu(12)
+    width: parent.width
 
     property string title
-    property date creationDate
+    property string date
     property string content
     property string resource
     property string tags
-    property string notebookColor: preferences.colorForNotebook(model.guid)
+    property bool reminder
+    property bool loading
+    property bool synced
+    property bool syncError
+    property bool conflicting
+    property string notebookColor
 
-    showDivider: false;
+    signal deleteNote()
+    signal editNote()
+    signal editReminder()
+    signal editTags()
 
+    leftSideAction: Action {
+        iconName: "delete"
+        text: i18n.tr("Delete")
+        onTriggered: {
+            root.deleteNote()
+        }
+    }
+
+    rightSideActions: [
+        Action {
+            iconName: "alarm-clock"
+            text: i18n.tr("Reminder")
+            onTriggered: {
+                root.editReminder();
+            }
+        },
+        Action {
+            iconSource: "../images/tags.svg"
+            text: i18n.tr("Tags")
+            onTriggered: {
+                root.editTags();
+            }
+        },
+        Action {
+            iconName: "edit"
+            text: i18n.tr("Edit")
+            onTriggered: {
+                root.editNote();
+            }
+        }
+    ]
     ColumnLayout {
-        anchors { fill: parent; leftMargin: units.gu(1); rightMargin: units.gu(1) }
+        anchors { fill: parent }
         spacing: 0
 
         Rectangle {
@@ -53,37 +94,33 @@ Empty {
                 anchors.fill: parent
                 spacing: 0
 
-                Rectangle {
+                Item {
                     Layout.fillWidth: true
                     Layout.fillHeight: true
 
-                    gradient: Gradient {
-                        GradientStop{ position: 0.8; color: "transparent" }
-                        GradientStop{ position: 1; color: "#d9d9d9" }
-                    }
-
-                    Base {
+                    RowLayout {
                         anchors.fill: parent
-                        progression: true
-                        showDivider: false
-
-                        onClicked: root.clicked()   // Propagate the signal
+                        anchors.margins: units.gu(1)
+                        spacing: units.gu(1)
 
                         ColumnLayout {
-                            anchors { fill: parent; topMargin: units.gu(1); bottomMargin: units.gu(1); rightMargin: -units.gu(2) }
+                            Layout.fillWidth: true
+                            Layout.fillHeight: true
 
                             Label {
+                                id: titleLabel
                                 Layout.fillWidth: true
                                 text: root.title
                                 font.weight: Font.Light
                                 elide: Text.ElideRight
                                 color: root.notebookColor
-                            } 
-
+                            }
                             Label {
                                 Layout.fillWidth: true
                                 Layout.fillHeight: true
-                                text: root.content
+                                text: "<font color=\"" + root.notebookColor + "\">" +
+                                    Qt.formatDateTime(root.date, Qt.LocalDate) +
+                                    " </font>" + root.content
                                 wrapMode: Text.WordWrap
                                 textFormat: Text.StyledText
                                 maximumLineCount: 2
@@ -91,22 +128,36 @@ Empty {
                                 color: "black"
                             }
 
-                            RowLayout {
+                            Label {
                                 Layout.fillWidth: true
-                                Label {
-                                    Layout.fillWidth: true
-                                    text: root.tags
-                                    fontSize: "small"
-                                    color: "#b3b3b3"
+                                text: root.tags
+                                wrapMode: Text.WordWrap
+                                maximumLineCount: 1
+                                fontSize: "small"
+                                color: "#b3b3b3"
+                            }
+                        }
 
-                                }
-                                Label {
-//                                    Layout.minimumWidth: parent.width + units.gu(2)
-                                    text: Qt.formatDateTime(root.creationDate, "dddd, hh:mm")
-                                    color: "#b3b3b3"
-                                    fontSize: "small"
-                                    horizontalAlignment: Text.AlignRight
-                                }
+                        Item {
+                            Layout.fillHeight: true
+                            width: units.gu(2)
+
+                            Icon {
+                                anchors { left: parent.left; top: parent.top; right: parent.right }
+                                height: width
+                                name: root.reminder ? "alarm-clock" : ""
+                                visible: root.reminder
+                            }
+                            Icon {
+                                anchors { left: parent.left; verticalCenter: parent.verticalCenter; right: parent.right }
+                                height: width
+                                name: "go-next"
+                            }
+                            Icon {
+                                anchors { left: parent.left; bottom: parent.bottom; right: parent.right }
+                                height: width
+                                name: root.loading ? "sync-updating" : root.syncError ? "sync-error" : root.synced ? "sync-idle" : root.conflicting ? "weather-severe-alert-symbolic" : "sync-offline"
+                                visible: NotesStore.username !== "@local" && (!root.synced || root.syncError || root.loading || root.conflicting)
                             }
                         }
                     }
@@ -115,36 +166,20 @@ Empty {
                 Image {
                     source: root.resource
                     sourceSize.height: units.gu(11.6)
+                    asynchronous: true
 
-                    Layout.maximumWidth: parent.width / 2
-
-                    Rectangle {
-                        height: parent.width / 4 
-                        width: parent.height
-
-                        anchors {verticalCenter: parent.verticalCenter; horizontalCenter: parent.horizontalCenter; horizontalCenterOffset: parent.width/2 - height/2 }
-                        rotation: 90
-                        
-                        gradient: Gradient {
-                            GradientStop{ position: 0; color: "#383838" }
-                            GradientStop{ position: 1; color: "transparent" }
-                        }
-                    }
-                
-                    Rectangle {
-                        height: parent.width / 4 
-                        width: parent.height
-
-                        anchors {verticalCenter: parent.verticalCenter; horizontalCenter: parent.horizontalCenter; horizontalCenterOffset: -parent.width/2 + height/2 }
-                        rotation: 270
-                        
-                        gradient: Gradient {
-                            GradientStop{ position: 0; color: "#383838" }
-                            GradientStop{ position: 1; color: "transparent" }
-                        }
-                    }
+                    Layout.maximumWidth: height
+                    fillMode: Image.PreserveAspectCrop
+                }
+            }
+            Rectangle {
+                anchors.fill: parent
+                gradient: Gradient {
+                    GradientStop{ position: 0.8; color: "transparent" }
+                    GradientStop{ position: 1; color: "#d9d9d9" }
                 }
             }
         }
+
     }
 }

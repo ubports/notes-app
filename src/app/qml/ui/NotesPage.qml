@@ -20,8 +20,10 @@ import QtQuick 2.3
 import QtQuick.Layouts 1.0
 import Ubuntu.Components 1.1
 import Ubuntu.Components.ListItems 1.0
+import Ubuntu.Components.Popups 1.0
 import Evernote 0.1
 import "../components"
+import Qt.labs.settings 1.0
 
 PageWithBottomEdge {
     id: root
@@ -55,12 +57,6 @@ PageWithBottomEdge {
     signal openSearch()
     signal editNote(var note)
 
-    onActiveChanged: {
-        if (active) {
-            NotesStore.refreshNotes();
-        }
-    }
-
     tools: ToolbarItems {
         ToolbarButton {
             action: Action {
@@ -75,31 +71,26 @@ PageWithBottomEdge {
 
         ToolbarButton {
             action: Action {
+                iconSource: "../images/sorting.svg"
+                text: i18n.tr("Sorting")
+                onTriggered: {
+                    var popupComponent = Qt.createComponent(Qt.resolvedUrl("../components/SortingDialog.qml"));
+                    var popup = popupComponent.createObject(root, {sortOrder: notes.sortOrder} )
+                    popup.accepted.connect( function() {
+                        notes.sortOrder = popup.sortOrder
+                        popup.destroy();
+                    })
+                    popup.sortOrder = notes.sortOrder;
+                }
+            }
+        }
+
+        ToolbarButton {
+            action: Action {
                 text: i18n.tr("Search")
                 iconName: "search"
                 onTriggered: {
                     root.openSearch();
-                }
-            }
-        }
-
-        ToolbarButton {
-            action: Action {
-                text: i18n.tr("Refresh")
-                iconName: "reload"
-                onTriggered: {
-                    NotesStore.refreshNotes();
-                }
-            }
-        }
-
-        ToolbarButton {
-            action: Action {
-                text: i18n.tr("Accounts")
-                iconName: "contacts-app-symbolic"
-                visible: accounts.count > 1
-                onTriggered: {
-                    openAccountPage(true);
                 }
             }
         }
@@ -143,6 +134,10 @@ PageWithBottomEdge {
         }
     }
 
+    Settings {
+        property alias sortOrder: notes.sortOrder
+    }
+
     Notes {
         id: notes
     }
@@ -154,6 +149,7 @@ PageWithBottomEdge {
         height: parent.height - y
         model: notes
         clip: true
+        maximumFlickVelocity: units.gu(200)
 
         onRefreshed: {
             NotesStore.refreshNotes();
@@ -161,8 +157,11 @@ PageWithBottomEdge {
 
         delegate: NotesDelegate {
             title: model.title
-            creationDate: model.created
+            date: notes.sortOrder == Notes.SortOrderUpdatedOldest || notes.sortOrder == Notes.SortOrderUpdatedNewest ?
+                      model.updated : model.created
+
             content: model.tagline
+            triggerActionOnMouseRelease: true
             tags: {
                 var tags = new Array();
                 for (var i = 0; i < model.tagGuids.length; i++) {
@@ -172,20 +171,63 @@ PageWithBottomEdge {
             }
             resource: model.resourceUrls.length > 0 ? model.resourceUrls[0] : ""
             notebookColor: preferences.colorForNotebook(model.notebookGuid)
+            reminder: model.reminder
+            synced: model.synced
+            loading: model.loading
+            syncError: model.syncError
+            conflicting: model.conflicting
 
             Component.onCompleted: {
-                if (!model.tagline) {
-                    NotesStore.refreshNoteContent(model.guid);
+                notes.note(model.guid).load(false);
+            }
+
+            onItemClicked: {
+                if (!model.conflicting) {
+                    root.selectedNote = NotesStore.note(guid);
                 }
             }
 
-            onClicked: {
-                root.selectedNote = NotesStore.note(guid);
+            onDeleteNote: {
+                NotesStore.deleteNote(model.guid)
+            }
+            onEditNote: {
+                root.editNote(NotesStore.note(model.guid));
+            }
+            onEditReminder: {
+                pageStack.push(Qt.resolvedUrl("SetReminderPage.qml"), { note: NotesStore.note(model.guid) });
+            }
+            onEditTags: {
+                var popup = PopupUtils.open(Qt.resolvedUrl("../components/EditTagsDialog.qml"), root,
+                                { note: NotesStore.note(model.guid), pageHeight: root.height });
+                popup.done.connect(function() { NotesStore.saveNote(popup.note.guid)})
             }
         }
 
-        section.criteria: ViewSection.FullString
-        section.property: "createdString"
+        section.criteria: {
+            switch (notes.sortOrder) {
+            case Notes.SortOrderTitleAscending:
+            case Notes.SortOrderTitleDescending:
+                return ViewSection.FirstCharacter;
+            }
+
+            return ViewSection.FullString
+        }
+        section.property: {
+            switch(notes.sortOrder) {
+            case Notes.SortOrderDateCreatedNewest:
+            case Notes.SortOrderDateCreatedOldest:
+                return "createdString";
+            case Notes.SortOrderDateUpdatedNewest:
+            case Notes.SortOrderDateUpdatedOldest:
+                return "updatedString";
+            case Notes.SortOrderTitleAscending:
+            case Notes.SortOrderTitleDescending:
+                return "title";
+            }
+            return "";
+        }
+
+
         section.delegate: Empty {
             height: units.gu(5)
             showDivider: false
@@ -207,11 +249,15 @@ PageWithBottomEdge {
         }
         Label {
             anchors.centerIn: parent
-            visible: !notes.loading && (notes.error || notesListView.count == 0)
+            visible: !notes.loading && notesListView.count == 0
             width: parent.width - units.gu(4)
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignHCenter
-            text: notes.error ? notes.error : i18n.tr("No notes available. You can create new notes using the \"Add note\" button.")
+            text: i18n.tr("No notes available. You can create new notes using the \"Add note\" button.")
+        }
+
+        Scrollbar {
+            flickableItem: parent
         }
     }
 }

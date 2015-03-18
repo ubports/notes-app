@@ -28,24 +28,15 @@ Page {
 
     property var selectedNote: null
 
+    signal openSearch();
+
     tools: ToolbarItems {
         ToolbarButton {
             action: Action {
                 text: i18n.tr("Search")
                 iconName: "search"
                 onTriggered: {
-                    pagestack.push(Qt.resolvedUrl("SearchNotesPage.qml"))
-                }
-            }
-        }
-
-        ToolbarButton {
-            action: Action {
-                text: i18n.tr("Accounts")
-                iconName: "contacts-app-symbolic"
-                visible: accounts.count > 1
-                onTriggered: {
-                    openAccountPage(true);
+                    root.openSearch();
                 }
             }
         }
@@ -62,18 +53,15 @@ Page {
             id: remindersListView
             anchors { left: parent.left; right: parent.right }
             height: parent.height - y
+            clip: true
+            maximumFlickVelocity: units.gu(200)
 
             delegate: RemindersDelegate {
                 width: remindersListView.width
                 note: notes.note(guid)
+                triggerActionOnMouseRelease: true
 
-                Component.onCompleted: {
-                    if (!model.plaintextContent) {
-                        NotesStore.refreshNoteContent(model.guid)
-                    }
-                }
-
-                onClicked: {
+                onItemClicked: {
                     root.selectedNote = NotesStore.note(guid);
                 }
             }
@@ -103,12 +91,15 @@ Page {
             }
             Label {
                 anchors.centerIn: parent
-                visible: !notes.loading && (notes.error || remindersListView.count == 0)
+                visible: !notes.loading && remindersListView.count == 0
                 width: parent.width - units.gu(4)
                 wrapMode: Text.WordWrap
                 horizontalAlignment: Text.AlignHCenter
-                text: notes.error ? notes.error :
-                i18n.tr("No reminders available. You can create new reminders by setting a reminder when viewing a note.")
+                text: i18n.tr("No reminders available. You can create new reminders by setting a reminder when viewing a note.")
+            }
+
+            Scrollbar {
+                flickableItem: parent
             }
         }
     }

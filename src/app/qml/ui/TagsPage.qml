@@ -19,6 +19,7 @@
 import QtQuick 2.3
 import Ubuntu.Components 1.1
 import Ubuntu.Components.ListItems 1.0
+import Ubuntu.Components.Popups 1.0
 import Evernote 0.1
 import "../components"
 
@@ -28,7 +29,8 @@ Page {
 
     property bool narrowMode
 
-    signal openTaggedNotes(string title, string tagGuid, bool narrowMode)
+    signal openTaggedNotes(string tagGuid)
+    signal openSearch();
 
     onActiveChanged: {
         if (active) {
@@ -44,49 +46,17 @@ Page {
         }
     }
 
-//    tools: ToolbarItems {
-//        ToolbarButton {
-//            action: Action {
-//                objectName: "addNotebookButton"
-//                text: i18n.tr("Add notebook")
-//                iconName: "add"
-//                onTriggered: {
-//                    contentColumn.newNotebook = true;
-//                }
-//            }
-//        }
-
-//        ToolbarButton {
-//            action: Action {
-//                text: i18n.tr("Search")
-//                iconName: "search"
-//                onTriggered: {
-//                    pagestack.push(Qt.resolvedUrl("SearchNotesPage.qml"))
-//                }
-//            }
-//        }
-
-//        ToolbarButton {
-//            action: Action {
-//                text: i18n.tr("Refresh")
-//                iconName: "reload"
-//                onTriggered: {
-//                    NotesStore.refreshNotebooks();
-//                }
-//            }
-//        }
-
-//        ToolbarButton {
-//            action: Action {
-//                text: i18n.tr("Accounts")
-//                iconName: "contacts-app-symbolic"
-//                visible: accounts.count > 1
-//                onTriggered: {
-//                    openAccountPage(true);
-//                }
-//            }
-//        }
-//    }
+    tools: ToolbarItems {
+        ToolbarButton {
+            action: Action {
+                text: i18n.tr("Search")
+                iconName: "search"
+                onTriggered: {
+                    root.openSearch();
+                }
+            }
+        }
+    }
 
     Tags {
         id: tags
@@ -97,120 +67,92 @@ Page {
         anchors.fill: parent
         property bool newNotebook: false
 
-//        states: [
-//            State {
-//                name: "newNotebook"; when: contentColumn.newNotebook
-//                PropertyChanges { target: newNotebookContainer; opacity: 1; height: newNotebookContainer.implicitHeight }
-//                PropertyChanges { target: buttonRow; opacity: 1; height: cancelButton.height + units.gu(4) }
-//            }
-//        ]
-
-//        Empty {
-//            id: newNotebookContainer
-//            height: 0
-//            visible: opacity > 0
-//            opacity: 0
-//            clip: true
-
-//            Behavior on height {
-//                UbuntuNumberAnimation {}
-//            }
-//            Behavior on opacity {
-//                UbuntuNumberAnimation {}
-//            }
-
-//            onVisibleChanged: {
-//                newNoteTitleTextField.forceActiveFocus();
-//            }
-
-//            TextField {
-//                id: newNoteTitleTextField
-//                objectName: "newNoteTitleTextField"
-//                anchors { left: parent.left; right: parent.right; margins: units.gu(2); verticalCenter: parent.verticalCenter }
-//            }
-//        }
-
         PulldownListView {
             id: tagsListView
             objectName: "tagsListView"
             model: tags
             anchors { left: parent.left; right: parent.right }
-            height: parent.height - y - buttonRow.height - keyboardRect.height
+            height: parent.height - y - keyboardRect.height
             clip: true
+            maximumFlickVelocity: units.gu(200)
 
             onRefreshed: {
                 NotesStore.refreshTags();
             }
 
             delegate: TagsDelegate {
-                onClicked: {
+                width: parent.width
+                height: units.gu(10)
+                triggerActionOnMouseRelease: true
+
+                onItemClicked: {
                     print("selected tag:", model.guid)
-                    root.openTaggedNotes(name, model.guid, narrowMode)
+                    root.openTaggedNotes(model.guid)
+                }
+                onDeleteTag: {
+                    NotesStore.expungeTag(model.guid);
+                }
+
+                onRenameTag: {
+                    var popup = PopupUtils.open(renameTagDialogComponent, root, {name: model.name})
+                    popup.accepted.connect(function(newName) {
+                        tags.tag(index).name = newName;
+                        NotesStore.saveTag(model.guid);
+                    })
                 }
             }
 
-            ActivityIndicator {
-                anchors.centerIn: parent
-                running: tags.loading
-                visible: running
-            }
-
-            Label {
-                anchors.centerIn: parent
-                width: parent.width - units.gu(4)
-                wrapMode: Text.WordWrap
-                horizontalAlignment: Text.AlignHCenter
-                visible: !tags.loading && tags.error
-                text: tags.error
-            }
-
-        }
-
-        Label {
-            anchors.centerIn: parent
-            visible: !tags.loading && (tags.error || tagsListView.count == 0)
-            width: parent.width - units.gu(4)
-            wrapMode: Text.WordWrap
-            horizontalAlignment: Text.AlignHCenter
-            text: tags.error ? tags.error : i18n.tr("No tags available. You can tag notes while viewing them.")
-        }
-
-        Item {
-            id: buttonRow
-            anchors { left: parent.left; right: parent.right; margins: units.gu(2) }
-            height: 0
-            visible: height > 0
-            clip: true
-
-            Behavior on height {
-                UbuntuNumberAnimation {}
-            }
-
-            Button {
-                id: cancelButton
-                anchors { left: parent.left; verticalCenter: parent.verticalCenter }
-                text: i18n.tr("Cancel")
-                onClicked: {
-                    newNoteTitleTextField.text = "";
-                    contentColumn.newNotebook = false
-                }
-            }
-            Button {
-                objectName: "saveButton"
-                anchors { right: parent.right; verticalCenter: parent.verticalCenter }
-                text: i18n.tr("Save")
-                enabled: newNoteTitleTextField.text.length > 0
-                onClicked: {
-                    NotesStore.createNotebook(newNoteTitleTextField.text);
-                    newNoteTitleTextField.text = "";
-                    contentColumn.newNotebook = false
-                }
+            Scrollbar {
+                flickableItem: parent
             }
         }
+
         Item {
             id: keyboardRect
             anchors { left: parent.left; right: parent.right }
             height: Qt.inputMethod.keyboardRectangle.height
+        }
+    }
+
+    BouncingProgressBar {
+        anchors.top: parent.top
+        visible: tags.loading
+    }
+
+    Label {
+        anchors.centerIn: parent
+        visible: !tags.loading && tagsListView.count == 0
+        width: parent.width - units.gu(4)
+        wrapMode: Text.WordWrap
+        horizontalAlignment: Text.AlignHCenter
+        text: i18n.tr("No tags available. You can tag notes while viewing them.")
+    }
+
+    Component {
+        id: renameTagDialogComponent
+        Dialog {
+            id: renameTagDialog
+            title: i18n.tr("Rename tag")
+            text: i18n.tr("Enter a new name for tag %1").arg(name)
+
+            property string name
+
+            signal accepted(string newName)
+
+            TextField {
+                id: nameTextField
+                text: renameTagDialog.name
+                placeholderText: i18n.tr("Name cannot be empty")
+            }
+
+            Button {
+                text: i18n.tr("OK")
+                enabled: nameTextField.text
+                onClicked: {
+                    renameTagDialog.accepted(nameTextField.text)
+                    PopupUtils.close(renameTagDialog)
+                }
+            }
         }
     }
 }

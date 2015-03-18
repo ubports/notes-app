@@ -24,108 +24,114 @@ import Ubuntu.Components.Popups 1.0
 import Ubuntu.Components.Pickers 1.0
 import Evernote 0.1
 
-Base {
+ListItemWithActions {
     id: root
     height: units.gu(10)
     clip: true
-    progression: true
-    removable: true
+    color: "transparent"
 
-    backgroundIndicator: Row {
-        x: root.__contents.x > 0 ? root.__contents.x - width : 0
-        width: childrenRect.width
-        anchors.verticalCenter: parent.verticalCenter
-        spacing: units.gu(1)
+    property var note
 
-        Icon {
-            height: units.gu(3)
-            width: height
-            anchors.verticalCenter: parent.verticalCenter
-            name: root.note.reminderDone ? "clear" : "select"
-        }
-
-        Label {
-            id: confirmRemovalDialog
-            anchors.verticalCenter: parent.verticalCenter
-            text: root.note.reminderDone ? i18n.tr("Clear reminder") : i18n.tr("Mark as done")
+    leftSideAction: Action {
+        text: i18n.tr("Clear reminder")
+        iconName: "clear"
+        onTriggered: {
+            note.reminder = false;
+            NotesStore.saveNote(note.guid)
         }
     }
 
-    property var note
+    rightSideActions: [
+        Action {
+            iconSource: root.note.reminderDone ? "image://theme/select" : "../images/unchecked.svg"
+            text: root.note.reminderDone ? i18n.tr("Mark as undone") : i18n.tr("Mark as done")
+            onTriggered: {
+                note.reminderDone = !root.note.reminderDone;
+                NotesStore.saveNote(note.guid)
+            }
+        },
+        Action {
+            iconName: "alarm-clock"
+            text: i18n.tr("Edit reminder")
+            onTriggered: {
+                pageStack.push(Qt.resolvedUrl("../ui/SetReminderPage.qml"), { note: root.note });
+            }
+        }
+    ]
 
     Behavior on height {
         UbuntuNumberAnimation {}
     }
 
-    onItemRemoved: {
-        // Revert "removal"
-        root.cancelItemRemoval();
-        root.height = units.gu(10)
-        print("marking reminder as", !note.reminderDone, " done for note", note.title);
-        if (!note.reminderDone) {
-            note.reminderDone = true;
-        } else {
-            note.reminder = false;
-        }
+    RowLayout {
+        anchors { fill: parent; margins: units.gu(1) }
+        spacing: units.gu(1)
 
-        NotesStore.saveNote(note.guid)
-    }
-
-    Column {
-        id: mainColumn
-        anchors { left: parent.left; right: parent.right; top: parent.top; topMargin: units.gu(1) }
-        spacing: units.gu(2)
-        height: implicitHeight + units.gu(1)
-
-        RowLayout {
-            anchors { left: parent.left; right: parent.right }
-            height: units.gu(8)
-            spacing: units.gu(1)
-
-            UbuntuShape {
-                Layout.fillHeight: true
-                width: height
-                color: preferences.colorForNotebook(note.notebookGuid)
-                radius: "medium"
-
-                Column {
-                    anchors.centerIn: parent
-                    Label {
-                        text: note.hasReminderTime ? Qt.formatDateTime(note.reminderTime, "hh") : "00"
-                        color: "white"
-                        horizontalAlignment: Text.AlignHCenter
-                        font.bold: true
-                        fontSize: "large"
-                    }
-                    Label {
-                        text: note.hasReminderTime ? Qt.formatDateTime(note.reminderTime, "mm") : "00"
-                        color: "white"
-                        horizontalAlignment: Text.AlignHCenter
-                        fontSize: "large"
-                    }
-                }
-            }
+        UbuntuShape {
+            Layout.fillHeight: true
+            width: height
+            color: preferences.colorForNotebook(note.notebookGuid)
+            radius: "medium"
 
             Column {
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                spacing: units.gu(1)
-
+                anchors.centerIn: parent
                 Label {
-                    text: note.title
+                    text: note.hasReminderTime ? Qt.formatDateTime(note.reminderTime, "hh") : "00"
+                    color: "white"
+                    horizontalAlignment: Text.AlignHCenter
+                    font.bold: true
                     fontSize: "large"
-                    horizontalAlignment: Text.AlignLeft
-                    color: "black"
                 }
                 Label {
-                    text: note.plaintextContent
-                    fontSize: "small"
-                    horizontalAlignment: Text.AlignLeft
-                    maximumLineCount: 2
-                    width: parent.width
-                    wrapMode: Text.WordWrap
-                    color: "black"
+                    text: note.hasReminderTime ? Qt.formatDateTime(note.reminderTime, "mm") : "00"
+                    color: "white"
+                    horizontalAlignment: Text.AlignHCenter
+                    fontSize: "large"
                 }
+            }
+        }
+
+        ColumnLayout {
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+            spacing: units.gu(1)
+
+            Label {
+                id: titleLabel
+                text: note.title
+                Layout.fillWidth: true
+                fontSize: "large"
+                horizontalAlignment: Text.AlignLeft
+                color: "black"
+                elide: Text.ElideRight
+            }
+
+            Label {
+                text: note.tagline
+                fontSize: "small"
+                horizontalAlignment: Text.AlignLeft
+                Layout.fillWidth: true
+                maximumLineCount: 2
+                width: parent.width
+                wrapMode: Text.WordWrap
+                color: "black"
+            }
+        }
+
+        Item {
+            Layout.fillHeight: true
+            width: units.gu(2)
+
+            Icon {
+                anchors { left: parent.left; verticalCenter: parent.verticalCenter; right: parent.right }
+                height: width
+                name: "go-next"
+            }
+            Icon {
+                anchors { left: parent.left; bottom: parent.bottom; right: parent.right }
+                height: width
+                name: model.loading ? "sync-updating" : model.syncError ? "sync-error" : model.synced ? "sync-idle" : "sync-offline"
+                visible: NotesStore.username !== "@local" && (!model.synced || model.syncError || model.loading)
             }
         }
     }

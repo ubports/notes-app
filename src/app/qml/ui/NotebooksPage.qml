@@ -19,6 +19,7 @@
 import QtQuick 2.3
 import Ubuntu.Components 1.1
 import Ubuntu.Components.ListItems 1.0
+import Ubuntu.Components.Popups 1.0
 import Evernote 0.1
 import "../components"
 
@@ -28,7 +29,8 @@ Page {
 
     property bool narrowMode
 
-    signal openNotebook(string title, string notebookGuid, bool narrowMode)
+    signal openNotebook(string notebookGuid)
+    signal openSearch();
 
     onActiveChanged: {
         if (active) {
@@ -53,28 +55,7 @@ Page {
                 text: i18n.tr("Search")
                 iconName: "search"
                 onTriggered: {
-                    pagestack.push(Qt.resolvedUrl("SearchNotesPage.qml"))
-                }
-            }
-        }
-
-        ToolbarButton {
-            action: Action {
-                text: i18n.tr("Refresh")
-                iconName: "reload"
-                onTriggered: {
-                    NotesStore.refreshNotebooks();
-                }
-            }
-        }
-
-        ToolbarButton {
-            action: Action {
-                text: i18n.tr("Accounts")
-                iconName: "contacts-app-symbolic"
-                visible: accounts.count > 1
-                onTriggered: {
-                    openAccountPage(true);
+                    root.openSearch();
                 }
             }
         }
@@ -129,33 +110,47 @@ Page {
             anchors { left: parent.left; right: parent.right }
             height: parent.height - y - buttonRow.height - keyboardRect.height
             clip: true
+            maximumFlickVelocity: units.gu(200)
 
             onRefreshed: {
                 NotesStore.refreshNotebooks();
             }
 
             delegate: NotebooksDelegate {
-                onClicked: {
+                width: parent.width
+                height: units.gu(10)
+                triggerActionOnMouseRelease: true
+
+                onItemClicked: {
                     print("selected notebook:", model.guid)
-                    root.openNotebook(name, model.guid, narrowMode)
+                    root.openNotebook(model.guid)
+                }
+
+                onDeleteNotebook: {
+                    NotesStore.expungeNotebook(model.guid)
+                }
+
+                onSetAsDefault: {
+                    NotesStore.setDefaultNotebook(model.guid)
+                }
+
+                onRenameNotebook: {
+                    var popup = PopupUtils.open(renameNotebookDialogComponent, root, {name: model.name})
+                    popup.accepted.connect(function(newName) {
+                        notebooks.notebook(index).name = newName;
+                        NotesStore.saveNotebook(model.guid);
+                    })
                 }
             }
 
-            ActivityIndicator {
-                anchors.centerIn: parent
-                running: notebooks.loading
-                visible: running
+            BouncingProgressBar {
+                anchors.top: parent.top
+                visible: notebooks.loading
             }
 
-            Label {
-                anchors.centerIn: parent
-                width: parent.width - units.gu(4)
-                wrapMode: Text.WordWrap
-                horizontalAlignment: Text.AlignHCenter
-                visible: !notebooks.loading && notebooks.error
-                text: notebooks.error
+            Scrollbar {
+                flickableItem: parent
             }
-
         }
 
         Item {
@@ -194,6 +189,34 @@ Page {
             id: keyboardRect
             anchors { left: parent.left; right: parent.right }
             height: Qt.inputMethod.keyboardRectangle.height
+        }
+    }
+
+    Component {
+        id: renameNotebookDialogComponent
+        Dialog {
+            id: renameNotebookDialog
+            title: i18n.tr("Rename notebook")
+            text: i18n.tr("Enter a new name for notebook %1").arg(name)
+
+            property string name
+
+            signal accepted(string newName)
+
+            TextField {
+                id: nameTextField
+                text: renameNotebookDialog.name
+                placeholderText: i18n.tr("Name cannot be empty")
+            }
+
+            Button {
+                text: i18n.tr("OK")
+                enabled: nameTextField.text
+                onClicked: {
+                    renameNotebookDialog.accepted(nameTextField.text)
+                    PopupUtils.close(renameNotebookDialog)
+                }
+            }
         }
     }
 }

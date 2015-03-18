@@ -22,11 +22,37 @@ import Ubuntu.Components 1.1
 import Ubuntu.Components.ListItems 1.0
 import Evernote 0.1
 
-Empty {
+ListItemWithActions {
     id: root
-    height: units.gu(10)
 
     property string notebookColor: preferences.colorForNotebook(model.guid)
+
+    signal deleteNotebook();
+    signal setAsDefault();
+    signal renameNotebook();
+
+    leftSideAction: Action {
+        iconName: "delete"
+        text: i18n.tr("Delete")
+        onTriggered: {
+            root.deleteNotebook();
+        }
+    }
+
+    rightSideActions: [
+        Action {
+            iconName: model.isDefaultNotebook ? "starred" : "non-starred"
+            onTriggered: {
+                root.setAsDefault();
+            }
+        },
+        Action {
+            iconName: "edit"
+            onTriggered: {
+                root.renameNotebook();
+            }
+        }
+    ]
 
     Rectangle {
         anchors.fill: parent
@@ -34,74 +60,56 @@ Empty {
         anchors.bottomMargin: units.dp(1)
     }
 
-    Base {
+    RowLayout {
         anchors.fill: parent
-        progression: true
+        anchors.margins: units.gu(1)
+        spacing: units.gu(1)
 
-        onClicked: root.clicked()
+        Item {
+            Layout.fillHeight: true
+            width: units.gu(1)
+            Rectangle {
+                anchors { top: parent.top; bottom: parent.bottom; horizontalCenter: parent.horizontalCenter; margins: units.gu(1.5) }
+                width: units.gu(.5)
+                color: root.notebookColor
+                radius: width / 2
+            }
+        }
 
-        RowLayout {
-            anchors { fill: parent; topMargin: units.gu(1); bottomMargin: units.gu(1) }
+        ColumnLayout {
+            Layout.fillHeight: true
+            Layout.fillWidth: true
 
-            Item {
-                anchors { top: parent.top; bottom: parent.bottom }
-                width: units.gu(1)
-                Rectangle {
-                    anchors { top: parent.top; bottom: parent.bottom; horizontalCenter: parent.horizontalCenter; margins: units.gu(1.5) }
-                    width: units.gu(.5)
-                    color: root.notebookColor
-                    radius: width / 2
-                }
+            Label {
+                id: notebookTitleLabel
+                objectName: 'notebookTitleLabel'
+                text: model.name
+                color: root.notebookColor
+                fontSize: "large"
+                Layout.fillWidth: true
             }
 
-            ColumnLayout {
-                height: parent.height
+            Label {
+                objectName: 'notebookLastUpdatedLabel'
+                text: i18n.tr("Last edited %1").arg(model.lastUpdatedString)
+                fontSize: "small"
+                color: "black"
                 Layout.fillWidth: true
+            }
 
-                Label {
-                    id: notebookTitleLabel
-                    objectName: 'notebookTitleLabel'
-                    text: model.name
-                    color: root.notebookColor
-                    fontSize: "large"
-
-                    MouseArea {
-                        onPressAndHold: {
-                            notebookTitleLabel.visible = false;
-                            notebookTitleTextField.forceActiveFocus();
-                        }
-                        anchors.fill: parent
-                        propagateComposedEvents: true
-                    }
+            Row {
+                Layout.fillHeight: true
+                spacing: units.gu(1)
+                Icon {
+                    height: parent.height
+                    width: height
+                    name: "starred"
+                    visible: model.isDefaultNotebook
                 }
 
-                TextField {
-                    id: notebookTitleTextField
-                    text: model.name
-                    color: root.notebookColor
-                    visible: !notebookTitleLabel.visible
-
-                    InverseMouseArea {
-                        onClicked: {
-                            if (notebookTitleTextField.text) {
-                                notebooks.notebook(index).name = notebookTitleTextField.text;
-                                NotesStore.saveNotebook(notebooks.notebook(index).guid);
-                                notebookTitleLabel.visible = true;
-                            }
-                        }
-                        anchors.fill: parent
-                    }
-                }
-
-                Label {
-                    objectName: 'notebookLastUpdatedLabel'
-                    text: i18n.tr("Last edited %1").arg(model.lastUpdatedString)
-                    fontSize: "small"
-                    color: "black"
-                }
                 Label {
                     objectName: 'notebookPublishedLabel'
-                    Layout.fillHeight: true
+                    anchors.verticalCenter: parent.verticalCenter
                     text: model.published ? i18n.tr("Shared") : i18n.tr("Private")
                     color: model.published ? "black" : "#b3b3b3"
                     fontSize: "x-small"
@@ -109,13 +117,31 @@ Empty {
                     font.bold: model.published
                 }
             }
+        }
 
-            Label {
+        Item {
+            Layout.fillHeight: true
+            width: units.gu(2)
+
+             Label {
                 objectName: 'notebookNoteCountLabel'
-                Layout.fillHeight: true
-                verticalAlignment: Text.AlignVCenter
-                text: "(" + model.noteCount + ")"
+                anchors { left: parent.left; top: parent.top; right: parent.right }
+                height: width
                 color: "#b3b3b3"
+                text: "(" + model.noteCount + ")"
+                fontSize: "small"
+                horizontalAlignment: Text.AlignRight
+            }
+            Icon {
+                anchors { left: parent.left; verticalCenter: parent.verticalCenter; right: parent.right }
+                height: width
+                name: "go-next"
+            }
+            Icon {
+                anchors { left: parent.left; bottom: parent.bottom; right: parent.right }
+                height: width
+                name: model.loading ? "sync-updating" : model.syncError ? "sync-error" : model.synced ? "sync-idle" : "sync-offline"
+                visible: NotesStore.username !== "@local" && (!model.synced || model.syncError || model.loading)
             }
         }
     }

@@ -26,48 +26,75 @@ import Evernote 0.1
 Page {
     id: root
     objectName: "Accountselectorpage"
-    title: i18n.tr("Select Evernote account")
+    title: i18n.tr("Select account")
 
-    property alias accounts: listView.model
-    property bool isChangingAccount
+    property alias accounts: optionSelector.model
+    property bool unauthorizedAccounts
+    property var oaSetup: null
 
-    signal accountSelected(var handle)
+    signal accountSelected(string username, var handle)
 
-    Setup {
-        id: setup
-        applicationId: "com.ubuntu.reminders_reminders"
-        providerId: useSandbox ? "evernote-sandbox" : "evernote"
-    }
 
     Column {
         anchors { fill: parent; margins: units.gu(2) }
-        spacing: units.gu(1)
+        spacing: units.gu(2)
 
-        ListView {
-            id: listView
+        Button {
+            anchors { left: parent.left; right: parent.right; margins: units.gu(1) }
+            text: i18n.tr("Store notes locally only")
+            onClicked: {
+                root.accountSelected("@local", null)
+            }
+        }
+
+        Label {
+            anchors { left: parent.left; right: parent.right; margins: units.gu(1) }
+            text: i18n.tr("Accounts on www.evernote.com")
+        }
+
+        OptionSelector {
+            id: optionSelector
             width: parent.width
-            height: units.gu(10)
-            model: accounts
-            currentIndex: -1
+            expanded: true
 
             delegate: Standard {
                 objectName: "EvernoteAccount"
                 text: displayName
+                showDivider: index + 1 !== accounts.count
+
                 MouseArea {
                     anchors.fill: parent
-                    onClicked: root.accountSelected(accountServiceHandle)
+                    onClicked: {
+                        if (model.enabled) {
+                            root.accountSelected(displayName, accountServiceHandle)
+                        }
+                        else {
+                            console.log('authorize')
+                        }
+                    }
+                }
+
+                Component.onCompleted: {
+                    if (isChangingAccount && displayName == preferences.accountName) {
+                        optionSelector.selectedIndex = index;
+                    }
+                    if (!model.enabled) {
+                        text = i18n.tr("%1 - Tap to authorize").arg(text)
+                    }
                 }
             }
-
-            footer: Button {
-                text: i18n.tr("Add account")
-                onClicked: setup.exec()
-            }
         }
-    }
 
-    tools: ToolbarItems {
-        locked: !isChangingAccount
-        opened: isChangingAccount
-    }
+        Button {
+            anchors.horizontalCenter: parent.horizontalCenter
+            width: parent.width - units.gu(2)
+            text: i18n.tr("Add new account")
+            color: UbuntuColors.orange
+            onClicked: root.oaSetup.exec()
+        }
+     }
+
+     head.backAction: Action {
+         visible: false
+     }
 }

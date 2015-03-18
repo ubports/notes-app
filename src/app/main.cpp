@@ -20,22 +20,47 @@
  *          Riccardo Padovani <rpadovani@ubuntu.com>
  */
 
-#include "camerahelper.h"
 #include "preferences.h"
+#include "formattinghelper.h"
 
 #include <QtGui/QGuiApplication>
 #include <QtQuick/QQuickView>
 #include <QtQml/QtQml>
 #include <QLibrary>
-#include <QDir>
+#include <QCommandLineParser>
+#include <QCommandLineOption>
+#include <QLoggingCategory>
 
-#include <QDebug>
+QHash<QString, bool> s_loggingFilters;
+QLoggingCategory dcApplication("Application");
+
+void loggingCategoryFilter(QLoggingCategory *category)
+{
+    if (s_loggingFilters.contains(category->categoryName())) {
+        bool debugEnabled = s_loggingFilters.value(category->categoryName());
+        category->setEnabled(QtDebugMsg, debugEnabled);
+        category->setEnabled(QtWarningMsg, debugEnabled || s_loggingFilters.value("Warnings"));
+    } else {
+        category->setEnabled(QtDebugMsg, false);
+        category->setEnabled(QtWarningMsg, s_loggingFilters.value("qml") || s_loggingFilters.value("Warnings"));
+    }
+}
 
 int main(int argc, char *argv[])
 {
     QGuiApplication a(argc, argv);
     QQuickView view;
     view.setResizeMode(QQuickView::SizeRootObjectToView);
+
+    s_loggingFilters.insert("Warnings", true);
+    s_loggingFilters.insert("Application", true);
+    s_loggingFilters.insert("NotesStore", true);
+    s_loggingFilters.insert("JobQueue", false);
+    s_loggingFilters.insert("Sync", true);
+    s_loggingFilters.insert("Connection", true);
+    s_loggingFilters.insert("Enml", false);
+    s_loggingFilters.insert("Organizer", false);
+    s_loggingFilters.insert("qml", true);
 
     // Set up import paths
     QStringList importPathList = view.engine()->importPathList();
@@ -44,30 +69,49 @@ int main(int argc, char *argv[])
     // in the sistem if there is one
     importPathList.prepend(QCoreApplication::applicationDirPath() + "/../plugin/");
 
-    QStringList args = a.arguments();
-    if (args.contains("-h") || args.contains("--help")) {
-        qDebug() << "usage: " + args.at(0) + " [-p|--phone] [-t|--tablet] [-h|--help] [-I <path>]";
-        qDebug() << "    -p|--phone    If running on Desktop, start in a phone sized window.";
-        qDebug() << "    -t|--tablet   If running on Desktop, start in a tablet sized window.";
-        qDebug() << "    -h|--help     Print this help.";
-        qDebug() << "    -I <path>     Give a path for an additional QML import directory. May be used multiple times.";
-        qDebug() << "    -s|--sandbox  Connect to sandbox.evernote.com instead of evernote.com.";
-        return 0;
+    QCommandLineParser cmdLineParser;
+    cmdLineParser.setSingleDashWordOptionMode(QCommandLineParser::ParseAsLongOptions);
+    QCommandLineOption phoneFactorOption(QStringList() << "p" << "phone", "If running on Desktop, start in a phone sized window.");
+    cmdLineParser.addOption(phoneFactorOption);
+    QCommandLineOption tabletFactorOption(QStringList() << "t" << "tablet", "If running on Desktop, start in a tablet sized window.");
+    cmdLineParser.addOption(tabletFactorOption);
+    QCommandLineOption importPathOption("I", "Give a path for an additional QML import directory. May be used multiple times.", "path");
+    cmdLineParser.addOption(importPathOption);
+    QCommandLineOption sandboxOption(QStringList() << "s" << "sandbox", "Use sandbox.evernote.com instead of www.evernote.com.");
+    cmdLineParser.addOption(sandboxOption);
+    QString debugDescription = QString("Debug categories to enable. Prefix with \"No\" to disable. Warnings from all categories will be printed unless explicitly muted with \"NoWarnings\". May be used multiple times. Categories are:");
+    foreach (const QString &filterName, s_loggingFilters.keys()) {
+        debugDescription += "\n" + filterName + " (" + (s_loggingFilters.value(filterName) ? "yes" : "no") + ")";
     }
+    QCommandLineOption debugOption(QStringList() << "d" << "debug", debugDescription, "[No]DebugCategory");
+    cmdLineParser.addOption(debugOption);
+    QCommandLineOption testabilityOption("testability", "Load the testability driver.");
+    cmdLineParser.addOption(testabilityOption);
+    cmdLineParser.addPositionalArgument("uri", "Uri to start the application in a specific mode. E.g. evernote://newnote to directly create and edit a new note.");
+    cmdLineParser.addHelpOption();
 
+    cmdLineParser.process(a);
 
-    for (int i = 0; i < args.count(); i++) {
-        if (args.at(i) == "-I" && args.count() > i + 1) {
-            QString addedPath = args.at(i+1);
-            if (addedPath.startsWith('.')) {
-                addedPath = addedPath.right(addedPath.length() - 1);
-                addedPath.prepend(QDir::currentPath());
-            }
-            importPathList.append(addedPath);
+    foreach (QString debugArea, cmdLineParser.values(debugOption)) {
+        bool enable = !debugArea.startsWith("No");
+        debugArea.remove(QRegExp("^No"));
+        if (s_loggingFilters.contains(debugArea)) {
+            s_loggingFilters[debugArea] = enable;
+        } else {
+            qWarning() << "No such debug category:" << debugArea;
         }
     }
+    QLoggingCategory::installFilter(loggingCategoryFilter);
 
-    if (args.contains(QLatin1String("-testability")) || getenv("QT_LOAD_TESTABILITY")) {
+    foreach (QString addedPath, cmdLineParser.values(importPathOption)) {
+        if (addedPath == "." || addedPath.startsWith("./")) {
+            addedPath = addedPath.right(addedPath.length() - 1);
+            addedPath.prepend(QDir::currentPath());
+        }
+        importPathList.append(addedPath);
+    }
+
+    if (cmdLineParser.isSet(testabilityOption) || getenv("QT_LOAD_TESTABILITY")) {
         QLibrary testLib(QLatin1String("qttestability"));
         if (testLib.load()) {
             typedef void (*TasInitialize)(void);
@@ -82,21 +126,22 @@ int main(int argc, char *argv[])
         }
     }
 
-    if (args.contains(QLatin1String("-s")) || args.contains("--sandbox")) {
+    if (cmdLineParser.isSet(sandboxOption)) {
         view.engine()->rootContext()->setContextProperty("useSandbox", QVariant(true));
-        qDebug() << "Running against the sandbox server";
+        qCDebug(dcApplication) << "Running against the sandbox server";
     } else {
         view.engine()->rootContext()->setContextProperty("useSandbox", QVariant(false));
-        qDebug() << "Running against the production server";
+        qCDebug(dcApplication) << "Running against the production server";
     }
 
     view.engine()->rootContext()->setContextProperty("tablet", QVariant(false));
     view.engine()->rootContext()->setContextProperty("phone", QVariant(false));
-    if (args.contains("-t") || args.contains("--tablet")) {
-        qDebug() << "running in tablet mode";
+
+    if (cmdLineParser.isSet(tabletFactorOption)) {
+        qCDebug(dcApplication) << "Running in tablet mode";
         view.engine()->rootContext()->setContextProperty("tablet", QVariant(true));
-    } else if (args.contains("-p") || args.contains("--phone")){
-        qDebug() << "running in phone mode";
+    } else if (cmdLineParser.isSet(phoneFactorOption)){
+        qCDebug(dcApplication) << "Running in phone mode";
         view.engine()->rootContext()->setContextProperty("phone", QVariant(true));
     } else if (qgetenv("QT_QPA_PLATFORM") != "ubuntumirclient") {
         // Default to tablet size on X11
@@ -105,13 +150,14 @@ int main(int argc, char *argv[])
 
     view.engine()->setImportPathList(importPathList);
 
-    // Set up camera helper
-    CameraHelper helper;
-    view.engine()->rootContext()->setContextProperty("cameraHelper", &helper);
+    view.engine()->rootContext()->setContextProperty("uriArgs", cmdLineParser.positionalArguments());
 
     // Set up account preferences
     Preferences preferences;
     view.engine()->rootContext()->setContextProperty("preferences", &preferences);
+
+    // Register FormattingHelper
+    qmlRegisterType<FormattingHelper>("reminders", 1, 0, "FormattingHelper");
 
     QString qmlfile;
     const QString filePath = QLatin1String("qml/reminders.qml");
@@ -136,13 +182,7 @@ int main(int argc, char *argv[])
     // So if you want to change it, make sure to find all the places where it is set, not just here :D
     QCoreApplication::setApplicationName("com.ubuntu.reminders");
 
-    QDir cacheDir(QStandardPaths::standardLocations(QStandardPaths::CacheLocation).first());
-    if (!cacheDir.exists()) {
-        qDebug() << "creating cacheDir:" << cacheDir.absolutePath();
-        cacheDir.mkpath(cacheDir.absolutePath());
-    }
-
-    qDebug() << "using main qml file from:" << qmlfile;
+    qCDebug(dcApplication) << "Using main qml file from:" << qmlfile;
     view.setSource(QUrl::fromLocalFile(qmlfile));
     view.show();
 
