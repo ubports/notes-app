@@ -229,12 +229,24 @@ bool Notes::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) con
 
 bool Notes::lessThan(const QModelIndex &left, const QModelIndex &right) const
 {
-    QVariant leftValue = sourceModel()->data(left, sortRole()).toString();
-    QVariant rightValue = sourceModel()->data(right, sortRole()).toString();
+    QVariant leftValue = sourceModel()->data(left, sortRole());
+    QVariant rightValue = sourceModel()->data(right, sortRole());
 
-    if (leftValue == rightValue) {
-        return sourceModel()->data(left, NotesStore::RoleTitle).toString() < sourceModel()->data(right, NotesStore::RoleTitle).toString();
+    switch (m_sortOrder) {
+    case SortOrderDateCreatedNewest:
+    case SortOrderDateCreatedOldest:
+    case SortOrderDateUpdatedNewest:
+    case SortOrderDateUpdatedOldest:
+        if (leftValue.toDateTime().toMSecsSinceEpoch() < rightValue.toDateTime().toMSecsSinceEpoch()) {
+            return true;
+        } else if (leftValue.toDateTime().toMSecsSinceEpoch() > rightValue.toDateTime().toMSecsSinceEpoch()) {
+            return false;
+        }
+        break;
+    case SortOrderTitleAscending:
+    case SortOrderTitleDescending:
+        // fall trough
+        break;
     }
-
-    return leftValue < rightValue;
+    return leftValue.toString() < rightValue.toString();
 }

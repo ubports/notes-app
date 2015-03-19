@@ -2,7 +2,6 @@ import QtQuick 2.2
 import Ubuntu.Components 1.0
 import Ubuntu.Components.Popups 1.0
 import Ubuntu.Components.ListItems 1.0
-import reminders 1.0
 
 Item {
     id: root
@@ -33,10 +32,14 @@ Item {
                     i18n.tr("Title (ascending)"),
                     i18n.tr("Title (descending)")
                 ]
+                delegate: OptionSelectorDelegate {
+                    objectName: "sortingOption" + index
+                }
             }
 
             Button {
                 text: i18n.tr("Close")
+                objectName: "sortingCloseButton"
                 onClicked: {
                     root.sortOrder = optionSelector.selectedIndex
                     root.accepted();

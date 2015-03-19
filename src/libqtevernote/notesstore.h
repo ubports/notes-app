@@ -113,6 +113,7 @@ public:
     QHash<int, QByteArray> roleNames() const;
 
     QList<Note*> notes() const;
+    Q_INVOKABLE Note* note(int index) const;
 
     Q_INVOKABLE Note* note(const QString &guid);
     Q_INVOKABLE Note* createNote(const QString &title, const QString &notebookGuid = QString(), const QString &richTextContent = QString());
@@ -123,6 +124,7 @@ public:
     Q_INVOKABLE void clearSearchResults();
 
     QList<Notebook*> notebooks() const;
+    Q_INVOKABLE Notebook* notebook(int index) const;
     Q_INVOKABLE Notebook* notebook(const QString &guid);
     Q_INVOKABLE void createNotebook(const QString &name);
     Q_INVOKABLE void saveNotebook(const QString &guid);

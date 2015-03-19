@@ -21,7 +21,6 @@
  */
 
 #include "preferences.h"
-#include "formattinghelper.h"
 
 #include <QtGui/QGuiApplication>
 #include <QtQuick/QQuickView>
@@ -156,11 +155,8 @@ int main(int argc, char *argv[])
     Preferences preferences;
     view.engine()->rootContext()->setContextProperty("preferences", &preferences);
 
-    // Register FormattingHelper
-    qmlRegisterType<FormattingHelper>("reminders", 1, 0, "FormattingHelper");
-
     QString qmlfile;
-    const QString filePath = QLatin1String("qml/reminders.qml");
+    const QString filePath = QLatin1String("qml/Reminders.qml");
     QStringList paths = QStandardPaths::standardLocations(QStandardPaths::DataLocation);
     paths.prepend(QDir::currentPath());
     paths.prepend(QCoreApplication::applicationDirPath());

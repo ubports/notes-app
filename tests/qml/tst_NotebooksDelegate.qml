@@ -54,7 +54,7 @@ Item {
     ListView {
         id: notebooksListView
         anchors.fill: parent
-        
+
         model: notebooks
 
         delegate: NotebooksDelegate {

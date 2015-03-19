@@ -135,7 +135,11 @@ MainView {
             }
             var component = Qt.createComponent(Qt.resolvedUrl("ui/EditNotePage.qml"));
             var page = component.createObject();
-            page.exitEditMode.connect(function() {Qt.inputMethod.hide(); pagestack.pop()});
+            page.exitEditMode.connect(function() {
+                    Qt.inputMethod.hide();
+                    pagestack.pop();
+                    page.destroy();
+                });
             pagestack.push(page, {note: note});
         } else {
             sideViewLoader.clear();
@@ -410,7 +414,7 @@ MainView {
             if (root.narrowMode) {
                 var component = Qt.createComponent(Qt.resolvedUrl("ui/EditNotePage.qml"));
                 var page = component.createObject();
-                page.exitEditMode.connect(function() {Qt.inputMethod.hide(); pagestack.pop();});
+                page.exitEditMode.connect(function() {Qt.inputMethod.hide(); pagestack.pop(); page.destroy()});
                 pagestack.push(page, {note: note});
             } else {
                 notesPage.selectedNote = note;

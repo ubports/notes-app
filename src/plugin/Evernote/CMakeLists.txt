@@ -9,6 +9,7 @@ include_directories(
 
 set(evernoteplugin_SRCS
     evernoteplugin.cpp
+    formattinghelper.cpp
 )
 
 add_library(evernoteplugin MODULE

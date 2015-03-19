@@ -256,6 +256,11 @@ QList<Note*> NotesStore::notes() const
     return m_notes;
 }
 
+Note *NotesStore::note(int index) const
+{
+    return m_notes.at(index);
+}
+
 Note *NotesStore::note(const QString &guid)
 {
     return m_notesHash.value(guid);
@@ -264,6 +269,11 @@ Note *NotesStore::note(const QString &guid)
 QList<Notebook *> NotesStore::notebooks() const
 {
     return m_notebooks;
+}
+
+Notebook *NotesStore::notebook(int index) const
+{
+    return m_notebooks.at(index);
 }
 
 Notebook *NotesStore::notebook(const QString &guid)

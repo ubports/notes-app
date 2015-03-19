@@ -24,7 +24,6 @@ import Ubuntu.Components.ListItems 1.0
 import Ubuntu.Content 0.1
 import Ubuntu.Components.Themes.Ambiance 1.1
 import Evernote 0.1
-import reminders 1.0
 import "../components"
 
 Item {
@@ -111,6 +110,7 @@ Item {
 
             TextField {
                 id: titleTextField
+                objectName: root.isBottomEdge ? "bottomEdgeTitleTextField" : "titleTextField"
                 text: root.note ? root.note.title : ""
                 placeholderText: i18n.tr("Untitled")
                 height: units.gu(4)
@@ -118,6 +118,7 @@ Item {
                 anchors.verticalCenter: parent.verticalCenter
             }
             AbstractButton {
+                objectName: isBottomEdge ? "bottomEdgeSaveButton" : "saveButton"
                 height: units.gu(3)
                 width: height
                 anchors.verticalCenter: parent.verticalCenter
@@ -127,6 +128,7 @@ Item {
                 }
                 onClicked: {
                     saveNote();
+                    print("closing editview")
                     root.exitEditMode(root.note);
                 }
             }
@@ -176,6 +178,7 @@ Item {
 
                      TextEdit {
                          id: noteTextArea
+                         objectName: isBottomEdge ? "bottomEdgeNoteTextArea" : "noteTextArea"
                          width: flick.width
                          height: Math.max(flick.height - notebookSelector.height, paintedHeight)
                          focus: true
