@@ -35,13 +35,8 @@ Item {
                 delegate: OptionSelectorDelegate {
                     objectName: "sortingOption" + index
                 }
-            }
-
-            Button {
-                text: i18n.tr("Close")
-                objectName: "sortingCloseButton"
-                onClicked: {
-                    root.sortOrder = optionSelector.selectedIndex
+                onDelegateClicked: {
+                    root.sortOrder = index
                     root.accepted();
                     PopupUtils.close(dialog);
                 }
@@ -49,4 +44,3 @@ Item {
         }
     }
 }
-

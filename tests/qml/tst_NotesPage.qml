@@ -169,8 +169,6 @@ Item {
 
             var sortOption = findChild(root, "sortingOption" + data.sortingOption);
             mouseClick(sortOption, 1, 1);
-            var closeButton = findChild(root, "sortingCloseButton");
-            mouseClick(closeButton, 1, 1);
 
             waitForRendering(root);
 
