@@ -1,5 +1,5 @@
 {
-    "description": "Ubuntu Reminders app, powered by Evernote",
+    "description": "Ubuntu Notes app, powered by Evernote",
     "framework": "ubuntu-sdk-14.10",
     "architecture": "@CLICK_ARCH@",
     "hooks": {
@@ -21,7 +21,7 @@
     },
     "maintainer": "Ubuntu App Cats <ubuntu-touch-coreapps@lists.launchpad.net>",
     "name": "com.ubuntu.reminders",
-    "title": "Reminders",
+    "title": "Notes",
     "version": "0.5.@BZR_REVNO@",
     "x-source": {
         "vcs-bzr": "lp:reminders-app",

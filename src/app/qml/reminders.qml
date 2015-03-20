@@ -517,7 +517,7 @@ MainView {
             }
 
             Tab {
-                title: i18n.tr("Reminders")
+                title: i18n.tr("Notes")
                 page: RemindersPage {
                     id: remindersPage
 
