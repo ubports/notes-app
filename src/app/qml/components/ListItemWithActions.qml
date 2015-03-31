@@ -209,6 +209,12 @@ Item {
        }
        visible: _visibleRightSideActions.length > 0
        width: rightActionsRepeater.count > 0 ? rightActionsRepeater.count * (root.actionWidth + units.gu(2)) + root.actionThreshold + units.gu(2) : 0
+
+       Rectangle {
+            anchors.fill: parent
+            color: 'white'
+       }
+
        Row {
            anchors{
                top: parent.top
