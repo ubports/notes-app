@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-11-11 00:31+0100\n"
-"PO-Revision-Date: 2015-01-30 08:34+0000\n"
-"Last-Translator: Milo Casagrande <milo.casagrande@gmail.com>\n"
+"PO-Revision-Date: 2015-04-01 13:18+0000\n"
+"Last-Translator: Claudio Arseni <claudio.arseni@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-03-31 05:59+0000\n"
+"X-Launchpad-Export-Date: 2015-04-02 05:52+0000\n"
 "X-Generator: Launchpad (build 17413)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:274
@@ -379,7 +379,7 @@ msgstr "nel %1 %2"
 #: src/libqtevernote/notesstore.cpp:366
 #, qt-format
 msgid "Error refreshing notes: %1"
-msgstr "Errore mell'aggiornare le note: %1"
+msgstr "Errore nell'aggiornare le note: %1"
 
 #: src/libqtevernote/notesstore.cpp:551
 #, qt-format
