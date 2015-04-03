@@ -2,19 +2,19 @@
 # Copyright © 2014 Rosetta Contributors and Canonical Ltd 2014
 # This file is distributed under the same license as the reminders-app package.
 # Josef Andersson <josef.andersson@fripost.org>, 2014.
-#
+# clone <josef.andersson@fripost.org>, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-11-11 00:31+0100\n"
-"PO-Revision-Date: 2015-03-05 17:15+0000\n"
+"PO-Revision-Date: 2015-04-03 05:36+0000\n"
 "Last-Translator: Josef Andersson <Unknown>\n"
-"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-03-31 05:59+0000\n"
+"X-Launchpad-Export-Date: 2015-04-03 05:48+0000\n"
 "X-Generator: Launchpad (build 17413)\n"
 "Language: sv\n"
 
@@ -83,7 +83,7 @@ msgid ""
 "No note selected.\n"
 "Select a note to see it in detail."
 msgstr ""
-"Ingen anteckning markerad\n"
+"Ingen anteckning markerad.\n"
 "Välj en anteckning för att se den i detalj."
 
 #: src/app/qml/reminders.qml:391
@@ -221,8 +221,7 @@ msgstr "Välj tid och datum för påminnelsen:"
 #: src/app/qml/ui/TagsPage.qml:175
 msgid "No tags available. You can tag notes while viewing them."
 msgstr ""
-"Inga taggar tillgängliga. Du kan redigera tagganteckningar medan du visar "
-"dem."
+"Inga taggar tillgängliga. Du kan tagga anteckningar medan du visar dem."
 
 #: src/libqtevernote/evernoteconnection.cpp:234
 msgid "Error connecting to Evernote: Please check network connection."
