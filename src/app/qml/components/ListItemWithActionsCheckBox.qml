@@ -14,12 +14,27 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.2
+import QtQuick 2.3
 import Ubuntu.Components 1.1
+import "../Theme"
 
-CheckBox {
-    checked: root.selected
+AbstractButton {
+    id: checkBox
+
+    /*!
+      Specifies whether the checkbox is checked or not. By default the property
+      is set to false.
+    */
+    property bool isMultiSelect: true
+    property bool checked: isMultiSelect ? root.selected : false
     width: implicitWidth
     // disable item mouse area to avoid conflicts with parent mouse area
-    __mouseArea.enabled: false
+    __mouseArea.enabled: isMultiSelect ? false : true
+
+    /*!
+      \internal
+     */
+    onTriggered: checked = !checked
+
+    style: Theme.createStyleComponent(Qt.resolvedUrl("../Theme/CheckBoxStyle.qml"), checkBox)
 }
