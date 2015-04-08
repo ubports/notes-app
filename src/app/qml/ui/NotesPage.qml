@@ -251,7 +251,7 @@ PageWithBottomEdge {
             width: parent.width - units.gu(4)
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignHCenter
-            text: i18n.tr("No notes available. You can create new notes using the \"Add note\" button.")
+            text: i18n.tr("No notes available. You can create new notes by pulling the note editor up from the bottom edge.")
         }
 
         Scrollbar {
