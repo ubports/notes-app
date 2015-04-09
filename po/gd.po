@@ -2,19 +2,19 @@
 # Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
 # This file is distributed under the same license as the reminders-app package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
-# GunChleoc <fios@foramnagaidhlig.net>, 2014.
+# GunChleoc <fios@foramnagaidhlig.net>, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-03-31 11:32+0200\n"
-"PO-Revision-Date: 2014-11-15 05:51+0000\n"
+"PO-Revision-Date: 2015-04-08 17:51+0000\n"
 "Last-Translator: GunChleoc <Unknown>\n"
 "Language-Team: Fòram na Gàidhlig\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-04-06 05:31+0000\n"
+"X-Launchpad-Export-Date: 2015-04-09 05:44+0000\n"
 "X-Generator: Launchpad (build 17413)\n"
 "Language: gd\n"
 
@@ -28,19 +28,19 @@ msgstr "Aplacaid nan cuimhneachan aig Ubuntu le cumhachd Evernote"
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
-msgstr ""
+msgstr "Leabhar-nòtaichean:"
 
 #: src/app/qml/components/ConflictDelegate.qml:63
 msgid "Reminder:"
-msgstr ""
+msgstr "Cuimhneachan:"
 
 #: src/app/qml/components/EditTagsDialog.qml:45
 msgid "Create a new tag"
-msgstr ""
+msgstr "Cruthaich taga ùr"
 
 #: src/app/qml/components/EditTagsDialog.qml:73
 msgid "Create tag"
-msgstr ""
+msgstr "Cruthaich taga"
 
 #. TRANSLATORS: Button to close the edit mode
 #: src/app/qml/components/EditTagsDialog.qml:120
@@ -71,7 +71,7 @@ msgstr "Prìobhaideach"
 
 #: src/app/qml/components/NotesDelegate.qml:73
 msgid "Reminder"
-msgstr ""
+msgstr "Cuimhneachan"
 
 #: src/app/qml/components/NotesDelegate.qml:80 src/app/qml/reminders.qml:572
 msgid "Tags"
@@ -103,11 +103,11 @@ msgstr "Falamhaich an cuimhneachan"
 
 #: src/app/qml/components/RemindersDelegate.qml:49
 msgid "Mark as undone"
-msgstr ""
+msgstr "Comharraich nach deach a choileanadh"
 
 #: src/app/qml/components/RemindersDelegate.qml:49
 msgid "Mark as done"
-msgstr "Comharraich gun deach a dhèanamh"
+msgstr "Comharraich gun deach a choileanadh"
 
 #: src/app/qml/components/RemindersDelegate.qml:57
 #: src/app/qml/ui/NotePage.qml:44 src/app/qml/ui/NotesPage.qml:109
@@ -116,85 +116,94 @@ msgstr "Deasaich an cuimhneachan"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:25
 msgid "Resolve conflict"
-msgstr ""
+msgstr "Fuasgail a' chòmhstri"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:30
 msgid ""
 "This will <b>keep the changes made on this device</b> and <b>restore the "
 "note on Evernote</b>."
 msgstr ""
+"<b>Cumaidh seo na chaidh atharrachadh air an uidheam seo</b> agus "
+"<b>aisigidh e an nòta air Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:32
 msgid "This will <b>delete the changed note on Evernote</b>."
-msgstr ""
+msgstr "<b>Sguabaidh seo às an nòta air Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:34
 msgid ""
 "This will <b>keep the changes made on this device</b> and <b>discard any "
 "changes made on Evernote</b>."
 msgstr ""
+"<b>Cumaidh seo na chaidh atharrachadh air an uidheam seo</b> agus <b>tilgidh "
+"e air falbh gach atharrachadh a chaidh a dhèanamh air Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:38
 msgid "This will <b>delete the changed note on this device</b>."
-msgstr ""
+msgstr "<b>Sguabaidh seo às an nòta air an uidheam seo</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:40
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>restore it "
 "on this device</b>."
 msgstr ""
+"<b>Luchdaidh seo a-nuas an nòta air atharrachadh o Evernote</b> agus "
+"<b>aisigidh e an nòta air an uidheam seo</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:42
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>discard any "
 "changes made on this device</b>."
 msgstr ""
+"<b>Luchdaidh seo a-nuas an nòta air atharrachadh o Evernote</b> agus "
+"<b>tilgidh e air falbh gach atharrachadh a chaidh a dhèanamh air an uidheam "
+"seo</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:45
 msgid "Are you sure you want to continue?"
-msgstr ""
+msgstr "A bheil thu cinnteach gu bheil thu airson leantainn air adhart?"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:57
 #: src/app/qml/reminders.qml:690
 msgid "Yes"
-msgstr ""
+msgstr "Tha"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:66
 #: src/app/qml/reminders.qml:680
 msgid "No"
-msgstr ""
+msgstr "Chan eil"
 
 #: src/app/qml/components/SortingDialog.qml:20
 msgid "Sort by"
-msgstr ""
+msgstr "Seòrsaich a-rèir"
 
 #: src/app/qml/components/SortingDialog.qml:29
 msgid "Date created (newest first)"
-msgstr ""
+msgstr "Cuin a chaidh a chruthachadh (ùr gu sean)"
 
 #: src/app/qml/components/SortingDialog.qml:30
 msgid "Date created (oldest first)"
-msgstr ""
+msgstr "Cuin a chaidh a chruthachadh (sean gu ùr)"
 
 #: src/app/qml/components/SortingDialog.qml:31
 msgid "Date updated (newest first)"
-msgstr ""
+msgstr "Cuin a chaidh ùrachadh (ùr gu sean)"
 
 #: src/app/qml/components/SortingDialog.qml:32
 msgid "Date updated (oldest first)"
-msgstr ""
+msgstr "Cuin a chaidh ùrachadh (sean gu ùr)"
 
 #: src/app/qml/components/SortingDialog.qml:33
 msgid "Title (ascending)"
-msgstr ""
+msgstr "Tiotal (a' dìreadh)"
 
 #: src/app/qml/components/SortingDialog.qml:34
 msgid "Title (descending)"
-msgstr ""
+msgstr "Tiotal (a' teàrnadh)"
 
 #: src/app/qml/reminders.qml:385
 msgid "Default notebook"
-msgstr ""
+msgstr "Leabhar-nòtaichean tùsail"
 
 #: src/app/qml/reminders.qml:491
 msgid "Notes"
@@ -218,23 +227,25 @@ msgstr ""
 
 #: src/app/qml/reminders.qml:662
 msgid "Setup Evernote connection?"
-msgstr ""
+msgstr "A bheil thu airson ceangal gu Evernote a shuidheachadh?"
 
 #: src/app/qml/reminders.qml:663
 msgid "Reminders can store your notes and reminders locally on this device. "
 msgstr ""
+"'S urrainn do dh'aplacaid nan cuimhneachan na nòtaichean is cuimhneachain "
+"agad a ghlèidheadh air an uidheam seo. "
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
-msgstr ""
+msgstr "Tagh cunntas"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:44
 msgid "Store notes locally only"
-msgstr ""
+msgstr "Na glèidh na nòtaichean ach gu h-ionadail"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:52
 msgid "Accounts on www.evernote.com"
-msgstr ""
+msgstr "Cunntasan air www.evernote.com"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:82
 #, qt-format
@@ -275,29 +286,31 @@ msgstr "LT"
 
 #: src/app/qml/ui/NoteConflictPage.qml:27
 msgid "Conflicting changes"
-msgstr ""
+msgstr "Còmhstri eadar atharraichean"
 
 #: src/app/qml/ui/NoteConflictView.qml:54
 msgid ""
 "This note has been modified in multiple places. Please choose the version to "
 "be opened and delete the other."
 msgstr ""
+"Chaidh an nòta seo atharrachadh ann an iomadh àite. Tagh an tionndadh dheth "
+"a tha thu airson fosgladh is sguab às am fear eile."
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Deleted on this device:"
-msgstr ""
+msgstr "Air sguabadh às air an uidheam seo:"
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Modified on this device:"
-msgstr ""
+msgstr "Air atharrachadh às air an uidheam seo:"
 
 #: src/app/qml/ui/NoteConflictView.qml:85
 msgid "Deleted from Evernote:"
-msgstr ""
+msgstr "Air sguabadh às air Evernote:"
 
 #: src/app/qml/ui/NoteConflictView.qml:85
 msgid "Modified somewhere else:"
-msgstr ""
+msgstr "Air atharrachadh àiteigin eile:"
 
 #: src/app/qml/ui/NotePage.qml:44 src/app/qml/ui/NotesPage.qml:109
 msgid "Set reminder"
@@ -305,7 +318,7 @@ msgstr "Suidhich cuimhneachan"
 
 #: src/app/qml/ui/NoteView.qml:146
 msgid "Attachment"
-msgstr ""
+msgstr "Ceanglachan"
 
 #: src/app/qml/ui/NotebooksPage.qml:45
 msgid "Add notebook"
@@ -328,20 +341,20 @@ msgstr "Sàbhail"
 
 #: src/app/qml/ui/NotebooksPage.qml:198
 msgid "Rename notebook"
-msgstr ""
+msgstr "Thoir ainm eile air an leabhar-nòtaichean"
 
 #: src/app/qml/ui/NotebooksPage.qml:199
 #, qt-format
 msgid "Enter a new name for notebook %1"
-msgstr ""
+msgstr "Cuir a-steach ainm ùr airson an leabhair-nòtaichean \"%1\""
 
 #: src/app/qml/ui/NotebooksPage.qml:208 src/app/qml/ui/TagsPage.qml:144
 msgid "Name cannot be empty"
-msgstr ""
+msgstr "Chan fhaod ainm a bhith falamh"
 
 #: src/app/qml/ui/NotebooksPage.qml:212 src/app/qml/ui/TagsPage.qml:148
 msgid "OK"
-msgstr ""
+msgstr "Ceart ma-thà"
 
 #: src/app/qml/ui/NotesPage.qml:43 src/app/qml/ui/NotesPage.qml:63
 msgid "Add note"
@@ -349,7 +362,7 @@ msgstr "Cuir nòta ris"
 
 #: src/app/qml/ui/NotesPage.qml:74
 msgid "Sorting"
-msgstr ""
+msgstr "Seòrsachadh"
 
 #: src/app/qml/ui/NotesPage.qml:254
 msgid ""
@@ -378,7 +391,7 @@ msgstr "Tagh ceann-là 's àm airson a' chuimhneachain"
 #. TRANSLATORS: A checkbox with marks the reminder as done
 #: src/app/qml/ui/SetReminderView.qml:64
 msgid "Reminder done"
-msgstr ""
+msgstr "Chaidh an cuimhneachan a choileanadh"
 
 #: src/app/qml/ui/TagsPage.qml:127
 msgid "No tags available. You can tag notes while viewing them."
@@ -388,16 +401,16 @@ msgstr ""
 
 #: src/app/qml/ui/TagsPage.qml:134
 msgid "Rename tag"
-msgstr ""
+msgstr "Thoir ainm eile air an taga"
 
 #: src/app/qml/ui/TagsPage.qml:135
 #, qt-format
 msgid "Enter a new name for tag %1"
-msgstr ""
+msgstr "Cuir a-steach ainm ùr airson an taga \"%1\""
 
 #: src/libqtevernote/evernoteconnection.cpp:268
 msgid "Offline mode"
-msgstr ""
+msgstr "Modh far loidhne"
 
 #: src/libqtevernote/evernoteconnection.cpp:273
 #: src/libqtevernote/evernoteconnection.cpp:362
@@ -444,17 +457,24 @@ msgid ""
 "Authentication for Evernote server expired. Please renew login information "
 "in the accounts settings."
 msgstr ""
+"Dh'fhalbh an ùine air an dearbhadh airson an fhrithealaiche aig Evernote. "
+"Ath-nuadhaich am fiosrachadh clàraidh a-steach ann an roghainnean a' "
+"chunntais."
 
 #: src/libqtevernote/evernoteconnection.cpp:332
 #: src/libqtevernote/evernoteconnection.cpp:350
 #, qt-format
 msgid "Unknown error connecting to Evernote: %1"
 msgstr ""
+"Tachair mearachd nach aithne dhuinn fad 's a rinn sinn ceangal ri Evernote: "
+"%1"
 
 #: src/libqtevernote/evernoteconnection.cpp:341
 msgid ""
 "Error connecting to Evernote: Rate limit exceeded. Please try again later."
 msgstr ""
+"Mearachd le ceangal gu Evernote: Chaidh thu thar crìochan an reat. Feuch ris "
+"a-rithist an ceann greis."
 
 #: src/libqtevernote/evernoteconnection.cpp:357
 msgid ""
@@ -475,7 +495,7 @@ msgstr ""
 
 #: src/libqtevernote/evernoteconnection.cpp:435
 msgid "Disconnected from Evernote."
-msgstr ""
+msgstr "Chaidh an cheangal gu Evernote a bhriseadh."
 
 #: src/libqtevernote/note.cpp:162 src/libqtevernote/note.cpp:196
 #: src/libqtevernote/note.cpp:381
@@ -556,28 +576,38 @@ msgid ""
 "This account is managed by Evernote. Use the Evernote website to delete "
 "notebooks."
 msgstr ""
+"Tha an cunntas seo ga stiùireadh le Evernote. Cleachd làrach-lìn Evernote "
+"gus leabhraichean-nòtaichean a sguabadh às."
 
 #: src/libqtevernote/notesstore.cpp:422
 msgid ""
 "Cannot delete the default notebook. Set another notebook to be the default "
 "first."
 msgstr ""
+"Chan urrainn dhuinn an leabhar-nòtaichean tùsail a sguabadh às. Suidhich "
+"leabhar-nòtaichean eile 'na fhear tùsail an toiseach."
 
 #: src/libqtevernote/notesstore.cpp:1700
 msgid "Rate limit for Evernote server exceeded. Please try again later."
 msgstr ""
+"Chaidh thu thar crìoch an reat airson an fhrithealaiche aig Evernote. Feuch "
+"ris a-rithist an ceann greis."
 
 #: src/libqtevernote/notesstore.cpp:1703
 msgid "Upload quota for Evernote server exceed. Please try again later."
 msgstr ""
+"Chaidh thu thar cuota luchdaidh suas airson an fhrithealaiche aig Evernote. "
+"Feuch ris a-rithist an ceann greis."
 
 #: src/libqtevernote/notesstore.cpp:1717
 msgid ""
 "This account is managed by Evernote. Please use the Evernote website to "
 "delete tags."
 msgstr ""
+"Tha an cunntas seo ga stiùireadh le Evernote. Cleachd làrach-lìn Evernote "
+"gus tagaichean a sguabadh às."
 
 #. TRANSLATORS: A default file name if we don't get one from the server. Avoid weird characters.
 #: src/libqtevernote/resource.cpp:39
 msgid "Unnamed"
-msgstr ""
+msgstr "Gun ainm"
