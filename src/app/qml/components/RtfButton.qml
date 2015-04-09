@@ -38,9 +38,10 @@ Item {
 
     opacity: enabled ? 1 : 0.5
 
-    MouseArea {
+    AbstractButton {
         id: mouseArea
         anchors.fill: parent
+        activeFocusOnPress: false
         onClicked: root.clicked()
     }
 
