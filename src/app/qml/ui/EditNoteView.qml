@@ -629,6 +629,7 @@ Item {
                 height: parent.height
                 iconColor: UbuntuColors.green
                 onClicked: {
+                    noteTextArea.focus = false;
                     saveNote();
                     root.exitEditMode(root.note);
                 }
