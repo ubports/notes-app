@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-03-31 11:32+0200\n"
-"PO-Revision-Date: 2015-04-08 08:23+0000\n"
+"PO-Revision-Date: 2015-04-09 18:47+0000\n"
 "Last-Translator: rob <linuxned@gmail.com>\n"
 "Language-Team: Dutch <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-04-09 05:44+0000\n"
+"X-Launchpad-Export-Date: 2015-04-10 05:14+0000\n"
 "X-Generator: Launchpad (build 17413)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
@@ -123,14 +123,12 @@ msgid ""
 "note on Evernote</b>."
 msgstr ""
 "Hierdoor zullen <b>de wijzigingen die gemaakt zijn op dit apparaat bewaard "
-"worden</b> en zal <b>de oorspronkelijke ongewijzigde notitie weer hersteld "
-"worden bij Evernote zelf</b>."
+"worden</b> en zal <b>de notitie hersteld worden bij Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:32
 msgid "This will <b>delete the changed note on Evernote</b>."
 msgstr ""
-"Hierdoor zal <b>de gewijzigde notitie bij Evernote zelf verwijderd "
-"worden</b>."
+"Hierdoor zal <b>de gewijzigde notitie verwijderd worden bij Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:34
 msgid ""
@@ -138,29 +136,28 @@ msgid ""
 "changes made on Evernote</b>."
 msgstr ""
 "Hierdoor zullen <b>de wijzigingen die gemaakt zijn op dit apparaat bewaard "
-"worden</b> maar zullen <b>wijzigingen die gemaakt zijn bij Evernote zelf "
+"worden</b> maar zullen <b>wijzigingen die gemaakt zijn bij Evernote "
 "genegeerd worden</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:38
 msgid "This will <b>delete the changed note on this device</b>."
 msgstr ""
-"Hierdoor zal <b>de gewijzigde notitie alleen op dit apparaat verwijderd "
-"worden</b>."
+"Hierdoor zal <b>de gewijzigde notitie verwijderd worden van dit apparaat</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:40
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>restore it "
 "on this device</b>."
 msgstr ""
-"Hierdoor zal de <b>de gewijzigde notitie vanaf Evernote zelf gedownload "
-"worden</b> en zal <b>deze notitie weer hersteld worden op dit apparaat</b>."
+"Hierdoor zal de <b>de gewijzigde notitie vanaf Evernote gedownload "
+"worden</b> en zal <b>deze hersteld worden op dit apparaat</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:42
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>discard any "
 "changes made on this device</b>."
 msgstr ""
-"Hierdoor zal de <b>de gewijzigde notitie vanaf Evernote zelf gedownload "
+"Hierdoor zal de <b>de gewijzigde notitie vanaf Evernote gedownload "
 "worden</b> en zullen <b>wijzigingen die gemaakt zijn op dit apparaat "
 "genegeerd worden</b>."
 
