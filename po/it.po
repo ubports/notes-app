@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-03-31 11:32+0200\n"
-"PO-Revision-Date: 2015-04-10 09:40+0000\n"
+"PO-Revision-Date: 2015-04-11 09:44+0000\n"
 "Last-Translator: Claudio Arseni <claudio.arseni@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-04-11 05:51+0000\n"
+"X-Launchpad-Export-Date: 2015-04-12 06:02+0000\n"
 "X-Generator: Launchpad (build 17423)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
@@ -27,7 +27,7 @@ msgstr "App per i promemoria di Ubuntu, basata su Evernote"
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
-msgstr ""
+msgstr "Taccuino:"
 
 #: src/app/qml/components/ConflictDelegate.qml:63
 msgid "Reminder:"
@@ -35,11 +35,11 @@ msgstr "Promemoria:"
 
 #: src/app/qml/components/EditTagsDialog.qml:45
 msgid "Create a new tag"
-msgstr "Crea una nuova etichetta"
+msgstr "Crea un nuovo tag"
 
 #: src/app/qml/components/EditTagsDialog.qml:73
 msgid "Create tag"
-msgstr "Crea etichetta"
+msgstr "Crea tag"
 
 #. TRANSLATORS: Button to close the edit mode
 #: src/app/qml/components/EditTagsDialog.qml:120
@@ -127,29 +127,35 @@ msgstr ""
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:32
 msgid "This will <b>delete the changed note on Evernote</b>."
-msgstr ""
+msgstr "Questo <b>eliminerà la nota modificata su Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:34
 msgid ""
 "This will <b>keep the changes made on this device</b> and <b>discard any "
 "changes made on Evernote</b>."
 msgstr ""
+"Questo <b>manterrà le modifiche fatte su questo dispositivo</b> e "
+"<b>scarterà ogni modifica fatta su Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:38
 msgid "This will <b>delete the changed note on this device</b>."
-msgstr ""
+msgstr "Questo <b>eliminerà le note modificate su questo dispositivo</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:40
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>restore it "
 "on this device</b>."
 msgstr ""
+"Questo <b>scaricherà la nota modificata da Evernote</b> e <b>la ripristinerà "
+"su questo dispositivo</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:42
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>discard any "
 "changes made on this device</b>."
 msgstr ""
+"Questo <b>scaricherà la nota modificata da Evernote</b> e <b>scarterà ogni "
+"modifica fatta su questo dispositivo</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:45
 msgid "Are you sure you want to continue?"
@@ -171,19 +177,19 @@ msgstr "Ordina per"
 
 #: src/app/qml/components/SortingDialog.qml:29
 msgid "Date created (newest first)"
-msgstr ""
+msgstr "Data di creazione (a partire dalla più recente)"
 
 #: src/app/qml/components/SortingDialog.qml:30
 msgid "Date created (oldest first)"
-msgstr ""
+msgstr "Data di creazione (a partire dalla meno recente)"
 
 #: src/app/qml/components/SortingDialog.qml:31
 msgid "Date updated (newest first)"
-msgstr ""
+msgstr "Data di aggiornamento (a partire dalla più recente)"
 
 #: src/app/qml/components/SortingDialog.qml:32
 msgid "Date updated (oldest first)"
-msgstr ""
+msgstr "Data di aggiornamento (a partire dalla meno recente)"
 
 #: src/app/qml/components/SortingDialog.qml:33
 msgid "Title (ascending)"
@@ -195,7 +201,7 @@ msgstr "Titolo (decrescente)"
 
 #: src/app/qml/reminders.qml:385
 msgid "Default notebook"
-msgstr ""
+msgstr "Taccuino predefinito"
 
 #: src/app/qml/reminders.qml:491
 msgid "Notes"
@@ -203,7 +209,7 @@ msgstr "Note"
 
 #: src/app/qml/reminders.qml:519
 msgid "Notebooks"
-msgstr "Appunti"
+msgstr "Taccuini"
 
 #: src/app/qml/reminders.qml:600
 msgid "Accounts"
@@ -219,15 +225,17 @@ msgstr ""
 
 #: src/app/qml/reminders.qml:662
 msgid "Setup Evernote connection?"
-msgstr ""
+msgstr "Configurare connessione a Evernote?"
 
 #: src/app/qml/reminders.qml:663
 msgid "Reminders can store your notes and reminders locally on this device. "
 msgstr ""
+"I promemoria possono archiviare le note e i promemoria localmente su questo "
+"dispositivo "
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
-msgstr ""
+msgstr "Seleziona account"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:44
 msgid "Store notes locally only"
@@ -312,7 +320,7 @@ msgstr "Allegato"
 
 #: src/app/qml/ui/NotebooksPage.qml:45
 msgid "Add notebook"
-msgstr "Aggiungi blocco note"
+msgstr "Aggiungi taccuino"
 
 #: src/app/qml/ui/NotebooksPage.qml:55 src/app/qml/ui/NotesPage.qml:89
 #: src/app/qml/ui/RemindersPage.qml:36 src/app/qml/ui/SearchNotesPage.qml:60
@@ -331,12 +339,12 @@ msgstr "Salva"
 
 #: src/app/qml/ui/NotebooksPage.qml:198
 msgid "Rename notebook"
-msgstr ""
+msgstr "Rinomina taccuino"
 
 #: src/app/qml/ui/NotebooksPage.qml:199
 #, qt-format
 msgid "Enter a new name for notebook %1"
-msgstr ""
+msgstr "Inserire un nuovo nome per il taccuino %1"
 
 #: src/app/qml/ui/NotebooksPage.qml:208 src/app/qml/ui/TagsPage.qml:144
 msgid "Name cannot be empty"
@@ -380,7 +388,7 @@ msgstr "Seleziona data e ora per il promemoria:"
 #. TRANSLATORS: A checkbox with marks the reminder as done
 #: src/app/qml/ui/SetReminderView.qml:64
 msgid "Reminder done"
-msgstr ""
+msgstr "Contrassegna come fatto"
 
 #: src/app/qml/ui/TagsPage.qml:127
 msgid "No tags available. You can tag notes while viewing them."
@@ -390,12 +398,12 @@ msgstr ""
 
 #: src/app/qml/ui/TagsPage.qml:134
 msgid "Rename tag"
-msgstr "Rinomina etichetta"
+msgstr "Rinomina tag"
 
 #: src/app/qml/ui/TagsPage.qml:135
 #, qt-format
 msgid "Enter a new name for tag %1"
-msgstr "Inserire un nuovo nome per l'etichetta %1"
+msgstr "Inserire un nuovo nome per il tag %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:268
 msgid "Offline mode"
@@ -444,12 +452,14 @@ msgid ""
 "Authentication for Evernote server expired. Please renew login information "
 "in the accounts settings."
 msgstr ""
+"Autenticazione per il server Evernot scaduta. Rinnovare le informazioni di "
+"accesso nelle impostazioni account."
 
 #: src/libqtevernote/evernoteconnection.cpp:332
 #: src/libqtevernote/evernoteconnection.cpp:350
 #, qt-format
 msgid "Unknown error connecting to Evernote: %1"
-msgstr ""
+msgstr "Errore di connessione a Evernote sconosciuto: %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:341
 msgid ""
@@ -474,7 +484,7 @@ msgstr "Errore sconosciuto nel connettersi a Evernote"
 
 #: src/libqtevernote/evernoteconnection.cpp:435
 msgid "Disconnected from Evernote."
-msgstr ""
+msgstr "Disconnessi da Evernote."
 
 #: src/libqtevernote/note.cpp:162 src/libqtevernote/note.cpp:196
 #: src/libqtevernote/note.cpp:381
@@ -555,12 +565,16 @@ msgid ""
 "This account is managed by Evernote. Use the Evernote website to delete "
 "notebooks."
 msgstr ""
+"Questo account è gestito da Evernote. Usare il sito web di Evernote per "
+"eliminare i taccuini."
 
 #: src/libqtevernote/notesstore.cpp:422
 msgid ""
 "Cannot delete the default notebook. Set another notebook to be the default "
 "first."
 msgstr ""
+"Impossibile eliminare il taccuino predefinito. Impostare prima un altro "
+"taccuino come predefinito."
 
 #: src/libqtevernote/notesstore.cpp:1700
 msgid "Rate limit for Evernote server exceeded. Please try again later."
@@ -569,14 +583,17 @@ msgstr ""
 #: src/libqtevernote/notesstore.cpp:1703
 msgid "Upload quota for Evernote server exceed. Please try again later."
 msgstr ""
+"Capacità di upload per il server Evernote superata. Riprovare più tardi."
 
 #: src/libqtevernote/notesstore.cpp:1717
 msgid ""
 "This account is managed by Evernote. Please use the Evernote website to "
 "delete tags."
 msgstr ""
+"Questo account è gestito da Evernote. Usare il sito web di Evernote per "
+"eliminare i tag."
 
 #. TRANSLATORS: A default file name if we don't get one from the server. Avoid weird characters.
 #: src/libqtevernote/resource.cpp:39
 msgid "Unnamed"
-msgstr ""
+msgstr "Senza titolo"
