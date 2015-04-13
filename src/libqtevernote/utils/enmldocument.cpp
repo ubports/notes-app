@@ -128,15 +128,23 @@ QString EnmlDocument::convert(const QString &noteGuid, EnmlDocument::Type type) 
                                 break;
                             }
                             if (type == TypeRichText) {
+                                QString style = attribute.value().toString();
+
+                                // Let's remove any "-qt" attributes that might have ended up in the ENML (earlier versions
+                                // of reminders, or other QTextEdit based clients). They are most likely outdated as
+                                // Evernote just ignores but still keeps them and might cause issues if the content inside
+                                // the <p> changed. TextArea will regenerate them anyways if it thinks they are useful.
+                                style.remove(QRegExp("-qt-[a-z-: ]*;"));
+
+                                // Now convert some of the ENML style tags to "-qt" tags in order to get the most out
+                                // of QTextEdit.
                                 if (attribute.value().contains("padding-left")) {
-                                    QString style = attribute.value().toString();
                                     int padding = style.split("padding-left:").at(1).split("px").first().toInt();
                                     int indent = padding / 30 * 4;
                                     style.replace(QRegExp("padding-left:[ 0-9]*px;"), "-qt-block-indent:" + QString::number(indent) + ";");
-                                    writer.writeAttribute("style", style);
-                                } else {
-                                    writer.writeAttribute(attribute);
                                 }
+
+                                writer.writeAttribute("style", style);
                             } else {
                                 writer.writeAttribute(attribute);
                             }
@@ -276,6 +284,8 @@ QString EnmlDocument::convert(const QString &noteGuid, EnmlDocument::Type type) 
 
     writer.writeEndElement();
     writer.writeEndDocument();
+    qCDebug(dcEnml) << QString("************** Converting ENML to %1 **************").arg(type == TypeHtml ? "HTML" : "RichText");
+    qCDebug(dcEnml) << QString("Original EML document:") << m_enml;
     qCDebug(dcEnml) << QString("Converted to %1:").arg(type == TypeHtml ? "HTML" : "RichText") << html;
     return html;
 }
@@ -346,15 +356,20 @@ void EnmlDocument::setRichText(const QString &richText)
                     if (reader.name() == "p") {
                         foreach (const QXmlStreamAttribute &attribute, reader.attributes()) {
                             if (attribute.name() == "style") {
+                                QString style = attribute.value().toString();
+
+                                // First convert some of the "-qt" tags added by the QTextArea to ENML style tags
                                 if (attribute.value().contains("-qt-block-indent")) {
-                                    QString style = attribute.value().toString();
                                     int indent = style.split("-qt-block-indent:").at(1).split(";").first().toInt();
                                     int padding = indent / 4 * 30;
                                     style.replace(QRegExp("-qt-block-indent:[0-9]*;"), "padding-left:" + QString::number(padding) + "px;");
-                                    writer.writeAttribute("style", style);
-                                } else {
-                                    writer.writeAttribute(attribute);
                                 }
+
+                                // Now let's remove any left "-qt" attributes as they won't do any good to ENML
+                                // TextArea will regenerate them anyways when it loads a document without them.
+                                style.remove(QRegExp("-qt-[a-z-: ]*;"));
+
+                                writer.writeAttribute("style", style);
                             } else {
                                 writer.writeAttribute(attribute);
                             }
@@ -414,6 +429,11 @@ void EnmlDocument::setRichText(const QString &richText)
     }
 
     writer.writeEndDocument();
+
+    qCDebug(dcEnml) << QString("************** Converting RichText to ENML **************");
+    qCDebug(dcEnml) << QString("Original RichText:") << richText;
+    qCDebug(dcEnml) << QString("Converted to ENML:") << m_enml;
+
 }
 
 void EnmlDocument::markTodo(const QString &todoId, bool checked)
