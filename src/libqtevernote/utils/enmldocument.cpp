@@ -134,7 +134,7 @@ QString EnmlDocument::convert(const QString &noteGuid, EnmlDocument::Type type) 
                                 // of reminders, or other QTextEdit based clients). They are most likely outdated as
                                 // Evernote just ignores but still keeps them and might cause issues if the content inside
                                 // the <p> changed. TextArea will regenerate them anyways if it thinks they are useful.
-                                style.remove(QRegExp("-qt-[a-z\-\: ]*;"));
+                                style.remove(QRegExp("-qt-[a-z-: ]*;"));
 
                                 // Now convert some of the ENML style tags to "-qt" tags in order to get the most out
                                 // of QTextEdit.
@@ -367,7 +367,7 @@ void EnmlDocument::setRichText(const QString &richText)
 
                                 // Now let's remove any left "-qt" attributes as they won't do any good to ENML
                                 // TextArea will regenerate them anyways when it loads a document without them.
-                                style.remove(QRegExp("-qt-[a-z\-\: ]*;"));
+                                style.remove(QRegExp("-qt-[a-z-: ]*;"));
 
                                 writer.writeAttribute("style", style);
                             } else {
