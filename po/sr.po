@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-03-31 11:32+0200\n"
-"PO-Revision-Date: 2014-09-05 13:30+0000\n"
+"PO-Revision-Date: 2015-04-13 14:52+0000\n"
 "Last-Translator: Данило Шеган <Unknown>\n"
 "Language-Team: Serbian <sr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-04-06 05:32+0000\n"
-"X-Generator: Launchpad (build 17413)\n"
+"X-Launchpad-Export-Date: 2015-04-14 05:33+0000\n"
+"X-Generator: Launchpad (build 17423)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
 msgid "Reminders"
@@ -23,23 +23,23 @@ msgstr "Подсетници"
 
 #: com.ubuntu.reminders.desktop.in.in.h:2
 msgid "Ubuntu Reminders app, powered by Evernote"
-msgstr ""
+msgstr "Убунту програм за подсетнике, погоњен Evernote-ом"
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
-msgstr ""
+msgstr "Свеска:"
 
 #: src/app/qml/components/ConflictDelegate.qml:63
 msgid "Reminder:"
-msgstr ""
+msgstr "Подсетник:"
 
 #: src/app/qml/components/EditTagsDialog.qml:45
 msgid "Create a new tag"
-msgstr ""
+msgstr "Направи нови ознаку"
 
 #: src/app/qml/components/EditTagsDialog.qml:73
 msgid "Create tag"
-msgstr ""
+msgstr "Направи ознаку"
 
 #. TRANSLATORS: Button to close the edit mode
 #: src/app/qml/components/EditTagsDialog.qml:120
@@ -70,11 +70,11 @@ msgstr "Лично"
 
 #: src/app/qml/components/NotesDelegate.qml:73
 msgid "Reminder"
-msgstr ""
+msgstr "Подсетник"
 
 #: src/app/qml/components/NotesDelegate.qml:80 src/app/qml/reminders.qml:572
 msgid "Tags"
-msgstr ""
+msgstr "Ознаке"
 
 #: src/app/qml/components/NotesDelegate.qml:87 src/app/qml/ui/NotePage.qml:37
 #: src/app/qml/ui/NotesPage.qml:125
@@ -102,7 +102,7 @@ msgstr "Одбаците подсетник"
 
 #: src/app/qml/components/RemindersDelegate.qml:49
 msgid "Mark as undone"
-msgstr ""
+msgstr "Означи као неурађено"
 
 #: src/app/qml/components/RemindersDelegate.qml:49
 msgid "Mark as done"
@@ -115,13 +115,15 @@ msgstr "Уреди подсетник"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:25
 msgid "Resolve conflict"
-msgstr ""
+msgstr "Разреши сукоб"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:30
 msgid ""
 "This will <b>keep the changes made on this device</b> and <b>restore the "
 "note on Evernote</b>."
 msgstr ""
+"Ово ће <b>задржати измене направљене на овом уређају</b> и <b>вратити "
+"белешку на Evernote-у</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:32
 msgid "This will <b>delete the changed note on Evernote</b>."
@@ -151,49 +153,49 @@ msgstr ""
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:45
 msgid "Are you sure you want to continue?"
-msgstr ""
+msgstr "Сигурно желите да наставите?"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:57
 #: src/app/qml/reminders.qml:690
 msgid "Yes"
-msgstr ""
+msgstr "Да"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:66
 #: src/app/qml/reminders.qml:680
 msgid "No"
-msgstr ""
+msgstr "Не"
 
 #: src/app/qml/components/SortingDialog.qml:20
 msgid "Sort by"
-msgstr ""
+msgstr "Поређај према"
 
 #: src/app/qml/components/SortingDialog.qml:29
 msgid "Date created (newest first)"
-msgstr ""
+msgstr "Датуму настанка (прво најновији)"
 
 #: src/app/qml/components/SortingDialog.qml:30
 msgid "Date created (oldest first)"
-msgstr ""
+msgstr "Датуму настанка (прво најстарији)"
 
 #: src/app/qml/components/SortingDialog.qml:31
 msgid "Date updated (newest first)"
-msgstr ""
+msgstr "Датуму измене (прво најновији)"
 
 #: src/app/qml/components/SortingDialog.qml:32
 msgid "Date updated (oldest first)"
-msgstr ""
+msgstr "Датуму измене (прво најстарији)"
 
 #: src/app/qml/components/SortingDialog.qml:33
 msgid "Title (ascending)"
-msgstr ""
+msgstr "Наслову (од А до Ш)"
 
 #: src/app/qml/components/SortingDialog.qml:34
 msgid "Title (descending)"
-msgstr ""
+msgstr "Наслову (од Ш до А)"
 
 #: src/app/qml/reminders.qml:385
 msgid "Default notebook"
-msgstr ""
+msgstr "Подразумевана свеска"
 
 #: src/app/qml/reminders.qml:491
 msgid "Notes"
@@ -217,19 +219,20 @@ msgstr ""
 
 #: src/app/qml/reminders.qml:662
 msgid "Setup Evernote connection?"
-msgstr ""
+msgstr "Подесити везу са Evernote-ом?"
 
 #: src/app/qml/reminders.qml:663
 msgid "Reminders can store your notes and reminders locally on this device. "
 msgstr ""
+"Подсетници могу да чувају ваше белешке и подсетнике локално на овом уређају. "
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
-msgstr ""
+msgstr "Изаберите налог"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:44
 msgid "Store notes locally only"
-msgstr ""
+msgstr "Чувајте белешке искључиво локално"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:52
 msgid "Accounts on www.evernote.com"
@@ -238,19 +241,19 @@ msgstr ""
 #: src/app/qml/ui/AccountSelectorPage.qml:82
 #, qt-format
 msgid "%1 - Tap to authorize"
-msgstr ""
+msgstr "%1 - Додирните да одобрите"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:91
 msgid "Add new account"
-msgstr ""
+msgstr "Додај нови налог"
 
 #: src/app/qml/ui/EditNoteView.qml:448
 msgid "Font"
-msgstr ""
+msgstr "Фонт"
 
 #: src/app/qml/ui/EditNoteView.qml:460
 msgid "Size"
-msgstr ""
+msgstr "Величина"
 
 #. TRANSLATORS: Toolbar button for "Bold"
 #: src/app/qml/ui/EditNoteView.qml:483
@@ -274,29 +277,31 @@ msgstr ""
 
 #: src/app/qml/ui/NoteConflictPage.qml:27
 msgid "Conflicting changes"
-msgstr ""
+msgstr "Сукобљене измене"
 
 #: src/app/qml/ui/NoteConflictView.qml:54
 msgid ""
 "This note has been modified in multiple places. Please choose the version to "
 "be opened and delete the other."
 msgstr ""
+"Ове белешка је измењена на више места. Изаберите коју желите да отворите да "
+"бисте обрисали другу."
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Deleted on this device:"
-msgstr ""
+msgstr "Обрисана на овом уређају:"
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Modified on this device:"
-msgstr ""
+msgstr "Измењена на овом уређају:"
 
 #: src/app/qml/ui/NoteConflictView.qml:85
 msgid "Deleted from Evernote:"
-msgstr ""
+msgstr "Обрисана са Evernote-a:"
 
 #: src/app/qml/ui/NoteConflictView.qml:85
 msgid "Modified somewhere else:"
-msgstr ""
+msgstr "Измењена негде другде:"
 
 #: src/app/qml/ui/NotePage.qml:44 src/app/qml/ui/NotesPage.qml:109
 msgid "Set reminder"
@@ -304,7 +309,7 @@ msgstr "Постави подсетник"
 
 #: src/app/qml/ui/NoteView.qml:146
 msgid "Attachment"
-msgstr ""
+msgstr "Прилог"
 
 #: src/app/qml/ui/NotebooksPage.qml:45
 msgid "Add notebook"
@@ -327,20 +332,20 @@ msgstr "Сачувај"
 
 #: src/app/qml/ui/NotebooksPage.qml:198
 msgid "Rename notebook"
-msgstr ""
+msgstr "Преименуј свеску"
 
 #: src/app/qml/ui/NotebooksPage.qml:199
 #, qt-format
 msgid "Enter a new name for notebook %1"
-msgstr ""
+msgstr "Унесите ново име за свеску %1"
 
 #: src/app/qml/ui/NotebooksPage.qml:208 src/app/qml/ui/TagsPage.qml:144
 msgid "Name cannot be empty"
-msgstr ""
+msgstr "Име не сме бити празно"
 
 #: src/app/qml/ui/NotebooksPage.qml:212 src/app/qml/ui/TagsPage.qml:148
 msgid "OK"
-msgstr ""
+msgstr "У реду"
 
 #: src/app/qml/ui/NotesPage.qml:43 src/app/qml/ui/NotesPage.qml:63
 msgid "Add note"
@@ -348,7 +353,7 @@ msgstr "Додај белешку"
 
 #: src/app/qml/ui/NotesPage.qml:74
 msgid "Sorting"
-msgstr ""
+msgstr "Ређање"
 
 #: src/app/qml/ui/NotesPage.qml:254
 msgid ""
@@ -375,55 +380,62 @@ msgstr "Изаберите датум и време за подсетник:"
 #. TRANSLATORS: A checkbox with marks the reminder as done
 #: src/app/qml/ui/SetReminderView.qml:64
 msgid "Reminder done"
-msgstr ""
+msgstr "Подсетник извршен"
 
 #: src/app/qml/ui/TagsPage.qml:127
 msgid "No tags available. You can tag notes while viewing them."
 msgstr ""
+"Нема расположивих ознака. Можете означити белешке у току њиховог прегледа."
 
 #: src/app/qml/ui/TagsPage.qml:134
 msgid "Rename tag"
-msgstr ""
+msgstr "Преименуј ознаку"
 
 #: src/app/qml/ui/TagsPage.qml:135
 #, qt-format
 msgid "Enter a new name for tag %1"
-msgstr ""
+msgstr "Унесите ново име за ознаку %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:268
 msgid "Offline mode"
-msgstr ""
+msgstr "Рад ван мреже"
 
 #: src/libqtevernote/evernoteconnection.cpp:273
 #: src/libqtevernote/evernoteconnection.cpp:362
 msgid "Unknown error connecting to Evernote."
-msgstr ""
+msgstr "Непозната грешка у повезивању са Evernote-ом."
 
 #: src/libqtevernote/evernoteconnection.cpp:286
 msgid ""
 "Error connecting to Evernote: Server version does not match app version. "
 "Please update the application."
 msgstr ""
+"Грешка у повезивању са Evernote-ом: верзија сервера се не поклапа са "
+"верзијом програма. Молимо надоградите програм."
 
 #: src/libqtevernote/evernoteconnection.cpp:292
 #: src/libqtevernote/evernoteconnection.cpp:297
 #, qt-format
 msgid "Error connecting to Evernote: Error code %1"
-msgstr ""
+msgstr "Грешка у повезивању са Evernote-ом: грешка %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:302
 msgid ""
 "Error connecting to Evernote: Cannot download version information from "
 "server."
 msgstr ""
+"Грешка у повезивању са Evernote-ом: није могуће преузимање података о "
+"верзији са сервера."
 
 #: src/libqtevernote/evernoteconnection.cpp:307
 msgid "Unknown error connecting to Evernote"
-msgstr ""
+msgstr "Непозната грешка у повезивању са Evernote-ом"
 
 #: src/libqtevernote/evernoteconnection.cpp:321
 msgid "Error connecting to Evernote: Cannot download server information."
 msgstr ""
+"Грешка у повезивању са Evernote-ом: није могуће преузимање података о "
+"серверу."
 
 #: src/libqtevernote/evernoteconnection.cpp:329
 #: src/libqtevernote/notesstore.cpp:1697
@@ -436,7 +448,7 @@ msgstr ""
 #: src/libqtevernote/evernoteconnection.cpp:350
 #, qt-format
 msgid "Unknown error connecting to Evernote: %1"
-msgstr ""
+msgstr "Грешка у повезивању са Evernote-ом: %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:341
 msgid ""
@@ -448,18 +460,20 @@ msgid ""
 "Error connecting to Evernote: Connection failure when downloading server "
 "information."
 msgstr ""
+"Грешка при повезивању са Evernote-ом: неуспешно повезивање ради преузимања "
+"података о серверу."
 
 #: src/libqtevernote/evernoteconnection.cpp:383
 msgid "Error connecting to Evernote: Connection failure"
-msgstr ""
+msgstr "Грешка у повезивању са Evernote-ом: грешка при повезивању"
 
 #: src/libqtevernote/evernoteconnection.cpp:387
 msgid "Unknown Error connecting to Evernote"
-msgstr ""
+msgstr "Непозната грешка приликом повезивања са Evernote-ом"
 
 #: src/libqtevernote/evernoteconnection.cpp:435
 msgid "Disconnected from Evernote."
-msgstr ""
+msgstr "Прекинута веза са Evernote-ом."
 
 #: src/libqtevernote/note.cpp:162 src/libqtevernote/note.cpp:196
 #: src/libqtevernote/note.cpp:381
@@ -564,4 +578,4 @@ msgstr ""
 #. TRANSLATORS: A default file name if we don't get one from the server. Avoid weird characters.
 #: src/libqtevernote/resource.cpp:39
 msgid "Unnamed"
-msgstr ""
+msgstr "Неименовано"
