@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-31 11:32+0200\n"
+"POT-Creation-Date: 2015-04-16 17:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -218,7 +218,17 @@ msgid "Setup Evernote connection?"
 msgstr ""
 
 #: src/app/qml/reminders.qml:663
-msgid "Reminders can store your notes and reminders locally on this device. "
+msgid "Reminders can store your notes and reminders locally on this device."
+msgstr ""
+
+#: src/app/qml/reminders.qml:664
+msgid ""
+"In order to synchronize notes with Evernote, an account at Evernote is "
+"required."
+msgstr ""
+
+#: src/app/qml/reminders.qml:665
+msgid "Do you want to setup an account now?"
 msgstr ""
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
@@ -350,7 +360,8 @@ msgstr ""
 
 #: src/app/qml/ui/NotesPage.qml:254
 msgid ""
-"No notes available. You can create new notes using the \"Add note\" button."
+"No notes available. You can create new notes by pulling the note editor up "
+"from the bottom edge."
 msgstr ""
 
 #: src/app/qml/ui/RemindersPage.qml:97
