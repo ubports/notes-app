@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-16 17:45+0200\n"
-"PO-Revision-Date: 2015-04-10 11:30+0000\n"
+"PO-Revision-Date: 2015-04-17 09:03+0000\n"
 "Last-Translator: Sasa Batistic <Unknown>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-04-17 05:36+0000\n"
+"X-Launchpad-Export-Date: 2015-04-18 05:48+0000\n"
 "X-Generator: Launchpad (build 17430)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
@@ -230,16 +230,17 @@ msgstr "Želite nastaviti povezavo Evernote?"
 #: src/app/qml/reminders.qml:663
 msgid "Reminders can store your notes and reminders locally on this device."
 msgstr ""
+"Opomniki lahko shranijo vaša sporočilca in opomnike krajevno na to napravo."
 
 #: src/app/qml/reminders.qml:664
 msgid ""
 "In order to synchronize notes with Evernote, an account at Evernote is "
 "required."
-msgstr ""
+msgstr "Za usklajevanje sporočilc z Evernote je zahtevan račun pri Evernote."
 
 #: src/app/qml/reminders.qml:665
 msgid "Do you want to setup an account now?"
-msgstr ""
+msgstr "Ali želite sedaj nastaviti račun?"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
@@ -375,6 +376,8 @@ msgid ""
 "No notes available. You can create new notes by pulling the note editor up "
 "from the bottom edge."
 msgstr ""
+"Nobeno sporočilce ni na voljo. Za ustvarjanje novih sporočilc povlecite "
+"urejevalnik sporočilc s spodnjega roba."
 
 #: src/app/qml/ui/RemindersPage.qml:97
 msgid ""
