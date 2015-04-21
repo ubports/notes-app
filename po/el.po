@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-16 17:45+0200\n"
-"PO-Revision-Date: 2015-03-17 14:49+0000\n"
+"PO-Revision-Date: 2015-04-20 22:55+0000\n"
 "Last-Translator: Aggelos Arnaoutis <angelosarn@hotmail.com>\n"
 "Language-Team: Greek <el@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-04-17 05:36+0000\n"
+"X-Launchpad-Export-Date: 2015-04-21 05:38+0000\n"
 "X-Generator: Launchpad (build 17430)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
@@ -27,19 +27,19 @@ msgstr "Εφαρμογή ειδοποιήσεων Ubuntu, με την υποστ
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
-msgstr ""
+msgstr "Σημειωματάριο:"
 
 #: src/app/qml/components/ConflictDelegate.qml:63
 msgid "Reminder:"
-msgstr ""
+msgstr "Υπενθύμιση:"
 
 #: src/app/qml/components/EditTagsDialog.qml:45
 msgid "Create a new tag"
-msgstr ""
+msgstr "Δημιουργία νέας ετικέτας"
 
 #: src/app/qml/components/EditTagsDialog.qml:73
 msgid "Create tag"
-msgstr ""
+msgstr "Δημιουργία ετικέτας"
 
 #. TRANSLATORS: Button to close the edit mode
 #: src/app/qml/components/EditTagsDialog.qml:120
@@ -70,7 +70,7 @@ msgstr "Ιδιωτικό"
 
 #: src/app/qml/components/NotesDelegate.qml:73
 msgid "Reminder"
-msgstr ""
+msgstr "Υπενθύμιση"
 
 #: src/app/qml/components/NotesDelegate.qml:80 src/app/qml/reminders.qml:572
 msgid "Tags"
@@ -115,7 +115,7 @@ msgstr "Επεξεργασία υπενθύμισης"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:25
 msgid "Resolve conflict"
-msgstr ""
+msgstr "Επίλυση σύγκρουσης"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:30
 msgid ""
@@ -125,75 +125,82 @@ msgstr ""
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:32
 msgid "This will <b>delete the changed note on Evernote</b>."
-msgstr ""
+msgstr "Αυτό θα <b>διαγράψει την τροποποιημένη σημείωση στο Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:34
 msgid ""
 "This will <b>keep the changes made on this device</b> and <b>discard any "
 "changes made on Evernote</b>."
 msgstr ""
+"Αυτό θα <b>κρατήσει τις αλλαγές που έγιναν σε αυτή τη συσκευή</b> και θα "
+"<b>απορρίψει τις αλλαγές που έγιναν στο Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:38
 msgid "This will <b>delete the changed note on this device</b>."
 msgstr ""
+"Αυτό θα <b>διαγράψει την τροποποιημένη σημείωση σε αυτή τη συσκευή</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:40
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>restore it "
 "on this device</b>."
 msgstr ""
+"Αυτό θα <b>λάβει την τροποποιημένη σημείωση από το Evernote</b< και θα "
+"<b>την επαναφέρει στην συσκευή</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:42
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>discard any "
 "changes made on this device</b>."
 msgstr ""
+"Αυτό θα <b>λάβει την τροποποιημένη σημείωση από το Evernote</b< και θα "
+"<b>απορρίψει όποιες αλλαγές έχουν γίνει σε αυτή τη συσκευή</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:45
 msgid "Are you sure you want to continue?"
-msgstr ""
+msgstr "Είστε σίγουρος ότι θέλετε να συνεχίσετε;"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:57
 #: src/app/qml/reminders.qml:690
 msgid "Yes"
-msgstr ""
+msgstr "Ναι"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:66
 #: src/app/qml/reminders.qml:680
 msgid "No"
-msgstr ""
+msgstr "Όχι"
 
 #: src/app/qml/components/SortingDialog.qml:20
 msgid "Sort by"
-msgstr ""
+msgstr "Ταξινόμηση κατά"
 
 #: src/app/qml/components/SortingDialog.qml:29
 msgid "Date created (newest first)"
-msgstr ""
+msgstr "Ημερομηνία δημιουργίας (νεότερο πρώτο)"
 
 #: src/app/qml/components/SortingDialog.qml:30
 msgid "Date created (oldest first)"
-msgstr ""
+msgstr "Ημερομηνία δημιουργίας (παλαιότερο πρώτο)"
 
 #: src/app/qml/components/SortingDialog.qml:31
 msgid "Date updated (newest first)"
-msgstr ""
+msgstr "Ημερομηνία τροποποίησης (νεότερο πρώτο)"
 
 #: src/app/qml/components/SortingDialog.qml:32
 msgid "Date updated (oldest first)"
-msgstr ""
+msgstr "Ημερομηνία τροποποίησης (παλαιότερο πρώτο)"
 
 #: src/app/qml/components/SortingDialog.qml:33
 msgid "Title (ascending)"
-msgstr ""
+msgstr "Τίτλος (αύξουσα σειρά)"
 
 #: src/app/qml/components/SortingDialog.qml:34
 msgid "Title (descending)"
-msgstr ""
+msgstr "Τίτλος (φθίνουσα σειρά)"
 
 #: src/app/qml/reminders.qml:385
 msgid "Default notebook"
-msgstr ""
+msgstr "Προεπιλεγμένο σημειωματάριο"
 
 #: src/app/qml/reminders.qml:491
 msgid "Notes"
@@ -228,6 +235,8 @@ msgid ""
 "In order to synchronize notes with Evernote, an account at Evernote is "
 "required."
 msgstr ""
+"Για συγχρονισμό σημειώσεων με το Evernote, απαιτείται λογαριασμός στο "
+"Evernote."
 
 #: src/app/qml/reminders.qml:665
 msgid "Do you want to setup an account now?"
@@ -235,15 +244,15 @@ msgstr ""
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
-msgstr ""
+msgstr "Επιλογή λογαριασμού"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:44
 msgid "Store notes locally only"
-msgstr ""
+msgstr "Αποθήκευση σημειώσεων μόνο τοπικά"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:52
 msgid "Accounts on www.evernote.com"
-msgstr ""
+msgstr "Λογαριασμοί στη www.evernote.com"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:82
 #, qt-format
@@ -284,13 +293,15 @@ msgstr "T"
 
 #: src/app/qml/ui/NoteConflictPage.qml:27
 msgid "Conflicting changes"
-msgstr ""
+msgstr "Συγκρουόμενες αλλαγές"
 
 #: src/app/qml/ui/NoteConflictView.qml:54
 msgid ""
 "This note has been modified in multiple places. Please choose the version to "
 "be opened and delete the other."
 msgstr ""
+"Αυτή η σημείωση έχει τροποποιηθεί σε πολλαπλές θέσεις. Παρακαλώ επιλέξτε την "
+"έκδοση που θα ανοιχτεί και διαγράψτε την άλλη."
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Deleted on this device:"
@@ -314,7 +325,7 @@ msgstr "Ορισμός υπενθύμισης"
 
 #: src/app/qml/ui/NoteView.qml:146
 msgid "Attachment"
-msgstr ""
+msgstr "Συνημμένο"
 
 #: src/app/qml/ui/NotebooksPage.qml:45
 msgid "Add notebook"
@@ -337,20 +348,20 @@ msgstr "Αποθήκευση"
 
 #: src/app/qml/ui/NotebooksPage.qml:198
 msgid "Rename notebook"
-msgstr ""
+msgstr "Μετονομασία σημειωματαρίου"
 
 #: src/app/qml/ui/NotebooksPage.qml:199
 #, qt-format
 msgid "Enter a new name for notebook %1"
-msgstr ""
+msgstr "Εισαγωγή νέου ονόματος για το σημειωματάριο %1"
 
 #: src/app/qml/ui/NotebooksPage.qml:208 src/app/qml/ui/TagsPage.qml:144
 msgid "Name cannot be empty"
-msgstr ""
+msgstr "Το όνομα δεν μπορεί να είναι κενό"
 
 #: src/app/qml/ui/NotebooksPage.qml:212 src/app/qml/ui/TagsPage.qml:148
 msgid "OK"
-msgstr ""
+msgstr "Εντάξει"
 
 #: src/app/qml/ui/NotesPage.qml:43 src/app/qml/ui/NotesPage.qml:63
 msgid "Add note"
@@ -358,7 +369,7 @@ msgstr "Προσθήκη σημείωσης"
 
 #: src/app/qml/ui/NotesPage.qml:74
 msgid "Sorting"
-msgstr ""
+msgstr "Ταξινόμηση"
 
 #: src/app/qml/ui/NotesPage.qml:254
 msgid ""
@@ -395,16 +406,16 @@ msgstr ""
 
 #: src/app/qml/ui/TagsPage.qml:134
 msgid "Rename tag"
-msgstr ""
+msgstr "Μετονομασία ετικέτας"
 
 #: src/app/qml/ui/TagsPage.qml:135
 #, qt-format
 msgid "Enter a new name for tag %1"
-msgstr ""
+msgstr "Εισαγωγή νέου ονόματος για ετικέτα %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:268
 msgid "Offline mode"
-msgstr ""
+msgstr "Λειτουργία εκτός σύνδεσης"
 
 #: src/libqtevernote/evernoteconnection.cpp:273
 #: src/libqtevernote/evernoteconnection.cpp:362
@@ -449,12 +460,14 @@ msgid ""
 "Authentication for Evernote server expired. Please renew login information "
 "in the accounts settings."
 msgstr ""
+"Η εξουσιοδότηση για τον διακομιστή Evernote έληξε. Παρακαλώ ανανεώστε τις "
+"πληροφορίες σύνδεσης στις ρυθμίσεις λογαριασμών."
 
 #: src/libqtevernote/evernoteconnection.cpp:332
 #: src/libqtevernote/evernoteconnection.cpp:350
 #, qt-format
 msgid "Unknown error connecting to Evernote: %1"
-msgstr ""
+msgstr "Άγνωστο σφάλμα σύνδεση στο Evernote: %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:341
 msgid ""
