@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-16 17:45+0200\n"
-"PO-Revision-Date: 2015-04-07 11:29+0000\n"
+"PO-Revision-Date: 2015-04-21 07:31+0000\n"
 "Last-Translator: Jiri Grönroos <Unknown>\n"
 "Language-Team: Finnish <fi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-04-17 05:36+0000\n"
+"X-Launchpad-Export-Date: 2015-04-22 06:11+0000\n"
 "X-Generator: Launchpad (build 17430)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
@@ -231,16 +231,17 @@ msgstr "Tehdäänkö Evernote-yhteyden asetukset?"
 #: src/app/qml/reminders.qml:663
 msgid "Reminders can store your notes and reminders locally on this device."
 msgstr ""
+"Muistutukset voivat varastoida muistiinpanoja paikallisesti laitteelle."
 
 #: src/app/qml/reminders.qml:664
 msgid ""
 "In order to synchronize notes with Evernote, an account at Evernote is "
 "required."
-msgstr ""
+msgstr "Synkronointi Evernoten kanssa vaatii Evernote-tilin määrittämisen."
 
 #: src/app/qml/reminders.qml:665
 msgid "Do you want to setup an account now?"
-msgstr ""
+msgstr "Haluatko määrittää tilin nyt?"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
@@ -376,6 +377,8 @@ msgid ""
 "No notes available. You can create new notes by pulling the note editor up "
 "from the bottom edge."
 msgstr ""
+"Muistiinpanoja ei ole käytettävissä. Voit luoda uuden muistiinpanon "
+"vetämällä ylös näytön alalaidasta."
 
 #: src/app/qml/ui/RemindersPage.qml:97
 msgid ""
