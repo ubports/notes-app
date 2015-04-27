@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-03-31 11:32+0200\n"
-"PO-Revision-Date: 2014-10-19 15:05+0000\n"
-"Last-Translator: Pau Iranzo <Unknown>\n"
+"POT-Creation-Date: 2015-04-16 17:45+0200\n"
+"PO-Revision-Date: 2015-04-22 10:29+0000\n"
+"Last-Translator: David Planella <david.planella@ubuntu.com>\n"
 "Language-Team: Catalan <ca@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-04-06 05:31+0000\n"
-"X-Generator: Launchpad (build 17413)\n"
+"X-Launchpad-Export-Date: 2015-04-23 06:49+0000\n"
+"X-Generator: Launchpad (build 17430)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
 msgid "Reminders"
@@ -27,19 +27,19 @@ msgstr "Aplicació Recordatoris, compatible amb Evernote"
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
-msgstr ""
+msgstr "Llibreta:"
 
 #: src/app/qml/components/ConflictDelegate.qml:63
 msgid "Reminder:"
-msgstr ""
+msgstr "Recordatori:"
 
 #: src/app/qml/components/EditTagsDialog.qml:45
 msgid "Create a new tag"
-msgstr ""
+msgstr "Crear una etiqueta nova"
 
 #: src/app/qml/components/EditTagsDialog.qml:73
 msgid "Create tag"
-msgstr ""
+msgstr "Crea una etiqueta"
 
 #. TRANSLATORS: Button to close the edit mode
 #: src/app/qml/components/EditTagsDialog.qml:120
@@ -70,7 +70,7 @@ msgstr "Privada"
 
 #: src/app/qml/components/NotesDelegate.qml:73
 msgid "Reminder"
-msgstr ""
+msgstr "Recordatori"
 
 #: src/app/qml/components/NotesDelegate.qml:80 src/app/qml/reminders.qml:572
 msgid "Tags"
@@ -220,7 +220,17 @@ msgid "Setup Evernote connection?"
 msgstr ""
 
 #: src/app/qml/reminders.qml:663
-msgid "Reminders can store your notes and reminders locally on this device. "
+msgid "Reminders can store your notes and reminders locally on this device."
+msgstr ""
+
+#: src/app/qml/reminders.qml:664
+msgid ""
+"In order to synchronize notes with Evernote, an account at Evernote is "
+"required."
+msgstr ""
+
+#: src/app/qml/reminders.qml:665
+msgid "Do you want to setup an account now?"
 msgstr ""
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
@@ -352,10 +362,9 @@ msgstr ""
 
 #: src/app/qml/ui/NotesPage.qml:254
 msgid ""
-"No notes available. You can create new notes using the \"Add note\" button."
+"No notes available. You can create new notes by pulling the note editor up "
+"from the bottom edge."
 msgstr ""
-"No hi ha cap nota disponible. Podeu crear-ne de noves amb el botó «Afegeix "
-"una nota»."
 
 #: src/app/qml/ui/RemindersPage.qml:97
 msgid ""

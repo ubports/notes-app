@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-03-31 11:32+0200\n"
-"PO-Revision-Date: 2015-04-15 18:48+0000\n"
-"Last-Translator: Rouxel <vincent.rouxel@mailoo.org>\n"
+"POT-Creation-Date: 2015-04-16 17:45+0200\n"
+"PO-Revision-Date: 2015-04-22 06:38+0000\n"
+"Last-Translator: Fohanno Thierry <thierry.fohanno@ofis-bzh.org>\n"
 "Language-Team: Breton <br@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-04-16 05:31+0000\n"
-"X-Generator: Launchpad (build 17428)\n"
+"X-Launchpad-Export-Date: 2015-04-23 06:49+0000\n"
+"X-Generator: Launchpad (build 17430)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
 msgid "Reminders"
@@ -27,19 +27,19 @@ msgstr "Arload Degas-da-soñj Ubuntu, kaset en-dro gant Evernote"
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
-msgstr ""
+msgstr "Bloc'h-notennañ :"
 
 #: src/app/qml/components/ConflictDelegate.qml:63
 msgid "Reminder:"
-msgstr ""
+msgstr "Degas-soñj :"
 
 #: src/app/qml/components/EditTagsDialog.qml:45
 msgid "Create a new tag"
-msgstr ""
+msgstr "Krouiñ un dikedenn nevez"
 
 #: src/app/qml/components/EditTagsDialog.qml:73
 msgid "Create tag"
-msgstr ""
+msgstr "Krouiñ un dikedenn"
 
 #. TRANSLATORS: Button to close the edit mode
 #: src/app/qml/components/EditTagsDialog.qml:120
@@ -102,7 +102,7 @@ msgstr "Diverkañ an degas-soñj"
 
 #: src/app/qml/components/RemindersDelegate.qml:49
 msgid "Mark as undone"
-msgstr ""
+msgstr "Merkañ evel disc'hraet"
 
 #: src/app/qml/components/RemindersDelegate.qml:49
 msgid "Mark as done"
@@ -115,43 +115,51 @@ msgstr "Aozañ an degas-soñj"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:25
 msgid "Resolve conflict"
-msgstr ""
+msgstr "Diskoulmañ an tabut"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:30
 msgid ""
 "This will <b>keep the changes made on this device</b> and <b>restore the "
 "note on Evernote</b>."
 msgstr ""
+"Kement-mañ a <b>viro ar c'hemmoù graet er benveg-mañ</b> hag a <b>assavo an "
+"notenn en Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:32
 msgid "This will <b>delete the changed note on Evernote</b>."
-msgstr ""
+msgstr "Kement-mañ a  <b>ziverko an notenn kemmet en Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:34
 msgid ""
 "This will <b>keep the changes made on this device</b> and <b>discard any "
 "changes made on Evernote</b>."
 msgstr ""
+"Kement-mañ a <b>viro ar c'hemmoù graet er benveg-mañ</b> hag a <b>zistaolo "
+"ar c'hemmoù graet en Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:38
 msgid "This will <b>delete the changed note on this device</b>."
-msgstr ""
+msgstr "Kement-mañ a <b>ziverko an notenn kemmet er benveg-mañ</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:40
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>restore it "
 "on this device</b>."
 msgstr ""
+"Kement-mañ a <b>bellgargo an notenn kemmet eus Evernote</b> hag a  <b>assavo "
+"anezhi er benveg-mañ</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:42
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>discard any "
 "changes made on this device</b>."
 msgstr ""
+"Kement-mañ a <b>bellgargo an notenn kemmet eus Evernote</b> hag a "
+"<b>zistaolo ar c'hemmoù graet er benveg-mañ</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:45
 msgid "Are you sure you want to continue?"
-msgstr ""
+msgstr "Ha sur oc'h e fell deoc'h kenderc'hel ?"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:57
 #: src/app/qml/reminders.qml:690
@@ -165,35 +173,35 @@ msgstr "Ket"
 
 #: src/app/qml/components/SortingDialog.qml:20
 msgid "Sort by"
-msgstr ""
+msgstr "Urzhiañ dre"
 
 #: src/app/qml/components/SortingDialog.qml:29
 msgid "Date created (newest first)"
-msgstr ""
+msgstr "Deiziad krouiñ (an hini nevesañ da gentañ)"
 
 #: src/app/qml/components/SortingDialog.qml:30
 msgid "Date created (oldest first)"
-msgstr ""
+msgstr "Deiziad krouiñ (an hini koshañ da gentañ)"
 
 #: src/app/qml/components/SortingDialog.qml:31
 msgid "Date updated (newest first)"
-msgstr ""
+msgstr "Deiziad hizivaat (an hini nevesañ da gentañ)"
 
 #: src/app/qml/components/SortingDialog.qml:32
 msgid "Date updated (oldest first)"
-msgstr ""
+msgstr "Deiziad hizivaat (an hini koshañ da gentañ)"
 
 #: src/app/qml/components/SortingDialog.qml:33
 msgid "Title (ascending)"
-msgstr ""
+msgstr "Titl (urzh al lizherenneg)"
 
 #: src/app/qml/components/SortingDialog.qml:34
 msgid "Title (descending)"
-msgstr ""
+msgstr "Titl (urzh al lizherenneg eilpennet)"
 
 #: src/app/qml/reminders.qml:385
 msgid "Default notebook"
-msgstr ""
+msgstr "Bloc'h-notennañ dre ziouer"
 
 #: src/app/qml/reminders.qml:491
 msgid "Notes"
@@ -217,23 +225,35 @@ msgstr ""
 
 #: src/app/qml/reminders.qml:662
 msgid "Setup Evernote connection?"
-msgstr ""
+msgstr "Arventennañ ar c'hevreañ ouzh Evernote ?"
 
 #: src/app/qml/reminders.qml:663
-msgid "Reminders can store your notes and reminders locally on this device. "
+msgid "Reminders can store your notes and reminders locally on this device."
 msgstr ""
+"Gallout a ra Degas-soñj stokañ ho notennoù hag ho tegas-soñj er benveg-mañ."
+
+#: src/app/qml/reminders.qml:664
+msgid ""
+"In order to synchronize notes with Evernote, an account at Evernote is "
+"required."
+msgstr ""
+"Ret eo kaout ur gont Evernote a-benn sinkronelaat an notennoù gant Evernote."
+
+#: src/app/qml/reminders.qml:665
+msgid "Do you want to setup an account now?"
+msgstr "Ha fellout a ra deoc'h arventennañ ur gont bremañ ?"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
-msgstr ""
+msgstr "Diuzañ ur gont"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:44
 msgid "Store notes locally only"
-msgstr ""
+msgstr "Stokañ an notennoù er benveg hepken"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:52
 msgid "Accounts on www.evernote.com"
-msgstr ""
+msgstr "Kontoù war www.evernote.com"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:82
 #, qt-format
@@ -274,29 +294,31 @@ msgstr "T"
 
 #: src/app/qml/ui/NoteConflictPage.qml:27
 msgid "Conflicting changes"
-msgstr ""
+msgstr "Kemmoù kenniñvek"
 
 #: src/app/qml/ui/NoteConflictView.qml:54
 msgid ""
 "This note has been modified in multiple places. Please choose the version to "
 "be opened and delete the other."
 msgstr ""
+"Kemmet eo bet an notenn-mañ e meur a lec'h. Dibabit ar stumm da zigeriñ ha "
+"diverkañ egile."
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Deleted on this device:"
-msgstr ""
+msgstr "Diverket er benveg-mañ :"
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Modified on this device:"
-msgstr ""
+msgstr "Kemmet er benveg-mañ :"
 
 #: src/app/qml/ui/NoteConflictView.qml:85
 msgid "Deleted from Evernote:"
-msgstr ""
+msgstr "Diverket en Evernote :"
 
 #: src/app/qml/ui/NoteConflictView.qml:85
 msgid "Modified somewhere else:"
-msgstr ""
+msgstr "Kemmet e lec'h all :"
 
 #: src/app/qml/ui/NotePage.qml:44 src/app/qml/ui/NotesPage.qml:109
 msgid "Set reminder"
@@ -304,7 +326,7 @@ msgstr "Lakaat un degas-soñj"
 
 #: src/app/qml/ui/NoteView.qml:146
 msgid "Attachment"
-msgstr ""
+msgstr "Restr stag"
 
 #: src/app/qml/ui/NotebooksPage.qml:45
 msgid "Add notebook"
@@ -327,16 +349,16 @@ msgstr "Enrollañ"
 
 #: src/app/qml/ui/NotebooksPage.qml:198
 msgid "Rename notebook"
-msgstr ""
+msgstr "Adenvel ar bloc'h-notennañ"
 
 #: src/app/qml/ui/NotebooksPage.qml:199
 #, qt-format
 msgid "Enter a new name for notebook %1"
-msgstr ""
+msgstr "Skrivañ un anv nevez evit ar bloc'h-notennañ %1"
 
 #: src/app/qml/ui/NotebooksPage.qml:208 src/app/qml/ui/TagsPage.qml:144
 msgid "Name cannot be empty"
-msgstr ""
+msgstr "Ne c'hall ket an anv bezañ goullo"
 
 #: src/app/qml/ui/NotebooksPage.qml:212 src/app/qml/ui/TagsPage.qml:148
 msgid "OK"
@@ -348,14 +370,15 @@ msgstr "Ouzhpennañ un notenn"
 
 #: src/app/qml/ui/NotesPage.qml:74
 msgid "Sorting"
-msgstr ""
+msgstr "Oc'h urzhiañ"
 
 #: src/app/qml/ui/NotesPage.qml:254
 msgid ""
-"No notes available. You can create new notes using the \"Add note\" button."
+"No notes available. You can create new notes by pulling the note editor up "
+"from the bottom edge."
 msgstr ""
-"N'eus ket notenn ebet. Gallout a rit krouiñ notennoù nevez oc'h implijout ar "
-"bouton \"Ouzhpennañ un notenn\"."
+"N'eus ket notennoù da gaout. Gallout a rit krouiñ notennoù nevez dre riklañ "
+"an aozer notennoù war-du an nec'h."
 
 #: src/app/qml/ui/RemindersPage.qml:97
 msgid ""
@@ -376,7 +399,7 @@ msgstr "Diuzañ an deiziad hag an eur evit an degas-soñj :"
 #. TRANSLATORS: A checkbox with marks the reminder as done
 #: src/app/qml/ui/SetReminderView.qml:64
 msgid "Reminder done"
-msgstr ""
+msgstr "Degas-soñj graet"
 
 #: src/app/qml/ui/TagsPage.qml:127
 msgid "No tags available. You can tag notes while viewing them."
@@ -386,16 +409,16 @@ msgstr ""
 
 #: src/app/qml/ui/TagsPage.qml:134
 msgid "Rename tag"
-msgstr ""
+msgstr "Adenvel an dikedenn"
 
 #: src/app/qml/ui/TagsPage.qml:135
 #, qt-format
 msgid "Enter a new name for tag %1"
-msgstr ""
+msgstr "Skrivañ un anv nevez evit an dikedenn %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:268
 msgid "Offline mode"
-msgstr ""
+msgstr "Mod ezlinenn"
 
 #: src/libqtevernote/evernoteconnection.cpp:273
 #: src/libqtevernote/evernoteconnection.cpp:362
@@ -440,17 +463,21 @@ msgid ""
 "Authentication for Evernote server expired. Please renew login information "
 "in the accounts settings."
 msgstr ""
+"Diamzeret eo an dilesadur evit servijer Evernote. Adlakait an titouroù "
+"dilesa en arventennoù ar c'hontoù, mar plij."
 
 #: src/libqtevernote/evernoteconnection.cpp:332
 #: src/libqtevernote/evernoteconnection.cpp:350
 #, qt-format
 msgid "Unknown error connecting to Evernote: %1"
-msgstr ""
+msgstr "Fazi dizanav o kevreañ ouzh Evernote : %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:341
 msgid ""
 "Error connecting to Evernote: Rate limit exceeded. Please try again later."
 msgstr ""
+"Fazi o kevreañ ouzh Evernote : tremenet eo bevenn ar c'has. Esaeit en-dro "
+"diwezhatoc'h, mar plij."
 
 #: src/libqtevernote/evernoteconnection.cpp:357
 msgid ""
@@ -470,7 +497,7 @@ msgstr "Fazi dianav o kevreañ ouzh Evernote"
 
 #: src/libqtevernote/evernoteconnection.cpp:435
 msgid "Disconnected from Evernote."
-msgstr ""
+msgstr "Digevreet diouzh Evernote."
 
 #: src/libqtevernote/note.cpp:162 src/libqtevernote/note.cpp:196
 #: src/libqtevernote/note.cpp:381
@@ -551,26 +578,35 @@ msgid ""
 "This account is managed by Evernote. Use the Evernote website to delete "
 "notebooks."
 msgstr ""
+"Meret eo ar gont-mañ gant Evernote. Implijit lec'hienn internet Evernote "
+"evit diverkañ ar bloc'hoù-notennañ."
 
 #: src/libqtevernote/notesstore.cpp:422
 msgid ""
 "Cannot delete the default notebook. Set another notebook to be the default "
 "first."
 msgstr ""
+"Ne c'haller ket diverkañ ar bloc'h-notennañ dre ziouer. Lakait ur bloc'h-"
+"notennañ all da vezañ an hini dre ziouer da gentañ."
 
 #: src/libqtevernote/notesstore.cpp:1700
 msgid "Rate limit for Evernote server exceeded. Please try again later."
 msgstr ""
+"Tremenet eo bevenn kas servijer Evernote. Esaeit en-dro diwezhatoc'h, mar "
+"plij."
 
 #: src/libqtevernote/notesstore.cpp:1703
 msgid "Upload quota for Evernote server exceed. Please try again later."
 msgstr ""
+"Tremenet kota kargañ servijer Evernote. Esaeit en-dro diwezhatoc'h, mar plij."
 
 #: src/libqtevernote/notesstore.cpp:1717
 msgid ""
 "This account is managed by Evernote. Please use the Evernote website to "
 "delete tags."
 msgstr ""
+"Meret eo ar gont-mañ gant Evernote. Implijit lec'hienn internet Evernote "
+"evit diverkañ an tikedennoù, mar plij."
 
 #. TRANSLATORS: A default file name if we don't get one from the server. Avoid weird characters.
 #: src/libqtevernote/resource.cpp:39
