@@ -29,6 +29,7 @@ Item {
     property string color: "transparent"
     property alias iconColor: icon.color
     property alias horizontalAlignment: textField.horizontalAlignment
+    property alias activeFocusOnPress: mouseArea.activeFocusOnPress
 
     property alias font: textField.font
 
