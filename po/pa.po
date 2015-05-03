@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-16 17:45+0200\n"
-"PO-Revision-Date: 2015-04-24 04:39+0000\n"
+"PO-Revision-Date: 2015-05-03 04:56+0000\n"
 "Last-Translator: Gursharnjit_Singh <ubuntuser13@gmail.com>\n"
 "Language-Team: Punjabi <pa@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-04-25 05:38+0000\n"
-"X-Generator: Launchpad (build 17430)\n"
+"X-Launchpad-Export-Date: 2015-05-03 06:08+0000\n"
+"X-Generator: Launchpad (build 17474)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
 msgid "Reminders"
@@ -122,50 +122,58 @@ msgid ""
 "This will <b>keep the changes made on this device</b> and <b>restore the "
 "note on Evernote</b>."
 msgstr ""
+"ਇਹ <b>ਇਸ ਜੰਤਰ ਤੇ ਕੀਤੇ ਬਦਲਾਆਂ ਨੂੰ ਰੱਖੇਗਾ</b> ਅਤੇ <b>ਐਵਰਨੋਟ ਤੇ ਨੋਟ ਨੂੰ ਮੁੜ-"
+"ਸਟੋਰ ਕਰ ਦਵੇਗਾ</b>।"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:32
 msgid "This will <b>delete the changed note on Evernote</b>."
-msgstr ""
+msgstr "ਇਹ <b>ਐਵਰਨੋਟ ਤੇ ਬਦਲੇ ਗਏ ਨੋਟ ਨੂੰ ਹਟਾ ਦਵੇਗਾ</b>।"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:34
 msgid ""
 "This will <b>keep the changes made on this device</b> and <b>discard any "
 "changes made on Evernote</b>."
 msgstr ""
+"ਇਹ <b>ਇਸ ਜੰਤਰ ਤੇ ਕੀਤੇ ਬਦਲਾਆਂ ਨੂੰ ਰੱਖੇਗਾ</b> ਅਤੇ <b>ਐਵਰਨੋਟ ਵੱਲੋਂ ਕੀਤੇ ਕਿਸੇ ਵੀ "
+"ਤਰ੍ਹਾਂ ਦੇ ਬਦਲਾਅ ਨੂੰ ਰੱਦ ਕਰ ਦਵੇਗਾ</b>।"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:38
 msgid "This will <b>delete the changed note on this device</b>."
-msgstr ""
+msgstr "ਇਹ <b>ਇਸ ਜੰਤਰ ਤੇ ਬਦਲੇ ਗਏ ਨੋਟ ਨੂੰ ਹਟਾ ਦਵੇਗਾ</b>।"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:40
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>restore it "
 "on this device</b>."
 msgstr ""
+"ਇਹ <b>ਐਵਰਨੋਟ ਤੋਂ ਬਦਲੇ ਹੋਏ ਨੋਟ ਨੂੰ ਡਾਊਨਲੋਡ</b> ਅਤੇ <b>ਇਸ ਜੰਤਰ ਤੇ ਮੁੜ-"
+"ਸਟੋਰ</b>ਕਰੇਗਾ।"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:42
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>discard any "
 "changes made on this device</b>."
 msgstr ""
+"ਇਹ <b>ਐਵਰਨੋਟ ਤੋਂ ਬਦਲੇ ਹੋਏ ਨੋਟ ਨੂੰ ਡਾਊਨਲੋਡ</b> ਅਤੇ <b>ਇਸ ਜੰਤਰ ਤੇ ਕੀਤੇ ਕਿਸੇ "
+"ਬਦਲਾਅ ਨੂੰ ਰੱਦ</b>ਕਰੇਗਾ।"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:45
 msgid "Are you sure you want to continue?"
-msgstr ""
+msgstr "ਕੀ ਤੁਸੀਂ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:57
 #: src/app/qml/reminders.qml:690
 msgid "Yes"
-msgstr ""
+msgstr "ਹਾਂ"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:66
 #: src/app/qml/reminders.qml:680
 msgid "No"
-msgstr ""
+msgstr "ਨਹੀਂ"
 
 #: src/app/qml/components/SortingDialog.qml:20
 msgid "Sort by"
-msgstr ""
+msgstr "ਛਾਂਟੋ ਦੁਆਰਾ"
 
 #: src/app/qml/components/SortingDialog.qml:29
 msgid "Date created (newest first)"

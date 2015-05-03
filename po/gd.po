@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-16 17:45+0200\n"
-"PO-Revision-Date: 2015-04-08 17:51+0000\n"
+"PO-Revision-Date: 2015-05-03 02:05+0000\n"
 "Last-Translator: GunChleoc <Unknown>\n"
 "Language-Team: Fòram na Gàidhlig\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-04-17 05:36+0000\n"
-"X-Generator: Launchpad (build 17430)\n"
+"X-Launchpad-Export-Date: 2015-05-03 06:08+0000\n"
+"X-Generator: Launchpad (build 17474)\n"
 "Language: gd\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
@@ -232,16 +232,20 @@ msgstr "A bheil thu airson ceangal gu Evernote a shuidheachadh?"
 #: src/app/qml/reminders.qml:663
 msgid "Reminders can store your notes and reminders locally on this device."
 msgstr ""
+"'S urrainn do dh'aplacaid nan cuimhneachan na nòtaichean is cuimhneachain "
+"agad a ghlèidheadh air an uidheam seo."
 
 #: src/app/qml/reminders.qml:664
 msgid ""
 "In order to synchronize notes with Evernote, an account at Evernote is "
 "required."
 msgstr ""
+"Gus nòtaichean a cho-shioncronachadh le Evernote, bidh feum agad air cunntas "
+"Evernote."
 
 #: src/app/qml/reminders.qml:665
 msgid "Do you want to setup an account now?"
-msgstr ""
+msgstr "A bheil thu airson cunntas a chruthachadh an-dràsta?"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
@@ -377,6 +381,8 @@ msgid ""
 "No notes available. You can create new notes by pulling the note editor up "
 "from the bottom edge."
 msgstr ""
+"Chan eil nòta ri fhaighinn. 'S urrainn dhut nòta ùr a chruthachadh is tu a' "
+"slaodadh deasaiche na nòtaichean a-nìos on oir aig a' bhonn."
 
 #: src/app/qml/ui/RemindersPage.qml:97
 msgid ""
