@@ -37,6 +37,7 @@ Item {
                 notebookSelector.selectedIndex = i;
             }
         }
+        note.renderWidth = noteTextArea.width - noteTextArea.textMargin * 2
     }
 
     signal exitEditMode(var note)
@@ -84,7 +85,7 @@ Item {
         target: noteTextArea
         onWidthChanged: {
             note.richTextContent = noteTextArea.text;
-            note.renderWidth = noteTextArea.width - noteTextArea.textMargin
+            note.renderWidth = noteTextArea.width - noteTextArea.textMargin * 2
         }
     }
 
