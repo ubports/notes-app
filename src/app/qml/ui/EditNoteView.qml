@@ -629,8 +629,8 @@ Item {
                 text: i18n.tr("Done")
                 height: parent.height
                 iconColor: UbuntuColors.green
-                activeFocusOnPress: true
                 onClicked: {
+                    forceActiveFocus();
                     saveNote();
                     root.exitEditMode(root.note);
                 }
