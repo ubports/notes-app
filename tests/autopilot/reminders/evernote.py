@@ -21,8 +21,8 @@ from evernote.edam.error import ttypes as errors
 
 
 TEST_OAUTH_TOKEN = (
-    'S=s1:U=8e6bf:E=14d08e375ff:C=145b1324a03:P=1cd:A=en-devtoken:V=2:'
-    'H=79b946c32b4515ee52b387f7b68baa69')
+    'S=s1:U=8e6bf:E=1548ba3de0d:C=14d33f2aea0:P=1cd:A=en-devtoken:V=2:'
+    'H=2443c889ce7e8f083d8e155b404c44a1')
 EVERNOTE_NOTE_XML_PROLOG = (
     '<?xml version="1.0" encoding="UTF-8"?>'
     '<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">')
