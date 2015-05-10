@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-16 17:45+0200\n"
-"PO-Revision-Date: 2015-05-03 04:56+0000\n"
+"PO-Revision-Date: 2015-05-10 04:44+0000\n"
 "Last-Translator: Gursharnjit_Singh <ubuntuser13@gmail.com>\n"
 "Language-Team: Punjabi <pa@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-05-04 05:34+0000\n"
+"X-Launchpad-Export-Date: 2015-05-10 05:41+0000\n"
 "X-Generator: Launchpad (build 17474)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
@@ -177,31 +177,31 @@ msgstr "ਛਾਂਟੋ ਦੁਆਰਾ"
 
 #: src/app/qml/components/SortingDialog.qml:29
 msgid "Date created (newest first)"
-msgstr ""
+msgstr "ਰਚਣ ਮਿਤੀ (ਬਿਲਕੁੱਲ ਨਵੀਂ ਪਹਿਲਾਂ)"
 
 #: src/app/qml/components/SortingDialog.qml:30
 msgid "Date created (oldest first)"
-msgstr ""
+msgstr "ਰਚਣ ਮਿਤੀ (ਸੱਭ ਤੋਂ ਪੁਰਾਣੀ ਪਹਿਲਾਂ)"
 
 #: src/app/qml/components/SortingDialog.qml:31
 msgid "Date updated (newest first)"
-msgstr ""
+msgstr "ਅੱਪਡੇਟ ਮਿਤੀ (ਬਿਲਕੁੱਲ ਨਵੀਂ ਪਹਿਲਾਂ)"
 
 #: src/app/qml/components/SortingDialog.qml:32
 msgid "Date updated (oldest first)"
-msgstr ""
+msgstr "ਅੱਪਡੇਟ ਮਿਤੀ (ਸੱਭ ਤੋਂ ਪੁਰਾਣੀ ਪਹਿਲਾਂ)"
 
 #: src/app/qml/components/SortingDialog.qml:33
 msgid "Title (ascending)"
-msgstr ""
+msgstr "ਸਿਰਲੇਖ (ਵੱਧਦੇ)"
 
 #: src/app/qml/components/SortingDialog.qml:34
 msgid "Title (descending)"
-msgstr ""
+msgstr "ਸਿਰਲੇਖ (ਘੱਟਦੇ)"
 
 #: src/app/qml/reminders.qml:385
 msgid "Default notebook"
-msgstr ""
+msgstr "ਮੂਲ ਨੋਟਬੁੱਕ"
 
 #: src/app/qml/reminders.qml:491
 msgid "Notes"
@@ -225,33 +225,35 @@ msgstr ""
 
 #: src/app/qml/reminders.qml:662
 msgid "Setup Evernote connection?"
-msgstr ""
+msgstr "ਐਵਰਨੋਟ ਕੁਨੈਕਸ਼ਨ ਸੈੱਟ ਕਰੋ?"
 
 #: src/app/qml/reminders.qml:663
 msgid "Reminders can store your notes and reminders locally on this device."
 msgstr ""
+"ਰੀਮਾਈਂਡਰ ਨੋਟ ਤੁਹਾਡੇ ਨੋਟਾਂ ਅਤੇ ਰੀਮਾਈਂਡਰਾਂ ਨੂੰ ਇਸ ਜੰਤਰ ਤੇ ਲੋਕਲ ਰੂਪ ਵਿੱਚ ਸਟੋਰ "
+"ਕਰਦੇ ਹਨ।"
 
 #: src/app/qml/reminders.qml:664
 msgid ""
 "In order to synchronize notes with Evernote, an account at Evernote is "
 "required."
-msgstr ""
+msgstr "ਐਵਰਨੋਟ ਨਾਲ ਨੋਟਾਂ ਨੂੰ ਸਮਕਾਲੀ ਕਰਨ ਲਈ, ਐਵਰਨੋਟ ਤੇ ਇੱਕ ਖਾਤੇ ਦੀ ਲੋੜ ਹੈ।"
 
 #: src/app/qml/reminders.qml:665
 msgid "Do you want to setup an account now?"
-msgstr ""
+msgstr "ਕੀ ਤੁਸੀਂ ਹੁਣੇ ਇੱਕ ਖਾਤਾ ਸੈੱਟ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
-msgstr ""
+msgstr "ਖਾਤਾ ਚੁਣੋ"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:44
 msgid "Store notes locally only"
-msgstr ""
+msgstr "ਕੇਵਲ ਨੋਟਾਂ ਨੂੰ ਲੋਕਲ ਰੂਪ ਵਿੱਚ ਸਟੋਰ ਕਰੋ"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:52
 msgid "Accounts on www.evernote.com"
-msgstr ""
+msgstr "www.evernote.com ਤੇ ਖਾਤੇ"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:82
 #, qt-format
@@ -292,29 +294,31 @@ msgstr "T"
 
 #: src/app/qml/ui/NoteConflictPage.qml:27
 msgid "Conflicting changes"
-msgstr ""
+msgstr "ਬਦਲਾਅਾਂ ਦਾ ਵਿਰੋਧ ਕਰ ਰਿਹਾਂ"
 
 #: src/app/qml/ui/NoteConflictView.qml:54
 msgid ""
 "This note has been modified in multiple places. Please choose the version to "
 "be opened and delete the other."
 msgstr ""
+"ਇਸ ਨੋਟ ਵਿੱਚ ਕਈ ਥਾਵਾਂ ਤੇ ਸੋਧ ਹੋ ਚੁੱਕਿਆ। ਕਿਰਪਾ ਕਰਕੇ ਖੋਲ੍ਹਣ ਲਈ ਵਰਜਨ ਚੁਣੋ ਅਤੇ "
+"ਹੋਰਾਂ ਨੂੰ ਹਟਾਓ।"
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Deleted on this device:"
-msgstr ""
+msgstr "ਇਸ ਜੰਤਰ ਤੋਂ ਹਟਾਇਆ:"
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Modified on this device:"
-msgstr ""
+msgstr "ਇਸ ਜੰਤਰ ਤੇ ਸੋਧਿਆ:"
 
 #: src/app/qml/ui/NoteConflictView.qml:85
 msgid "Deleted from Evernote:"
-msgstr ""
+msgstr "ਐਵਰਨੋਟ ਤੋਂ ਹਟਾਇਆ:"
 
 #: src/app/qml/ui/NoteConflictView.qml:85
 msgid "Modified somewhere else:"
-msgstr ""
+msgstr "ਕਿਸੇ ਹੋਰ ਥਾਂ ਤੇ ਸੋਧਿਆ:"
 
 #: src/app/qml/ui/NotePage.qml:44 src/app/qml/ui/NotesPage.qml:109
 msgid "Set reminder"
@@ -322,7 +326,7 @@ msgstr "ਰੀਮਾਈਂਡਰ ਸੈੱਟ ਕਰੋ"
 
 #: src/app/qml/ui/NoteView.qml:146
 msgid "Attachment"
-msgstr ""
+msgstr "ਨੱਥੀ"
 
 #: src/app/qml/ui/NotebooksPage.qml:45
 msgid "Add notebook"
@@ -345,20 +349,20 @@ msgstr "ਸੰਭਾਲ੍ਹੋ"
 
 #: src/app/qml/ui/NotebooksPage.qml:198
 msgid "Rename notebook"
-msgstr ""
+msgstr "ਨੋਟਬੁੱਕ ਨੂੰ ਮੁੜ-ਨਾਂ ਦਿਓ"
 
 #: src/app/qml/ui/NotebooksPage.qml:199
 #, qt-format
 msgid "Enter a new name for notebook %1"
-msgstr ""
+msgstr "ਨੋਟਬੁੱਕ ਲਈ ਇੱਕ ਨਵਾਂ ਨਾਂ ਦਰਜ ਕਰੋ %1"
 
 #: src/app/qml/ui/NotebooksPage.qml:208 src/app/qml/ui/TagsPage.qml:144
 msgid "Name cannot be empty"
-msgstr ""
+msgstr "ਨਾਂ ਖ਼ਾਲੀ ਨਹੀਂ ਹੋ ਸਕਦਾ"
 
 #: src/app/qml/ui/NotebooksPage.qml:212 src/app/qml/ui/TagsPage.qml:148
 msgid "OK"
-msgstr ""
+msgstr "ਠੀਕ"
 
 #: src/app/qml/ui/NotesPage.qml:43 src/app/qml/ui/NotesPage.qml:63
 msgid "Add note"
@@ -366,13 +370,15 @@ msgstr "ਨੋਟ  ਜੋੜੋ"
 
 #: src/app/qml/ui/NotesPage.qml:74
 msgid "Sorting"
-msgstr ""
+msgstr "ਛਾਂਟ ਰਿਹਾਂ"
 
 #: src/app/qml/ui/NotesPage.qml:254
 msgid ""
 "No notes available. You can create new notes by pulling the note editor up "
 "from the bottom edge."
 msgstr ""
+"ਕੋਈ ਨੋਟ ਮੋਜੂਦ ਨਹੀਂ। ਤੁਸੀਂ ਨੋਟ ਸੰਪਾਦਕ ਨੂੰ ਹੇਠਲੇ ਸਿਰੇ ਤੋਂ ਉੱਪਰ ਵੱਲ ਖਿੱਚਣ ਦੁਆਰਾ "
+"ਨਵੇਂ ਨੋਟਾਂ ਦੀ ਰਚਨਾ ਕਰ ਸਕਦੇ ਹੋ।"
 
 #: src/app/qml/ui/RemindersPage.qml:97
 msgid ""
@@ -393,7 +399,7 @@ msgstr "ਰੀਮਾਈਂਡਰ ਲਈ ਤਾਰੀਖ ਅਤੇ ਸਮਾਂ �
 #. TRANSLATORS: A checkbox with marks the reminder as done
 #: src/app/qml/ui/SetReminderView.qml:64
 msgid "Reminder done"
-msgstr ""
+msgstr "ਰੀਮਾਈਂਡਰ ਮੁੰਕਮਲ"
 
 #: src/app/qml/ui/TagsPage.qml:127
 msgid "No tags available. You can tag notes while viewing them."
@@ -401,16 +407,16 @@ msgstr "ਕੋਈ ਟੈਗ ਮੌਜੂਦ ਨਹੀਂ। ਤੁਸੀਂ ਨ�
 
 #: src/app/qml/ui/TagsPage.qml:134
 msgid "Rename tag"
-msgstr ""
+msgstr "ਟੈਗ ਨੂੰ ਮੁੜ-ਨਾਂ ਦਿਓ"
 
 #: src/app/qml/ui/TagsPage.qml:135
 #, qt-format
 msgid "Enter a new name for tag %1"
-msgstr ""
+msgstr "ਟੈਗ ਲਈ ਇੱਕ ਨਵਾਂ ਨਾਂ ਦਰਜ ਕਰੋ %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:268
 msgid "Offline mode"
-msgstr ""
+msgstr "ਆਫਲਾਈਨ ਮੋਡ"
 
 #: src/libqtevernote/evernoteconnection.cpp:273
 #: src/libqtevernote/evernoteconnection.cpp:362
@@ -454,17 +460,21 @@ msgid ""
 "Authentication for Evernote server expired. Please renew login information "
 "in the accounts settings."
 msgstr ""
+"ਐਵਰਨੋਟ ਸਰਵਰ ਦੀ ਵੈਧਤਾ ਦੀ ਮਿਆਦ ਖ਼ਤਮ ਹੋਈ। ਕਿਰਪਾ ਕਰਕੇ ਖਾਤਾ ਸੈਟਿੰਗ ਵਿੱਚ ਲਾਗਇਨ "
+"ਜਾਣਕਾਰੀ ਨੂੰ ਤਾਜ਼ਾ ਕਰੋ।"
 
 #: src/libqtevernote/evernoteconnection.cpp:332
 #: src/libqtevernote/evernoteconnection.cpp:350
 #, qt-format
 msgid "Unknown error connecting to Evernote: %1"
-msgstr ""
+msgstr "ਐਵਰਨੋਟ ਨੂੰ ਕੁਨੈਕਟ ਕਰਦੇ ਸਮੇਂ ਅਣਜਾਣ ਖ਼ਾਮੀ ਆਈ: %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:341
 msgid ""
 "Error connecting to Evernote: Rate limit exceeded. Please try again later."
 msgstr ""
+"ਐਵਰਨੋਟ ਨੂੰ ਕੁਨੈਕਟ ਕਰਦੇ ਸਮੇਂ ਖ਼ਾਮੀ: ਰੇਟ ਸੀਮਾ ਵੱਧੀ। ਕਿਰਪਾ ਕਰਕੇ ਬਾਅਦ ਵਿੱਚ "
+"ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ ਕਰੋ।"
 
 #: src/libqtevernote/evernoteconnection.cpp:357
 msgid ""
@@ -484,7 +494,7 @@ msgstr "ਐਵਰਨੋਟ ਨੂੰ ਕੁਨੇਕਟ ਕਰਦੇ ਅਣਜ�
 
 #: src/libqtevernote/evernoteconnection.cpp:435
 msgid "Disconnected from Evernote."
-msgstr ""
+msgstr "ਐਵਰਨੋਟ ਤੋਂ ਡਿਸਕੁਨੈਕਟ ਹੋਇਆ।"
 
 #: src/libqtevernote/note.cpp:162 src/libqtevernote/note.cpp:196
 #: src/libqtevernote/note.cpp:381
@@ -565,28 +575,36 @@ msgid ""
 "This account is managed by Evernote. Use the Evernote website to delete "
 "notebooks."
 msgstr ""
+"ਇਸ ਖਾਤੇ ਦੀ ਸਾਂਭ-ਸੰਭਾਲ੍ਹ ਐਵਰਨੋਟ ਵੱਲੋਂ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਨੋਟਬੁੱਕਾਂ ਹਟਾਉਣ ਲਈ "
+"ਐਵਰਨੋਟ ਵੈੱਬਸਾਈਟ ਵਰਤੋਂ।"
 
 #: src/libqtevernote/notesstore.cpp:422
 msgid ""
 "Cannot delete the default notebook. Set another notebook to be the default "
 "first."
 msgstr ""
+"ਮੂਲ ਨੋਟਬੁੱਕ ਨੂੰ ਹਟਾ ਨਹੀਂ ਸਕਦਾ। ਪਹਿਲਾਂ ਕਿਸੇ ਹੋਰ ਨੋਟਬੁੱਕ ਨੂੰ ਮੂਲ ਦੇ ਤੌਰ ਤੇ "
+"ਸੈੱਟ ਕਰੋ।"
 
 #: src/libqtevernote/notesstore.cpp:1700
 msgid "Rate limit for Evernote server exceeded. Please try again later."
 msgstr ""
+"ਐਵਰਨੋਟ ਸਰਵਰ ਦੀ ਰੇਟ ਸੀਮਾ ਵੱਧੀ। ਕਿਰਪਾ ਕਰਕੇ ਬਾਅਦ ਵਿੱਚ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ ਕਰੋ।"
 
 #: src/libqtevernote/notesstore.cpp:1703
 msgid "Upload quota for Evernote server exceed. Please try again later."
 msgstr ""
+"ਐਵਰਨੋਟ ਸਰਵਰ ਦਾ ਅੱਪਲੋਡ ਕੋਟਾ ਵਧਿਆ। ਕਿਰਪਾ ਕਰਕੇ ਬਾਅਦ ਵਿੱਚ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ ਕਰੋ।"
 
 #: src/libqtevernote/notesstore.cpp:1717
 msgid ""
 "This account is managed by Evernote. Please use the Evernote website to "
 "delete tags."
 msgstr ""
+"ਇਸ ਖਾਤੇ ਦੀ ਸਾਂਭ-ਸੰਭਾਲ੍ਹ ਐਵਰਨੋਟ ਵੱਲੋਂ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਟੈਗ ਹਟਾਉਣ ਲਈ "
+"ਐਵਰਨੋਟ ਵੈੱਬਸਾਈਟ ਵਰਤੋਂ।"
 
 #. TRANSLATORS: A default file name if we don't get one from the server. Avoid weird characters.
 #: src/libqtevernote/resource.cpp:39
 msgid "Unnamed"
-msgstr ""
+msgstr "ਬਿਨ-ਨਾਂ"
