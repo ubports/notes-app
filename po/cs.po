@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-16 17:45+0200\n"
-"PO-Revision-Date: 2014-02-19 10:23+0000\n"
-"Last-Translator: Vizsla Áron <Unknown>\n"
+"PO-Revision-Date: 2015-05-11 20:42+0000\n"
+"Last-Translator: Vojtěch Daněk <vdanek@outlook.com>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-04-17 05:36+0000\n"
-"X-Generator: Launchpad (build 17430)\n"
+"X-Launchpad-Export-Date: 2015-05-12 05:33+0000\n"
+"X-Generator: Launchpad (build 17487)\n"
+"Language: cs\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
 msgid "Reminders"
@@ -23,29 +24,29 @@ msgstr "Upomínky"
 
 #: com.ubuntu.reminders.desktop.in.in.h:2
 msgid "Ubuntu Reminders app, powered by Evernote"
-msgstr ""
+msgstr "Aplikace Ubuntu Upomínky, poháněna Evernote"
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
-msgstr ""
+msgstr "Sešit:"
 
 #: src/app/qml/components/ConflictDelegate.qml:63
 msgid "Reminder:"
-msgstr ""
+msgstr "Připomínka:"
 
 #: src/app/qml/components/EditTagsDialog.qml:45
 msgid "Create a new tag"
-msgstr ""
+msgstr "Vytvořit nový štítek"
 
 #: src/app/qml/components/EditTagsDialog.qml:73
 msgid "Create tag"
-msgstr ""
+msgstr "Vytvořit štítek"
 
 #. TRANSLATORS: Button to close the edit mode
 #: src/app/qml/components/EditTagsDialog.qml:120
 #: src/app/qml/ui/EditNoteView.qml:628 src/libqtevernote/note.cpp:369
 msgid "Done"
-msgstr ""
+msgstr "Hotovo"
 
 #. TRANSLATORS: Button that deletes a reminder
 #: src/app/qml/components/NotebooksDelegate.qml:36
@@ -58,7 +59,7 @@ msgstr "Smazat"
 #: src/app/qml/components/NotebooksDelegate.qml:96
 #, qt-format
 msgid "Last edited %1"
-msgstr ""
+msgstr "Poslední úprava %1"
 
 #: src/app/qml/components/NotebooksDelegate.qml:115
 msgid "Shared"
@@ -70,11 +71,11 @@ msgstr "Soukromé"
 
 #: src/app/qml/components/NotesDelegate.qml:73
 msgid "Reminder"
-msgstr ""
+msgstr "Upomínka"
 
 #: src/app/qml/components/NotesDelegate.qml:80 src/app/qml/reminders.qml:572
 msgid "Tags"
-msgstr ""
+msgstr "Štítky"
 
 #: src/app/qml/components/NotesDelegate.qml:87 src/app/qml/ui/NotePage.qml:37
 #: src/app/qml/ui/NotesPage.qml:125
@@ -90,110 +91,117 @@ msgstr "Bez názvu"
 
 #: src/app/qml/components/PulldownListView.qml:40
 msgid "Release to refresh"
-msgstr ""
+msgstr "Pusťte pro obnovení..."
 
 #: src/app/qml/components/PulldownListView.qml:40
 msgid "Pull down to refresh"
-msgstr ""
+msgstr "Potáhněte dolů pro obnovení..."
 
 #: src/app/qml/components/RemindersDelegate.qml:36
 msgid "Clear reminder"
-msgstr ""
+msgstr "Vyčistit upomínky"
 
 #: src/app/qml/components/RemindersDelegate.qml:49
 msgid "Mark as undone"
-msgstr ""
+msgstr "Označit jako nedokončené"
 
 #: src/app/qml/components/RemindersDelegate.qml:49
 msgid "Mark as done"
-msgstr ""
+msgstr "Označit jako dokončené"
 
 #: src/app/qml/components/RemindersDelegate.qml:57
 #: src/app/qml/ui/NotePage.qml:44 src/app/qml/ui/NotesPage.qml:109
 msgid "Edit reminder"
-msgstr ""
+msgstr "Upravit připomínku"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:25
 msgid "Resolve conflict"
-msgstr ""
+msgstr "Vyřešit konflikt"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:30
 msgid ""
 "This will <b>keep the changes made on this device</b> and <b>restore the "
 "note on Evernote</b>."
 msgstr ""
+"Toto <b>zachová změny provedené na tomto zařízení</b> a <b>obnoví poznámku "
+"na Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:32
 msgid "This will <b>delete the changed note on Evernote</b>."
-msgstr ""
+msgstr "Toto <b>vymaže změněné poznámky na Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:34
 msgid ""
 "This will <b>keep the changes made on this device</b> and <b>discard any "
 "changes made on Evernote</b>."
 msgstr ""
+"Toto <b>zachová změny provedené na tomto zařízení</b> a <b>zruší všechny "
+"změny provedené na Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:38
 msgid "This will <b>delete the changed note on this device</b>."
-msgstr ""
+msgstr "Toto <b>vymaže všechny změny na tomto zařízení</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:40
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>restore it "
 "on this device</b>."
 msgstr ""
+"Toto <b>stáhne změny z Evernote</b> a <b>obnoví je na tomto zařízení</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:42
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>discard any "
 "changes made on this device</b>."
 msgstr ""
+"Toto <b>stáhne změny z Evernote</b> a <b>zruší všechny změny vytvořené na "
+"tomto zařízení</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:45
 msgid "Are you sure you want to continue?"
-msgstr ""
+msgstr "Jste si jistí, že chcete pokračovat?"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:57
 #: src/app/qml/reminders.qml:690
 msgid "Yes"
-msgstr ""
+msgstr "Ano"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:66
 #: src/app/qml/reminders.qml:680
 msgid "No"
-msgstr ""
+msgstr "Ne"
 
 #: src/app/qml/components/SortingDialog.qml:20
 msgid "Sort by"
-msgstr ""
+msgstr "Seřadit podle"
 
 #: src/app/qml/components/SortingDialog.qml:29
 msgid "Date created (newest first)"
-msgstr ""
+msgstr "Data vytvoření (nejnovější první)"
 
 #: src/app/qml/components/SortingDialog.qml:30
 msgid "Date created (oldest first)"
-msgstr ""
+msgstr "Data vytvoření (nejstarší první)"
 
 #: src/app/qml/components/SortingDialog.qml:31
 msgid "Date updated (newest first)"
-msgstr ""
+msgstr "Data aktualizace (nejnovější první)"
 
 #: src/app/qml/components/SortingDialog.qml:32
 msgid "Date updated (oldest first)"
-msgstr ""
+msgstr "Data aktualizace (nejstarší první)"
 
 #: src/app/qml/components/SortingDialog.qml:33
 msgid "Title (ascending)"
-msgstr ""
+msgstr "Název (vzestupně)"
 
 #: src/app/qml/components/SortingDialog.qml:34
 msgid "Title (descending)"
-msgstr ""
+msgstr "Název (sestupně)"
 
 #: src/app/qml/reminders.qml:385
 msgid "Default notebook"
-msgstr ""
+msgstr "Výchozí sešit"
 
 #: src/app/qml/reminders.qml:491
 msgid "Notes"
@@ -205,114 +213,120 @@ msgstr "Sešity"
 
 #: src/app/qml/reminders.qml:600
 msgid "Accounts"
-msgstr ""
+msgstr "Účty"
 
 #: src/app/qml/reminders.qml:619
 msgid ""
 "No note selected.\n"
 "Select a note to see it in detail."
 msgstr ""
+"Nebyla vybrána poznámka.\n"
+"Pro podrobnosti vyberte jednu z poznámek."
 
 #: src/app/qml/reminders.qml:662
 msgid "Setup Evernote connection?"
-msgstr ""
+msgstr "Nastavit spojení s Evernote?"
 
 #: src/app/qml/reminders.qml:663
 msgid "Reminders can store your notes and reminders locally on this device."
-msgstr ""
+msgstr "Připomínky mohou uložit vaše poznámky a upomínky na vaše zařízení."
 
 #: src/app/qml/reminders.qml:664
 msgid ""
 "In order to synchronize notes with Evernote, an account at Evernote is "
 "required."
 msgstr ""
+"Pro úspěšnou synchronizaci s Evernote se musíte přihlásit pomocí Evernote "
+"účtu."
 
 #: src/app/qml/reminders.qml:665
 msgid "Do you want to setup an account now?"
-msgstr ""
+msgstr "Chcete se připojit k účtu?"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
-msgstr ""
+msgstr "Zvolit účet"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:44
 msgid "Store notes locally only"
-msgstr ""
+msgstr "Ukládat poznámky pouze lokálně"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:52
 msgid "Accounts on www.evernote.com"
-msgstr ""
+msgstr "Účty na www.evernote.com"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:82
 #, qt-format
 msgid "%1 - Tap to authorize"
-msgstr ""
+msgstr "%1 - Klepněte pro autorizaci"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:91
 msgid "Add new account"
-msgstr ""
+msgstr "Přidat nový účet"
 
 #: src/app/qml/ui/EditNoteView.qml:448
 msgid "Font"
-msgstr ""
+msgstr "Písmo"
 
 #: src/app/qml/ui/EditNoteView.qml:460
 msgid "Size"
-msgstr ""
+msgstr "Velikost"
 
 #. TRANSLATORS: Toolbar button for "Bold"
 #: src/app/qml/ui/EditNoteView.qml:483
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #. TRANSLATORS: Toolbar button for "Italic"
 #: src/app/qml/ui/EditNoteView.qml:496
 msgid "I"
-msgstr ""
+msgstr "I"
 
 #. TRANSLATORS: Toolbar button for "Underline"
 #: src/app/qml/ui/EditNoteView.qml:510
 msgid "U"
-msgstr ""
+msgstr "U"
 
 #. TRANSLATORS: Toolbar button for "Strikeout"
 #: src/app/qml/ui/EditNoteView.qml:524
 msgid "T"
-msgstr ""
+msgstr "T"
 
 #: src/app/qml/ui/NoteConflictPage.qml:27
 msgid "Conflicting changes"
-msgstr ""
+msgstr "Konfliktní změny"
 
 #: src/app/qml/ui/NoteConflictView.qml:54
 msgid ""
 "This note has been modified in multiple places. Please choose the version to "
 "be opened and delete the other."
 msgstr ""
+"Tato poznámka byla změněna na několika místech. Zvolte, prosím, verzi, která "
+"má být otevřena a ostatní smazány."
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Deleted on this device:"
-msgstr ""
+msgstr "Smazána na tomto zařízení:"
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Modified on this device:"
-msgstr ""
+msgstr "Upraveno na tomto zařízení:"
 
 #: src/app/qml/ui/NoteConflictView.qml:85
 msgid "Deleted from Evernote:"
-msgstr ""
+msgstr "Smazáno z Evernote:"
 
 #: src/app/qml/ui/NoteConflictView.qml:85
 msgid "Modified somewhere else:"
-msgstr ""
+msgstr "Upraveno někde jinde:"
 
 #: src/app/qml/ui/NotePage.qml:44 src/app/qml/ui/NotesPage.qml:109
 msgid "Set reminder"
-msgstr ""
+msgstr "Nastavit připomenutí"
 
 #: src/app/qml/ui/NoteView.qml:146
 msgid "Attachment"
-msgstr ""
+msgstr "Příloha"
 
 #: src/app/qml/ui/NotebooksPage.qml:45
 msgid "Add notebook"
@@ -335,20 +349,20 @@ msgstr "Uložit"
 
 #: src/app/qml/ui/NotebooksPage.qml:198
 msgid "Rename notebook"
-msgstr ""
+msgstr "Přejmenovat sešit"
 
 #: src/app/qml/ui/NotebooksPage.qml:199
 #, qt-format
 msgid "Enter a new name for notebook %1"
-msgstr ""
+msgstr "Zadejde nové jméno pro sešit %1"
 
 #: src/app/qml/ui/NotebooksPage.qml:208 src/app/qml/ui/TagsPage.qml:144
 msgid "Name cannot be empty"
-msgstr ""
+msgstr "Jméno nemůže být prázdné"
 
 #: src/app/qml/ui/NotebooksPage.qml:212 src/app/qml/ui/TagsPage.qml:148
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: src/app/qml/ui/NotesPage.qml:43 src/app/qml/ui/NotesPage.qml:63
 msgid "Add note"
@@ -356,13 +370,15 @@ msgstr "Přidat poznámku"
 
 #: src/app/qml/ui/NotesPage.qml:74
 msgid "Sorting"
-msgstr ""
+msgstr "Třídění"
 
 #: src/app/qml/ui/NotesPage.qml:254
 msgid ""
 "No notes available. You can create new notes by pulling the note editor up "
 "from the bottom edge."
 msgstr ""
+"Poznámky nejsou k dispozici. Můžete vytvořit novou poznámku pomocí editoru "
+"poznámek, který spustíte táhnutím prstem ze spodní strany obrazovky."
 
 #: src/app/qml/ui/RemindersPage.qml:97
 msgid ""
