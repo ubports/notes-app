@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-16 17:45+0200\n"
-"PO-Revision-Date: 2015-05-11 20:42+0000\n"
+"PO-Revision-Date: 2015-05-14 08:00+0000\n"
 "Last-Translator: Vojtěch Daněk <vdanek@outlook.com>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-05-12 05:33+0000\n"
-"X-Generator: Launchpad (build 17487)\n"
+"X-Launchpad-Export-Date: 2015-05-15 05:31+0000\n"
+"X-Generator: Launchpad (build 17493)\n"
 "Language: cs\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
@@ -385,47 +385,51 @@ msgid ""
 "No reminders available. You can create new reminders by setting a reminder "
 "when viewing a note."
 msgstr ""
+"Nejsou dostupné žádné upomínky. Nové upomínky můžete vytvářet nastavením "
+"upomínek při zobrazení poznámky."
 
 #: src/app/qml/ui/SearchNotesPage.qml:32
 msgid "Search notes"
-msgstr ""
+msgstr "Vyhledat poznámky"
 
 #: src/app/qml/ui/SetReminderView.qml:36
 msgid "Select date and time for the reminder:"
-msgstr ""
+msgstr "Zvolte datum a čas pro upomínku:"
 
 #. TRANSLATORS: A checkbox with marks the reminder as done
 #: src/app/qml/ui/SetReminderView.qml:64
 msgid "Reminder done"
-msgstr ""
+msgstr "Upomínka vytvořena"
 
 #: src/app/qml/ui/TagsPage.qml:127
 msgid "No tags available. You can tag notes while viewing them."
-msgstr ""
+msgstr "Nenalezeny žádné štítky. Štítky se přidávají při zobrazení poznámek."
 
 #: src/app/qml/ui/TagsPage.qml:134
 msgid "Rename tag"
-msgstr ""
+msgstr "Přejmenovat značku"
 
 #: src/app/qml/ui/TagsPage.qml:135
 #, qt-format
 msgid "Enter a new name for tag %1"
-msgstr ""
+msgstr "Zadejte nové jméno pro značku %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:268
 msgid "Offline mode"
-msgstr ""
+msgstr "Offline režim"
 
 #: src/libqtevernote/evernoteconnection.cpp:273
 #: src/libqtevernote/evernoteconnection.cpp:362
 msgid "Unknown error connecting to Evernote."
-msgstr ""
+msgstr "Neznámá chyba spojení k Evernote."
 
 #: src/libqtevernote/evernoteconnection.cpp:286
 msgid ""
 "Error connecting to Evernote: Server version does not match app version. "
 "Please update the application."
 msgstr ""
+"Chyba spojení k Evernote: Verze serveru neodpovídá verzi aplikace. "
+"Aktualizujte, prosím, svou aplikaci."
 
 #: src/libqtevernote/evernoteconnection.cpp:292
 #: src/libqtevernote/evernoteconnection.cpp:297
