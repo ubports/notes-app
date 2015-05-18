@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-16 17:45+0200\n"
-"PO-Revision-Date: 2015-04-21 06:02+0000\n"
+"PO-Revision-Date: 2015-05-17 09:53+0000\n"
 "Last-Translator: Richard Somlói <ricsipontaz@gmail.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-04-22 06:11+0000\n"
-"X-Generator: Launchpad (build 17430)\n"
+"X-Launchpad-Export-Date: 2015-05-18 05:25+0000\n"
+"X-Generator: Launchpad (build 17493)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
 msgid "Reminders"
@@ -35,7 +35,7 @@ msgstr "Emlékeztető:"
 
 #: src/app/qml/components/EditTagsDialog.qml:45
 msgid "Create a new tag"
-msgstr "Új címke létrehozása"
+msgstr "Új címke"
 
 #: src/app/qml/components/EditTagsDialog.qml:73
 msgid "Create tag"
@@ -66,7 +66,7 @@ msgstr "Megosztott"
 
 #: src/app/qml/components/NotebooksDelegate.qml:115
 msgid "Private"
-msgstr "Privát"
+msgstr "Magánjellegű"
 
 #: src/app/qml/components/NotesDelegate.qml:73
 msgid "Reminder"
@@ -115,7 +115,7 @@ msgstr "Emlékeztető szerkesztése"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:25
 msgid "Resolve conflict"
-msgstr "Konfliktusok megoldása"
+msgstr "Ütközések megoldása"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:30
 msgid ""
@@ -173,23 +173,23 @@ msgstr "Nem"
 
 #: src/app/qml/components/SortingDialog.qml:20
 msgid "Sort by"
-msgstr "Rendezés"
+msgstr "Rendezési feltétel"
 
 #: src/app/qml/components/SortingDialog.qml:29
 msgid "Date created (newest first)"
-msgstr "Létrehozás dátuma (újabb előre)"
+msgstr "Létrehozás (újabb előre)"
 
 #: src/app/qml/components/SortingDialog.qml:30
 msgid "Date created (oldest first)"
-msgstr "Létrehozás dátuma (régebbi előre)"
+msgstr "Létrehozás (régebbi előre)"
 
 #: src/app/qml/components/SortingDialog.qml:31
 msgid "Date updated (newest first)"
-msgstr "Frissítés dátuma (újabb előre)"
+msgstr "Frissítés (újabb előre)"
 
 #: src/app/qml/components/SortingDialog.qml:32
 msgid "Date updated (oldest first)"
-msgstr "Frissítés dátuma (régebbi előre)"
+msgstr "Frissítés (régebbi előre)"
 
 #: src/app/qml/components/SortingDialog.qml:33
 msgid "Title (ascending)"
@@ -324,7 +324,7 @@ msgstr "Megváltoztatva valahol máshol:"
 
 #: src/app/qml/ui/NotePage.qml:44 src/app/qml/ui/NotesPage.qml:109
 msgid "Set reminder"
-msgstr "Emlékeztető beállítása"
+msgstr "Emlékeztető"
 
 #: src/app/qml/ui/NoteView.qml:146
 msgid "Attachment"
@@ -356,7 +356,7 @@ msgstr "Jegyzetfüzet átnevezése"
 #: src/app/qml/ui/NotebooksPage.qml:199
 #, qt-format
 msgid "Enter a new name for notebook %1"
-msgstr "Adjon megy egy új nevet a következő jegyzetfüzetnek: %1"
+msgstr "Adja meg a következő jegyzetfüzet új nevét: %1"
 
 #: src/app/qml/ui/NotebooksPage.qml:208 src/app/qml/ui/TagsPage.qml:144
 msgid "Name cannot be empty"
@@ -396,7 +396,7 @@ msgstr "Jegyzetek keresése"
 
 #: src/app/qml/ui/SetReminderView.qml:36
 msgid "Select date and time for the reminder:"
-msgstr "Válasszon dátumot és időt az emlékeztetőhöz:"
+msgstr "Dátum és idő megadása az emlékeztetőhöz:"
 
 #. TRANSLATORS: A checkbox with marks the reminder as done
 #: src/app/qml/ui/SetReminderView.qml:64
@@ -537,7 +537,7 @@ msgstr "Holnap"
 
 #: src/libqtevernote/note.cpp:387
 msgid "Next week"
-msgstr "Jövő hét"
+msgstr "Jövő héten"
 
 #: src/libqtevernote/note.cpp:390
 msgid "In two weeks"
