@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-16 17:45+0200\n"
-"PO-Revision-Date: 2015-05-14 08:00+0000\n"
+"PO-Revision-Date: 2015-05-25 13:39+0000\n"
 "Last-Translator: Vojtěch Daněk <vdanek@outlook.com>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-05-15 05:31+0000\n"
-"X-Generator: Launchpad (build 17493)\n"
+"X-Launchpad-Export-Date: 2015-05-26 05:53+0000\n"
+"X-Generator: Launchpad (build 17514)\n"
 "Language: cs\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
@@ -435,21 +435,22 @@ msgstr ""
 #: src/libqtevernote/evernoteconnection.cpp:297
 #, qt-format
 msgid "Error connecting to Evernote: Error code %1"
-msgstr ""
+msgstr "Chyba připojení k Evernote: Chybný kód %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:302
 msgid ""
 "Error connecting to Evernote: Cannot download version information from "
 "server."
 msgstr ""
+"Chyba připojení k Evernote: Informace o verzi nejdou stáhnout ze serveru."
 
 #: src/libqtevernote/evernoteconnection.cpp:307
 msgid "Unknown error connecting to Evernote"
-msgstr ""
+msgstr "Neznámá chyba připojení k Evernote."
 
 #: src/libqtevernote/evernoteconnection.cpp:321
 msgid "Error connecting to Evernote: Cannot download server information."
-msgstr ""
+msgstr "Chyba připojení k Evernote: Informace o serveru nelze stáhnout."
 
 #: src/libqtevernote/evernoteconnection.cpp:329
 #: src/libqtevernote/notesstore.cpp:1697
@@ -457,137 +458,147 @@ msgid ""
 "Authentication for Evernote server expired. Please renew login information "
 "in the accounts settings."
 msgstr ""
+"Ověření pro server Evernote vypršelo. Obnovte si, prosím, své přihlašovací "
+"údaje v nastavení účtu."
 
 #: src/libqtevernote/evernoteconnection.cpp:332
 #: src/libqtevernote/evernoteconnection.cpp:350
 #, qt-format
 msgid "Unknown error connecting to Evernote: %1"
-msgstr ""
+msgstr "Neznámá chyba připojení k Evernote: %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:341
 msgid ""
 "Error connecting to Evernote: Rate limit exceeded. Please try again later."
 msgstr ""
+"Chyba připojení k Evernote. Limit byl vyčerpán. Zkuste to, prosím, později."
 
 #: src/libqtevernote/evernoteconnection.cpp:357
 msgid ""
 "Error connecting to Evernote: Connection failure when downloading server "
 "information."
 msgstr ""
+"Chyba připojení k Evernote: Připojení selhalo v průběhu stahování informací."
 
 #: src/libqtevernote/evernoteconnection.cpp:383
 msgid "Error connecting to Evernote: Connection failure"
-msgstr ""
+msgstr "Chyba připojení k Evernote: Připojení selhalo"
 
 #: src/libqtevernote/evernoteconnection.cpp:387
 msgid "Unknown Error connecting to Evernote"
-msgstr ""
+msgstr "Neznámá chyba připojení k Evernote."
 
 #: src/libqtevernote/evernoteconnection.cpp:435
 msgid "Disconnected from Evernote."
-msgstr ""
+msgstr "Odpojedno z Evernote."
 
 #: src/libqtevernote/note.cpp:162 src/libqtevernote/note.cpp:196
 #: src/libqtevernote/note.cpp:381
 msgid "Today"
-msgstr ""
+msgstr "Dnes"
 
 #: src/libqtevernote/note.cpp:165 src/libqtevernote/note.cpp:199
 msgid "Yesterday"
-msgstr ""
+msgstr "Včera"
 
 #: src/libqtevernote/note.cpp:168 src/libqtevernote/note.cpp:202
 msgid "Last week"
-msgstr ""
+msgstr "Minulý týden"
 
 #: src/libqtevernote/note.cpp:171 src/libqtevernote/note.cpp:205
 msgid "Two weeks ago"
-msgstr ""
+msgstr "Před dvěma týdny"
 
 #. TRANSLATORS: the first argument refers to a month name and the second to a year
 #: src/libqtevernote/note.cpp:175 src/libqtevernote/note.cpp:209
 #, qt-format
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: src/libqtevernote/note.cpp:375
 msgid "No date"
-msgstr ""
+msgstr "Bez data"
 
 #: src/libqtevernote/note.cpp:378
 msgid "Overdue"
-msgstr ""
+msgstr "Opožděné"
 
 #: src/libqtevernote/note.cpp:384
 msgid "Tomorrow"
-msgstr ""
+msgstr "Zítra"
 
 #: src/libqtevernote/note.cpp:387
 msgid "Next week"
-msgstr ""
+msgstr "Příští týden"
 
 #: src/libqtevernote/note.cpp:390
 msgid "In two weeks"
-msgstr ""
+msgstr "Za dva týdny"
 
 #: src/libqtevernote/note.cpp:392
 msgid "Later"
-msgstr ""
+msgstr "Později"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: today"
 #: src/libqtevernote/notebook.cpp:120
 msgid "today"
-msgstr ""
+msgstr "dnes"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: yesterday"
 #: src/libqtevernote/notebook.cpp:124
 msgid "yesterday"
-msgstr ""
+msgstr "včera"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: last week"
 #: src/libqtevernote/notebook.cpp:128
 msgid "last week"
-msgstr ""
+msgstr "dva týdny"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: two weeks ago"
 #: src/libqtevernote/notebook.cpp:132
 msgid "two weeks ago"
-msgstr ""
+msgstr "před dvěma týdny"
 
 #. TRANSLATORS: this is used in the notes list to group notes created on the same month
 #. the first parameter refers to a month name and the second to a year
 #: src/libqtevernote/notebook.cpp:136
 #, qt-format
 msgid "on %1 %2"
-msgstr ""
+msgstr "v %1 %2"
 
 #: src/libqtevernote/notesstore.cpp:409
 msgid ""
 "This account is managed by Evernote. Use the Evernote website to delete "
 "notebooks."
 msgstr ""
+"Tento účet je spravován Evernote. Pro smazání sešítů využijte stránky "
+"Evernote."
 
 #: src/libqtevernote/notesstore.cpp:422
 msgid ""
 "Cannot delete the default notebook. Set another notebook to be the default "
 "first."
 msgstr ""
+"Nemůžete smazat výchozí sešit. Zvolte nový výchozí sešit a akci zopakujte."
 
 #: src/libqtevernote/notesstore.cpp:1700
 msgid "Rate limit for Evernote server exceeded. Please try again later."
-msgstr ""
+msgstr "Limit pro Evernote byl vyčerpán. Zkuste to, prosím, později."
 
 #: src/libqtevernote/notesstore.cpp:1703
 msgid "Upload quota for Evernote server exceed. Please try again later."
 msgstr ""
+"Fronta nahrávání Evernote byla vyčerpána. Zkuste to, prosím, později."
 
 #: src/libqtevernote/notesstore.cpp:1717
 msgid ""
 "This account is managed by Evernote. Please use the Evernote website to "
 "delete tags."
 msgstr ""
+"Tento účet je spravován Evernote. Pro smazání štítků využijte stránky "
+"Evernote."
 
 #. TRANSLATORS: A default file name if we don't get one from the server. Avoid weird characters.
 #: src/libqtevernote/resource.cpp:39
 msgid "Unnamed"
-msgstr ""
+msgstr "Nepojmenováno"
