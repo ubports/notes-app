@@ -75,7 +75,7 @@ Page {
                 }
 
                 Component.onCompleted: {
-                    if (isChangingAccount && displayName == preferences.accountName) {
+                    if (displayName == preferences.accountName) {
                         optionSelector.selectedIndex = index;
                     }
                     if (!model.enabled) {

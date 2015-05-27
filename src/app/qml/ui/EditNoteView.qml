@@ -84,8 +84,10 @@ Item {
     Connections {
         target: noteTextArea
         onWidthChanged: {
-            note.richTextContent = noteTextArea.text;
-            note.renderWidth = noteTextArea.width - noteTextArea.textMargin * 2
+            if (note) {
+                note.richTextContent = noteTextArea.text;
+                note.renderWidth = noteTextArea.width - noteTextArea.textMargin * 2
+            }
         }
     }
 
