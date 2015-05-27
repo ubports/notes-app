@@ -89,6 +89,17 @@ Item {
         }
     }
 
+    Connections {
+        target: Qt.application
+        onActiveChanged: {
+            print("active changed", root, root.note, active)
+            if (root.note) {
+                print("Saving note:", root.note.guid)
+                root.saveNote()
+            }
+        }
+    }
+
     Column {
         anchors { left: parent.left; top: parent.top; right: parent.right; bottom: toolbox.top }
 
@@ -210,6 +221,14 @@ Item {
                          selectByMouse: toolbox.charFormatExpanded
                          textMargin: units.gu(1)
                          selectionColor: UbuntuColors.blue
+
+                         property int lastCursorPos: -1
+                         onCursorPositionChanged: {
+                             lastCursorPos = cursorPosition;
+                         }
+                         onTextChanged: {
+                             cursorPosition = lastCursorPos
+                         }
 
                          // Due to various things updating when creating the view,
                          // we need to set the focus in the next event loop pass
