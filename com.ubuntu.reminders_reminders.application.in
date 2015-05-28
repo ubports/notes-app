@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <application id="@PROJECT_NAME@_@APP_NAME@">
 
-  <description>Reminders</description>
+  <description>Notes</description>
 
   <services>
     <service id="com.ubuntu.reminders_reminders">
