@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-16 17:45+0200\n"
-"PO-Revision-Date: 2015-05-02 15:03+0000\n"
-"Last-Translator: Krzysztof <Unknown>\n"
+"PO-Revision-Date: 2015-05-29 12:30+0000\n"
+"Last-Translator: Krzysztof Tataradziński <Unknown>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-05-03 06:08+0000\n"
-"X-Generator: Launchpad (build 17474)\n"
+"X-Launchpad-Export-Date: 2015-05-30 05:33+0000\n"
+"X-Generator: Launchpad (build 17532)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
 msgid "Reminders"
@@ -122,6 +122,8 @@ msgid ""
 "This will <b>keep the changes made on this device</b> and <b>restore the "
 "note on Evernote</b>."
 msgstr ""
+"Ta akcja <b>zachowa zmiany dokonane na tym urządzeniu</b> i <b>przywróci "
+"notatkę w Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:32
 msgid "This will <b>delete the changed note on Evernote</b>."
@@ -132,22 +134,28 @@ msgid ""
 "This will <b>keep the changes made on this device</b> and <b>discard any "
 "changes made on Evernote</b>."
 msgstr ""
+"Ta akcja <b>zachowa zmiany dokonane na tym urządzeniu</b> i <b>porzuci "
+"zmiany w Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:38
 msgid "This will <b>delete the changed note on this device</b>."
-msgstr ""
+msgstr "Ta akcja <b> usunie zmienioną notatkę z tego urządzenia</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:40
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>restore it "
 "on this device</b>."
 msgstr ""
+"Ta akcja <b>pobierze zmienioną notatkę z Evernote</b> i <b>przywróci ją na "
+"to urządzenie</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:42
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>discard any "
 "changes made on this device</b>."
 msgstr ""
+"Ta akcja <b>pobierze zmienioną notatkę z Evernote</b> i <b>porzuci wszystkie "
+"zmiany poczynione na tym urządzeniu</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:45
 msgid "Are you sure you want to continue?"
@@ -587,8 +595,10 @@ msgid ""
 "This account is managed by Evernote. Please use the Evernote website to "
 "delete tags."
 msgstr ""
+"To konto zarządzane jest przez Evernote. Aby usunąć tagi, skorzystaj ze "
+"strony internetowej Evernote."
 
 #. TRANSLATORS: A default file name if we don't get one from the server. Avoid weird characters.
 #: src/libqtevernote/resource.cpp:39
 msgid "Unnamed"
-msgstr ""
+msgstr "Bez nazwy"
