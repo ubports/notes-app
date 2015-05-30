@@ -63,7 +63,6 @@ Page {
         anchors.fill: parent
 
         onOpenTaggedNotes: {
-            console.log('babbo natale')
             root.openTaggedNotes(title, tagGuid);
         }
     }

@@ -96,17 +96,10 @@ MainView {
 
     backgroundColor: "#dddddd"
 
-    property var accountPage;
-
-    function openAccountPage(isChangingAccount) {
+    function openAccountPage() {
         var unauthorizedAccounts = allAccounts.count - accounts.count > 0 ? true : false
-        if (accountPage) {
-            accountPage.destroy(100)
-        }
-        var component = Qt.createComponent(Qt.resolvedUrl("ui/AccountSelectorPage.qml"));
-        accountPage = component.createObject(root, { accounts: accounts, unauthorizedAccounts: unauthorizedAccounts, oaSetup: setup });
+        var accountPage = pagestack.push(Qt.createComponent(Qt.resolvedUrl("ui/AccountSelectorPage.qml")), { accounts: accounts, unauthorizedAccounts: unauthorizedAccounts, oaSetup: setup });
         accountPage.accountSelected.connect(function(username, handle) { accountService.startAuthentication(username, handle); pagestack.pop(); root.accountPage = null });
-        pagestack.push(accountPage);
     }
 
     function displayNote(note, conflictMode) {
@@ -118,11 +111,9 @@ MainView {
         note.load(true);
         if (root.narrowMode) {
             print("creating noteview");
-            var page;
             if (!conflictMode && note.conflicting) {
                 // User wants to open the note even though it is conflicting! Show the Conflict page instead.
-                var component = Qt.createComponent(Qt.resolvedUrl("ui/NoteConflictPage.qml"));
-                page = component.createObject(root, {note: note});
+                var page = pagestack.push(Qt.createComponent(Qt.resolvedUrl("ui/NoteConflictPage.qml")), {note: note});
                 page.displayNote.connect(function(note) { root.displayNote(note, true); } );
                 page.resolveConflict.connect(function(keepLocal) {
                     var confirmation = PopupUtils.open(Qt.resolvedUrl("components/ResolveConflictConfirmationDialog.qml"), page, {keepLocal: keepLocal, remoteDeleted: note.conflictingNote.deleted, localDeleted: note.deleted});
@@ -132,12 +123,10 @@ MainView {
                     });
                 })
             } else {
-                var component = Qt.createComponent(Qt.resolvedUrl("ui/NotePage.qml"));
-                page = component.createObject(root, {readOnly: conflictMode, note: note });
+                var page = pagestack.push(Qt.createComponent(Qt.resolvedUrl("ui/NotePage.qml")), {readOnly: conflictMode, note: note })
                 page.editNote.connect(function(note) {root.switchToEditMode(note)})
                 page.openTaggedNotes.connect(function(title, tagGuid) {pagestack.pop();root.openTaggedNotes(title, tagGuid, true)})
             }
-            pagestack.push(page)
         } else {
             var view;
             if (!conflictMode && note.conflicting) {
@@ -166,10 +155,8 @@ MainView {
             if (pagestack.depth > 1) {
                 pagestack.pop();
             }
-            var component = Qt.createComponent(Qt.resolvedUrl("ui/EditNotePage.qml"));
-            var page = component.createObject();
+            var page = pagestack.push(Qt.resolvedUrl("ui/EditNotePage.qml"), {note: note});
             page.exitEditMode.connect(function() {Qt.inputMethod.hide(); pagestack.pop()});
-            pagestack.push(page, {note: note});
         } else {
             sideViewLoader.clear();
             var view = sideViewLoader.embed(Qt.resolvedUrl("ui/EditNoteView.qml"))
@@ -180,9 +167,7 @@ MainView {
     }
 
     function openSearch() {
-        var component = Qt.createComponent(Qt.resolvedUrl("ui/SearchNotesPage.qml"))
-        var page = component.createObject();
-        pagestack.push(page)
+        var page = pagestack.push(Qt.createComponent(Qt.resolvedUrl("ui/SearchNotesPage.qml")))
         page.noteSelected.connect(function(note) {root.displayNote(note)})
         page.editNote.connect(function(note) {root.switchToEditMode(note)})
     }
@@ -217,7 +202,7 @@ MainView {
             break;
         default:
             print("There are multiple accounts. Allowing user to select one.");
-            openAccountPage(false);
+            openAccountPage();
         }
     }
 
@@ -317,10 +302,8 @@ MainView {
     }
 
     function openTaggedNotes(title, tagGuid, narrowMode) {
-        var component = Qt.createComponent(Qt.resolvedUrl("ui/NotesPage.qml"))
-        var page = component.createObject();
         print("opening note page for tag", tagGuid)
-        pagestack.push(page, {title: title, filterTagGuid: tagGuid, narrowMode: narrowMode});
+        var page = pagestack.push(Qt.createComponent(Qt.resolvedUrl("ui/NotesPage.qml")), {title: title, filterTagGuid: tagGuid, narrowMode: narrowMode});
         page.selectedNoteChanged.connect(function() {
             if (page.selectedNote) {
                 root.displayNote(page.selectedNote);
@@ -441,10 +424,8 @@ MainView {
             var note = NotesStore.note(guid);
             print("note created:", note.guid);
             if (root.narrowMode) {
-                var component = Qt.createComponent(Qt.resolvedUrl("ui/EditNotePage.qml"));
-                var page = component.createObject();
+                var page = pagestack.push(Qt.resolvedUrl("ui/EditNotePage.qml"), {note: note});
                 page.exitEditMode.connect(function() {Qt.inputMethod.hide(); pagestack.pop();});
-                pagestack.push(page, {note: note});
             } else {
                 notesPage.selectedNote = note;
                 var view = sideViewLoader.embed(Qt.resolvedUrl("ui/EditNoteView.qml"));
@@ -526,10 +507,8 @@ MainView {
                     onOpenNotebook: {
                         var notebook = NotesStore.notebook(notebookGuid)
                         print("have notebook:", notebook, notebook.name)
-                        var component = Qt.createComponent(Qt.resolvedUrl("ui/NotesPage.qml"))
-                        var page = component.createObject();
                         print("opening note page for notebook", notebookGuid)
-                        pagestack.push(page, {title: notebook.name, filterNotebookGuid: notebookGuid, narrowMode: root.narrowMode});
+                        var page = pagestack.push(Qt.createComponent(Qt.resolvedUrl("ui/NotesPage.qml")), {title: notebook.name, filterNotebookGuid: notebookGuid, narrowMode: root.narrowMode});
                         page.selectedNoteChanged.connect(function() {
                             if (page.selectedNote) {
                                 root.displayNote(page.selectedNote);
@@ -575,10 +554,8 @@ MainView {
 
                     onOpenTaggedNotes: {
                         var tag = NotesStore.tag(tagGuid);
-                        var component = Qt.createComponent(Qt.resolvedUrl("ui/NotesPage.qml"))
-                        var page = component.createObject();
                         print("opening note page for tag", tagGuid)
-                        pagestack.push(page, {title: tag.name, filterTagGuid: tagGuid, narrowMode: root.narrowMode});
+                        var page = pagestack.push(Qt.createComponent(Qt.resolvedUrl("ui/NotesPage.qml")), {title: tag.name, filterTagGuid: tagGuid, narrowMode: root.narrowMode});
                         page.selectedNoteChanged.connect(function() {
                             if (page.selectedNote) {
                                 root.displayNote(page.selectedNote);
