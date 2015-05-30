@@ -48,9 +48,9 @@ Item {
         var text = noteTextArea.text;
 
         if (note) {
-            note.title = titleTextField.text;
-            note.notebookGuid = notebookSelector.selectedGuid;
-            note.richTextContent = noteTextArea.text;
+            note.title = title;
+            note.notebookGuid = notebookGuid;
+            note.richTextContent = text;
             NotesStore.saveNote(note.guid);
         } else {
             NotesStore.createNote(title, notebookGuid, text);
