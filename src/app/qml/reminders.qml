@@ -637,7 +637,7 @@ MainView {
             id: noAccount
             objectName: "noAccountDialog"
             title: i18n.tr("Setup Evernote connection?")
-            text: i18n.tr("Reminders can store your notes and reminders locally on this device.") + " "
+            text: i18n.tr("Notes can store your notes and reminders locally on this device.") + " "
                           + i18n.tr("In order to synchronize notes with Evernote, an account at Evernote is required.") + " "
                           + i18n.tr("Do you want to setup an account now?")
 
