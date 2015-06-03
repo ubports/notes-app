@@ -540,6 +540,15 @@ void Note::attachFile(int position, const QUrl &fileName)
     Resource *resource = new Resource(fileName.path(), this);
     m_resources.insert(resource->hash(), resource);
     m_content.attachFile(position, resource->hash(), resource->type());
+
+    QSettings infoFile(m_infoFile, QSettings::IniFormat);
+    infoFile.beginGroup("resources");
+    infoFile.beginGroup(resource->hash());
+    infoFile.setValue("fileName", resource->fileName());
+    infoFile.setValue("type", resource->type());
+    infoFile.endGroup();
+    infoFile.endGroup();
+
     emit resourcesChanged();
     emit contentChanged();
 
