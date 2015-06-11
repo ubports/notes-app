@@ -89,14 +89,16 @@ Dialog {
             }
 
             Rectangle {
-                x: textField.x
-                y: textField.y + textField.height
-                width: textField.width
+                anchors {
+                    left: textField.left
+                    top: textField.bottom
+                    right: textField.right
+                }
                 color: "white"
                 border.width: units.dp(1)
                 border.color: "black"
                 height: Math.min(5, tagsListView.count) * units.gu(4)
-                visible: textField.text.length > 0
+                visible: textField.text.length > 0 && (textField.focus || tagsListView.focus)
 
                 ListView {
                     id: tagsListView
@@ -106,16 +108,28 @@ Dialog {
 
                     delegate: Empty {
                         height: units.gu(4)
-                        Label {
+                        RowLayout {
+                            id: tagRow
                             anchors.fill: parent
                             anchors.margins: units.gu(1)
-                            text: model.name
-                            color: textField.text === model.name ? UbuntuColors.orange : "black"
+                            spacing: units.gu(1)
+
+                            property bool used: root.note ? root.note.tagGuids.indexOf(model.guid) !== -1 : false
+                            Label {
+                                text: model.name
+                                color: textField.text === model.name ? UbuntuColors.orange : "black"
+                                Layout.fillHeight: true
+                                Layout.fillWidth: true
+                            }
+                            Icon {
+                                name: "tick"
+                                visible: tagRow.used
+                                Layout.fillHeight: true
+                            }
                         }
 
                         onClicked: {
                             textField.text = model.name
-                            textField.accept()
                         }
                     }
                 }
