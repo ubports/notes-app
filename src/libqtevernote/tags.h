@@ -38,7 +38,8 @@ public:
         RoleNoteCount,
         RoleLoading,
         RoleSynced,
-        RoleSyncError
+        RoleSyncError,
+        RoleDeleted
     };
     explicit Tags(QObject *parent = 0);
 
@@ -62,6 +63,7 @@ private slots:
     void tagAdded(const QString &guid);
     void tagRemoved(const QString &guid);
     void tagGuidChanged(const QString &oldGuid, const QString &newGuid);
+    void deletedChanged();
 
     void nameChanged();
     void noteCountChanged();

@@ -89,6 +89,7 @@ ListItemWithActions {
                 color: root.notebookColor
                 fontSize: "large"
                 Layout.fillWidth: true
+                font.strikeout: model.deleted
             }
 
             Label {

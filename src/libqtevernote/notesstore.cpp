@@ -41,6 +41,7 @@
 #include "jobs/fetchtagsjob.h"
 #include "jobs/createtagjob.h"
 #include "jobs/savetagjob.h"
+#include "jobs/expungetagjob.h"
 
 #include "libintl.h"
 
@@ -404,12 +405,17 @@ void NotesStore::saveTag(const QString &guid)
 
 void NotesStore::expungeNotebook(const QString &guid)
 {
+#ifdef NO_EXPUNGE_NOTEBOOKS
+    // This snipped can be used if the app is compiled with a restricted api key
+    // that can't expunge notebooks on Evernote. Compile with
+    // cmake -DNO_EXPUNGE_NOTEBOOKS=1
     if (m_username != "@local") {
         qCWarning(dcNotesStore) << "Account managed by Evernote. Cannot delete notebooks.";
         m_errorQueue.append(QString(gettext("This account is managed by Evernote. Use the Evernote website to delete notebooks.")));
         emit errorChanged();
         return;
     }
+#endif
 
     Notebook* notebook = m_notebooksHash.value(guid);
     if (!notebook) {
@@ -453,17 +459,32 @@ void NotesStore::expungeNotebook(const QString &guid)
         }
     }
 
-    m_notebooks.removeAll(notebook);
-    m_notebooksHash.remove(notebook->guid());
-    emit notebookRemoved(notebook->guid());
+    if (notebook->lastSyncedSequenceNumber() == 0) {
+        emit notebookRemoved(notebook->guid());
+        m_notebooks.removeAll(notebook);
+        m_notebooksHash.remove(notebook->guid());
+        emit notebookRemoved(notebook->guid());
 
-    QSettings settings(m_cacheFile, QSettings::IniFormat);
-    settings.beginGroup("notebooks");
-    settings.remove(notebook->guid());
-    settings.endGroup();
+        QSettings settings(m_cacheFile, QSettings::IniFormat);
+        settings.beginGroup("notebooks");
+        settings.remove(notebook->guid());
+        settings.endGroup();
 
-    notebook->deleteInfoFile();
-    notebook->deleteLater();
+        notebook->deleteInfoFile();
+        notebook->deleteLater();
+    } else {
+        qCDebug(dcNotesStore) << "Setting notebook to deleted:" << notebook->guid();
+        notebook->setDeleted(true);
+        notebook->setUpdateSequenceNumber(notebook->updateSequenceNumber()+1);
+        emit notebookChanged(notebook->guid());
+        syncToCacheFile(notebook);
+
+        if (EvernoteConnection::instance()->isConnected()) {
+            ExpungeNotebookJob *job = new ExpungeNotebookJob(guid, this);
+            connect(job, &ExpungeNotebookJob::jobDone, this, &NotesStore::expungeNotebookJobDone);
+            EvernoteConnection::instance()->enqueue(job);
+        }
+    }
 }
 
 QList<Tag *> NotesStore::tags() const
@@ -558,6 +579,33 @@ void NotesStore::saveTagJobDone(EvernoteConnection::ErrorCode errorCode, const Q
     tag->setLastSyncedSequenceNumber(result.updateSequenceNum);
     emit tagChanged(tag->guid());
     syncToCacheFile(tag);
+}
+
+void NotesStore::expungeTagJobDone(EvernoteConnection::ErrorCode errorCode, const QString &errorMessage, const QString &guid)
+{
+    handleUserError(errorCode);
+    if (errorCode != EvernoteConnection::ErrorCodeNoError) {
+        qCWarning(dcSync) << "Error expunging tag:" << errorMessage;
+        return;
+    }
+
+    if (!m_tagsHash.contains(guid)) {
+        qCWarning(dcSync) << "Received a response for a expungeTag call, but can't find tag around any more.";
+        return;
+    }
+
+    emit tagRemoved(guid);
+    Tag *tag = m_tagsHash.take(guid);
+    m_tags.removeAll(tag);
+
+    QSettings cacheFile(m_cacheFile, QSettings::IniFormat);
+    cacheFile.beginGroup("tags");
+    cacheFile.remove(guid);
+    cacheFile.endGroup();
+    tag->syncToInfoFile();
+
+    tag->deleteInfoFile();
+    tag->deleteLater();
 }
 
 void NotesStore::tagNote(const QString &noteGuid, const QString &tagGuid)
@@ -1030,14 +1078,19 @@ void NotesStore::fetchNotebooksJobDone(EvernoteConnection::ErrorCode errorCode, 
                 syncToCacheFile(notebook);
             }
         } else {
-            // Local notebook changed. See if we can push our changes
             if (result.updateSequenceNum == notebook->lastSyncedSequenceNumber()) {
-                qCDebug(dcNotesStore) << "Local Notebook changed. Uploading changes to Evernote:" << notebook->guid();
-                SaveNotebookJob *job = new SaveNotebookJob(notebook);
-                connect(job, &SaveNotebookJob::jobDone, this, &NotesStore::saveNotebookJobDone);
-                EvernoteConnection::instance()->enqueue(job);
-                notebook->setLoading(true);
-                emit notebookChanged(notebook->guid());
+                // Local notebook changed. See if we can push our changes
+                if (notebook->deleted()) {
+                    qCDebug(dcNotesStore) << "Local notebook has been deleted. Deleting from server";
+                    expungeNotebook(notebook->guid());
+                } else {
+                    qCDebug(dcNotesStore) << "Local Notebook changed. Uploading changes to Evernote:" << notebook->guid();
+                    SaveNotebookJob *job = new SaveNotebookJob(notebook);
+                    connect(job, &SaveNotebookJob::jobDone, this, &NotesStore::saveNotebookJobDone);
+                    EvernoteConnection::instance()->enqueue(job);
+                    notebook->setLoading(true);
+                    emit notebookChanged(notebook->guid());
+                }
             } else {
                 qCWarning(dcNotesStore) << "Sync conflict in notebook:" << notebook->name();
                 qCWarning(dcNotesStore) << "Resolving of sync conflicts is not implemented yet.";
@@ -1134,11 +1187,16 @@ void NotesStore::fetchTagsJobDone(EvernoteConnection::ErrorCode errorCode, const
         } else {
             // local tag changed. See if we can sync it to the server
             if (result.updateSequenceNum == tag->lastSyncedSequenceNumber()) {
-                SaveTagJob *job = new SaveTagJob(tag);
-                connect(job, &SaveTagJob::jobDone, this, &NotesStore::saveTagJobDone);
-                EvernoteConnection::instance()->enqueue(job);
-                tag->setLoading(true);
-                emit tagChanged(tag->guid());
+                if (tag->deleted()) {
+                    qCDebug(dcNotesStore) << "Tag has been deleted locally";
+                    expungeTag(tag->guid());
+                } else {
+                    SaveTagJob *job = new SaveTagJob(tag);
+                    connect(job, &SaveTagJob::jobDone, this, &NotesStore::saveTagJobDone);
+                    EvernoteConnection::instance()->enqueue(job);
+                    tag->setLoading(true);
+                    emit tagChanged(tag->guid());
+                }
             } else {
                 qCWarning(dcSync) << "CONFLICT in tag" << tag->name();
                 tag->setSyncError(true);
@@ -1473,9 +1531,22 @@ void NotesStore::expungeNotebookJobDone(EvernoteConnection::ErrorCode errorCode,
         qCWarning(dcSync) << "Error expunging notebook:" << errorMessage;
         return;
     }
+
+    if (!m_notebooksHash.contains(guid)) {
+        qCWarning(dcSync) << "Received a response for a expungeNotebook call, but can't find notebook around any more.";
+        return;
+    }
+
     emit notebookRemoved(guid);
     Notebook *notebook = m_notebooksHash.take(guid);
     m_notebooks.removeAll(notebook);
+
+    QSettings settings(m_cacheFile, QSettings::IniFormat);
+    settings.beginGroup("notebooks");
+    settings.remove(notebook->guid());
+    settings.endGroup();
+
+    notebook->deleteInfoFile();
     notebook->deleteLater();
 }
 
@@ -1712,12 +1783,18 @@ bool NotesStore::handleUserError(EvernoteConnection::ErrorCode errorCode)
 
 void NotesStore::expungeTag(const QString &guid)
 {
+#ifdef NO_EXPUNGE_TAGS
+    // This snipped can be used if the app is compiled with a restricted api key
+    // that can't expunge tags on Evernote. Compile with
+    // cmake -DNO_EXPUNGE_TAGS=1
+
     if (m_username != "@local") {
         qCWarning(dcNotesStore) << "This account is managed by Evernote. Cannot delete tags.";
         m_errorQueue.append(gettext("This account is managed by Evernote. Please use the Evernote website to delete tags."));
         emit errorChanged();
         return;
     }
+#endif
 
     Tag *tag = m_tagsHash.value(guid);
     if (!tag) {
@@ -1730,23 +1807,38 @@ void NotesStore::expungeTag(const QString &guid)
         Note *note = m_notesHash.value(noteGuid);
         if (!note) {
             qCWarning(dcNotesStore) << "Tag holds note" << noteGuid << "which hasn't been found in Notes Store";
+            Q_ASSERT(false);
             continue;
         }
         untagNote(noteGuid, guid);
     }
 
-    emit tagRemoved(guid);
-    m_tagsHash.remove(guid);
-    m_tags.removeAll(tag);
+    if (tag->lastSyncedSequenceNumber() == 0) {
+        emit tagRemoved(guid);
+        m_tagsHash.remove(guid);
+        m_tags.removeAll(tag);
 
-    QSettings cacheFile(m_cacheFile, QSettings::IniFormat);
-    cacheFile.beginGroup("tags");
-    cacheFile.remove(guid);
-    cacheFile.endGroup();
-    tag->syncToInfoFile();
+        QSettings cacheFile(m_cacheFile, QSettings::IniFormat);
+        cacheFile.beginGroup("tags");
+        cacheFile.remove(guid);
+        cacheFile.endGroup();
+        tag->syncToInfoFile();
 
-    tag->deleteInfoFile();
-    tag->deleteLater();
+        tag->deleteInfoFile();
+        tag->deleteLater();
+    } else {
+        qCDebug(dcNotesStore) << "Setting tag to deleted:" << tag->guid();
+        tag->setDeleted(true);
+        tag->setUpdateSequenceNumber(tag->updateSequenceNumber()+1);
+        emit tagChanged(tag->guid());
+        syncToCacheFile(tag);
+
+        if (EvernoteConnection::instance()->isConnected()) {
+            ExpungeTagJob *job = new ExpungeTagJob(guid, this);
+            connect(job, &ExpungeTagJob::jobDone, this, &NotesStore::expungeTagJobDone);
+            EvernoteConnection::instance()->enqueue(job);
+        }
+    }
 }
 
 void NotesStore::resolveConflict(const QString &noteGuid, NotesStore::ConflictResolveMode mode)

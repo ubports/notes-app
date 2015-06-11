@@ -33,6 +33,7 @@ Notebook::Notebook(QString guid, quint32 updateSequenceNumber, QObject *parent) 
     m_guid(guid),
     m_published(false),
     m_isDefaultNotebook(false),
+    m_deleted(false),
     m_loading(false),
     m_syncError(false)
 {
@@ -44,6 +45,7 @@ Notebook::Notebook(QString guid, quint32 updateSequenceNumber, QObject *parent) 
     m_lastSyncedSequenceNumber = infoFile.value("lastSyncedSequenceNumber", 0).toUInt();
     m_isDefaultNotebook = infoFile.value("isDefaultNotebook", false).toBool();
     m_synced = m_lastSyncedSequenceNumber == m_updateSequenceNumber;
+    m_deleted = infoFile.value("deleted", false).toBool();
 
     foreach (Note *note, NotesStore::instance()->notes()) {
         if (note->notebookGuid() == m_guid) {
@@ -155,6 +157,7 @@ Notebook *Notebook::clone()
     notebook->setName(m_name);
     notebook->setLastUpdated(m_lastUpdated);
     notebook->setPublished(m_published);
+    notebook->setDeleted(m_deleted);
 
     return notebook;
 }
@@ -232,6 +235,7 @@ void Notebook::syncToInfoFile()
     infoFile.value("lastUpdated", m_lastUpdated);
     infoFile.setValue("lastSyncedSequenceNumber", m_lastSyncedSequenceNumber);
     infoFile.setValue("isDefaultNotebook", m_isDefaultNotebook);
+    infoFile.setValue("deleted", m_deleted);
 }
 
 void Notebook::deleteInfoFile()
@@ -255,6 +259,11 @@ bool Notebook::synced() const
 bool Notebook::syncError() const
 {
     return m_syncError;
+}
+
+bool Notebook::deleted() const
+{
+    return m_deleted;
 }
 
 qint32 Notebook::updateSequenceNumber() const
@@ -284,6 +293,14 @@ void Notebook::setLastSyncedSequenceNumber(qint32 lastSyncedSequenceNumber)
 
         m_synced = m_updateSequenceNumber == m_lastSyncedSequenceNumber;
         emit syncedChanged();
+    }
+}
+
+void Notebook::setDeleted(bool deleted)
+{
+    if (m_deleted != deleted) {
+        m_deleted = deleted;
+        emit deletedChanged();
     }
 }
 
