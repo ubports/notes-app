@@ -33,9 +33,9 @@ Notebook::Notebook(QString guid, quint32 updateSequenceNumber, QObject *parent) 
     m_guid(guid),
     m_published(false),
     m_isDefaultNotebook(false),
+    m_deleted(false),
     m_loading(false),
-    m_syncError(false),
-    m_deleted(false)
+    m_syncError(false)
 {
     setGuid(guid);
     QSettings infoFile(m_infoFile, QSettings::IniFormat);

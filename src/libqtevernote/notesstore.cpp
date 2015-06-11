@@ -478,7 +478,6 @@ void NotesStore::expungeNotebook(const QString &guid)
         notebook->setUpdateSequenceNumber(notebook->updateSequenceNumber()+1);
         emit notebookChanged(notebook->guid());
         syncToCacheFile(notebook);
-        saveNotebook(notebook->guid());
 
         if (EvernoteConnection::instance()->isConnected()) {
             ExpungeNotebookJob *job = new ExpungeNotebookJob(guid, this);
@@ -1833,7 +1832,6 @@ void NotesStore::expungeTag(const QString &guid)
         tag->setUpdateSequenceNumber(tag->updateSequenceNumber()+1);
         emit tagChanged(tag->guid());
         syncToCacheFile(tag);
-        saveTag(tag->guid());
 
         if (EvernoteConnection::instance()->isConnected()) {
             ExpungeTagJob *job = new ExpungeTagJob(guid, this);

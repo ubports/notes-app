@@ -29,9 +29,9 @@ Tag::Tag(const QString &guid, quint32 updateSequenceNumber, QObject *parent) :
     QObject(parent),
     m_updateSequenceNumber(updateSequenceNumber),
     m_guid(guid),
+    m_deleted(false),
     m_loading(false),
-    m_syncError(false),
-    m_deleted(false)
+    m_syncError(false)
 {
     setGuid(guid);
     QSettings infoFile(m_infoFile, QSettings::IniFormat);
