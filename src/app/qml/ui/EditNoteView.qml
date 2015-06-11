@@ -647,7 +647,7 @@ Item {
             RtfButton {
                 iconName: "tick"
                 // TRANSLATORS: Button to close the edit mode
-                text: i18n.tr("Done")
+                text: i18n.tr("Close")
                 height: parent.height
                 iconColor: UbuntuColors.green
                 onClicked: {

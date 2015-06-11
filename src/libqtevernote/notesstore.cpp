@@ -478,6 +478,12 @@ Tag *NotesStore::tag(const QString &guid)
 
 Tag* NotesStore::createTag(const QString &name)
 {
+    foreach (Tag *tag, m_tags) {
+        if (tag->name() == name) {
+            return tag;
+        }
+    }
+
     QString newGuid = QUuid::createUuid().toString();
     newGuid.remove("{").remove("}");
     Tag *tag = new Tag(newGuid, 1, this);
