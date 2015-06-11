@@ -30,11 +30,13 @@ Tag::Tag(const QString &guid, quint32 updateSequenceNumber, QObject *parent) :
     m_updateSequenceNumber(updateSequenceNumber),
     m_guid(guid),
     m_loading(false),
-    m_syncError(false)
+    m_syncError(false),
+    m_deleted(false)
 {
     setGuid(guid);
     QSettings infoFile(m_infoFile, QSettings::IniFormat);
     m_name = infoFile.value("name").toString();
+    m_deleted = infoFile.value("deleted").toBool();
     m_lastSyncedSequenceNumber = infoFile.value("lastSyncedSequenceNumber", 0).toUInt();
     m_synced = m_lastSyncedSequenceNumber == m_updateSequenceNumber;
 
@@ -129,6 +131,7 @@ Tag *Tag::clone()
 {
     Tag *tag = new Tag(m_guid, m_updateSequenceNumber);
     tag->setName(m_name);
+    tag->setDeleted(m_deleted);
     return tag;
 }
 
@@ -178,6 +181,7 @@ void Tag::syncToInfoFile()
 {
     QSettings infoFile(m_infoFile, QSettings::IniFormat);
     infoFile.setValue("name", m_name);
+    infoFile.setValue("deleted", m_deleted);
     infoFile.setValue("lastSyncedSequenceNumber", m_lastSyncedSequenceNumber);
 }
 
@@ -212,11 +216,24 @@ bool Tag::syncError() const
     return m_syncError;
 }
 
+bool Tag::deleted() const
+{
+    return m_deleted;
+}
+
 void Tag::setSyncError(bool syncError)
 {
     if (m_syncError != syncError) {
         m_syncError = syncError;
         emit syncErrorChanged();
+    }
+}
+
+void Tag::setDeleted(bool deleted)
+{
+    if (m_deleted != deleted) {
+        m_deleted = deleted;
+        emit deletedChanged();
     }
 }
 

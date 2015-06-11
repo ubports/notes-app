@@ -32,6 +32,7 @@ set(qtevernote_SRCS
     jobs/fetchtagsjob.cpp
     jobs/createtagjob.cpp
     jobs/savetagjob.cpp
+    jobs/expungetagjob.cpp
     resourceimageprovider.cpp
     utils/enmldocument.cpp
     utils/organizeradapter.cpp

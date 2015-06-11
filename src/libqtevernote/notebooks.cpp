@@ -70,6 +70,8 @@ QVariant Notebooks::data(const QModelIndex &index, int role) const
         return notebook->syncError();
     case RoleIsDefaultNotebook:
         return notebook->isDefaultNotebook();
+    case RoleDeleted:
+        return notebook->deleted();
     }
     return QVariant();
 }
@@ -94,6 +96,7 @@ QHash<int, QByteArray> Notebooks::roleNames() const
     roles.insert(RoleSynced, "synced");
     roles.insert(RoleSyncError, "syncError");
     roles.insert(RoleIsDefaultNotebook, "isDefaultNotebook");
+    roles.insert(RoleDeleted, "deleted");
     return roles;
 }
 
@@ -121,6 +124,7 @@ void Notebooks::notebookAdded(const QString &guid)
     connect(notebook, &Notebook::loadingChanged, this, &Notebooks::notebookLoadingChanged);
     connect(notebook, &Notebook::syncErrorChanged, this, &Notebooks::syncErrorChanged);
     connect(notebook, &Notebook::isDefaultNotebookChanged, this, &Notebooks::isDefaultNotebookChanged);
+    connect(notebook, &Notebook::deletedChanged, this, &Notebooks::deletedChanged);
 
     beginInsertRows(QModelIndex(), m_list.count(), m_list.count());
     m_list.append(guid);
@@ -148,6 +152,13 @@ void Notebooks::isDefaultNotebookChanged()
     Notebook *notebook = static_cast<Notebook*>(sender());
     QModelIndex idx = index(m_list.indexOf((notebook->guid())));
     emit dataChanged(idx, idx, QVector<int>() << RoleIsDefaultNotebook);
+}
+
+void Notebooks::deletedChanged()
+{
+    Notebook *notebook = static_cast<Notebook*>(sender());
+    QModelIndex idx = index(m_list.indexOf(notebook->guid()));
+    emit dataChanged(idx, idx, QVector<int>() << RoleDeleted);
 }
 
 void Notebooks::nameChanged()
