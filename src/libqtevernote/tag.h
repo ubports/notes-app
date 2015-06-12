@@ -38,6 +38,7 @@ class Tag: public QObject
     Q_PROPERTY(QString guid READ guid NOTIFY guidChanged)
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
     Q_PROPERTY(int noteCount READ noteCount NOTIFY noteCountChanged)
+    Q_PROPERTY(bool deleted READ deleted NOTIFY deletedChanged)
     // Don't forget to update clone() if you add new properties
 
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
@@ -65,6 +66,7 @@ public:
     bool loading() const;
     bool synced() const;
     bool syncError() const;
+    bool deleted() const;
 
     Tag *clone();
 
@@ -75,6 +77,7 @@ signals:
     void loadingChanged();
     void syncedChanged();
     void syncErrorChanged();
+    void deletedChanged();
 
 private slots:
     void noteAdded(const QString &noteGuid, const QString &notebookGuid);
@@ -88,12 +91,14 @@ private:
     void setLastSyncedSequenceNumber(qint32 lastSyncedSequenceNumber);
     void setLoading(bool loading);
     void setSyncError(bool syncError);
+    void setDeleted(bool deleted);
 
 private:
     qint32 m_updateSequenceNumber;
     qint32 m_lastSyncedSequenceNumber;
     QString m_guid;
     QString m_name;
+    bool m_deleted;
 
     QList<QString> m_notesList;
 

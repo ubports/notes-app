@@ -42,7 +42,8 @@ public:
         RoleLoading,
         RoleSynced,
         RoleSyncError,
-        RoleIsDefaultNotebook
+        RoleIsDefaultNotebook,
+        RoleDeleted
     };
     explicit Notebooks(QObject *parent = 0);
 
@@ -76,6 +77,7 @@ private slots:
     void notebookLoadingChanged();
     void syncErrorChanged();
     void isDefaultNotebookChanged();
+    void deletedChanged();
 
 private:
     QList<QString> m_list;
