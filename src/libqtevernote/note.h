@@ -165,6 +165,8 @@ public:
     Q_INVOKABLE void attachFile(int position, const QUrl &fileName);
     Q_INVOKABLE void addTag(const QString &tagGuid);
     Q_INVOKABLE void removeTag(const QString &tagGuid);
+    Q_INVOKABLE void insertText(int position, const QString &text);
+    Q_INVOKABLE void insertLink(int position, const QString &url);
 
     int renderWidth() const;
     void setRenderWidth(int renderWidth);

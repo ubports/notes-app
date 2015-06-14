@@ -136,7 +136,7 @@ ListItemWithActions {
                                 Layout.fillHeight: true
                                 text: "<font color=\"" + root.notebookColor + "\">" +
                                     Qt.formatDateTime(root.date, Qt.LocalDate) +
-                                    " </font>" + root.content
+                                    " </font>" + root.content.replace("\n", " ").trim()
                                 wrapMode: Text.WordWrap
                                 textFormat: Text.StyledText
                                 maximumLineCount: 2

@@ -486,6 +486,7 @@ void EnmlDocument::setRenderWidth(int renderWidth)
 
 void EnmlDocument::attachFile(int position, const QString &hash, const QString &type)
 {
+    qCDebug(dcEnml) << "Attaching file at position" << position;
     QXmlStreamReader reader(m_enml);
 
     QString output;
@@ -537,6 +538,118 @@ void EnmlDocument::attachFile(int position, const QString &hash, const QString &
     m_enml = output;
 }
 
+void EnmlDocument::insertText(int position, const QString &text)
+{
+    qCDebug(dcEnml) << "Inserting Text at position" << position;
+
+    QXmlStreamReader reader(m_enml);
+
+    QString output;
+    QXmlStreamWriter writer(&output);
+    writer.writeStartDocument();
+    writer.writeDTD("<!DOCTYPE en-note SYSTEM \"http://xml.evernote.com/pub/enml2.dtd\">");
+
+    int textPos = 0;
+    bool inserted = false;
+
+    while (!reader.atEnd() && !reader.hasError()) {
+        QXmlStreamReader::TokenType token = reader.readNext();
+
+        if (token == QXmlStreamReader::StartElement) {
+            writer.writeStartElement(reader.name().toString());
+            writer.writeAttributes(reader.attributes());
+        }
+
+        if (token == QXmlStreamReader::Characters) {
+            QString textString = reader.text().toString();
+            if (textPos <= position && textPos + textString.length() > position) {
+                writer.writeCharacters(textString.left(position - textPos));
+
+                writer.writeStartElement("div");
+                writer.writeCharacters(text);
+                writer.writeEndElement();
+                inserted = true;
+
+                writer.writeCharacters(textString.right(textString.length() - (position - textPos)));
+            } else {
+                writer.writeCharacters(reader.text().toString());
+            }
+            textPos += textString.length();
+        }
+        if (token == QXmlStreamReader::EndElement) {
+
+            // The above logic would fail on an empty note
+            if (reader.name() == "en-note" && !inserted) {
+                writer.writeStartElement("div");
+                writer.writeCharacters(text);
+                writer.writeEndElement();
+            }
+
+            writer.writeEndElement();
+        }
+    }
+    m_enml = output;
+}
+
+void EnmlDocument::insertLink(int position, const QString &url)
+{
+    qCDebug(dcEnml) << "Inserting Link at position" << position;
+
+    QXmlStreamReader reader(m_enml);
+
+    QString output;
+    QXmlStreamWriter writer(&output);
+    writer.writeStartDocument();
+    writer.writeDTD("<!DOCTYPE en-note SYSTEM \"http://xml.evernote.com/pub/enml2.dtd\">");
+
+    int textPos = 0;
+    bool inserted = false;
+
+    while (!reader.atEnd() && !reader.hasError()) {
+        QXmlStreamReader::TokenType token = reader.readNext();
+
+        if (token == QXmlStreamReader::StartElement) {
+            writer.writeStartElement(reader.name().toString());
+            writer.writeAttributes(reader.attributes());
+        }
+
+        if (token == QXmlStreamReader::Characters) {
+            QString textString = reader.text().toString();
+            if (textPos <= position && textPos + textString.length() > position) {
+                writer.writeCharacters(textString.left(position - textPos));
+
+                writer.writeStartElement("div");
+                writer.writeStartElement("a");
+                writer.writeAttribute("href", url);
+                writer.writeCharacters(url);
+                writer.writeEndElement();
+                writer.writeEndElement();
+                inserted = true;
+
+                writer.writeCharacters(textString.right(textString.length() - (position - textPos)));
+            } else {
+                writer.writeCharacters(reader.text().toString());
+            }
+            textPos += textString.length();
+        }
+        if (token == QXmlStreamReader::EndElement) {
+
+            // The above logic would fail on an empty note
+            if (reader.name() == "en-note" && !inserted) {
+                writer.writeStartElement("div");
+                writer.writeStartElement("a");
+                writer.writeAttribute("href", url);
+                writer.writeCharacters(url);
+                writer.writeEndElement();
+                writer.writeEndElement();
+            }
+
+            writer.writeEndElement();
+        }
+    }
+    m_enml = output;
+}
+
 QString EnmlDocument::toPlaintext() const
 {
     // output
@@ -551,10 +664,8 @@ QString EnmlDocument::toPlaintext() const
         // Write all normal text inside <body> </body> to output
         if (token == QXmlStreamReader::Characters) {
             plaintext.append(reader.text().toString());
-            plaintext.append(' ');
         }
     }
 
-    plaintext.remove('\n').trimmed();
     return plaintext;
 }
