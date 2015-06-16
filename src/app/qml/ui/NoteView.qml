@@ -17,19 +17,22 @@
  */
 
 import QtQuick 2.3
+import QtQuick.Layouts 1.1
 import Ubuntu.Components 1.1
-import com.canonical.Oxide 1.0
+import Ubuntu.Components.ListItems 1.0
+import Ubuntu.Components.Popups 1.0
+import com.canonical.Oxide 1.5
 import Ubuntu.Content 1.0
 import Evernote 0.1
 import "../components"
 
 Item {
     id: root
-    property string title: contentPeerPicker.visible ? ""
-                            : (note && note.title) ? note.title : i18n.tr("Untitled")
+//    property string title: contentPeerPicker.visible ? ""
+//                            : (note && note.title) ? note.title : i18n.tr("Untitled")
     property var note: null
 
-    signal openTaggedNotes(string title, string tagGuid)
+    signal editNote()
 
     BouncingProgressBar {
         anchors.top: parent.top
@@ -48,10 +51,41 @@ Item {
         ]
     }
 
+    Rectangle {
+        id: locationBar
+        y: noteTextArea.locationBarController.offset
+        anchors.left: parent.left
+        anchors.right: parent.right
+        height: headerContent.height
+        color: "white"
+        z: 2
+
+        Header {
+            id: headerContent
+            note: root.note
+            editingEnabled: false
+
+            onEditReminders: {
+                print("pushing reminderspage", root.note.reminder)
+                pageStack.push(Qt.resolvedUrl("SetReminderPage.qml"), { note: root.note});
+            }
+            onEditTags: {
+                PopupUtils.open(Qt.resolvedUrl("../components/EditTagsDialog.qml"), root, { note: root.note, pageHeight: root.height });
+            }
+        }
+    }
+
     WebView {
         id: noteTextArea
-        width: parent.width
-        height: parent.height - tagsRow.height - (tagsRow.height > 0 ? units.gu(2) : 0)
+        anchors.fill: parent
+        anchors.bottomMargin: buttonPanel.height
+
+        locationBarController {
+            height: locationBar.height
+            mode: Oxide.LocationBarController.ModeAuto
+
+            onOffsetChanged: print("offset:", offset)
+        }
 
         property string html: root.note ? note.htmlContent : ""
 
@@ -104,42 +138,48 @@ Item {
         ]
     }
 
-    ListView {
-        id: tagsRow
-        anchors { left: parent.left; right: parent.right; bottom: parent.bottom; margins: units.gu(1) }
-        model: root.note ? root.note.tagGuids.length : undefined
-        orientation: ListView.Horizontal
-        spacing: units.gu(1)
-        height: visible ? units.gu(3) : 0
-        visible: root.note ? root.note.tagGuids.length > 0 ? true : false : false
+    Item {
+        id: buttonPanel
+        anchors { left: parent.left; right: parent.right; bottom: parent.bottom }
+        height: units.gu(6)
 
-        delegate: Rectangle {
-            id: rectangle
-            radius: units.gu(1)
-            color: "white"
-            border.color: preferences.colorForNotebook(root.note.notebookGuid)
+        RowLayout {
+            anchors { left: parent.left; right: parent.right; fill: parent }
+            anchors.margins: units.gu(1)
+            height: units.gu(4)
 
-            Text {
-                text: NotesStore.tag(root.note.tagGuids[index]).name
-                color: preferences.colorForNotebook(root.note.notebookGuid)
-                Component.onCompleted: {
-                    rectangle.width = width + units.gu(2)
-                    rectangle.height = height + units.gu(1)
-                    anchors.centerIn = parent
+            RtfButton {
+                iconName: "tick"
+                // TRANSLATORS: Button to close the note viewer
+                text: i18n.tr("Close")
+                height: parent.height
+                iconColor: UbuntuColors.green
+                onClicked: {
+                    pageStack.pop()
                 }
             }
 
-            MouseArea {
-                anchors.fill: parent
+            RtfSeparator {}
+
+            Item {
+                Layout.fillWidth: true
+            }
+
+            RtfSeparator {}
+
+            RtfButton {
+                iconName: "edit"
+                // TRANSLATORS: Button to go from note viewer to note editor
+                text: i18n.tr("Edit")
+                height: parent.height
+                iconColor: UbuntuColors.green
                 onClicked: {
-                    if (!narrowMode) {
-                        sideViewLoader.clear();
-                    }
-                    root.openTaggedNotes(NotesStore.tag(root.note.tagGuids[index]).name, NotesStore.tag(root.note.tagGuids[index]).guid)
+                    root.editNote()
                 }
             }
         }
     }
+
 
     ContentItem {
         id: exportItem

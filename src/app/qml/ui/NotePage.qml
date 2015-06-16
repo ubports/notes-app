@@ -28,42 +28,14 @@ Page {
     property bool readOnly: false
 
     signal editNote(var note)
-    signal openTaggedNotes(string title, string tagGuid)
 
-    head {
-        actions: !root.readOnly ? normalActions : []
-        property list<Action> normalActions: [
-            Action {
-                text: i18n.tr("Edit")
-                iconName: "edit"
-                onTriggered: {
-                    root.editNote(root.note)
-                }
-            },
-            Action {
-                text: note.reminder ? i18n.tr("Edit reminder") : i18n.tr("Set reminder")
-                iconName: note.reminder ? "reminder" : "reminder-new"
-                onTriggered: {
-                    pageStack.push(Qt.resolvedUrl("SetReminderPage.qml"), { note: root.note});
-                }
-            },
-            Action {
-                text: i18n.tr("Delete")
-                iconName: "delete"
-                onTriggered: {
-                    NotesStore.deleteNote(note.guid);
-                    pagestack.pop();
-                }
-            }
-        ]
-    }
 
     NoteView {
         id: noteView
         anchors.fill: parent
 
-        onOpenTaggedNotes: {
-            root.openTaggedNotes(title, tagGuid);
+        onEditNote: {
+            root.editNote(root.note)
         }
     }
 }

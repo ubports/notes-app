@@ -174,6 +174,7 @@ Dialog {
                     else {
                         root.note.tagGuids.push(model.guid);
                     }
+                    NotesStore.saveNote(root.note.guid);
                 }
             }
         }
