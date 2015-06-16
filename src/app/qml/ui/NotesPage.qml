@@ -141,6 +141,24 @@ PageWithBottomEdge {
         id: notes
     }
 
+    function sortOrderToString(sortOrder){
+        print("asking for sortOrder", sortOrder, Notes.SortOrderDateUpdatedNewest)
+        switch(sortOrder) {
+        case Notes.SortOrderDateCreatedNewest:
+        case Notes.SortOrderDateCreatedOldest:
+            print("returning createdString")
+            return "createdString";
+        case Notes.SortOrderDateUpdatedNewest:
+        case Notes.SortOrderDateUpdatedOldest:
+            print("returning updatedString")
+            return "updatedString";
+        case Notes.SortOrderTitleAscending:
+        case Notes.SortOrderTitleDescending:
+            return "title";
+        }
+        return "";
+    }
+
     PulldownListView {
         id: notesListView
         objectName: "notespageListview"
@@ -210,21 +228,7 @@ PageWithBottomEdge {
 
             return ViewSection.FullString
         }
-        section.property: {
-            switch(notes.sortOrder) {
-            case Notes.SortOrderDateCreatedNewest:
-            case Notes.SortOrderDateCreatedOldest:
-                return "createdString";
-            case Notes.SortOrderDateUpdatedNewest:
-            case Notes.SortOrderDateUpdatedOldest:
-                return "updatedString";
-            case Notes.SortOrderTitleAscending:
-            case Notes.SortOrderTitleDescending:
-                return "title";
-            }
-            return "";
-        }
-
+        section.property: root.sortOrderToString(notes.sortOrder);
 
         section.delegate: Empty {
             height: units.gu(5)
@@ -236,7 +240,7 @@ PageWithBottomEdge {
                     Layout.fillWidth: true
                 }
                 Label {
-                    text: "(" + notes.sectionCount("createdString", section) + ")"
+                    text: "(" + notes.sectionCount(root.sortOrderToString(notes.sortOrder), section) + ")"
                 }
             }
         }

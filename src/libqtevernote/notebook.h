@@ -37,6 +37,7 @@ class Notebook : public QObject
     Q_PROPERTY(QDateTime lastUpdated READ lastUpdated NOTIFY lastUpdatedChanged)
     Q_PROPERTY(QString lastUpdatedString READ lastUpdatedString NOTIFY lastUpdatedChanged)
     Q_PROPERTY(bool isDefaultNotebook READ isDefaultNotebook WRITE setIsDefaultNotebook NOTIFY isDefaultNotebookChanged)
+    Q_PROPERTY(bool deleted READ deleted NOTIFY deletedChanged)
     // Don't forget to update clone() if you add new properties
 
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
@@ -71,6 +72,7 @@ public:
     bool loading() const;
     bool synced() const;
     bool syncError() const;
+    bool deleted() const;
 
     Notebook *clone();
 
@@ -87,6 +89,7 @@ signals:
     void syncedChanged();
     void syncErrorChanged();
     void isDefaultNotebookChanged();
+    void deletedChanged();
 
 private slots:
     void noteAdded(const QString &noteGuid, const QString &notebookGuid);
@@ -101,6 +104,7 @@ private:
     void setSyncError(bool syncError);
     void setUpdateSequenceNumber(qint32 updateSequenceNumber);
     void setLastSyncedSequenceNumber(qint32 lastSyncedSequenceNumber);
+    void setDeleted(bool deleted);
 
     void syncToInfoFile();
     void deleteInfoFile();
@@ -114,6 +118,7 @@ private:
     QDateTime m_lastUpdated;
     bool m_isDefaultNotebook;
     QList<QString> m_notesList;
+    bool m_deleted;
 
     QString m_infoFile;
 

@@ -197,6 +197,7 @@ private slots:
     void fetchTagsJobDone(EvernoteConnection::ErrorCode errorCode, const QString &errorMessage, const std::vector<evernote::edam::Tag> &results);
     void createTagJobDone(EvernoteConnection::ErrorCode errorCode, const QString &errorMessage, const QString &tmpGuid, const evernote::edam::Tag &result);
     void saveTagJobDone(EvernoteConnection::ErrorCode errorCode, const QString &errorMessage, const evernote::edam::Tag &result);
+    void expungeTagJobDone(EvernoteConnection::ErrorCode errorCode, const QString &errorMessage, const QString &guid);
 
     void syncToCacheFile(Note *note);
     void deleteFromCacheFile(Note* note);

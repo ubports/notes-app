@@ -383,7 +383,8 @@ MainView {
         onAuthenticated: {
             EvernoteConnection.token = reply.AccessToken;
             print("token is:", EvernoteConnection.token)
-            if (NetworkingStatus.online) {
+            print("NetworkingStatus.online:", NetworkingStatus.Online)
+            if (NetworkingStatus.Online) {
                 EvernoteConnection.connectToEvernote();
             }
         }

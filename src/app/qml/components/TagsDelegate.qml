@@ -80,6 +80,7 @@ ListItemWithActions {
                 text: model.name
                 fontSize: "large"
                 Layout.fillWidth: true
+                font.strikeout: model.deleted
             }
         }
 
