@@ -85,7 +85,6 @@ Page {
                 height: units.gu(10)
 
                 onItemClicked: {
-                    print("selected tag:", model.guid)
                     root.openTaggedNotes(model.guid)
                 }
                 onDeleteTag: {

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright: 2013 - 2014 Canonical, Ltd
  *
  * This file is part of reminders
@@ -143,7 +143,6 @@ MainView {
             } else {
                 notesPage.conflictMode = conflictMode;
                 view = sideViewLoader.embed(Qt.resolvedUrl("ui/NoteView.qml"))
-                view.openTaggedNotes.connect(function(title, tagGuid) {root.openTaggedNotes(title, tagGuid, false)})
             }
             view.note = note;
         }
@@ -302,7 +301,7 @@ MainView {
     }
 
     function openTaggedNotes(title, tagGuid, narrowMode) {
-        print("opening note page for tag", tagGuid)
+        print("!!!opening note page for tag", tagGuid)
         var page = pagestack.push(Qt.createComponent(Qt.resolvedUrl("ui/NotesPage.qml")), {title: title, filterTagGuid: tagGuid, narrowMode: narrowMode});
         page.selectedNoteChanged.connect(function() {
             if (page.selectedNote) {
@@ -555,20 +554,7 @@ MainView {
 
                     onOpenTaggedNotes: {
                         var tag = NotesStore.tag(tagGuid);
-                        print("opening note page for tag", tagGuid)
-                        var page = pagestack.push(Qt.createComponent(Qt.resolvedUrl("ui/NotesPage.qml")), {title: tag.name, filterTagGuid: tagGuid, narrowMode: root.narrowMode});
-                        page.selectedNoteChanged.connect(function() {
-                            if (page.selectedNote) {
-                                root.displayNote(page.selectedNote);
-                                if (root.narrowMode) {
-                                    page.selectedNote = null;
-                                }
-                            }
-                        })
-                        page.editNote.connect(function(note) {
-                            root.switchToEditMode(note)
-                        })
-                        NotesStore.refreshNotes();
+                        root.openTaggedNotes(tag.name, tag.guid, root.narrowMode)
                     }
 
                     onOpenSearch: root.openSearch();

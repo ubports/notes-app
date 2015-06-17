@@ -83,8 +83,6 @@ Item {
         locationBarController {
             height: locationBar.height
             mode: Oxide.LocationBarController.ModeAuto
-
-            onOffsetChanged: print("offset:", offset)
         }
 
         property string html: root.note ? note.htmlContent : ""

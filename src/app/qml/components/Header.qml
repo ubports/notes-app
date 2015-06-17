@@ -52,7 +52,6 @@ Column {
         width: parent.width
         model: Notebooks {}
 
-
         Component.onCompleted: {
             for (var i = 0; i < model.count; i++) {
                 if (model.notebook(i).guid == root.note.notebookGuid) {
