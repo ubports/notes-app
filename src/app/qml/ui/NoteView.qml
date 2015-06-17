@@ -28,8 +28,6 @@ import "../components"
 
 Item {
     id: root
-//    property string title: contentPeerPicker.visible ? ""
-//                            : (note && note.title) ? note.title : i18n.tr("Untitled")
     property var note: null
 
     signal editNote()
@@ -177,7 +175,6 @@ Item {
             }
         }
     }
-
 
     ContentItem {
         id: exportItem
