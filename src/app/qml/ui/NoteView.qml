@@ -29,6 +29,7 @@ import "../components"
 Item {
     id: root
     property var note: null
+    property bool canClose: false
 
     signal editNote()
 
@@ -150,12 +151,15 @@ Item {
                 text: i18n.tr("Close")
                 height: parent.height
                 iconColor: UbuntuColors.green
+                visible: root.canClose
                 onClicked: {
                     pageStack.pop()
                 }
             }
 
-            RtfSeparator {}
+            RtfSeparator {
+                visible: root.canClose
+            }
 
             Item {
                 Layout.fillWidth: true

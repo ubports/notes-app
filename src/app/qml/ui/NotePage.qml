@@ -33,6 +33,7 @@ Page {
     NoteView {
         id: noteView
         anchors.fill: parent
+        canClose: true
 
         onEditNote: {
             root.editNote(root.note)

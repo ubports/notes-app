@@ -125,7 +125,6 @@ MainView {
             } else {
                 var page = pagestack.push(Qt.createComponent(Qt.resolvedUrl("ui/NotePage.qml")), {readOnly: conflictMode, note: note })
                 page.editNote.connect(function(note) {root.switchToEditMode(note)})
-                page.openTaggedNotes.connect(function(title, tagGuid) {pagestack.pop();root.openTaggedNotes(title, tagGuid, true)})
             }
         } else {
             var view;
@@ -143,6 +142,7 @@ MainView {
             } else {
                 notesPage.conflictMode = conflictMode;
                 view = sideViewLoader.embed(Qt.resolvedUrl("ui/NoteView.qml"))
+                view.editNote.connect(function() {root.switchToEditMode(view.note)})
             }
             view.note = note;
         }
