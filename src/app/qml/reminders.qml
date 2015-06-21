@@ -131,6 +131,7 @@ MainView {
             if (!conflictMode && note.conflicting) {
                 // User wants to open the note even though it is conflicting! Show the Conflict page instead.
                 notesPage.conflictMode = true;
+                sideViewLoader.clear();
                 view = sideViewLoader.embed(Qt.resolvedUrl("ui/NoteConflictView.qml"))
                 view.displayNote.connect(function(note) {root.displayNote(note,true)})
                 view.resolveConflict.connect(function(keepLocal) {
@@ -141,6 +142,7 @@ MainView {
                 })
             } else {
                 notesPage.conflictMode = conflictMode;
+                sideViewLoader.clear();
                 view = sideViewLoader.embed(Qt.resolvedUrl("ui/NoteView.qml"))
                 view.editNote.connect(function() {root.switchToEditMode(view.note)})
             }
