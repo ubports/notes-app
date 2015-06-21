@@ -30,6 +30,7 @@ Column {
     Timer { id: setNotebookTimer; interval: 1; repeat: false; onTriggered: updateNotebook(); }
 
     function updateNotebook() {
+        if (!root.note) return;
         for (var i = 0; i < notebooks.count; i++) {
             if (notebooks.notebook(i).guid == root.note.notebookGuid) {
                 if (notebookSelector.selectedIndex != i) { // Avoid setting it twice as it breaks the animation                    print("setting index:", notebookSelector.selectedIndex, i)
@@ -64,7 +65,6 @@ Column {
     }
 
     ThinDivider {}
-
 
     ItemSelector {
         id: notebookSelector
@@ -137,6 +137,5 @@ Column {
     }
 
     ThinDivider {}
-
 }
 
