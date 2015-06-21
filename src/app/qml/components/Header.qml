@@ -20,6 +20,25 @@ Column {
     signal editReminders();
     signal editTags();
 
+    Notebooks {
+        id: notebooks
+    }
+
+    Component.onCompleted: setNotebookTimer.start();
+    onNoteChanged: setNotebookTimer.start();
+    // in case note is set during creation, the animation breaks if we set selectedIndex. Wait for a eventloop pass
+    Timer { id: setNotebookTimer; interval: 1; repeat: false; onTriggered: updateNotebook(); }
+
+    function updateNotebook() {
+        for (var i = 0; i < notebooks.count; i++) {
+            if (notebooks.notebook(i).guid == root.note.notebookGuid) {
+                if (notebookSelector.selectedIndex != i) { // Avoid setting it twice as it breaks the animation                    print("setting index:", notebookSelector.selectedIndex, i)
+                    notebookSelector.selectedIndex = i;
+                }
+            }
+        }
+    }
+
     TextField {
         id: titleTextField
         height: units.gu(6)
@@ -50,15 +69,7 @@ Column {
     ItemSelector {
         id: notebookSelector
         width: parent.width
-        model: Notebooks {}
-
-        Component.onCompleted: {
-            for (var i = 0; i < model.count; i++) {
-                if (model.notebook(i).guid == root.note.notebookGuid) {
-                    selectedIndex = i;
-                }
-            }
-        }
+        model: notebooks
 
         onDelegateClicked: {
             var newNotebookGuid = model.notebook(index).guid;

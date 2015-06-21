@@ -32,11 +32,6 @@ Item {
     property var note
 
     onNoteChanged: {
-        for (var i = 0; i < notebookSelector.values.count; i++) {
-            if (notebookSelector.values.notebook(i).guid == note.notebookGuid) {
-                notebookSelector.selectedIndex = i;
-            }
-        }
         note.renderWidth = noteTextArea.width - noteTextArea.textMargin * 2
     }
 
