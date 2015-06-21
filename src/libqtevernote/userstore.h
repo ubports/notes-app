@@ -33,26 +33,29 @@ class UserStore : public QObject
     Q_OBJECT
 
     // TODO: Once we need more than just the username, turn this into a class User
-    Q_PROPERTY(QString username READ username NOTIFY usernameChanged)
+    Q_PROPERTY(qint32 userId READ userId NOTIFY userChanged)
+    Q_PROPERTY(QString userName READ userName NOTIFY userChanged)
 
 public:
     static UserStore* instance();
 
-    QString username() const;
+    qint32 userId() const;
+    QString userName() const;
 
 signals:
-    void usernameChanged(const QString &username);
+    void userChanged();
 
 private slots:
     void fetchUsername();
 
-    void fetchUsernameJobDone(EvernoteConnection::ErrorCode errorCode, const QString &errorMessage, const QString &result);
+    void fetchUsernameJobDone(EvernoteConnection::ErrorCode errorCode, const QString &errorMessage, const int userId, const QString &userName);
 
 private:
     static UserStore* s_instance;
     explicit UserStore(QObject *parent = 0);
 
-    QString m_username;
+    qint32 m_userId;
+    QString m_userName;
 };
 
 #endif // USERSTORE_H

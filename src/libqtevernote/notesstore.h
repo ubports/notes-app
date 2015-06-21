@@ -205,7 +205,7 @@ private slots:
     void syncToCacheFile(Tag *tag);
     void loadFromCacheFile();
 
-    void userStoreConnected(const QString &username);
+    void userStoreConnected();
     void emitDataChanged();
     void clear();
 
@@ -214,6 +214,8 @@ private:
     void updateFromEDAM(const evernote::edam::Notebook &evNotebook, Notebook *notebook);
 
     bool handleUserError(EvernoteConnection::ErrorCode errorCode);
+
+    void removeNote(const QString &guid);
 
 private:
     explicit NotesStore(QObject *parent = 0);

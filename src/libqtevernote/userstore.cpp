@@ -57,9 +57,13 @@ UserStore *UserStore::instance()
     return s_instance;
 }
 
-QString UserStore::username() const
+qint32 UserStore::userId() const
 {
-    return m_username;
+    return m_userId;
+}
+QString UserStore::userName() const
+{
+    return m_userName;
 }
 
 void UserStore::fetchUsername()
@@ -69,18 +73,21 @@ void UserStore::fetchUsername()
         connect(job, &FetchUsernameJob::jobDone, this, &UserStore::fetchUsernameJobDone);
         EvernoteConnection::instance()->enqueue(job);
     } else {
-        m_username.clear();
-        emit usernameChanged(m_username);
+        m_userId = -1;
+        m_userName.clear();
+        emit userChanged();
     }
 }
 
-void UserStore::fetchUsernameJobDone(EvernoteConnection::ErrorCode errorCode, const QString &errorMessage, const QString &result)
+void UserStore::fetchUsernameJobDone(EvernoteConnection::ErrorCode errorCode, const QString &errorMessage, const int userId, const QString &userName)
 {
     if (errorCode != EvernoteConnection::ErrorCodeNoError) {
         qCWarning(dcConnection) << "Error fetching username:" << errorMessage;
         return;
     }
 
-    m_username = result;
-    emit usernameChanged(m_username);
+    qCDebug(dcConnection) << "FetchUsername done. User ID:" << userId << "User name:" << userName;
+    m_userId = userId;
+    m_userName = userName;
+    emit userChanged();
 }

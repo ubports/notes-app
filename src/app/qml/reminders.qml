@@ -280,9 +280,13 @@ MainView {
     }
 
     function registerPushClient() {
-        console.log("Registering push client");
+        console.log("Registering push client", JSON.stringify({
+                                                                  "userId" : "" +  UserStore.userId,
+                                                                  "appId": root.applicationName + "_reminders",
+                                                                  "token": pushClient.token
+                                                              }));
         var req = new XMLHttpRequest();
-        req.open("post", "http://162.213.35.108/register", true);
+        req.open("post", "https://push.ubuntu.com/gateway/register", true);
         req.setRequestHeader("content-type", "application/json");
         req.onreadystatechange = function() {//Call a function when the state changes.
             print("push client register response")
@@ -295,7 +299,7 @@ MainView {
             }
         }
         req.send(JSON.stringify({
-            "userId" : UserStore.username,
+            "userId" : "" + UserStore.userId,
             "appId": root.applicationName + "_reminders",
             "token": pushClient.token
         }))
@@ -324,18 +328,30 @@ MainView {
         onNotificationsChanged: {
             print("PushClient notification:", notifications)
             var notification = JSON.parse(notifications)["payload"];
-            print("user", notification["userId"])
-            if (notification["userId"] !== UserStore.username) {
-                console.warn("user mismatch:", notification["userId"], "!=", UserStore.username)
+
+            if (notification["userId"] != UserStore.userId) { // Yes, we want type coercion here.
+                console.warn("user mismatch:", notification["userId"], "!=", UserStore.userId)
                 return;
             }
 
-            if (notification["notebookGUID"] !== undefined) {
+            switch(notification["reason"]) {
+            case "update":
+                print("Note updated on server:", notification["guid"])
+                if (NotesStore.note(notification["guid"]) === null) {
+                    NotesStore.refreshNotes();
+                } else {
+                    NotesStore.refreshNoteContent(notification["guid"]);
+                }
+                break;
+            case "create":
+                print("New note appeared on server:", notification["guid"])
+                NotesStore.refreshNotes();
+                break;
+            case "notebook_update":
                 NotesStore.refreshNotebooks();
-                NotesStore.refreshNotes(notification["notebookGUID"]);
-            }
-            if (notification["noteGUID"] !== undefined) {
-                NotesStore.refreshNoteContent(notification["noteGUID"]);
+                break;
+            default:
+                console.warn("Unhandled push notification:", notification["reason"])
             }
         }
 
@@ -412,10 +428,10 @@ MainView {
 
     Connections {
         target: UserStore
-        onUsernameChanged: {
-            print("Logged in as user:", UserStore.username);
-            // Disabling push notifications as we haven't had a chance to properly test that yet
-            //registerPushClient();
+        onUserChanged: {
+            print("Logged in as user:", UserStore.userId, UserStore.userName);
+            preferences.setTokenForUser(UserStore.userId, EvernoteConnection.token);
+            registerPushClient();
         }
     }
 

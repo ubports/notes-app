@@ -9,7 +9,7 @@ class Core: public QObject
 public:
     Core(QObject *parent = 0);
 
-    void process(const QByteArray &pushNotification);
+    bool process(const QByteArray &pushNotification);
 
 
 signals:

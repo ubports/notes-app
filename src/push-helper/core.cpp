@@ -4,35 +4,48 @@
 #include "notesstore.h"
 #include "note.h"
 
+#include <Accounts/Manager>
+#include <Accounts/AccountService>
+
 #include <QDebug>
 #include <QOrganizerEvent>
+#include <QStandardPaths>
+#include <QJsonDocument>
 
 Core::Core(QObject *parent):
     QObject(parent)
 {
-    qDebug() << "Core starting up";
     connect(EvernoteConnection::instance(), &EvernoteConnection::isConnectedChanged, this, &Core::connectedChanged);
-    qDebug() << "EvernoteConnection created";
     connect(NotesStore::instance(), &NotesStore::loadingChanged, this, &Core::notesLoaded);
-    qDebug() << "notestore created";
-//    connect(&m_oaSetup, &OnlineAccountsClient::Setup::finished, this, &Core::oaRequestFinished);
+}
 
+bool Core::process(const QByteArray &pushNotification)
+{
+    qDebug() << "should process:" << pushNotification;
 
-//    m_oaSetup.setApplicationId("com.ubuntu.reminders_reminders");
-//    m_oaSetup.setServiceTypeId("evernote");
-//    m_oaSetup.exec();
-//    qDebug() << "OA request started";
+    QJsonParseError error;
+    QJsonDocument jsonDoc = QJsonDocument::fromJson(pushNotification, &error);
+    if (error.error != QJsonParseError::NoError) {
+        qDebug() << "Error parsing notification json:" << error.errorString();
+        return false;
+    }
+    QVariantMap notification = jsonDoc.toVariant().toMap().value("payload").toMap();
 
-    EvernoteConnection::instance()->setToken("S=s358:U=39eb980:E=1516e9a3575:C=14a16e90690:P=185:A=canonicalis:V=2:H=737f36850d4943e61ff2fcf7b4c809e2");
+    QSettings settings(QStandardPaths::standardLocations(QStandardPaths::ConfigLocation).first() + "/com.ubuntu.reminders/reminders.conf", QSettings::IniFormat);
+    settings.beginGroup("accounts");
+    QString token = settings.value(notification.value("userId").toString()).toString();
+    settings.endGroup();
+
+    if (token.isEmpty()) {
+        qDebug() << "No token found for this userId in " + settings.fileName() + ". Discarding push notification...";
+        return false;
+    }
+
+    EvernoteConnection::instance()->setToken(token);
     EvernoteConnection::instance()->setHostname("www.evernote.com");
     EvernoteConnection::instance()->connectToEvernote();
 
-    qDebug() << "Core created";
-}
-
-void Core::process(const QByteArray &pushNotification)
-{
-    qDebug() << "should process:" << pushNotification;
+    return true;
 }
 
 void Core::connectedChanged()
@@ -48,13 +61,5 @@ void Core::connectedChanged()
 void Core::notesLoaded()
 {
     qDebug() << "notes loading changed:" << NotesStore::instance()->loading();
-    foreach (Note *note, NotesStore::instance()->notes()) {
-        qDebug() << "have note" << note->title();
-        qDebug() << "content:" << note->plaintextContent();
-    }
 }
 
-void Core::oaRequestFinished(const QVariantMap &reply)
-{
-    qDebug() << "OA reply" << reply;
-}
