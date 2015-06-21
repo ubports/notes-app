@@ -66,7 +66,7 @@ Item {
 
             onEditReminders: {
                 print("pushing reminderspage", root.note.reminder)
-                pageStack.push(Qt.resolvedUrl("SetReminderPage.qml"), { note: root.note});
+                pagestack.push(Qt.resolvedUrl("SetReminderPage.qml"), { note: root.note});
             }
             onEditTags: {
                 PopupUtils.open(Qt.resolvedUrl("../components/EditTagsDialog.qml"), root, { note: root.note, pageHeight: root.height });
