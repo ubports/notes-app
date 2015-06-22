@@ -42,7 +42,8 @@ using namespace apache::thrift::transport;
 UserStore* UserStore::s_instance = 0;
 
 UserStore::UserStore(QObject *parent) :
-    QObject(parent)
+    QObject(parent),
+    m_userId(-1)
 {
     connect(EvernoteConnection::instance(), &EvernoteConnection::isConnectedChanged, this, &UserStore::fetchUsername);
 

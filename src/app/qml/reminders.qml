@@ -431,7 +431,9 @@ MainView {
         onUserChanged: {
             print("Logged in as user:", UserStore.userId, UserStore.userName);
             preferences.setTokenForUser(UserStore.userId, EvernoteConnection.token);
-            registerPushClient();
+            if (UserStore.userId >= 0) {
+                registerPushClient();
+            }
         }
     }
 
