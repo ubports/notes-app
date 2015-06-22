@@ -102,21 +102,20 @@ MainView {
     Connections {
         target: ContentHub
         onImportRequested: {
-            importTransfer = transfer
+            importTransfer = transfer;
             var popup = PopupUtils.open(importQuestionComponent);
             popup.accepted.connect(function(createNew) {
-                PopupUtils.close(popup)
+                PopupUtils.close(popup);
                 if (createNew) {
-                    var note = NotesStore.createNote(i18n.tr("Untitled"))
+                    var note = NotesStore.createNote(i18n.tr("Untitled"));
                     handleImportTransfer(note);
                 }
             })
 
             popup.rejected.connect(function() {
-                PopupUtils.close(popup)
+                PopupUtils.close(popup);
                 importTransfer = null;
             })
-
         }
     }
 
@@ -520,7 +519,6 @@ MainView {
         }
     }
 
-
     PageStack {
         id: pagestack
         anchors.rightMargin: root.narrowMode ? 0 : root.width - units.gu(40)
@@ -745,7 +743,9 @@ MainView {
             title: importTransfer.items.length > 1 ?
                        i18n.tr("Importing %1 items").arg(importTransfer.items.length)
                      : i18n.tr("Importing 1 item")
-            text: i18n.tr("Do you want to create a new note for this item or do you want to attach it to an existing note?")
+            text: importTransfer.items.length > 1 ?
+                      i18n.tr("Do you want to create a new note for those items or do you want to attach them to an existing note?")
+                    : i18n.tr("Do you want to create a new note for this item or do you want to attach it to an existing note?")
 
             signal accepted(bool createNew);
             signal rejected();
