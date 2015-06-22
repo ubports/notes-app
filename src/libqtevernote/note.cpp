@@ -277,7 +277,7 @@ void Note::setRichTextContent(const QString &richTextContent)
 
 QString Note::plaintextContent() const
 {
-    return m_content.toPlaintext().trimmed();
+    return m_content.toPlaintext();
 }
 
 QString Note::tagline() const
@@ -568,6 +568,20 @@ void Note::addTag(const QString &tagGuid)
 void Note::removeTag(const QString &tagGuid)
 {
     NotesStore::instance()->untagNote(m_guid, tagGuid);
+}
+
+void Note::insertText(int position, const QString &text)
+{
+    m_content.insertText(position, text);
+    m_tagline = m_content.toPlaintext().left(100);
+    emit contentChanged();
+}
+
+void Note::insertLink(int position, const QString &url)
+{
+    m_content.insertLink(position, url);
+    m_tagline = m_content.toPlaintext().left(100);
+    emit contentChanged();
 }
 
 int Note::renderWidth() const

@@ -142,15 +142,12 @@ PageWithBottomEdge {
     }
 
     function sortOrderToString(sortOrder){
-        print("asking for sortOrder", sortOrder, Notes.SortOrderDateUpdatedNewest)
         switch(sortOrder) {
         case Notes.SortOrderDateCreatedNewest:
         case Notes.SortOrderDateCreatedOldest:
-            print("returning createdString")
             return "createdString";
         case Notes.SortOrderDateUpdatedNewest:
         case Notes.SortOrderDateUpdatedOldest:
-            print("returning updatedString")
             return "updatedString";
         case Notes.SortOrderTitleAscending:
         case Notes.SortOrderTitleDescending:

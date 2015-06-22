@@ -26,6 +26,7 @@ import Evernote 0.1
 import Ubuntu.OnlineAccounts 0.1
 import Ubuntu.OnlineAccounts.Client 0.1
 import Ubuntu.PushNotifications 0.1
+import Ubuntu.Content 1.0
 import "components"
 import "ui"
 
@@ -79,6 +80,45 @@ MainView {
         }
     }
 
+    property var importTransfer: null
+    function handleImportTransfer(note) {
+        if (importTransfer == null) return;
+
+        for (var i = 0; i < importTransfer.items.length; i++) {
+            var url = importTransfer.items[i].url;
+            switch (importTransfer.contentType) {
+            case ContentType.Links:
+                note.insertLink(note.plaintextContent.length, url)
+                break;
+            default:
+                note.attachFile(note.plaintextContent.length, url)
+                break;
+            }
+        }
+        note.save();
+        importTransfer = null;
+    }
+
+    Connections {
+        target: ContentHub
+        onImportRequested: {
+            importTransfer = transfer;
+            var popup = PopupUtils.open(importQuestionComponent);
+            popup.accepted.connect(function(createNew) {
+                PopupUtils.close(popup);
+                if (createNew) {
+                    var note = NotesStore.createNote(i18n.tr("Untitled"));
+                    handleImportTransfer(note);
+                }
+            })
+
+            popup.rejected.connect(function() {
+                PopupUtils.close(popup);
+                importTransfer = null;
+            })
+        }
+    }
+
     Timer {
         id: connectDelayTimer
         interval: 2000
@@ -105,6 +145,10 @@ MainView {
     function displayNote(note, conflictMode) {
         if (conflictMode == undefined) {
             conflictMode = false;
+        }
+
+        if (importTransfer != null) {
+            handleImportTransfer(note);
         }
 
         print("displayNote:", note.guid)
@@ -455,26 +499,43 @@ MainView {
         }
     }
 
-    StatusBar {
+    Column {
         id: statusBar
         anchors { left: parent.left; right: parent.right; top: parent.top; topMargin: units.gu(9) }
-        color: root.backgroundColor
-        shown: text
-        text: EvernoteConnection.error || NotesStore.error
-        iconName: "sync-error"
 
-        Timer {
-            interval: 5000
-            repeat: true
-            running: NotesStore.error
-            onTriggered: NotesStore.clearError();
+        StatusBar {
+            anchors { left: parent.left; right: parent.right }
+            color: root.backgroundColor
+            shown: text
+            text: EvernoteConnection.error || NotesStore.error
+            iconName: "sync-error"
+            iconColor: UbuntuColors.red
+            showCancelButton: true
+
+            onCancel: {
+                NotesStore.clearError();
+            }
+
+            Timer {
+                interval: 5000
+                repeat: true
+                running: NotesStore.error
+                onTriggered: NotesStore.clearError();
+            }
         }
 
-        MouseArea {
-            anchors.fill: parent
-            onClicked: NotesStore.clearError();
-        }
+        StatusBar {
+            anchors { left: parent.left; right: parent.right }
+            color: root.backgroundColor
+            shown: importTransfer != null
+            text: importTransfer.items.length === 1 ? i18n.tr("Select note to attach imported file") : i18n.tr("Select note to attach imported files")
+            iconName: "document-save"
+            showCancelButton: true
 
+            onCancel: {
+                importTransfer = null;
+            }
+        }
     }
 
     PageStack {
@@ -676,6 +737,39 @@ MainView {
                     onClicked: setup.exec()
                     Layout.fillWidth: true
                 }
+            }
+        }
+    }
+
+    Component {
+        id: importQuestionComponent
+
+        Dialog {
+            id: importDialog
+            title: importTransfer.items.length > 1 ?
+                       i18n.tr("Importing %1 items").arg(importTransfer.items.length)
+                     : i18n.tr("Importing 1 item")
+            text: importTransfer.items.length > 1 ?
+                      i18n.tr("Do you want to create a new note for those items or do you want to attach them to an existing note?")
+                    : i18n.tr("Do you want to create a new note for this item or do you want to attach it to an existing note?")
+
+            signal accepted(bool createNew);
+            signal rejected();
+
+            Button {
+                text: i18n.tr("Create new note")
+                onClicked: importDialog.accepted(true)
+                color: UbuntuColors.green
+            }
+            Button {
+                text: i18n.tr("Attach to existing note")
+                onClicked: importDialog.accepted(false);
+                color: UbuntuColors.blue
+            }
+            Button {
+                text: i18n.tr("Cancel import")
+                onClicked: importDialog.rejected();
+                color: UbuntuColors.red
             }
         }
     }

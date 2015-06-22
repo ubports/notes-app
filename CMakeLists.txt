@@ -74,6 +74,7 @@ if(CLICK_MODE)
         reminders.url-dispatcher
         push-helper.json
         push-helper.apparmor
+        reminders-contenthub.json
         DESTINATION ${CMAKE_INSTALL_PREFIX})
 install(FILES COPYING DESTINATION ${CMAKE_INSTALL_PREFIX})
 else(CLICK_MODE)
