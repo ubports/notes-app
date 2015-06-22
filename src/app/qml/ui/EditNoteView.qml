@@ -32,24 +32,18 @@ Item {
     property var note
 
     onNoteChanged: {
-        for (var i = 0; i < notebookSelector.values.count; i++) {
-            if (notebookSelector.values.notebook(i).guid == note.notebookGuid) {
-                notebookSelector.selectedIndex = i;
-            }
-        }
         note.renderWidth = noteTextArea.width - noteTextArea.textMargin * 2
     }
 
     signal exitEditMode(var note)
 
     function saveNote() {
-        var title = titleTextField.text ? titleTextField.text : i18n.tr("Untitled");
-        var notebookGuid = notebookSelector.selectedGuid;
+        var title = header.title ? header.title : i18n.tr("Untitled");
+        var notebookGuid = header.notebookGuid;
         var text = noteTextArea.text;
 
         if (note) {
             note.title = title;
-            note.notebookGuid = notebookGuid;
             note.richTextContent = text;
             NotesStore.saveNote(note.guid);
         } else {
@@ -120,11 +114,11 @@ Item {
 
                  function ensureVisible(r)
                  {
-                     var staticHeight = titleTextField.height + notebookSelector.height
+                     var staticHeight = header.height
                      if (contentX >= r.x)
                          contentX = r.x;
-                     else if (contentX +width <= r.x+r.width)
-                         contentX = r.x+r.width-width;
+                     else if (contentX + width <= r.x + r.width)
+                         contentX = r.x + r.width-width;
                      if (contentY >= r.y)
                          contentY = r.y;
                      else if (contentY + height <= r.y + staticHeight + r.height) {
@@ -137,84 +131,22 @@ Item {
                      width: parent.width
                      height: childrenRect.height
 
-                     TextField {
-                         id: titleTextField
-                         height: units.gu(6)
-                         width: parent.width
-                         text: root.note ? root.note.title : ""
-                         placeholderText: i18n.tr("Untitled")
-                         font.pixelSize: units.gu(4)
-                         style: TextFieldStyle {
-                             background: null
-                         }
+                     Header {
+                        id: header
+                        note: root.note
+
+                        onEditReminders: {
+                            pageStack.push(Qt.resolvedUrl("SetReminderPage.qml"), { note: root.note});
+                        }
+                        onEditTags: {
+                            PopupUtils.open(Qt.resolvedUrl("../components/EditTagsDialog.qml"), root, { note: root.note, pageHeight: root.height});
+                        }
                      }
-
-                     ThinDivider {}
-
-                     ValueSelector {
-                         id: notebookSelector
-                         width: parent.width
-                         text: values.notebook(selectedIndex).name
-                         property string selectedGuid: values.notebook(selectedIndex) ? values.notebook(selectedIndex).guid : ""
-                         values: Notebooks {}
-
-                         // The ValueSelector is not customizable enough, yet we wanna use the expanstion it provides. Let's just paint on top of it
-
-                         Rectangle {
-                             anchors { left: parent.left; right: parent.right; top: parent.top }
-                             height: units.gu(6)
-                             color: "white"
-
-                             RowLayout {
-                                 anchors.fill: parent
-                                 anchors.margins: units.gu(1)
-
-                                 Item {
-                                     height: parent.height
-                                     width: height
-                                     Icon {
-                                         anchors.fill: parent
-                                         anchors.margins: units.gu(0.5)
-                                         name: "notebook"
-                                         color: preferences.colorForNotebook(notebookSelector.values.notebook(notebookSelector.selectedIndex).guid)
-                                     }
-                                 }
-
-                                 Label {
-                                     text: notebookSelector.values.notebook(notebookSelector.selectedIndex).name
-                                     Layout.fillWidth: true
-                                     color: preferences.colorForNotebook(notebookSelector.values.notebook(notebookSelector.selectedIndex).guid)
-                                 }
-                                 RtfButton {
-                                     iconName: root.note && root.note.reminder ? "reminder" : "reminder-new"
-                                     height: parent.height
-                                     width: height
-                                     iconColor: root.note && note.reminder ? UbuntuColors.blue : Qt.rgba(0.0, 0.0, 0.0, 0.0)
-                                     onClicked: {
-                                         Qt.inputMethod.hide();
-                                         pageStack.push(Qt.resolvedUrl("SetReminderPage.qml"), { note: root.note});
-                                     }
-                                 }
-                                 RtfButton {
-                                     id: tagsButton
-                                     iconSource: "../images/tags.svg"
-                                     height: parent.height
-                                     width: height
-                                     onClicked: {
-                                         Qt.inputMethod.hide();
-                                         PopupUtils.open(tagsDialog)
-                                     }
-                                 }
-                             }
-                         }
-                     }
-
-                     ThinDivider {}
 
                      TextEdit {
                          id: noteTextArea
                          width: flick.width
-                         height: Math.max(flick.height - notebookSelector.height - titleTextField.height, paintedHeight)
+                         height: Math.max(flick.height - header.height, paintedHeight)
                          focus: true
                          wrapMode: TextEdit.Wrap
                          textFormat: TextEdit.RichText
@@ -413,11 +345,6 @@ Item {
                 }
             }
         }
-    }
-
-    Component {
-        id: tagsDialog
-        EditTagsDialog { note: root.note; pageHeight: parent.height }
     }
 
     Rectangle {

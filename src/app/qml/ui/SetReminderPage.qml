@@ -26,8 +26,6 @@ Page {
     title: setReminderView.title
     property alias note: setReminderView.note
 
-    signal editNote(var note)
-
     SetReminderView {
         id: setReminderView
         anchors.fill: parent
