@@ -4,9 +4,6 @@
 #include "notesstore.h"
 #include "note.h"
 
-#include <Accounts/Manager>
-#include <Accounts/AccountService>
-
 #include <QDebug>
 #include <QOrganizerEvent>
 #include <QStandardPaths>
