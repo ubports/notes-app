@@ -33,7 +33,7 @@ Column {
         if (!root.note) return;
         for (var i = 0; i < notebooks.count; i++) {
             if (notebooks.notebook(i).guid == root.note.notebookGuid) {
-                if (notebookSelector.selectedIndex != i) { // Avoid setting it twice as it breaks the animation                    print("setting index:", notebookSelector.selectedIndex, i)
+                if (notebookSelector.selectedIndex != i) { // Avoid setting it twice as it breaks the animation
                     notebookSelector.selectedIndex = i;
                 }
             }
