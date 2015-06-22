@@ -17,7 +17,6 @@ signals:
 
 private slots:
     void connectedChanged();
-    void oaRequestFinished(const QVariantMap &reply);
 
     void notesLoaded();
 };
