@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-16 17:45+0200\n"
-"PO-Revision-Date: 2015-06-29 05:33+0000\n"
+"PO-Revision-Date: 2015-06-29 06:13+0000\n"
 "Last-Translator: Ian Li <Unknown>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-06-29 05:39+0000\n"
+"X-Launchpad-Export-Date: 2015-06-30 05:52+0000\n"
 "X-Generator: Launchpad (build 17578)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
@@ -27,7 +27,7 @@ msgstr "Ubuntu 日程提醒应用，印象笔记出品"
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
-msgstr "记事本："
+msgstr "笔记本："
 
 #: src/app/qml/components/ConflictDelegate.qml:63
 msgid "Reminder:"
@@ -121,33 +121,33 @@ msgstr "解决冲突"
 msgid ""
 "This will <b>keep the changes made on this device</b> and <b>restore the "
 "note on Evernote</b>."
-msgstr "这将把<b>所做的改动保留在本设备</b> 并 <b>恢复Evernote上的记事</b>。"
+msgstr "这将把<b>所做的改动保存在本设备</b> 并 <b>恢复 Evernote 上的笔记</b>。"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:32
 msgid "This will <b>delete the changed note on Evernote</b>."
-msgstr "这将<b>在Evernote上删除已变动的记事</b>。"
+msgstr "这将<b>在Evernote上删除已变动的笔记</b>。"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:34
 msgid ""
 "This will <b>keep the changes made on this device</b> and <b>discard any "
 "changes made on Evernote</b>."
-msgstr ""
+msgstr "这将<b>保留在本设备上所做的改动</b> 并 <b>丢弃 Evernote 上的任何改动</b>。"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:38
 msgid "This will <b>delete the changed note on this device</b>."
-msgstr "这将<b>在本设备上删除已变动的记事</b>。"
+msgstr "这将<b>删除本设备上已改动的笔记</b>。"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:40
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>restore it "
 "on this device</b>."
-msgstr ""
+msgstr "这将 <b>从 Evernote 下载改动过的笔记</b> 并 <b>在本设备上恢复它</b>。"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:42
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>discard any "
 "changes made on this device</b>."
-msgstr ""
+msgstr "这将 <b>从 Evernote 下载改动过的笔记</b> 并 <b>丢弃在本设备所做的任何改动</b>。"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:45
 msgid "Are you sure you want to continue?"
@@ -193,15 +193,15 @@ msgstr "标题（降序）"
 
 #: src/app/qml/reminders.qml:385
 msgid "Default notebook"
-msgstr "默认记事本"
+msgstr "默认笔记本"
 
 #: src/app/qml/reminders.qml:491
 msgid "Notes"
-msgstr "记事"
+msgstr "笔记"
 
 #: src/app/qml/reminders.qml:519
 msgid "Notebooks"
-msgstr "记事本"
+msgstr "笔记本"
 
 #: src/app/qml/reminders.qml:600
 msgid "Accounts"
@@ -212,8 +212,8 @@ msgid ""
 "No note selected.\n"
 "Select a note to see it in detail."
 msgstr ""
-"没有选择记事。\n"
-"请选择要查看的记事。"
+"没有选择笔记。\n"
+"请选择要查看的笔记。"
 
 #: src/app/qml/reminders.qml:662
 msgid "Setup Evernote connection?"
@@ -221,17 +221,17 @@ msgstr "设置Evernote连接？"
 
 #: src/app/qml/reminders.qml:663
 msgid "Reminders can store your notes and reminders locally on this device."
-msgstr ""
+msgstr "提醒工具能在本设备上存储您的笔记和提醒。"
 
 #: src/app/qml/reminders.qml:664
 msgid ""
 "In order to synchronize notes with Evernote, an account at Evernote is "
 "required."
-msgstr ""
+msgstr "为了能与 Evernote 同步笔记，必需有 Evernote 账户。"
 
 #: src/app/qml/reminders.qml:665
 msgid "Do you want to setup an account now?"
-msgstr ""
+msgstr "您打算现在设置一个账户吗？"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
@@ -239,7 +239,7 @@ msgstr "选择账户"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:44
 msgid "Store notes locally only"
-msgstr "仅在本地保存记事"
+msgstr "仅在本地保存笔记"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:52
 msgid "Accounts on www.evernote.com"
@@ -280,33 +280,33 @@ msgstr "U"
 #. TRANSLATORS: Toolbar button for "Strikeout"
 #: src/app/qml/ui/EditNoteView.qml:524
 msgid "T"
-msgstr ""
+msgstr "T"
 
 #: src/app/qml/ui/NoteConflictPage.qml:27
 msgid "Conflicting changes"
-msgstr ""
+msgstr "冲突的更改"
 
 #: src/app/qml/ui/NoteConflictView.qml:54
 msgid ""
 "This note has been modified in multiple places. Please choose the version to "
 "be opened and delete the other."
-msgstr ""
+msgstr "这条笔记在多个设备上被改动。请选择需要打开的版本，并将其余的删除。"
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Deleted on this device:"
-msgstr ""
+msgstr "在本设备上删除的："
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Modified on this device:"
-msgstr ""
+msgstr "在本设备上修改的："
 
 #: src/app/qml/ui/NoteConflictView.qml:85
 msgid "Deleted from Evernote:"
-msgstr ""
+msgstr "从 Evernote 上删除的："
 
 #: src/app/qml/ui/NoteConflictView.qml:85
 msgid "Modified somewhere else:"
-msgstr ""
+msgstr "在其它地方修改的："
 
 #: src/app/qml/ui/NotePage.qml:44 src/app/qml/ui/NotesPage.qml:109
 msgid "Set reminder"
@@ -314,11 +314,11 @@ msgstr "设定提醒"
 
 #: src/app/qml/ui/NoteView.qml:146
 msgid "Attachment"
-msgstr ""
+msgstr "附件"
 
 #: src/app/qml/ui/NotebooksPage.qml:45
 msgid "Add notebook"
-msgstr "添加记事本"
+msgstr "添加笔记本"
 
 #: src/app/qml/ui/NotebooksPage.qml:55 src/app/qml/ui/NotesPage.qml:89
 #: src/app/qml/ui/RemindersPage.qml:36 src/app/qml/ui/SearchNotesPage.qml:60
@@ -337,44 +337,44 @@ msgstr "保存"
 
 #: src/app/qml/ui/NotebooksPage.qml:198
 msgid "Rename notebook"
-msgstr ""
+msgstr "重命名笔记本"
 
 #: src/app/qml/ui/NotebooksPage.qml:199
 #, qt-format
 msgid "Enter a new name for notebook %1"
-msgstr ""
+msgstr "请输入笔记本 %1 的新名称"
 
 #: src/app/qml/ui/NotebooksPage.qml:208 src/app/qml/ui/TagsPage.qml:144
 msgid "Name cannot be empty"
-msgstr ""
+msgstr "名字不能为空"
 
 #: src/app/qml/ui/NotebooksPage.qml:212 src/app/qml/ui/TagsPage.qml:148
 msgid "OK"
-msgstr ""
+msgstr "确定"
 
 #: src/app/qml/ui/NotesPage.qml:43 src/app/qml/ui/NotesPage.qml:63
 msgid "Add note"
-msgstr "添加记事"
+msgstr "添加笔记"
 
 #: src/app/qml/ui/NotesPage.qml:74
 msgid "Sorting"
-msgstr ""
+msgstr "正在排序"
 
 #: src/app/qml/ui/NotesPage.qml:254
 msgid ""
 "No notes available. You can create new notes by pulling the note editor up "
 "from the bottom edge."
-msgstr ""
+msgstr "没有笔记可列。从底边上划拉出笔记编辑器，您可以开始创建新笔记。"
 
 #: src/app/qml/ui/RemindersPage.qml:97
 msgid ""
 "No reminders available. You can create new reminders by setting a reminder "
 "when viewing a note."
-msgstr ""
+msgstr "没有可用的提醒。您可以通过查看笔记时设置提醒创建新的提醒。"
 
 #: src/app/qml/ui/SearchNotesPage.qml:32
 msgid "Search notes"
-msgstr ""
+msgstr "搜索笔记"
 
 #: src/app/qml/ui/SetReminderView.qml:36
 msgid "Select date and time for the reminder:"
@@ -383,91 +383,91 @@ msgstr "为一个提醒选择日期和时间："
 #. TRANSLATORS: A checkbox with marks the reminder as done
 #: src/app/qml/ui/SetReminderView.qml:64
 msgid "Reminder done"
-msgstr ""
+msgstr "完成提醒"
 
 #: src/app/qml/ui/TagsPage.qml:127
 msgid "No tags available. You can tag notes while viewing them."
-msgstr ""
+msgstr "无可用标签，你可以浏览笔记时关联标签。"
 
 #: src/app/qml/ui/TagsPage.qml:134
 msgid "Rename tag"
-msgstr ""
+msgstr "重命名标签"
 
 #: src/app/qml/ui/TagsPage.qml:135
 #, qt-format
 msgid "Enter a new name for tag %1"
-msgstr ""
+msgstr "输入标签 %1 的新名称"
 
 #: src/libqtevernote/evernoteconnection.cpp:268
 msgid "Offline mode"
-msgstr ""
+msgstr "离线模式"
 
 #: src/libqtevernote/evernoteconnection.cpp:273
 #: src/libqtevernote/evernoteconnection.cpp:362
 msgid "Unknown error connecting to Evernote."
-msgstr ""
+msgstr "连接 Evernote 时发生未知错误。"
 
 #: src/libqtevernote/evernoteconnection.cpp:286
 msgid ""
 "Error connecting to Evernote: Server version does not match app version. "
 "Please update the application."
-msgstr ""
+msgstr "连接 Evernote 出错：服务器与app的版本不匹配。请更新应用。"
 
 #: src/libqtevernote/evernoteconnection.cpp:292
 #: src/libqtevernote/evernoteconnection.cpp:297
 #, qt-format
 msgid "Error connecting to Evernote: Error code %1"
-msgstr ""
+msgstr "连接 Evernote 出错：错误代码 %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:302
 msgid ""
 "Error connecting to Evernote: Cannot download version information from "
 "server."
-msgstr ""
+msgstr "连接 Evernote 出错：无法从服务器获取版本信息。"
 
 #: src/libqtevernote/evernoteconnection.cpp:307
 msgid "Unknown error connecting to Evernote"
-msgstr ""
+msgstr "连接 Evernote 时发生未知错误。"
 
 #: src/libqtevernote/evernoteconnection.cpp:321
 msgid "Error connecting to Evernote: Cannot download server information."
-msgstr ""
+msgstr "连接 Evernote 出错：无法获取服务器信息。"
 
 #: src/libqtevernote/evernoteconnection.cpp:329
 #: src/libqtevernote/notesstore.cpp:1697
 msgid ""
 "Authentication for Evernote server expired. Please renew login information "
 "in the accounts settings."
-msgstr ""
+msgstr "用于 Evernote 服务器的认证已过期。请在账户设置中更新登录信息。"
 
 #: src/libqtevernote/evernoteconnection.cpp:332
 #: src/libqtevernote/evernoteconnection.cpp:350
 #, qt-format
 msgid "Unknown error connecting to Evernote: %1"
-msgstr ""
+msgstr "连接 Evernote 时发生未知错误： %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:341
 msgid ""
 "Error connecting to Evernote: Rate limit exceeded. Please try again later."
-msgstr ""
+msgstr "连接 Evernote 出错：频率超限。请稍后再试。"
 
 #: src/libqtevernote/evernoteconnection.cpp:357
 msgid ""
 "Error connecting to Evernote: Connection failure when downloading server "
 "information."
-msgstr ""
+msgstr "连接 Evernote 出错：下载服务器信息时连接失败。"
 
 #: src/libqtevernote/evernoteconnection.cpp:383
 msgid "Error connecting to Evernote: Connection failure"
-msgstr ""
+msgstr "连接 Evernote 出错：连接失败"
 
 #: src/libqtevernote/evernoteconnection.cpp:387
 msgid "Unknown Error connecting to Evernote"
-msgstr ""
+msgstr "连接 Evernote 时发生未知错误"
 
 #: src/libqtevernote/evernoteconnection.cpp:435
 msgid "Disconnected from Evernote."
-msgstr ""
+msgstr "从 Evernote 断开连接。"
 
 #: src/libqtevernote/note.cpp:162 src/libqtevernote/note.cpp:196
 #: src/libqtevernote/note.cpp:381
@@ -547,29 +547,29 @@ msgstr "%2年%1月"
 msgid ""
 "This account is managed by Evernote. Use the Evernote website to delete "
 "notebooks."
-msgstr ""
+msgstr "此账户由 Evernote 管理。使用 Evernote 网站来删除笔记本。"
 
 #: src/libqtevernote/notesstore.cpp:422
 msgid ""
 "Cannot delete the default notebook. Set another notebook to be the default "
 "first."
-msgstr ""
+msgstr "无法删除默认笔记本。请先将另一个笔记本设为默认。"
 
 #: src/libqtevernote/notesstore.cpp:1700
 msgid "Rate limit for Evernote server exceeded. Please try again later."
-msgstr ""
+msgstr "使用 Evernote 服务器频率超限。请稍后再试。"
 
 #: src/libqtevernote/notesstore.cpp:1703
 msgid "Upload quota for Evernote server exceed. Please try again later."
-msgstr ""
+msgstr "超出 Evernote 服务器上传限额。请稍后再试。"
 
 #: src/libqtevernote/notesstore.cpp:1717
 msgid ""
 "This account is managed by Evernote. Please use the Evernote website to "
 "delete tags."
-msgstr ""
+msgstr "此账户由 Evernote 管理。使用 Evernote 网站来删除标签。"
 
 #. TRANSLATORS: A default file name if we don't get one from the server. Avoid weird characters.
 #: src/libqtevernote/resource.cpp:39
 msgid "Unnamed"
-msgstr ""
+msgstr "未命名"
