@@ -1,0 +1,610 @@
+# Bosnian translation for reminders-app
+# Copyright (c) 2015 Rosetta Contributors and Canonical Ltd 2015
+# This file is distributed under the same license as the reminders-app package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: reminders-app\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2015-04-16 17:45+0200\n"
+"PO-Revision-Date: 2015-07-02 20:37+0000\n"
+"Last-Translator: Kenan Gutić <Unknown>\n"
+"Language-Team: Bosnian <bs@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2015-07-03 05:50+0000\n"
+"X-Generator: Launchpad (build 17597)\n"
+
+#: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
+msgid "Reminders"
+msgstr "Podsjetnici"
+
+#: com.ubuntu.reminders.desktop.in.in.h:2
+msgid "Ubuntu Reminders app, powered by Evernote"
+msgstr "Ubuntu podsjetnik, pokrenut na Evernote"
+
+#: src/app/qml/components/ConflictDelegate.qml:35
+msgid "Notebook:"
+msgstr "Bilježnica:"
+
+#: src/app/qml/components/ConflictDelegate.qml:63
+msgid "Reminder:"
+msgstr "Podsjetnik:"
+
+#: src/app/qml/components/EditTagsDialog.qml:45
+msgid "Create a new tag"
+msgstr "Kreiraj novu oznaku"
+
+#: src/app/qml/components/EditTagsDialog.qml:73
+msgid "Create tag"
+msgstr "Kreiraj oznaku"
+
+#. TRANSLATORS: Button to close the edit mode
+#: src/app/qml/components/EditTagsDialog.qml:120
+#: src/app/qml/ui/EditNoteView.qml:628 src/libqtevernote/note.cpp:369
+msgid "Done"
+msgstr "Gotovo"
+
+#. TRANSLATORS: Button that deletes a reminder
+#: src/app/qml/components/NotebooksDelegate.qml:36
+#: src/app/qml/components/NotesDelegate.qml:53
+#: src/app/qml/components/TagsDelegate.qml:34 src/app/qml/ui/NotePage.qml:51
+#: src/app/qml/ui/NotesPage.qml:99 src/app/qml/ui/SetReminderView.qml:76
+msgid "Delete"
+msgstr "Obriši"
+
+#: src/app/qml/components/NotebooksDelegate.qml:96
+#, qt-format
+msgid "Last edited %1"
+msgstr "Zadnja izmjena %1"
+
+#: src/app/qml/components/NotebooksDelegate.qml:115
+msgid "Shared"
+msgstr "Dijeljeno"
+
+#: src/app/qml/components/NotebooksDelegate.qml:115
+msgid "Private"
+msgstr "Privatno"
+
+#: src/app/qml/components/NotesDelegate.qml:73
+msgid "Reminder"
+msgstr "Podsjetnik"
+
+#: src/app/qml/components/NotesDelegate.qml:80 src/app/qml/reminders.qml:572
+msgid "Tags"
+msgstr "Oznake"
+
+#: src/app/qml/components/NotesDelegate.qml:87 src/app/qml/ui/NotePage.qml:37
+#: src/app/qml/ui/NotesPage.qml:125
+msgid "Edit"
+msgstr "Uredi"
+
+#: src/app/qml/components/PageWithBottomEdge.qml:123
+#: src/app/qml/reminders.qml:246 src/app/qml/reminders.qml:251
+#: src/app/qml/ui/EditNoteView.qml:45 src/app/qml/ui/EditNoteView.qml:131
+#: src/app/qml/ui/NoteView.qml:29 src/app/qml/ui/NotesPage.qml:66
+msgid "Untitled"
+msgstr "Neimenovano"
+
+#: src/app/qml/components/PulldownListView.qml:40
+msgid "Release to refresh"
+msgstr "Pusti da osvježiš"
+
+#: src/app/qml/components/PulldownListView.qml:40
+msgid "Pull down to refresh"
+msgstr "Povuci dole da osvježiš"
+
+#: src/app/qml/components/RemindersDelegate.qml:36
+msgid "Clear reminder"
+msgstr "Očisti podsjetnik"
+
+#: src/app/qml/components/RemindersDelegate.qml:49
+msgid "Mark as undone"
+msgstr "Označi kao nezavršeno"
+
+#: src/app/qml/components/RemindersDelegate.qml:49
+msgid "Mark as done"
+msgstr "Označi kao završeno"
+
+#: src/app/qml/components/RemindersDelegate.qml:57
+#: src/app/qml/ui/NotePage.qml:44 src/app/qml/ui/NotesPage.qml:109
+msgid "Edit reminder"
+msgstr "Uredi podsjetnik"
+
+#: src/app/qml/components/ResolveConflictConfirmationDialog.qml:25
+msgid "Resolve conflict"
+msgstr "Riješi konflikt"
+
+#: src/app/qml/components/ResolveConflictConfirmationDialog.qml:30
+msgid ""
+"This will <b>keep the changes made on this device</b> and <b>restore the "
+"note on Evernote</b>."
+msgstr ""
+"Ovo će <b>zadržati izmjene načinjene na ovom uređaju</b> i <b>vratiti "
+"bilješke na Evernote</b>."
+
+#: src/app/qml/components/ResolveConflictConfirmationDialog.qml:32
+msgid "This will <b>delete the changed note on Evernote</b>."
+msgstr "Ovo će <b>obrisati izmjenjene bilješke na Evernote</b>."
+
+#: src/app/qml/components/ResolveConflictConfirmationDialog.qml:34
+msgid ""
+"This will <b>keep the changes made on this device</b> and <b>discard any "
+"changes made on Evernote</b>."
+msgstr ""
+"Ovo će <b> zadržati izmjene načinjene na ovom uređaju</b> i </b>odbaciti "
+"izmjene načinjene na Evernote</b>."
+
+#: src/app/qml/components/ResolveConflictConfirmationDialog.qml:38
+msgid "This will <b>delete the changed note on this device</b>."
+msgstr "Ovo će <b>obrisati izmjenjene bilješke na ovom uređaju</b>."
+
+#: src/app/qml/components/ResolveConflictConfirmationDialog.qml:40
+msgid ""
+"This will <b>download the changed note from Evernote</b> and <b>restore it "
+"on this device</b>."
+msgstr ""
+"Ovo će <b>preuzeti izmjenjene bilješke od Evernote</b> i <b>vratiti ih na "
+"ovaj uređaj</b>."
+
+#: src/app/qml/components/ResolveConflictConfirmationDialog.qml:42
+msgid ""
+"This will <b>download the changed note from Evernote</b> and <b>discard any "
+"changes made on this device</b>."
+msgstr ""
+"Ovo će <b>preuzeti izmjenjene bilješke od Evernote</b> i <b>odbaciti sve "
+"izmjene napravljene na ovom uređaju</b>."
+
+#: src/app/qml/components/ResolveConflictConfirmationDialog.qml:45
+msgid "Are you sure you want to continue?"
+msgstr "Da li sigurno želite nastaviti?"
+
+#: src/app/qml/components/ResolveConflictConfirmationDialog.qml:57
+#: src/app/qml/reminders.qml:690
+msgid "Yes"
+msgstr "Da"
+
+#: src/app/qml/components/ResolveConflictConfirmationDialog.qml:66
+#: src/app/qml/reminders.qml:680
+msgid "No"
+msgstr "Ne"
+
+#: src/app/qml/components/SortingDialog.qml:20
+msgid "Sort by"
+msgstr "Sortiraj po"
+
+#: src/app/qml/components/SortingDialog.qml:29
+msgid "Date created (newest first)"
+msgstr "Datum kreiranja (novije prvo)"
+
+#: src/app/qml/components/SortingDialog.qml:30
+msgid "Date created (oldest first)"
+msgstr "Datum kreiranja (starije prvo)"
+
+#: src/app/qml/components/SortingDialog.qml:31
+msgid "Date updated (newest first)"
+msgstr "Datum ažuriranja (novije prvo)"
+
+#: src/app/qml/components/SortingDialog.qml:32
+msgid "Date updated (oldest first)"
+msgstr "Datum ažuriranja (starije prvo)"
+
+#: src/app/qml/components/SortingDialog.qml:33
+msgid "Title (ascending)"
+msgstr "Naslov (uzlazno)"
+
+#: src/app/qml/components/SortingDialog.qml:34
+msgid "Title (descending)"
+msgstr "Naslov (silazno)"
+
+#: src/app/qml/reminders.qml:385
+msgid "Default notebook"
+msgstr "Početna bilježnica"
+
+#: src/app/qml/reminders.qml:491
+msgid "Notes"
+msgstr "Bilješke"
+
+#: src/app/qml/reminders.qml:519
+msgid "Notebooks"
+msgstr "Bilježnice"
+
+#: src/app/qml/reminders.qml:600
+msgid "Accounts"
+msgstr "Korisnički računi"
+
+#: src/app/qml/reminders.qml:619
+msgid ""
+"No note selected.\n"
+"Select a note to see it in detail."
+msgstr ""
+"Nema bilješke za izbor.\n"
+"Odaberite bilješku kako bi vidjeli detalje."
+
+#: src/app/qml/reminders.qml:662
+msgid "Setup Evernote connection?"
+msgstr "Postavi Evernote vezu?"
+
+#: src/app/qml/reminders.qml:663
+msgid "Reminders can store your notes and reminders locally on this device."
+msgstr ""
+"Podsjetnici mogu sačuvati vaše bilješke i podsjetnike lokalno na ovaj uređaj."
+
+#: src/app/qml/reminders.qml:664
+msgid ""
+"In order to synchronize notes with Evernote, an account at Evernote is "
+"required."
+msgstr ""
+"Kako bi sinhronizirali bilješke sa Evernote, potreban je Evernote korisnički "
+"račun."
+
+#: src/app/qml/reminders.qml:665
+msgid "Do you want to setup an account now?"
+msgstr "Želite li postaviti korisnički račun sada?"
+
+#: src/app/qml/ui/AccountSelectorPage.qml:29
+msgid "Select account"
+msgstr "Odaberi korisnički račun"
+
+#: src/app/qml/ui/AccountSelectorPage.qml:44
+msgid "Store notes locally only"
+msgstr "Čuvaj bilješke isključivo lokalno"
+
+#: src/app/qml/ui/AccountSelectorPage.qml:52
+msgid "Accounts on www.evernote.com"
+msgstr "Računi na www.evernote.com"
+
+#: src/app/qml/ui/AccountSelectorPage.qml:82
+#, qt-format
+msgid "%1 - Tap to authorize"
+msgstr "%1 - Dodirni za dozvolu"
+
+#: src/app/qml/ui/AccountSelectorPage.qml:91
+msgid "Add new account"
+msgstr "Dodaj novi račun"
+
+#: src/app/qml/ui/EditNoteView.qml:448
+msgid "Font"
+msgstr "Font"
+
+#: src/app/qml/ui/EditNoteView.qml:460
+msgid "Size"
+msgstr "Veličina"
+
+#. TRANSLATORS: Toolbar button for "Bold"
+#: src/app/qml/ui/EditNoteView.qml:483
+msgid "B"
+msgstr "B"
+
+#. TRANSLATORS: Toolbar button for "Italic"
+#: src/app/qml/ui/EditNoteView.qml:496
+msgid "I"
+msgstr "I"
+
+#. TRANSLATORS: Toolbar button for "Underline"
+#: src/app/qml/ui/EditNoteView.qml:510
+msgid "U"
+msgstr "U"
+
+#. TRANSLATORS: Toolbar button for "Strikeout"
+#: src/app/qml/ui/EditNoteView.qml:524
+msgid "T"
+msgstr "T"
+
+#: src/app/qml/ui/NoteConflictPage.qml:27
+msgid "Conflicting changes"
+msgstr "Konflikt u promjenama"
+
+#: src/app/qml/ui/NoteConflictView.qml:54
+msgid ""
+"This note has been modified in multiple places. Please choose the version to "
+"be opened and delete the other."
+msgstr ""
+"Ova bilješka je uređivana na više mjesta. Molim izaberite verziju koju "
+"želite otvoriti i obrisati ostale."
+
+#: src/app/qml/ui/NoteConflictView.qml:63
+msgid "Deleted on this device:"
+msgstr "Obrisano na ovom uređaju:"
+
+#: src/app/qml/ui/NoteConflictView.qml:63
+msgid "Modified on this device:"
+msgstr "Uređeno na ovom uređaju:"
+
+#: src/app/qml/ui/NoteConflictView.qml:85
+msgid "Deleted from Evernote:"
+msgstr "Obrisano sa Evernote:"
+
+#: src/app/qml/ui/NoteConflictView.qml:85
+msgid "Modified somewhere else:"
+msgstr "Uređeno negdje drugo:"
+
+#: src/app/qml/ui/NotePage.qml:44 src/app/qml/ui/NotesPage.qml:109
+msgid "Set reminder"
+msgstr "Postavi podsjetnik"
+
+#: src/app/qml/ui/NoteView.qml:146
+msgid "Attachment"
+msgstr "Prilog"
+
+#: src/app/qml/ui/NotebooksPage.qml:45
+msgid "Add notebook"
+msgstr "Dodaj bilježnicu"
+
+#: src/app/qml/ui/NotebooksPage.qml:55 src/app/qml/ui/NotesPage.qml:89
+#: src/app/qml/ui/RemindersPage.qml:36 src/app/qml/ui/SearchNotesPage.qml:60
+#: src/app/qml/ui/TagsPage.qml:52
+msgid "Search"
+msgstr "Traži"
+
+#: src/app/qml/ui/NotebooksPage.qml:169
+msgid "Cancel"
+msgstr "Odustani"
+
+#. TRANSLATORS: Button that saves a reminder
+#: src/app/qml/ui/NotebooksPage.qml:178 src/app/qml/ui/SetReminderView.qml:88
+msgid "Save"
+msgstr "Sačuvaj"
+
+#: src/app/qml/ui/NotebooksPage.qml:198
+msgid "Rename notebook"
+msgstr "Preimenuj bilježnicu"
+
+#: src/app/qml/ui/NotebooksPage.qml:199
+#, qt-format
+msgid "Enter a new name for notebook %1"
+msgstr "Unesi novo ime za bilježnicu %1"
+
+#: src/app/qml/ui/NotebooksPage.qml:208 src/app/qml/ui/TagsPage.qml:144
+msgid "Name cannot be empty"
+msgstr "Ime ne može biti prazno"
+
+#: src/app/qml/ui/NotebooksPage.qml:212 src/app/qml/ui/TagsPage.qml:148
+msgid "OK"
+msgstr "Uredu"
+
+#: src/app/qml/ui/NotesPage.qml:43 src/app/qml/ui/NotesPage.qml:63
+msgid "Add note"
+msgstr "Dodaj bilješku"
+
+#: src/app/qml/ui/NotesPage.qml:74
+msgid "Sorting"
+msgstr "Sortiranje"
+
+#: src/app/qml/ui/NotesPage.qml:254
+msgid ""
+"No notes available. You can create new notes by pulling the note editor up "
+"from the bottom edge."
+msgstr ""
+"Nema dostupnih bilješki. Možete kreirati nove bilješke povlačenjem sa donje "
+"ivice ka gore, što otvara urednik bilješki."
+
+#: src/app/qml/ui/RemindersPage.qml:97
+msgid ""
+"No reminders available. You can create new reminders by setting a reminder "
+"when viewing a note."
+msgstr ""
+"Nema dostupnih podsjetnika. Možete kreirati nove podsjetnik postavljajući "
+"podsjetnik kada pregledate bilješku."
+
+#: src/app/qml/ui/SearchNotesPage.qml:32
+msgid "Search notes"
+msgstr "Traži bilješke"
+
+#: src/app/qml/ui/SetReminderView.qml:36
+msgid "Select date and time for the reminder:"
+msgstr "Odaberite datum i vrijeme za podsjetnik:"
+
+#. TRANSLATORS: A checkbox with marks the reminder as done
+#: src/app/qml/ui/SetReminderView.qml:64
+msgid "Reminder done"
+msgstr "Podsjetnik gotov"
+
+#: src/app/qml/ui/TagsPage.qml:127
+msgid "No tags available. You can tag notes while viewing them."
+msgstr "Nema dostupnih oznaka. Možete označiti bilješke dok ih pregledate."
+
+#: src/app/qml/ui/TagsPage.qml:134
+msgid "Rename tag"
+msgstr "Preimenuj oznaku"
+
+#: src/app/qml/ui/TagsPage.qml:135
+#, qt-format
+msgid "Enter a new name for tag %1"
+msgstr "Unesite novo ime za oznaku %1"
+
+#: src/libqtevernote/evernoteconnection.cpp:268
+msgid "Offline mode"
+msgstr "Vanmrežni režim"
+
+#: src/libqtevernote/evernoteconnection.cpp:273
+#: src/libqtevernote/evernoteconnection.cpp:362
+msgid "Unknown error connecting to Evernote."
+msgstr "Nepoznata greška pri povezivanju sa Evernote"
+
+#: src/libqtevernote/evernoteconnection.cpp:286
+msgid ""
+"Error connecting to Evernote: Server version does not match app version. "
+"Please update the application."
+msgstr ""
+"Greška pri povezivanju sa Evernote: Server verzija se ne poklapa sa verzijom "
+"aplikacije. Molimo ažurirajte aplikaciju."
+
+#: src/libqtevernote/evernoteconnection.cpp:292
+#: src/libqtevernote/evernoteconnection.cpp:297
+#, qt-format
+msgid "Error connecting to Evernote: Error code %1"
+msgstr "Greška pri povezivanju sa Evernote: Kod greške %1"
+
+#: src/libqtevernote/evernoteconnection.cpp:302
+msgid ""
+"Error connecting to Evernote: Cannot download version information from "
+"server."
+msgstr ""
+"Greška pri povezivanju sa Evernote: Ne mogu preuzeti informaciju o verziji "
+"sa servera."
+
+#: src/libqtevernote/evernoteconnection.cpp:307
+msgid "Unknown error connecting to Evernote"
+msgstr "Nepoznata greška pri povezivanju sa Evernote"
+
+#: src/libqtevernote/evernoteconnection.cpp:321
+msgid "Error connecting to Evernote: Cannot download server information."
+msgstr ""
+"Greška pri povezivanju sa Evernote: Ne mogu preuzeti server informacije."
+
+#: src/libqtevernote/evernoteconnection.cpp:329
+#: src/libqtevernote/notesstore.cpp:1697
+msgid ""
+"Authentication for Evernote server expired. Please renew login information "
+"in the accounts settings."
+msgstr ""
+"Autentifikacja za Evernote server je istekla. Molimo obnovite informacije za "
+"prijavu u postavkama računa."
+
+#: src/libqtevernote/evernoteconnection.cpp:332
+#: src/libqtevernote/evernoteconnection.cpp:350
+#, qt-format
+msgid "Unknown error connecting to Evernote: %1"
+msgstr "Nepoznata greška pri povezivanju sa Evernote: %1"
+
+#: src/libqtevernote/evernoteconnection.cpp:341
+msgid ""
+"Error connecting to Evernote: Rate limit exceeded. Please try again later."
+msgstr ""
+"Greška pri povezivanju sa Evernote: Stopa limita istrošena. Pokušajte "
+"kasnije."
+
+#: src/libqtevernote/evernoteconnection.cpp:357
+msgid ""
+"Error connecting to Evernote: Connection failure when downloading server "
+"information."
+msgstr ""
+"Greška pri povezivanju sa Evernote: Kvar na konekciji pri preuzimanju server "
+"informacija."
+
+#: src/libqtevernote/evernoteconnection.cpp:383
+msgid "Error connecting to Evernote: Connection failure"
+msgstr "Greška pri povezivanju sa Evernote: Kvar na konekciji"
+
+#: src/libqtevernote/evernoteconnection.cpp:387
+msgid "Unknown Error connecting to Evernote"
+msgstr "Nepoznata greška pri povezivanju sa Evernote"
+
+#: src/libqtevernote/evernoteconnection.cpp:435
+msgid "Disconnected from Evernote."
+msgstr "Odspojen od Evernote."
+
+#: src/libqtevernote/note.cpp:162 src/libqtevernote/note.cpp:196
+#: src/libqtevernote/note.cpp:381
+msgid "Today"
+msgstr "Danas"
+
+#: src/libqtevernote/note.cpp:165 src/libqtevernote/note.cpp:199
+msgid "Yesterday"
+msgstr "Jučer"
+
+#: src/libqtevernote/note.cpp:168 src/libqtevernote/note.cpp:202
+msgid "Last week"
+msgstr "Prošle sedmice"
+
+#: src/libqtevernote/note.cpp:171 src/libqtevernote/note.cpp:205
+msgid "Two weeks ago"
+msgstr "Prije dvije sedmice"
+
+#. TRANSLATORS: the first argument refers to a month name and the second to a year
+#: src/libqtevernote/note.cpp:175 src/libqtevernote/note.cpp:209
+#, qt-format
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: src/libqtevernote/note.cpp:375
+msgid "No date"
+msgstr "Nema datuma"
+
+#: src/libqtevernote/note.cpp:378
+msgid "Overdue"
+msgstr "Prekoračeno"
+
+#: src/libqtevernote/note.cpp:384
+msgid "Tomorrow"
+msgstr "Sutra"
+
+#: src/libqtevernote/note.cpp:387
+msgid "Next week"
+msgstr "Slijedeće sedmice"
+
+#: src/libqtevernote/note.cpp:390
+msgid "In two weeks"
+msgstr "Za dvije sedmice"
+
+#: src/libqtevernote/note.cpp:392
+msgid "Later"
+msgstr "Kasnije"
+
+#. TRANSLATORS: this is part of a longer string - "Last updated: today"
+#: src/libqtevernote/notebook.cpp:120
+msgid "today"
+msgstr "danas"
+
+#. TRANSLATORS: this is part of a longer string - "Last updated: yesterday"
+#: src/libqtevernote/notebook.cpp:124
+msgid "yesterday"
+msgstr "jučer"
+
+#. TRANSLATORS: this is part of a longer string - "Last updated: last week"
+#: src/libqtevernote/notebook.cpp:128
+msgid "last week"
+msgstr "prošle sedmice"
+
+#. TRANSLATORS: this is part of a longer string - "Last updated: two weeks ago"
+#: src/libqtevernote/notebook.cpp:132
+msgid "two weeks ago"
+msgstr "prije dvije sedmice"
+
+#. TRANSLATORS: this is used in the notes list to group notes created on the same month
+#. the first parameter refers to a month name and the second to a year
+#: src/libqtevernote/notebook.cpp:136
+#, qt-format
+msgid "on %1 %2"
+msgstr "na %1 %2"
+
+#: src/libqtevernote/notesstore.cpp:409
+msgid ""
+"This account is managed by Evernote. Use the Evernote website to delete "
+"notebooks."
+msgstr ""
+"Ova račun je upravljan sa Evernote. Koristite Evernote web stranicu za "
+"brisanje bilježnica."
+
+#: src/libqtevernote/notesstore.cpp:422
+msgid ""
+"Cannot delete the default notebook. Set another notebook to be the default "
+"first."
+msgstr ""
+"Ne možete obrisati početnu bilježnicu. Postavite drugu bilježnicu kao "
+"početnu prvo."
+
+#: src/libqtevernote/notesstore.cpp:1700
+msgid "Rate limit for Evernote server exceeded. Please try again later."
+msgstr "Stopa limita za Evernote server je premašena. Pokušajte kasnije."
+
+#: src/libqtevernote/notesstore.cpp:1703
+msgid "Upload quota for Evernote server exceed. Please try again later."
+msgstr ""
+"Stopa postavljanja za Evernote server je premašena. Pokušajte kasnije."
+
+#: src/libqtevernote/notesstore.cpp:1717
+msgid ""
+"This account is managed by Evernote. Please use the Evernote website to "
+"delete tags."
+msgstr ""
+"Ovaj račun je upravljan sa Evernote. Koristite Evernote web stranicu za "
+"brisanje tagova."
+
+#. TRANSLATORS: A default file name if we don't get one from the server. Avoid weird characters.
+#: src/libqtevernote/resource.cpp:39
+msgid "Unnamed"
+msgstr "Neimenovano"
