@@ -81,7 +81,6 @@ Item {
 
         locationBarController {
             height: locationBar.height
-            mode: Oxide.LocationBarController.ModeAuto
         }
 
         property string html: root.note ? note.htmlContent : ""

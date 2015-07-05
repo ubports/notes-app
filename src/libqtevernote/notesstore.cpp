@@ -878,13 +878,17 @@ void NotesStore::fetchNoteJobDone(EvernoteConnection::ErrorCode errorCode, const
         qCWarning(dcSync) << "can't find note for this update... ignoring...";
         return;
     }
+    if (note->updateSequenceNumber() > result.updateSequenceNum) {
+        qCWarning(dcSync) << "Local update sequence number higher than remote. Local:" << note->updateSequenceNumber() << "remote:" << result.updateSequenceNum;
+        return;
+    }
 
     QModelIndex noteIndex = index(m_notes.indexOf(note));
     QVector<int> roles;
 
     handleUserError(errorCode);
     if (errorCode != EvernoteConnection::ErrorCodeNoError) {
-        qWarning(dcSync) << "Fetch note job failed:" << errorMessage;
+        qCWarning(dcSync) << "Fetch note job failed:" << errorMessage;
         note->setLoading(false);
         roles << RoleLoading;
         note->setSyncError(true);
@@ -1389,11 +1393,11 @@ void NotesStore::saveNote(const QString &guid)
             // This note hasn't been created on the server yet... try that first
             CreateNoteJob *job = new CreateNoteJob(note, this);
             connect(job, &CreateNoteJob::jobDone, this, &NotesStore::createNoteJobDone);
-            EvernoteConnection::instance()->enqueue(job);
+            EvernoteConnection::instance()->enqueueWrite(job);
         } else {
             SaveNoteJob *job = new SaveNoteJob(note, this);
             connect(job, &SaveNoteJob::jobDone, this, &NotesStore::saveNoteJobDone);
-            EvernoteConnection::instance()->enqueue(job);
+            EvernoteConnection::instance()->enqueueWrite(job);
         }
     }
 
@@ -1415,24 +1419,16 @@ void NotesStore::saveNoteJobDone(EvernoteConnection::ErrorCode errorCode, const 
 
     int idx = m_notes.indexOf(note);
     note->setLoading(false);
+    QModelIndex noteIndex = index(idx);
 
     handleUserError(errorCode);
     if (errorCode != EvernoteConnection::ErrorCodeNoError) {
         qCWarning(dcSync) << "Unhandled error saving note:" << errorCode << "Message:" << errorMessage;
         note->setSyncError(true);
-        emit dataChanged(index(idx), index(idx), QVector<int>() << RoleLoading << RoleSyncError);
+        emit dataChanged(noteIndex, noteIndex, QVector<int>() << RoleLoading << RoleSyncError);
         return;
     }
 
-    note->setUpdateSequenceNumber(result.updateSequenceNum);
-    note->setLastSyncedSequenceNumber(result.updateSequenceNum);
-    note->setTitle(QString::fromStdString(result.title));
-    note->setNotebookGuid(QString::fromStdString(result.notebookGuid));
-    note->setUpdated(QDateTime::fromMSecsSinceEpoch(result.updated));
-
-    syncToCacheFile(note);
-
-    QModelIndex noteIndex = index(m_notes.indexOf(note));
     emit dataChanged(noteIndex, noteIndex);
     emit noteChanged(note->guid(), note->notebookGuid());
 }
