@@ -39,6 +39,17 @@ Item {
         z: 10
     }
 
+    Component.onDestruction: {
+        if (priv.dirty) {
+            NotesStore.saveNote(note.guid);
+        }
+    }
+
+    QtObject {
+        id: priv
+        property bool dirty: false
+    }
+
     WebContext {
         id: webContext
 
@@ -110,7 +121,7 @@ Item {
                     switch (data.type) {
                     case "checkboxChanged":
                         note.markTodo(data.todoId, data.checked);
-                        NotesStore.saveNote(note.guid);
+                        priv.dirty = true;
                         break;
                     case "attachmentOpened":
                         var filePath = root.note.resource(data.resourceHash).hashedFilePath;

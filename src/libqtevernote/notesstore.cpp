@@ -1429,6 +1429,9 @@ void NotesStore::saveNoteJobDone(EvernoteConnection::ErrorCode errorCode, const 
         return;
     }
 
+    note->setLastSyncedSequenceNumber(result.updateSequenceNum);
+    syncToCacheFile(note);
+
     emit dataChanged(noteIndex, noteIndex);
     emit noteChanged(note->guid(), note->notebookGuid());
 }
