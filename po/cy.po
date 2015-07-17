@@ -1,51 +1,51 @@
-# Portuguese translation for reminders-app
-# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
+# Welsh translation for reminders-app
+# Copyright (c) 2015 Rosetta Contributors and Canonical Ltd 2015
 # This file is distributed under the same license as the reminders-app package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-16 17:45+0200\n"
-"PO-Revision-Date: 2015-07-16 11:33+0000\n"
-"Last-Translator: Ivo Xavier <ivofernandes12@gmail.com>\n"
-"Language-Team: Portuguese <pt@li.org>\n"
+"PO-Revision-Date: 2015-07-16 13:04+0000\n"
+"Last-Translator: Owen Llywelyn <owen.llywelyn@gmail.com>\n"
+"Language-Team: Welsh <cy@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-07-17 05:37+0000\n"
+"X-Launchpad-Export-Date: 2015-07-17 05:38+0000\n"
 "X-Generator: Launchpad (build 17628)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
 msgid "Reminders"
-msgstr "Notas"
+msgstr "Nodyn atgoffa"
 
 #: com.ubuntu.reminders.desktop.in.in.h:2
 msgid "Ubuntu Reminders app, powered by Evernote"
-msgstr "Notas Ubuntu, desenvolvido por Evernote"
+msgstr "Ap Nodion Atgoffa Ubuntu, a yrrir gan Evernote"
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
-msgstr "Bloco de notas"
+msgstr "Llyfr nodiadau:"
 
 #: src/app/qml/components/ConflictDelegate.qml:63
 msgid "Reminder:"
-msgstr "Lembrete:"
+msgstr "Nodyn atgoffa:"
 
 #: src/app/qml/components/EditTagsDialog.qml:45
 msgid "Create a new tag"
-msgstr "Crie uma nova tag"
+msgstr "Creu tag newydd"
 
 #: src/app/qml/components/EditTagsDialog.qml:73
 msgid "Create tag"
-msgstr "Criar tag"
+msgstr "Creu tag"
 
 #. TRANSLATORS: Button to close the edit mode
 #: src/app/qml/components/EditTagsDialog.qml:120
 #: src/app/qml/ui/EditNoteView.qml:628 src/libqtevernote/note.cpp:369
 msgid "Done"
-msgstr "Concluído"
+msgstr "Cwblhawyd"
 
 #. TRANSLATORS: Button that deletes a reminder
 #: src/app/qml/components/NotebooksDelegate.qml:36
@@ -53,225 +53,222 @@ msgstr "Concluído"
 #: src/app/qml/components/TagsDelegate.qml:34 src/app/qml/ui/NotePage.qml:51
 #: src/app/qml/ui/NotesPage.qml:99 src/app/qml/ui/SetReminderView.qml:76
 msgid "Delete"
-msgstr "Apagar"
+msgstr "Dileu"
 
 #: src/app/qml/components/NotebooksDelegate.qml:96
 #, qt-format
 msgid "Last edited %1"
-msgstr "Última edição %1"
+msgstr "Golygwyd ddiwethaf %1"
 
 #: src/app/qml/components/NotebooksDelegate.qml:115
 msgid "Shared"
-msgstr "Partilhado"
+msgstr "Wedi Rhannu"
 
 #: src/app/qml/components/NotebooksDelegate.qml:115
 msgid "Private"
-msgstr "Privado"
+msgstr "Preifat"
 
 #: src/app/qml/components/NotesDelegate.qml:73
 msgid "Reminder"
-msgstr "Lembrete"
+msgstr "Nodyn atgoffa"
 
 #: src/app/qml/components/NotesDelegate.qml:80 src/app/qml/reminders.qml:572
 msgid "Tags"
-msgstr "Tags"
+msgstr "Tagiau"
 
 #: src/app/qml/components/NotesDelegate.qml:87 src/app/qml/ui/NotePage.qml:37
 #: src/app/qml/ui/NotesPage.qml:125
 msgid "Edit"
-msgstr "Editar"
+msgstr "Golygu"
 
 #: src/app/qml/components/PageWithBottomEdge.qml:123
 #: src/app/qml/reminders.qml:246 src/app/qml/reminders.qml:251
 #: src/app/qml/ui/EditNoteView.qml:45 src/app/qml/ui/EditNoteView.qml:131
 #: src/app/qml/ui/NoteView.qml:29 src/app/qml/ui/NotesPage.qml:66
 msgid "Untitled"
-msgstr "Sem título"
+msgstr "Heb deitl"
 
 #: src/app/qml/components/PulldownListView.qml:40
 msgid "Release to refresh"
-msgstr "Solte para atualizar"
+msgstr "Rhyddhewch i adnewyddu"
 
 #: src/app/qml/components/PulldownListView.qml:40
 msgid "Pull down to refresh"
-msgstr "Puxe para baixo para atualizar"
+msgstr "Tynnwch lawr i adnewyddu"
 
 #: src/app/qml/components/RemindersDelegate.qml:36
 msgid "Clear reminder"
-msgstr "Limpar lembrete"
+msgstr "Clirio nodyn atgoffa"
 
 #: src/app/qml/components/RemindersDelegate.qml:49
 msgid "Mark as undone"
-msgstr "Marcar como não alterada"
+msgstr "Marcio fel heb ei wneud"
 
 #: src/app/qml/components/RemindersDelegate.qml:49
 msgid "Mark as done"
-msgstr "Marcar como concluído"
+msgstr "Marcio fel wedi'i wneud"
 
 #: src/app/qml/components/RemindersDelegate.qml:57
 #: src/app/qml/ui/NotePage.qml:44 src/app/qml/ui/NotesPage.qml:109
 msgid "Edit reminder"
-msgstr "Editar lembrete"
+msgstr "Golygu nodyn atgoffa"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:25
 msgid "Resolve conflict"
-msgstr "Solucionar conflitos"
+msgstr "Datrys gwrthdaro"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:30
 msgid ""
 "This will <b>keep the changes made on this device</b> and <b>restore the "
 "note on Evernote</b>."
 msgstr ""
-"Isto vai <b> manter as alterações feitas neste dispositivo </b> e <b> "
-"restaurar a nota no Evernote </b>."
+"Bydd hyn yn <b>cadw'r newidiadau wnaed ar y ddyfais hon</b> ac <b>adfer y "
+"nodyn ar Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:32
 msgid "This will <b>delete the changed note on Evernote</b>."
-msgstr "Isto vai <b> apagar a nota alterada no Evernote </b>."
+msgstr "Bydd hyn yn <b>dileu'r nodyn wedi'i newid ar Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:34
 msgid ""
 "This will <b>keep the changes made on this device</b> and <b>discard any "
 "changes made on Evernote</b>."
 msgstr ""
-"Isto vai <b> manter as alterações feitas neste dispositivo </b> e <b> "
-"descartar todas as alterações feitas no Evernote </b>."
+"Bydd hyn yn <b>cadw'r newidiadau wnaed ar y ddyfais hon</b> a <b>diystyru "
+"newidiadau wnaed ar Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:38
 msgid "This will <b>delete the changed note on this device</b>."
-msgstr "Isto vai <b> apagar a nota alterada neste dispositivo </b>."
+msgstr "Bydd hyn yn <b>dileu'r nodyn wedi'i newid ar y ddyfais hon</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:40
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>restore it "
 "on this device</b>."
 msgstr ""
-"Isto vai <b> descarregar a nota alterada no Evernote </b> e <b> restaurá-la "
-"neste dispositivo </b>."
+"Bydd hyn yn <b>llwytho'r nodyn wedi'i newid o Evernote</b> a'i <b>adfer ar y "
+"ddyfais hon</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:42
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>discard any "
 "changes made on this device</b>."
 msgstr ""
-"Isto vai <b> descarregarar a nota alterada no Evernote </b> e <b> descartar "
-"quaisquer alterações feitas neste dispositivo </b>."
+"Bydd hyn yn <b>llwytho'r nodyn wedi'i newid o Evernote</b> a diystyru "
+"newidiadau wnaed ar y ddyfais hon</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:45
 msgid "Are you sure you want to continue?"
-msgstr "Tem a certeza de que deseja continuar?"
+msgstr "Ydych chi'n siwr eich bod am barhau?"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:57
 #: src/app/qml/reminders.qml:690
 msgid "Yes"
-msgstr "Sim"
+msgstr "Ydw"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:66
 #: src/app/qml/reminders.qml:680
 msgid "No"
-msgstr "Não"
+msgstr "Na"
 
 #: src/app/qml/components/SortingDialog.qml:20
 msgid "Sort by"
-msgstr "Ordenado por"
+msgstr "Trefnu yn ôl"
 
 #: src/app/qml/components/SortingDialog.qml:29
 msgid "Date created (newest first)"
-msgstr "Data de criação (mais recente primeiro)"
+msgstr "Date created (newest first)"
 
 #: src/app/qml/components/SortingDialog.qml:30
 msgid "Date created (oldest first)"
-msgstr "Data de criação (mais antigo primeiro)"
+msgstr "Dyddiad creu (mwyaf newydd yn gyntaf)"
 
 #: src/app/qml/components/SortingDialog.qml:31
 msgid "Date updated (newest first)"
-msgstr "Data de atualização (mais recente primeiro)"
+msgstr "Dyddiad llwytho (mwyaf newydd yn gyntaf)"
 
 #: src/app/qml/components/SortingDialog.qml:32
 msgid "Date updated (oldest first)"
-msgstr "Data de atualização (mais antigo primeiro)"
+msgstr "Dyddiad llwytho (hynaf yn gyntaf)"
 
 #: src/app/qml/components/SortingDialog.qml:33
 msgid "Title (ascending)"
-msgstr "Título (crescente)"
+msgstr "Teitl (esgynnol)"
 
 #: src/app/qml/components/SortingDialog.qml:34
 msgid "Title (descending)"
-msgstr "Título (decrescente)"
+msgstr "Teitl (disgynnol)"
 
 #: src/app/qml/reminders.qml:385
 msgid "Default notebook"
-msgstr "Bloco de notas padrão"
+msgstr "Llyfr nodiadau diofyn"
 
 #: src/app/qml/reminders.qml:491
 msgid "Notes"
-msgstr "Notas"
+msgstr "Nodiadau"
 
 #: src/app/qml/reminders.qml:519
 msgid "Notebooks"
-msgstr "Blocos de Notas"
+msgstr "Llyfrau Nodiadau"
 
 #: src/app/qml/reminders.qml:600
 msgid "Accounts"
-msgstr "Contas"
+msgstr "Cyfrifon"
 
 #: src/app/qml/reminders.qml:619
 msgid ""
 "No note selected.\n"
 "Select a note to see it in detail."
 msgstr ""
-"Nenhuma nota selecionada.\n"
-"Selecione uma nota para ver em detalhe."
+"Dim nodyn wedi'i ddewis.\n"
+"Dewiswch nodyn i weld manylion."
 
 #: src/app/qml/reminders.qml:662
 msgid "Setup Evernote connection?"
-msgstr "Configuração de conexão Evernote?"
+msgstr "Creu cysylltiad Evernote?"
 
 #: src/app/qml/reminders.qml:663
 msgid "Reminders can store your notes and reminders locally on this device."
-msgstr ""
-"Notas pode guardar as suas notas e lembretes localmente neste dispositivo."
+msgstr "Gall Nodion Atgoffa gadw eich nodiadau'n lleol ar y ddyfais hon."
 
 #: src/app/qml/reminders.qml:664
 msgid ""
 "In order to synchronize notes with Evernote, an account at Evernote is "
 "required."
-msgstr ""
-"Para sincronizar com o Evernote, é necessário que tenha uma conta de "
-"Evernote."
+msgstr "Mae angen cyfri Evernote i gydweddu nodiadau gydag Evernote."
 
 #: src/app/qml/reminders.qml:665
 msgid "Do you want to setup an account now?"
-msgstr "Deseja configurar uma conta agora?"
+msgstr "Ydych chi am greu cyfrif nawr?"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
-msgstr "Escolha uma conta"
+msgstr "Dewis cyfrif"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:44
 msgid "Store notes locally only"
-msgstr "Guarde notas apenas localmente"
+msgstr "Cadw nodiadau yn lleol yn unig"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:52
 msgid "Accounts on www.evernote.com"
-msgstr "Contas em www.evernote.com"
+msgstr "Cyfrifon ar www.evernote.com"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:82
 #, qt-format
 msgid "%1 - Tap to authorize"
-msgstr "%1 - Toque para autorizar"
+msgstr "%1 - Tap i awdurdodi"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:91
 msgid "Add new account"
-msgstr "Adicionar uma nova conta"
+msgstr "Ychwanegu cyfrif newydd"
 
 #: src/app/qml/ui/EditNoteView.qml:448
 msgid "Font"
-msgstr "Tipo de Letra"
+msgstr "Ffont"
 
 #: src/app/qml/ui/EditNoteView.qml:460
 msgid "Size"
-msgstr "Tamanho"
+msgstr "Maint"
 
 #. TRANSLATORS: Toolbar button for "Bold"
 #: src/app/qml/ui/EditNoteView.qml:483
@@ -295,167 +292,164 @@ msgstr "T"
 
 #: src/app/qml/ui/NoteConflictPage.qml:27
 msgid "Conflicting changes"
-msgstr "Alterações conflituosas"
+msgstr "Newidiadau'n gwrthdaro"
 
 #: src/app/qml/ui/NoteConflictView.qml:54
 msgid ""
 "This note has been modified in multiple places. Please choose the version to "
 "be opened and delete the other."
 msgstr ""
-"Esta nota foi modificado em vários locais. Por favor, escolha a versão a ser "
-"aberta e exclua a outra."
+"Addaswyd y nodyn hwn mewn mwy nag un lle. Dewiswch y fesriwn i'w hagor a "
+"dileu'r llall."
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Deleted on this device:"
-msgstr "Excluídos neste dispositivo:"
+msgstr "Dilëwyd ar y ddyfais hon."
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Modified on this device:"
-msgstr "Modificados neste dispositivo:"
+msgstr "Addaswyd ar y ddyfais  hon."
 
 #: src/app/qml/ui/NoteConflictView.qml:85
 msgid "Deleted from Evernote:"
-msgstr "Excluída do Evernote:"
+msgstr "Dilëwyd o Evernote:"
 
 #: src/app/qml/ui/NoteConflictView.qml:85
 msgid "Modified somewhere else:"
-msgstr "Modificada noutro local"
+msgstr "Addaswyd rhywle arall:"
 
 #: src/app/qml/ui/NotePage.qml:44 src/app/qml/ui/NotesPage.qml:109
 msgid "Set reminder"
-msgstr "Definir lembrete"
+msgstr "Gosod nodyn atgoffa"
 
 #: src/app/qml/ui/NoteView.qml:146
 msgid "Attachment"
-msgstr "Anexo"
+msgstr "Atodiad"
 
 #: src/app/qml/ui/NotebooksPage.qml:45
 msgid "Add notebook"
-msgstr "Adicionar bloco de notas"
+msgstr "Ychwanegu llyfr nodiadau"
 
 #: src/app/qml/ui/NotebooksPage.qml:55 src/app/qml/ui/NotesPage.qml:89
 #: src/app/qml/ui/RemindersPage.qml:36 src/app/qml/ui/SearchNotesPage.qml:60
 #: src/app/qml/ui/TagsPage.qml:52
 msgid "Search"
-msgstr "Procurar"
+msgstr "Chwilio"
 
 #: src/app/qml/ui/NotebooksPage.qml:169
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr "Diddymu"
 
 #. TRANSLATORS: Button that saves a reminder
 #: src/app/qml/ui/NotebooksPage.qml:178 src/app/qml/ui/SetReminderView.qml:88
 msgid "Save"
-msgstr "Guardar"
+msgstr "Cadw"
 
 #: src/app/qml/ui/NotebooksPage.qml:198
 msgid "Rename notebook"
-msgstr "Renomear bloco de Notas"
+msgstr "Ailenwi llyfr nodiadau"
 
 #: src/app/qml/ui/NotebooksPage.qml:199
 #, qt-format
 msgid "Enter a new name for notebook %1"
-msgstr "Entre o novo nome para o Bloco de Notas %1"
+msgstr "Rhowch enw newydd ar gyfer llyfr nodiadau %1"
 
 #: src/app/qml/ui/NotebooksPage.qml:208 src/app/qml/ui/TagsPage.qml:144
 msgid "Name cannot be empty"
-msgstr "O nome não pode estar vazio."
+msgstr "All yr enw ddim bod yn wag"
 
 #: src/app/qml/ui/NotebooksPage.qml:212 src/app/qml/ui/TagsPage.qml:148
 msgid "OK"
-msgstr "OK"
+msgstr "Iawn"
 
 #: src/app/qml/ui/NotesPage.qml:43 src/app/qml/ui/NotesPage.qml:63
 msgid "Add note"
-msgstr "Adicionar nota"
+msgstr "Ychwanegu nodyn"
 
 #: src/app/qml/ui/NotesPage.qml:74
 msgid "Sorting"
-msgstr "Triagem"
+msgstr "Yn didoli"
 
 #: src/app/qml/ui/NotesPage.qml:254
 msgid ""
 "No notes available. You can create new notes by pulling the note editor up "
 "from the bottom edge."
 msgstr ""
-"Sem notas disponíveis. Pode criar novas notas ao puxar de baixo para cima o "
-"editor de notas."
+"Dim nodiadau ar gael. Gallwch greu nodiadau drwy dynnu'r golygydd nodiadau "
+"fyny o waelod y dudalen."
 
 #: src/app/qml/ui/RemindersPage.qml:97
 msgid ""
 "No reminders available. You can create new reminders by setting a reminder "
 "when viewing a note."
 msgstr ""
-"Não há lembretes disponíveis. Pode criar novas lembranças, definindo um "
-"lembrete ao visualizar uma nota."
+"Dim nodion atgoffa ar gael. Gallwch greu nodion atgoffa newydd tra'n darllen "
+"nodyn."
 
 #: src/app/qml/ui/SearchNotesPage.qml:32
 msgid "Search notes"
-msgstr "Pesquisar Notas"
+msgstr "Chwilio nodiadau"
 
 #: src/app/qml/ui/SetReminderView.qml:36
 msgid "Select date and time for the reminder:"
-msgstr "Escolha data e hora para o lembrete:"
+msgstr "Dewiswch ddyddiad ac amser i'r nodyn atgoffa:"
 
 #. TRANSLATORS: A checkbox with marks the reminder as done
 #: src/app/qml/ui/SetReminderView.qml:64
 msgid "Reminder done"
-msgstr "Feito Lembrete"
+msgstr "Cwblhawyd y nodyn atgoffa"
 
 #: src/app/qml/ui/TagsPage.qml:127
 msgid "No tags available. You can tag notes while viewing them."
-msgstr ""
-"Não há tags disponíveis. Você pode marcar notas enquanto as visualiza."
+msgstr "Dim tagiau ar gael. Gallwch dagio nodiadau tra'n eu darllen."
 
 #: src/app/qml/ui/TagsPage.qml:134
 msgid "Rename tag"
-msgstr "Renomear tag"
+msgstr "Ailenwi tag"
 
 #: src/app/qml/ui/TagsPage.qml:135
 #, qt-format
 msgid "Enter a new name for tag %1"
-msgstr "Dê novo nome à tag %1"
+msgstr "Rghowch enw newydd ar gyfer tag %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:268
 msgid "Offline mode"
-msgstr "Modo offline"
+msgstr "Modd all-lein"
 
 #: src/libqtevernote/evernoteconnection.cpp:273
 #: src/libqtevernote/evernoteconnection.cpp:362
 msgid "Unknown error connecting to Evernote."
-msgstr "Erro desconhecido ao conetar a Evernote."
+msgstr "Gwall anhysbys wrth gysylltu â Evernote."
 
 #: src/libqtevernote/evernoteconnection.cpp:286
 msgid ""
 "Error connecting to Evernote: Server version does not match app version. "
 "Please update the application."
 msgstr ""
-"Erro ao conetar ao Evernote: A versão do servidor não corresponde com a "
-"versão de aplicação. Por favor, atualize a aplicação."
+"Gwall wrth gysylltu â Evernote. Fersiwn gweinydd ddim yn cyfateb i fersiwn "
+"yr ap. Diweddarwch yr ap hwn."
 
 #: src/libqtevernote/evernoteconnection.cpp:292
 #: src/libqtevernote/evernoteconnection.cpp:297
 #, qt-format
 msgid "Error connecting to Evernote: Error code %1"
-msgstr "Erro ao conetar ao Evernote: Código de erro %1"
+msgstr "Gwall wrth gysylltu â Evernote: Cod gwall %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:302
 msgid ""
 "Error connecting to Evernote: Cannot download version information from "
 "server."
 msgstr ""
-"Erro ao conetar ao Evernote: Não foi possível transferir a informação da "
-"versão do servidor."
+"Gwall wrth gysylltu â Evernote: Methu llwytho gwybodaeth fersiwn o'r "
+"gweinydd."
 
 #: src/libqtevernote/evernoteconnection.cpp:307
 msgid "Unknown error connecting to Evernote"
-msgstr "Erro desconhecido ao conetar ao Evernote"
+msgstr "Gwall anhysbys wrth gysylltu â Evernote"
 
 #: src/libqtevernote/evernoteconnection.cpp:321
 msgid "Error connecting to Evernote: Cannot download server information."
-msgstr ""
-"Erro de ligação a Evernote: Não é possível fazer a descarga de informações "
-"do servidor."
+msgstr "Gwall wrth gysylltu â Evernote: Methu llwytho gwybodaeth gweinydd."
 
 #: src/libqtevernote/evernoteconnection.cpp:329
 #: src/libqtevernote/notesstore.cpp:1697
@@ -463,58 +457,58 @@ msgid ""
 "Authentication for Evernote server expired. Please renew login information "
 "in the accounts settings."
 msgstr ""
-"A autenticação no servidor Evernote expirou. Por favor, renove as "
-"informações de autenticação nas definições de conta."
+"Manylion dilysu ar gyfer gweinydd Evernote wedi darfod. Adnewyddwch eich "
+"gwybodaeth mewngofnodi yn y gosodiadau cyfrif."
 
 #: src/libqtevernote/evernoteconnection.cpp:332
 #: src/libqtevernote/evernoteconnection.cpp:350
 #, qt-format
 msgid "Unknown error connecting to Evernote: %1"
-msgstr "Erro desconhecido ao ligar a Evernote: %1"
+msgstr "Gwall anhysbys wrth gysylltu â Evernote: %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:341
 msgid ""
 "Error connecting to Evernote: Rate limit exceeded. Please try again later."
 msgstr ""
-"Erro de ligação ao Evernote: Taxa limite excedida. Por favor tente, "
-"novamente, mais tarde."
+"Gwall  wrth gysylltu â Evernote: Tu hwnt i'r terfyn cyfradd. Ceisiwch eto yn "
+"nes ymlaen."
 
 #: src/libqtevernote/evernoteconnection.cpp:357
 msgid ""
 "Error connecting to Evernote: Connection failure when downloading server "
 "information."
 msgstr ""
-"Erro de ligação com Evernote: Falha de ligação durante a descarga de "
-"informações do servidor."
+"Gwall  wrth gysylltu â Evernote: Methiant cysylltiad wrth lwytho o'r "
+"gweinydd."
 
 #: src/libqtevernote/evernoteconnection.cpp:383
 msgid "Error connecting to Evernote: Connection failure"
-msgstr "Erro de ligação com Evernote: Falha de ligação"
+msgstr "Gwall  wrth gysylltu â Evernote: Methiant cysylltiad"
 
 #: src/libqtevernote/evernoteconnection.cpp:387
 msgid "Unknown Error connecting to Evernote"
-msgstr "Erro desconhecido ao ligar a Evernote"
+msgstr "Gwall  anhysbys wrth gysylltu â Evernote"
 
 #: src/libqtevernote/evernoteconnection.cpp:435
 msgid "Disconnected from Evernote."
-msgstr "Desligado de Evernote"
+msgstr "Datgysylltwyd o Evernote."
 
 #: src/libqtevernote/note.cpp:162 src/libqtevernote/note.cpp:196
 #: src/libqtevernote/note.cpp:381
 msgid "Today"
-msgstr "Hoje"
+msgstr "Heddiw"
 
 #: src/libqtevernote/note.cpp:165 src/libqtevernote/note.cpp:199
 msgid "Yesterday"
-msgstr "Ontem"
+msgstr "Ddoe"
 
 #: src/libqtevernote/note.cpp:168 src/libqtevernote/note.cpp:202
 msgid "Last week"
-msgstr "Semana passada"
+msgstr "Wythnos diwethaf"
 
 #: src/libqtevernote/note.cpp:171 src/libqtevernote/note.cpp:205
 msgid "Two weeks ago"
-msgstr "Duas semanas atrás"
+msgstr "Pythefnos yn ôl"
 
 #. TRANSLATORS: the first argument refers to a month name and the second to a year
 #: src/libqtevernote/note.cpp:175 src/libqtevernote/note.cpp:209
@@ -524,92 +518,90 @@ msgstr "%1 %2"
 
 #: src/libqtevernote/note.cpp:375
 msgid "No date"
-msgstr "Sem data"
+msgstr "Dim dyddiad"
 
 #: src/libqtevernote/note.cpp:378
 msgid "Overdue"
-msgstr "Atrasado"
+msgstr "Dros amser"
 
 #: src/libqtevernote/note.cpp:384
 msgid "Tomorrow"
-msgstr "Amanhã"
+msgstr "Yfory"
 
 #: src/libqtevernote/note.cpp:387
 msgid "Next week"
-msgstr "Próxima semana"
+msgstr "Wythnos nesaf"
 
 #: src/libqtevernote/note.cpp:390
 msgid "In two weeks"
-msgstr "Dentro de duas semanas"
+msgstr "Mewn pythefnos"
 
 #: src/libqtevernote/note.cpp:392
 msgid "Later"
-msgstr "Mais tarde"
+msgstr "Hwyrach"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: today"
 #: src/libqtevernote/notebook.cpp:120
 msgid "today"
-msgstr "hoje"
+msgstr "heddiw"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: yesterday"
 #: src/libqtevernote/notebook.cpp:124
 msgid "yesterday"
-msgstr "ontem"
+msgstr "ddoe"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: last week"
 #: src/libqtevernote/notebook.cpp:128
 msgid "last week"
-msgstr "semana passada"
+msgstr "wythnos diwethaf"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: two weeks ago"
 #: src/libqtevernote/notebook.cpp:132
 msgid "two weeks ago"
-msgstr "há duas semanas"
+msgstr "pythefnos yn ôl"
 
 #. TRANSLATORS: this is used in the notes list to group notes created on the same month
 #. the first parameter refers to a month name and the second to a year
 #: src/libqtevernote/notebook.cpp:136
 #, qt-format
 msgid "on %1 %2"
-msgstr "em %1 %2"
+msgstr "ar %1 %2"
 
 #: src/libqtevernote/notesstore.cpp:409
 msgid ""
 "This account is managed by Evernote. Use the Evernote website to delete "
 "notebooks."
 msgstr ""
-"Esta conta é gerida por Evernote. Use o site da Evernote para excluir blocos "
-"de notas."
+"Rheolir y cyfrif hwn gan Evernote. Defnyddiwch gwefan Evernote i ddileu "
+"llyfrau nodiadau."
 
 #: src/libqtevernote/notesstore.cpp:422
 msgid ""
 "Cannot delete the default notebook. Set another notebook to be the default "
 "first."
 msgstr ""
-"Não é possível excluir o bloco de notas padrão. Defina outro bloco de notas "
-"para ser usado como padrão em primeiro lugar."
+"Methu dileu llyfr nodiadau diofyn. Dewiswch lyfr nodiadau arall fel un "
+"diofyn yn gyntaf."
 
 #: src/libqtevernote/notesstore.cpp:1700
 msgid "Rate limit for Evernote server exceeded. Please try again later."
 msgstr ""
-"O limite de taxa para o servidor Evernote foi ultrapassado. Por favor tente, "
-"novamente, mais tarde."
+"Wedi mynd dros terfyn cyfradd Evernote. Rhowch gynnig arall arni wedyn."
 
 #: src/libqtevernote/notesstore.cpp:1703
 msgid "Upload quota for Evernote server exceed. Please try again later."
 msgstr ""
-"A quota de carga para o servidor Evernote foi excedida. Por favor tente, "
-"novamente, mais tarde."
+"Wedi mynd dros cwota llwytho Evernote. Rhowch gynnig arall arni wedyn."
 
 #: src/libqtevernote/notesstore.cpp:1717
 msgid ""
 "This account is managed by Evernote. Please use the Evernote website to "
 "delete tags."
 msgstr ""
-"Esta conta é gerida por Evernote. Por favor, use o site do Evernote para "
-"excluir tags."
+"Rheolir y cyfrif hwn gan Evernote. Defnyddiwch gwefan Evernote i ddileu "
+"tagiau."
 
 #. TRANSLATORS: A default file name if we don't get one from the server. Avoid weird characters.
 #: src/libqtevernote/resource.cpp:39
 msgid "Unnamed"
-msgstr "Sem nome"
+msgstr "Heb enw"
