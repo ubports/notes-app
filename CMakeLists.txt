@@ -45,14 +45,13 @@ if(CLICK_MODE)
     set(DESKTOP_DIR ${DATA_DIR})
     set(APPLICATION_DIR ${DATA_DIR})
 
-    # Sets BZR_REVNO
-    execute_process(
-        COMMAND bzr revno ${CMAKE_SOURCE_DIR}
-        OUTPUT_VARIABLE BZR_REVNO
-        OUTPUT_STRIP_TRAILING_WHITESPACE
-    )
     if(NOT BZR_REVNO)
-        set(BZR_REVNO "latest")
+      execute_process(
+        COMMAND bzr revno
+                OUTPUT_VARIABLE BZR_REVNO
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+                OUTPUT_STRIP_TRAILING_WHITESPACE
+      )
     endif(NOT BZR_REVNO)
 
     execute_process(
@@ -111,7 +110,7 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE} DESTINATION ${DESKTOP_
 
 configure_file(${APPLICATION_FILE}.in ${CMAKE_CURRENT_BINARY_DIR}/${APPLICATION_FILE})
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${APPLICATION_FILE} DESTINATION ${APPLICATION_DIR})
- 
+
 # Tests
 enable_testing()
 
