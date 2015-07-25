@@ -18,7 +18,7 @@
 
 import QtQuick 2.3
 import QtQuick.Layouts 1.0
-import Ubuntu.Components 1.1
+import Ubuntu.Components 1.3
 import Ubuntu.Components.ListItems 1.0
 import Ubuntu.Components.Popups 1.0
 import Evernote 0.1
@@ -56,20 +56,17 @@ PageWithBottomEdge {
     signal openSearch()
     signal editNote(var note)
 
-    tools: ToolbarItems {
-        ToolbarButton {
-            action: Action {
+    head {
+        actions: [
+            Action {
                 visible: !narrowMode
                 text: i18n.tr("Add note")
                 iconName: "add"
                 onTriggered: {
                     NotesStore.createNote(i18n.tr("Untitled"), filterNotebookGuid);
                 }
-            }
-        }
-
-        ToolbarButton {
-            action: Action {
+            },
+            Action {
                 iconSource: "../images/sorting.svg"
                 text: i18n.tr("Sorting")
                 onTriggered: {
@@ -81,31 +78,23 @@ PageWithBottomEdge {
                     })
                     popup.sortOrder = notes.sortOrder;
                 }
-            }
-        }
-
-        ToolbarButton {
-            action: Action {
+            },
+            Action {
                 text: i18n.tr("Search")
                 iconName: "search"
                 onTriggered: {
                     root.openSearch();
                 }
-            }
-        }
-
-        ToolbarButton {
-            action: Action {
+            },
+            Action {
                 text: i18n.tr("Delete")
                 iconName: "delete"
                 visible: root.selectedNote !== null && !root.readOnly
                 onTriggered: {
                     NotesStore.deleteNote(root.selectedNote.guid);
                 }
-            }
-        }
-        ToolbarButton {
-            action: Action {
+            },
+            Action {
                 text: root.selectedNote.reminder ? i18n.tr("Edit reminder") : i18n.tr("Set reminder")
                 // TODO: use this instead when the toolkit switches from using the
                 // ubuntu-mobile-icons theme to suru:
@@ -118,10 +107,8 @@ PageWithBottomEdge {
                     root.selectedNote.reminder = !root.selectedNote.reminder
                     NotesStore.saveNote(root.selectedNote.guid)
                 }
-            }
-        }
-        ToolbarButton {
-            action: Action {
+            },
+            Action {
                 text: i18n.tr("Edit")
                 iconName: "edit"
                 visible: root.selectedNote !== null && !root.readOnly
@@ -130,7 +117,7 @@ PageWithBottomEdge {
                     root.editNote(root.selectedNote)
                 }
             }
-        }
+        ]
     }
 
     Settings {

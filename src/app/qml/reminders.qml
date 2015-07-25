@@ -18,7 +18,7 @@
 
 import QtQuick 2.3
 import QtQuick.Layouts 1.1
-import Ubuntu.Components 1.1
+import Ubuntu.Components 1.3
 import Ubuntu.Components.Popups 1.0
 import Ubuntu.Components.ListItems 1.0
 import Ubuntu.Connectivity 1.0
@@ -33,19 +33,8 @@ import "ui"
 MainView {
     id: root
 
-    // objectName for functional testing purposes (autopilot-qt5)
     objectName: "mainView"
-
-    // Note! applicationName needs to match the "name" field of the click manifest
     applicationName: "com.ubuntu.reminders"
-
-    useDeprecatedToolbar: false
-
-    /*
-     This property enables the application to change orientation
-     when the device is rotated. The default is false.
-    */
-    automaticOrientation: true
 
     property bool narrowMode: root.width < units.gu(80)
     property var uri: undefined

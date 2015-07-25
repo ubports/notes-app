@@ -18,7 +18,7 @@
 
 import QtQuick 2.3
 import QtQuick.Layouts 1.1
-import Ubuntu.Components 1.1
+import Ubuntu.Components 1.3
 import Ubuntu.Components.Popups 1.0
 import Ubuntu.Components.ListItems 1.0
 import Ubuntu.Content 0.1
@@ -143,18 +143,21 @@ Item {
                         }
                      }
 
-                     TextEdit {
+                     TextArea {
                          id: noteTextArea
                          width: flick.width
-                         height: Math.max(flick.height - header.height, paintedHeight)
+//                         height: Math.max(flick.height - header.height, paintedHeight + units.gu(2))
+                         autoSize: true
+                         maximumLineCount: 0
                          focus: true
                          wrapMode: TextEdit.Wrap
                          textFormat: TextEdit.RichText
                          text: root.note ? root.note.richTextContent : ""
                          onCursorRectangleChanged: flick.ensureVisible(cursorRectangle)
-                         selectByMouse: toolbox.charFormatExpanded
-                         textMargin: units.gu(1)
-                         selectionColor: UbuntuColors.blue
+
+                         style: TextAreaStyle {
+                             background: null
+                         }
 
                          property int lastCursorPos: -1
                          onCursorPositionChanged: {

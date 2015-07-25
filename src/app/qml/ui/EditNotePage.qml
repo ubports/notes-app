@@ -17,7 +17,7 @@
  */
 
 import QtQuick 2.3
-import Ubuntu.Components 1.1
+import Ubuntu.Components 1.3
 import Ubuntu.Components.ListItems 1.0
 import Evernote 0.1
 import "../components"
@@ -28,9 +28,10 @@ Page {
 
     signal exitEditMode(var note)
 
-    tools: ToolbarItems {
+    head {
+        visible: false
         locked: true
-        opened: false
+        backAction: Action {visible: false}
     }
 
     EditNoteView {
