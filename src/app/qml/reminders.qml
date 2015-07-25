@@ -490,7 +490,7 @@ MainView {
 
     Column {
         id: statusBar
-        anchors { left: parent.left; right: parent.right; top: parent.top; topMargin: units.gu(9) }
+        anchors { left: parent.left; right: parent.right; top: parent.top; topMargin: units.gu(6)}
 
         StatusBar {
             anchors { left: parent.left; right: parent.right }
