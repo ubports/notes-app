@@ -137,7 +137,7 @@ ListItemWithActions {
                                 text: "<font color=\"" + root.notebookColor + "\">" +
                                     Qt.formatDateTime(root.date, Qt.LocalDate) +
                                     " </font>" + root.content.replace("\n", " ").trim()
-                                wrapMode: Text.WordWrap
+                                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                                 textFormat: Text.StyledText
                                 maximumLineCount: 2
                                 fontSize: "small"
