@@ -51,7 +51,7 @@ Item {
                     name: "weather-severe-alert-symbolic"
                 }
                 Label {
-                    text: i18n.tr("This note has been modified in multiple places. Please choose the version to be opened and delete the other.")
+                    text: i18n.tr("This note has been modified in multiple places. Open each version to check the content, then swipe to delete one of them.")
                     Layout.fillWidth: true
                     wrapMode: Text.WordWrap
                 }
