@@ -109,13 +109,13 @@ ListItemWithActions {
             }
 
             Label {
-                text: note.tagline
+                text: note.tagline.replace("\n", " ").trim()
                 fontSize: "small"
                 horizontalAlignment: Text.AlignLeft
                 Layout.fillWidth: true
                 maximumLineCount: 2
                 width: parent.width
-                wrapMode: Text.WordWrap
+                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 color: "black"
             }
         }
