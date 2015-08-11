@@ -18,7 +18,7 @@
 
 import QtQuick 2.3
 import QtQuick.Layouts 1.0
-import Ubuntu.Components 1.1
+import Ubuntu.Components 1.3
 import Ubuntu.Components.ListItems 1.0
 import Evernote 0.1
 import "../components"
@@ -30,16 +30,16 @@ Page {
 
     signal openSearch();
 
-    tools: ToolbarItems {
-        ToolbarButton {
-            action: Action {
+    head {
+        actions: [
+            Action {
                 text: i18n.tr("Search")
                 iconName: "search"
                 onTriggered: {
                     root.openSearch();
                 }
             }
-        }
+        ]
     }
 
     Notes {

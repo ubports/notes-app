@@ -1,6 +1,6 @@
 import QtQuick 2.2
 import QtQuick.Layouts 1.1
-import Ubuntu.Components 1.1
+import Ubuntu.Components 1.3
 import Ubuntu.Components.ListItems 1.0
 import Ubuntu.Components.Themes.Ambiance 1.1
 import Evernote 0.1

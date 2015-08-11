@@ -17,18 +17,22 @@
  */
 
 import QtQuick 2.3
-import Ubuntu.Components 1.1
+import Ubuntu.Components 1.3
 import Evernote 0.1
 import "../components"
 
 Page {
     id: root
-    title: noteView.title
     property alias note: noteView.note
     property bool readOnly: false
 
-    signal editNote(var note)
+    head {
+        visible: false
+        locked: true
+        backAction: Action {visible: false}
+    }
 
+    signal editNote(var note)
 
     NoteView {
         id: noteView

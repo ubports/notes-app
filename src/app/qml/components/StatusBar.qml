@@ -1,6 +1,6 @@
 import QtQuick 2.3
 import QtQuick.Layouts 1.1
-import Ubuntu.Components 1.1
+import Ubuntu.Components 1.3
 import Evernote 0.1
 
 Rectangle {
