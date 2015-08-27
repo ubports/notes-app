@@ -2,48 +2,92 @@
 # Copyright © 2014 Rosetta Contributors and Canonical Ltd 2014
 # This file is distributed under the same license as the reminders-app package.
 # Josef Andersson <josef.andersson@fripost.org>, 2014.
-#
+# clone <josef.andersson@fripost.org>, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-11-11 00:31+0100\n"
-"PO-Revision-Date: 2015-03-05 17:15+0000\n"
+"POT-Creation-Date: 2015-04-16 17:45+0200\n"
+"PO-Revision-Date: 2015-04-17 17:14+0000\n"
 "Last-Translator: Josef Andersson <Unknown>\n"
-"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-03-06 06:05+0000\n"
-"X-Generator: Launchpad (build 17374)\n"
+"X-Launchpad-Export-Date: 2015-08-15 05:35+0000\n"
+"X-Generator: Launchpad (build 17686)\n"
 "Language: sv\n"
 
-#: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:274
+#: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
 msgid "Reminders"
 msgstr "Påminnelser"
 
 #: com.ubuntu.reminders.desktop.in.in.h:2
 msgid "Ubuntu Reminders app, powered by Evernote"
-msgstr "Ubuntu Reminders app, drivs av Evernote"
+msgstr "Ubuntu Påminnelser, använder Evernote"
 
-#: src/app/qml/components/NotebooksDelegate.qml:98
+#: src/app/qml/components/ConflictDelegate.qml:35
+msgid "Notebook:"
+msgstr "Anteckningblock:"
+
+#: src/app/qml/components/ConflictDelegate.qml:63
+msgid "Reminder:"
+msgstr "Påminnelse:"
+
+#: src/app/qml/components/EditTagsDialog.qml:45
+msgid "Create a new tag"
+msgstr "Skapa en ny tagg"
+
+#: src/app/qml/components/EditTagsDialog.qml:73
+msgid "Create tag"
+msgstr "Skapa tagg"
+
+#. TRANSLATORS: Button to close the edit mode
+#: src/app/qml/components/EditTagsDialog.qml:120
+#: src/app/qml/ui/EditNoteView.qml:628 src/libqtevernote/note.cpp:369
+msgid "Done"
+msgstr "Klar"
+
+#. TRANSLATORS: Button that deletes a reminder
+#: src/app/qml/components/NotebooksDelegate.qml:36
+#: src/app/qml/components/NotesDelegate.qml:53
+#: src/app/qml/components/TagsDelegate.qml:34 src/app/qml/ui/NotePage.qml:51
+#: src/app/qml/ui/NotesPage.qml:99 src/app/qml/ui/SetReminderView.qml:76
+msgid "Delete"
+msgstr "Radera"
+
+#: src/app/qml/components/NotebooksDelegate.qml:96
 #, qt-format
 msgid "Last edited %1"
 msgstr "Senast ändrad %1"
 
-#: src/app/qml/components/NotebooksDelegate.qml:105
+#: src/app/qml/components/NotebooksDelegate.qml:115
 msgid "Shared"
 msgstr "Delade"
 
-#: src/app/qml/components/NotebooksDelegate.qml:105
+#: src/app/qml/components/NotebooksDelegate.qml:115
 msgid "Private"
 msgstr "Privat"
 
-#. TRANSLATORS: the argument is a modification date that follows this format:
-#. http://qt-project.org/doc/qt-5/qml-qtqml-date.html
-#: src/app/qml/components/NotesDelegate.qml:107
-msgid "dddd, d hh:mm"
-msgstr "dddd, d hh:mm"
+#: src/app/qml/components/NotesDelegate.qml:73
+msgid "Reminder"
+msgstr "Påminnelse"
+
+#: src/app/qml/components/NotesDelegate.qml:80 src/app/qml/reminders.qml:572
+msgid "Tags"
+msgstr "Taggar"
+
+#: src/app/qml/components/NotesDelegate.qml:87 src/app/qml/ui/NotePage.qml:37
+#: src/app/qml/ui/NotesPage.qml:125
+msgid "Edit"
+msgstr "Redigera"
+
+#: src/app/qml/components/PageWithBottomEdge.qml:123
+#: src/app/qml/reminders.qml:246 src/app/qml/reminders.qml:251
+#: src/app/qml/ui/EditNoteView.qml:45 src/app/qml/ui/EditNoteView.qml:131
+#: src/app/qml/ui/NoteView.qml:29 src/app/qml/ui/NotesPage.qml:66
+msgid "Untitled"
+msgstr "Namnlös"
 
 #: src/app/qml/components/PulldownListView.qml:40
 msgid "Release to refresh"
@@ -53,156 +97,294 @@ msgstr "Släpp för att uppdatera"
 msgid "Pull down to refresh"
 msgstr "Dra nedåt för att uppdatera"
 
-#: src/app/qml/components/RemindersDelegate.qml:50
-#: src/app/qml/ui/SetReminderView.qml:69
+#: src/app/qml/components/RemindersDelegate.qml:36
 msgid "Clear reminder"
 msgstr "Rensa påminnelse"
 
-#: src/app/qml/components/RemindersDelegate.qml:50
+#: src/app/qml/components/RemindersDelegate.qml:49
+msgid "Mark as undone"
+msgstr "Markera som ogjord"
+
+#: src/app/qml/components/RemindersDelegate.qml:49
 msgid "Mark as done"
 msgstr "Markera som klar"
 
-#: src/app/qml/reminders.qml:214
+#: src/app/qml/components/RemindersDelegate.qml:57
+#: src/app/qml/ui/NotePage.qml:44 src/app/qml/ui/NotesPage.qml:109
+msgid "Edit reminder"
+msgstr "Ändra påminnelse"
+
+#: src/app/qml/components/ResolveConflictConfirmationDialog.qml:25
+msgid "Resolve conflict"
+msgstr "Lös konflikt"
+
+#: src/app/qml/components/ResolveConflictConfirmationDialog.qml:30
+msgid ""
+"This will <b>keep the changes made on this device</b> and <b>restore the "
+"note on Evernote</b>."
+msgstr ""
+"Det här kommer att <b>behålla ändringarna utförda på denna enhet</b> och "
+"<b>återställa anteckningen hos Evernote</b>."
+
+#: src/app/qml/components/ResolveConflictConfirmationDialog.qml:32
+msgid "This will <b>delete the changed note on Evernote</b>."
+msgstr ""
+"Det här kommer att <b>ta bort den ändrade anteckningen hos Evernote</b>."
+
+#: src/app/qml/components/ResolveConflictConfirmationDialog.qml:34
+msgid ""
+"This will <b>keep the changes made on this device</b> and <b>discard any "
+"changes made on Evernote</b>."
+msgstr ""
+"Det här kommer att <b>behålla ändringarna utförda på denna enhet</b> och "
+"<b>förkasta ändringar utförda hos Evernote</b>."
+
+#: src/app/qml/components/ResolveConflictConfirmationDialog.qml:38
+msgid "This will <b>delete the changed note on this device</b>."
+msgstr ""
+"Det här kommer att <b>ta bort den ändrade anteckningen på denna enhet</b>."
+
+#: src/app/qml/components/ResolveConflictConfirmationDialog.qml:40
+msgid ""
+"This will <b>download the changed note from Evernote</b> and <b>restore it "
+"on this device</b>."
+msgstr ""
+"Det här kommer att <b>hämta den ändrade anteckningen från Evernote</b> och "
+"<b>återställa den på den här enheten</b>."
+
+#: src/app/qml/components/ResolveConflictConfirmationDialog.qml:42
+msgid ""
+"This will <b>download the changed note from Evernote</b> and <b>discard any "
+"changes made on this device</b>."
+msgstr ""
+"Det här kommer att <b>hämta den ändrade anteckningen från Evernote</b> och "
+"<b>förkasta ändringar utförda på den här enheten</b>."
+
+#: src/app/qml/components/ResolveConflictConfirmationDialog.qml:45
+msgid "Are you sure you want to continue?"
+msgstr "Är du säker på att du vill fortsätta?"
+
+#: src/app/qml/components/ResolveConflictConfirmationDialog.qml:57
+#: src/app/qml/reminders.qml:690
+msgid "Yes"
+msgstr "Ja"
+
+#: src/app/qml/components/ResolveConflictConfirmationDialog.qml:66
+#: src/app/qml/reminders.qml:680
+msgid "No"
+msgstr "Nej"
+
+#: src/app/qml/components/SortingDialog.qml:20
+msgid "Sort by"
+msgstr "Sortera efter"
+
+#: src/app/qml/components/SortingDialog.qml:29
+msgid "Date created (newest first)"
+msgstr "Skapad (senast först)"
+
+#: src/app/qml/components/SortingDialog.qml:30
+msgid "Date created (oldest first)"
+msgstr "Skapad (äldst först)"
+
+#: src/app/qml/components/SortingDialog.qml:31
+msgid "Date updated (newest first)"
+msgstr "Uppdaterad (senast först)"
+
+#: src/app/qml/components/SortingDialog.qml:32
+msgid "Date updated (oldest first)"
+msgstr "Uppdaterad (äldst först)"
+
+#: src/app/qml/components/SortingDialog.qml:33
+msgid "Title (ascending)"
+msgstr "Titel (stigande)"
+
+#: src/app/qml/components/SortingDialog.qml:34
+msgid "Title (descending)"
+msgstr "Titel (sjunkande)"
+
+#: src/app/qml/reminders.qml:385
+msgid "Default notebook"
+msgstr "Standardanteckningsbok"
+
+#: src/app/qml/reminders.qml:491
 msgid "Notes"
 msgstr "Anteckningar"
 
-#: src/app/qml/reminders.qml:245
+#: src/app/qml/reminders.qml:519
 msgid "Notebooks"
 msgstr "Anteckningsblock"
 
-#: src/app/qml/reminders.qml:289
-msgid "Tags"
-msgstr "Taggar"
+#: src/app/qml/reminders.qml:600
+msgid "Accounts"
+msgstr "Konton"
 
-#: src/app/qml/reminders.qml:330
-msgid "Reconnect"
-msgstr "Återanslut"
-
-#: src/app/qml/reminders.qml:354
+#: src/app/qml/reminders.qml:619
 msgid ""
 "No note selected.\n"
 "Select a note to see it in detail."
 msgstr ""
-"Ingen anteckning markerad\n"
+"Ingen anteckning markerad.\n"
 "Välj en anteckning för att se den i detalj."
 
-#: src/app/qml/reminders.qml:391
-msgid "No account available"
-msgstr "Inget konto tillgängligt"
+#: src/app/qml/reminders.qml:662
+msgid "Setup Evernote connection?"
+msgstr "Ställ in Evernote-anslutning?"
 
-#: src/app/qml/reminders.qml:392
-msgid "Please configure and authorize an Evernote account in System Settings"
-msgstr "Konfigurera och auktorisera ett Evernotekonto i Systeminställningar"
+#: src/app/qml/reminders.qml:663
+msgid "Reminders can store your notes and reminders locally on this device."
+msgstr ""
+"Påminnelser kan lagra dina anteckningar och påminnelser lokalt på den här "
+"enheten."
 
-#: src/app/qml/reminders.qml:412
-msgid "Add account"
-msgstr "Lägg till konto"
+#: src/app/qml/reminders.qml:664
+msgid ""
+"In order to synchronize notes with Evernote, an account at Evernote is "
+"required."
+msgstr ""
+"För att synkronisera dina anteckningar med Evernote krävs ett Evernote-konto."
+
+#: src/app/qml/reminders.qml:665
+msgid "Do you want to setup an account now?"
+msgstr "Vill du skapa ett konto nu?"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
-msgid "Select Evernote account"
-msgstr "Välj Evernote-konto"
+msgid "Select account"
+msgstr "Välj konto"
 
-#: src/app/qml/ui/AccountSelectorPage.qml:74
+#: src/app/qml/ui/AccountSelectorPage.qml:44
+msgid "Store notes locally only"
+msgstr "Lagra endast anteckningar lokalt"
+
+#: src/app/qml/ui/AccountSelectorPage.qml:52
+msgid "Accounts on www.evernote.com"
+msgstr "Konton hos www.evernote.com"
+
+#: src/app/qml/ui/AccountSelectorPage.qml:82
 #, qt-format
 msgid "%1 - Tap to authorize"
 msgstr "%1 - Tryck för att autentisera"
 
-#: src/app/qml/ui/AccountSelectorPage.qml:83
+#: src/app/qml/ui/AccountSelectorPage.qml:91
 msgid "Add new account"
 msgstr "Lägg till nytt konto"
 
-#: src/app/qml/ui/AccountSelectorPage.qml:92
-msgid "Back"
-msgstr "Bakåt"
-
-#: src/app/qml/ui/EditNoteView.qml:95 src/app/qml/ui/EditNoteView.qml:108
-#: src/app/qml/ui/NotesPage.qml:71
-msgid "Untitled"
-msgstr "Namnlös"
-
-#: src/app/qml/ui/EditNoteView.qml:406
+#: src/app/qml/ui/EditNoteView.qml:448
 msgid "Font"
 msgstr "Teckensnitt"
 
-#: src/app/qml/ui/EditNoteView.qml:417
+#: src/app/qml/ui/EditNoteView.qml:460
 msgid "Size"
 msgstr "Storlek"
 
 #. TRANSLATORS: Toolbar button for "Bold"
-#: src/app/qml/ui/EditNoteView.qml:438
+#: src/app/qml/ui/EditNoteView.qml:483
 msgid "B"
 msgstr "F"
 
 #. TRANSLATORS: Toolbar button for "Italic"
-#: src/app/qml/ui/EditNoteView.qml:451
+#: src/app/qml/ui/EditNoteView.qml:496
 msgid "I"
 msgstr "K"
 
 #. TRANSLATORS: Toolbar button for "Underline"
-#: src/app/qml/ui/EditNoteView.qml:465
+#: src/app/qml/ui/EditNoteView.qml:510
 msgid "U"
 msgstr "U"
 
 #. TRANSLATORS: Toolbar button for "Strikeout"
-#: src/app/qml/ui/EditNoteView.qml:479
+#: src/app/qml/ui/EditNoteView.qml:524
 msgid "T"
 msgstr "G"
 
-#: src/app/qml/ui/NotePage.qml:34 src/app/qml/ui/NotesPage.qml:135
-msgid "Edit"
-msgstr "Redigera"
+#: src/app/qml/ui/NoteConflictPage.qml:27
+msgid "Conflicting changes"
+msgstr "Ändringar i konflikt"
 
-#: src/app/qml/ui/NotePage.qml:43 src/app/qml/ui/NotesPage.qml:119
-msgid "Edit reminder"
-msgstr "Ändra påminnelse"
+#: src/app/qml/ui/NoteConflictView.qml:54
+msgid ""
+"This note has been modified in multiple places. Please choose the version to "
+"be opened and delete the other."
+msgstr ""
+"Denna anteckning har blivit ändrad på flera ställen. Välj versionen att "
+"öppna och ta bort den andra."
 
-#: src/app/qml/ui/NotePage.qml:43 src/app/qml/ui/NotesPage.qml:119
-#: src/app/qml/ui/SetReminderView.qml:53
+#: src/app/qml/ui/NoteConflictView.qml:63
+msgid "Deleted on this device:"
+msgstr "Ta bort på denna enhet:"
+
+#: src/app/qml/ui/NoteConflictView.qml:63
+msgid "Modified on this device:"
+msgstr "Ändra på denna enhet:"
+
+#: src/app/qml/ui/NoteConflictView.qml:85
+msgid "Deleted from Evernote:"
+msgstr "Ta bort från Evernote:"
+
+#: src/app/qml/ui/NoteConflictView.qml:85
+msgid "Modified somewhere else:"
+msgstr "Ändrad på annan plats:"
+
+#: src/app/qml/ui/NotePage.qml:44 src/app/qml/ui/NotesPage.qml:109
 msgid "Set reminder"
 msgstr "Ställ in påminnelse"
 
-#: src/app/qml/ui/NotePage.qml:57 src/app/qml/ui/NotesPage.qml:109
-msgid "Delete"
-msgstr "Radera"
+#: src/app/qml/ui/NoteView.qml:146
+msgid "Attachment"
+msgstr "Bilaga"
 
-#: src/app/qml/ui/NotebooksPage.qml:43
+#: src/app/qml/ui/NotebooksPage.qml:45
 msgid "Add notebook"
 msgstr "Lägg till anteckningsblock"
 
-#: src/app/qml/ui/NotebooksPage.qml:53 src/app/qml/ui/NotesPage.qml:78
-#: src/app/qml/ui/RemindersPage.qml:34 src/app/qml/ui/SearchNotesPage.qml:58
+#: src/app/qml/ui/NotebooksPage.qml:55 src/app/qml/ui/NotesPage.qml:89
+#: src/app/qml/ui/RemindersPage.qml:36 src/app/qml/ui/SearchNotesPage.qml:60
+#: src/app/qml/ui/TagsPage.qml:52
 msgid "Search"
 msgstr "Sök"
 
-#: src/app/qml/ui/NotebooksPage.qml:63 src/app/qml/ui/NotesPage.qml:88
-msgid "Refresh"
-msgstr "Uppdatera"
-
-#: src/app/qml/ui/NotebooksPage.qml:73 src/app/qml/ui/NotesPage.qml:98
-#: src/app/qml/ui/RemindersPage.qml:44
-msgid "Accounts"
-msgstr "Konton"
-
-#: src/app/qml/ui/NotebooksPage.qml:175 src/app/qml/ui/TagsPage.qml:192
+#: src/app/qml/ui/NotebooksPage.qml:169
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: src/app/qml/ui/NotebooksPage.qml:184 src/app/qml/ui/TagsPage.qml:201
+#. TRANSLATORS: Button that saves a reminder
+#: src/app/qml/ui/NotebooksPage.qml:178 src/app/qml/ui/SetReminderView.qml:88
 msgid "Save"
 msgstr "Spara"
 
-#: src/app/qml/ui/NotesPage.qml:40 src/app/qml/ui/NotesPage.qml:68
+#: src/app/qml/ui/NotebooksPage.qml:198
+msgid "Rename notebook"
+msgstr "Byt namn på anteckningsblock"
+
+#: src/app/qml/ui/NotebooksPage.qml:199
+#, qt-format
+msgid "Enter a new name for notebook %1"
+msgstr "Ange ett nytt namn för anteckningsblocket %1"
+
+#: src/app/qml/ui/NotebooksPage.qml:208 src/app/qml/ui/TagsPage.qml:144
+msgid "Name cannot be empty"
+msgstr "Namn kan inte vara tomt"
+
+#: src/app/qml/ui/NotebooksPage.qml:212 src/app/qml/ui/TagsPage.qml:148
+msgid "OK"
+msgstr "OK"
+
+#: src/app/qml/ui/NotesPage.qml:43 src/app/qml/ui/NotesPage.qml:63
 msgid "Add note"
 msgstr "Lägg till anteckning"
 
-#: src/app/qml/ui/NotesPage.qml:215
-msgid ""
-"No notes available. You can create new notes using the \"Add note\" button."
-msgstr ""
-"Inga anteckningar tillgängliga. Du kan skapa nya anteckningar med knappen "
-"”Lägg till anteckning”."
+#: src/app/qml/ui/NotesPage.qml:74
+msgid "Sorting"
+msgstr "Sorterar"
 
-#: src/app/qml/ui/RemindersPage.qml:112
+#: src/app/qml/ui/NotesPage.qml:254
+msgid ""
+"No notes available. You can create new notes by pulling the note editor up "
+"from the bottom edge."
+msgstr ""
+"Inga anteckningar tillgängliga. Du kan skapa nya anteckningar genom dra "
+"anteckningsredigeraren uppåt från nederkanten."
+
+#: src/app/qml/ui/RemindersPage.qml:97
 msgid ""
 "No reminders available. You can create new reminders by setting a reminder "
 "when viewing a note."
@@ -210,7 +392,7 @@ msgstr ""
 "Inga påminnelser tillgängliga. Du kan skapa nya påminnelser genom att skapa "
 "en påminnelse när du tittar på en anteckning."
 
-#: src/app/qml/ui/SearchNotesPage.qml:30
+#: src/app/qml/ui/SearchNotesPage.qml:32
 msgid "Search notes"
 msgstr "Sök bland anteckningar"
 
@@ -218,21 +400,35 @@ msgstr "Sök bland anteckningar"
 msgid "Select date and time for the reminder:"
 msgstr "Välj tid och datum för påminnelsen:"
 
-#: src/app/qml/ui/TagsPage.qml:175
+#. TRANSLATORS: A checkbox with marks the reminder as done
+#: src/app/qml/ui/SetReminderView.qml:64
+msgid "Reminder done"
+msgstr "Påminnelse genomförd"
+
+#: src/app/qml/ui/TagsPage.qml:127
 msgid "No tags available. You can tag notes while viewing them."
 msgstr ""
-"Inga taggar tillgängliga. Du kan redigera tagganteckningar medan du visar "
-"dem."
+"Inga taggar tillgängliga. Du kan tagga anteckningar medan du visar dem."
 
-#: src/libqtevernote/evernoteconnection.cpp:234
-msgid "Error connecting to Evernote: Please check network connection."
-msgstr "Fel vid anslutning till Evernote: Kontrollera nätverksanslutningen."
+#: src/app/qml/ui/TagsPage.qml:134
+msgid "Rename tag"
+msgstr "Byt namn på tagg"
 
-#: src/libqtevernote/evernoteconnection.cpp:239
+#: src/app/qml/ui/TagsPage.qml:135
+#, qt-format
+msgid "Enter a new name for tag %1"
+msgstr "Ange ett nytt namn på taggen %1"
+
+#: src/libqtevernote/evernoteconnection.cpp:268
+msgid "Offline mode"
+msgstr "Frånkopplat läge"
+
+#: src/libqtevernote/evernoteconnection.cpp:273
+#: src/libqtevernote/evernoteconnection.cpp:362
 msgid "Unknown error connecting to Evernote."
 msgstr "Okänt fel vid anslutning till Evernote."
 
-#: src/libqtevernote/evernoteconnection.cpp:252
+#: src/libqtevernote/evernoteconnection.cpp:286
 msgid ""
 "Error connecting to Evernote: Server version does not match app version. "
 "Please update the application."
@@ -240,13 +436,13 @@ msgstr ""
 "Fel vid anslutning till Evernote: Serverversionen skiljer sig från "
 "programversionen. Uppdatera programmet."
 
-#: src/libqtevernote/evernoteconnection.cpp:258
-#: src/libqtevernote/evernoteconnection.cpp:263
+#: src/libqtevernote/evernoteconnection.cpp:292
+#: src/libqtevernote/evernoteconnection.cpp:297
 #, qt-format
 msgid "Error connecting to Evernote: Error code %1"
 msgstr "Fel vid anslutning till Evernote: Felkod %1"
 
-#: src/libqtevernote/evernoteconnection.cpp:268
+#: src/libqtevernote/evernoteconnection.cpp:302
 msgid ""
 "Error connecting to Evernote: Cannot download version information from "
 "server."
@@ -254,16 +450,36 @@ msgstr ""
 "Fel vid anslutning till Evernote: Kan inte hämta versionsinformation från "
 "server."
 
-#: src/libqtevernote/evernoteconnection.cpp:273
-#: src/libqtevernote/evernoteconnection.cpp:298
+#: src/libqtevernote/evernoteconnection.cpp:307
 msgid "Unknown error connecting to Evernote"
 msgstr "Okänt fel vid anslutning till Evernote"
 
-#: src/libqtevernote/evernoteconnection.cpp:287
+#: src/libqtevernote/evernoteconnection.cpp:321
 msgid "Error connecting to Evernote: Cannot download server information."
 msgstr "Fel vid anslutning till Evernote: Kan inte hämta serverinformation."
 
-#: src/libqtevernote/evernoteconnection.cpp:293
+#: src/libqtevernote/evernoteconnection.cpp:329
+#: src/libqtevernote/notesstore.cpp:1697
+msgid ""
+"Authentication for Evernote server expired. Please renew login information "
+"in the accounts settings."
+msgstr ""
+"Autentisering för Evernote-servern har gått ut. Förnya "
+"inloggningsinformationen i kontoinställningarna."
+
+#: src/libqtevernote/evernoteconnection.cpp:332
+#: src/libqtevernote/evernoteconnection.cpp:350
+#, qt-format
+msgid "Unknown error connecting to Evernote: %1"
+msgstr "Okänt fel vid anslutning till Evernote: %1"
+
+#: src/libqtevernote/evernoteconnection.cpp:341
+msgid ""
+"Error connecting to Evernote: Rate limit exceeded. Please try again later."
+msgstr ""
+"Fel vid anslutning till Evernote: Hastighetsgräns överskreds. Prova senare."
+
+#: src/libqtevernote/evernoteconnection.cpp:357
 msgid ""
 "Error connecting to Evernote: Connection failure when downloading server "
 "information."
@@ -271,119 +487,126 @@ msgstr ""
 "Fel vid anslutning till Evernote: Anslutningsfel vid hämtning av "
 "serverinformation."
 
-#: src/libqtevernote/evernoteconnection.cpp:319
+#: src/libqtevernote/evernoteconnection.cpp:383
 msgid "Error connecting to Evernote: Connection failure"
 msgstr "Fel vid anslutning till Evernote: Anslutningsfel"
 
-#: src/libqtevernote/evernoteconnection.cpp:323
+#: src/libqtevernote/evernoteconnection.cpp:387
 msgid "Unknown Error connecting to Evernote"
 msgstr "Okänt fel vid anslutning till Evernote"
 
-#: src/libqtevernote/jobs/evernotejob.cpp:94
-msgid "Authentication expired."
-msgstr "Autentiseringen har förfallit."
+#: src/libqtevernote/evernoteconnection.cpp:435
+msgid "Disconnected from Evernote."
+msgstr "Frånkopplade från Evernote."
 
-#: src/libqtevernote/jobs/evernotejob.cpp:98
-msgid "Limit exceeded."
-msgstr "Överskridet gränsvärde."
-
-#: src/libqtevernote/jobs/evernotejob.cpp:102
-msgid "Rate limit exceeded."
-msgstr "Överskriden hastighet."
-
-#: src/libqtevernote/jobs/evernotejob.cpp:106
-msgid "Quota exceeded."
-msgstr "Överskriden kvot."
-
-#: src/libqtevernote/note.cpp:82 src/libqtevernote/note.cpp:116
-#: src/libqtevernote/note.cpp:294
+#: src/libqtevernote/note.cpp:162 src/libqtevernote/note.cpp:196
+#: src/libqtevernote/note.cpp:381
 msgid "Today"
 msgstr "Idag"
 
-#: src/libqtevernote/note.cpp:85 src/libqtevernote/note.cpp:119
+#: src/libqtevernote/note.cpp:165 src/libqtevernote/note.cpp:199
 msgid "Yesterday"
 msgstr "Igår"
 
-#: src/libqtevernote/note.cpp:88 src/libqtevernote/note.cpp:122
+#: src/libqtevernote/note.cpp:168 src/libqtevernote/note.cpp:202
 msgid "Last week"
 msgstr "Förra veckan"
 
-#: src/libqtevernote/note.cpp:91 src/libqtevernote/note.cpp:125
+#: src/libqtevernote/note.cpp:171 src/libqtevernote/note.cpp:205
 msgid "Two weeks ago"
 msgstr "Två veckor sedan"
 
 #. TRANSLATORS: the first argument refers to a month name and the second to a year
-#: src/libqtevernote/note.cpp:95 src/libqtevernote/note.cpp:129
+#: src/libqtevernote/note.cpp:175 src/libqtevernote/note.cpp:209
 #, qt-format
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: src/libqtevernote/note.cpp:282
-msgid "Done"
-msgstr "Klar"
-
-#: src/libqtevernote/note.cpp:288
+#: src/libqtevernote/note.cpp:375
 msgid "No date"
 msgstr "Inget datum"
 
-#: src/libqtevernote/note.cpp:291
+#: src/libqtevernote/note.cpp:378
 msgid "Overdue"
 msgstr "Försenad"
 
-#: src/libqtevernote/note.cpp:297
+#: src/libqtevernote/note.cpp:384
 msgid "Tomorrow"
 msgstr "Imorgon"
 
-#: src/libqtevernote/note.cpp:300
+#: src/libqtevernote/note.cpp:387
 msgid "Next week"
 msgstr "Nästa vecka"
 
-#: src/libqtevernote/note.cpp:303
+#: src/libqtevernote/note.cpp:390
 msgid "In two weeks"
 msgstr "Om två veckor"
 
-#: src/libqtevernote/note.cpp:305
+#: src/libqtevernote/note.cpp:392
 msgid "Later"
 msgstr "Senare"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: today"
-#: src/libqtevernote/notebook.cpp:100
+#: src/libqtevernote/notebook.cpp:120
 msgid "today"
 msgstr "idag"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: yesterday"
-#: src/libqtevernote/notebook.cpp:104
+#: src/libqtevernote/notebook.cpp:124
 msgid "yesterday"
 msgstr "igår"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: last week"
-#: src/libqtevernote/notebook.cpp:108
+#: src/libqtevernote/notebook.cpp:128
 msgid "last week"
 msgstr "förra veckan"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: two weeks ago"
-#: src/libqtevernote/notebook.cpp:112
+#: src/libqtevernote/notebook.cpp:132
 msgid "two weeks ago"
 msgstr "två veckor sedan"
 
 #. TRANSLATORS: this is used in the notes list to group notes created on the same month
 #. the first parameter refers to a month name and the second to a year
-#: src/libqtevernote/notebook.cpp:116
+#: src/libqtevernote/notebook.cpp:136
 #, qt-format
 msgid "on %1 %2"
 msgstr "den %1 %2"
 
-#: src/libqtevernote/notesstore.cpp:366
-#, qt-format
-msgid "Error refreshing notes: %1"
-msgstr "Fel när anteckningar uppdaterades: %1"
+#: src/libqtevernote/notesstore.cpp:409
+msgid ""
+"This account is managed by Evernote. Use the Evernote website to delete "
+"notebooks."
+msgstr ""
+"Detta konto hanteras av Evernote. Använd webbplatsen för Evernote för att ta "
+"bort anteckningsblock."
 
-#: src/libqtevernote/notesstore.cpp:551
-#, qt-format
-msgid "Error refreshing notebooks: %1"
-msgstr "Fel när anteckningsböcker uppdaterades: %1"
+#: src/libqtevernote/notesstore.cpp:422
+msgid ""
+"Cannot delete the default notebook. Set another notebook to be the default "
+"first."
+msgstr ""
+"Kan inte ta bort standard-anteckningsblocket. Ange ett annat "
+"anteckningsblock till standard först."
 
-#: src/libqtevernote/notesstore.cpp:605
-#, qt-format
-msgid "Error refreshing tags: %1"
-msgstr "Fel vid uppdatering av taggar: %1"
+#: src/libqtevernote/notesstore.cpp:1700
+msgid "Rate limit for Evernote server exceeded. Please try again later."
+msgstr "Hastighetsgräns för Evernote överskreds. Prova senare."
+
+#: src/libqtevernote/notesstore.cpp:1703
+msgid "Upload quota for Evernote server exceed. Please try again later."
+msgstr ""
+"Översteg kvot för att skicka upp till Evernote-servern. Prova senare."
+
+#: src/libqtevernote/notesstore.cpp:1717
+msgid ""
+"This account is managed by Evernote. Please use the Evernote website to "
+"delete tags."
+msgstr ""
+"Detta konto hanteras av Evernote. Använd webbplatsen för Evernote för att ta "
+"bort taggar."
+
+#. TRANSLATORS: A default file name if we don't get one from the server. Avoid weird characters.
+#: src/libqtevernote/resource.cpp:39
+msgid "Unnamed"
+msgstr "Namnlös"

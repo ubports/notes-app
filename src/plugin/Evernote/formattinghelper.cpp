@@ -72,8 +72,8 @@ int FormattingHelper::cursorPosition() const
 
 void FormattingHelper::setCursorPosition(int position)
 {
-    if (m_textCursor.position() == m_formatPosition + 1) {
-        m_textCursor.movePosition(QTextCursor::PreviousCharacter, QTextCursor::KeepAnchor);
+    if (m_formatPosition >= 0 && m_textCursor.position() == position) {
+        m_textCursor.movePosition(QTextCursor::PreviousCharacter, QTextCursor::KeepAnchor, position - m_formatPosition);
         m_textCursor.setCharFormat(m_nextFormat);
     }
     m_textCursor.setPosition(position);

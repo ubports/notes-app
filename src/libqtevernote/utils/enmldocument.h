@@ -41,6 +41,10 @@ public:
     // Will insert the file described by hash at position in the plaintext string
     void attachFile(int position, const QString &hash, const QString &type);
 
+    // Convenience functions to insert some text without having a complete Editor attached
+    void insertText(int position, const QString &text);
+    void insertLink(int position, const QString &url);
+
     void markTodo(const QString &todoId, bool checked);
 
     int renderWidth() const;

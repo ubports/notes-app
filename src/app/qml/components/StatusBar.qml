@@ -1,6 +1,6 @@
 import QtQuick 2.3
 import QtQuick.Layouts 1.1
-import Ubuntu.Components 1.1
+import Ubuntu.Components 1.3
 import Evernote 0.1
 
 Rectangle {
@@ -10,35 +10,50 @@ Rectangle {
 
     property bool shown: false
     property alias iconName: icon.name
+    property alias iconColor: icon.color
     property alias text: label.text
+    property alias showCancelButton: cancelButton.visible
+
+    signal cancel();
 
     Behavior on height {
         UbuntuNumberAnimation {}
     }
 
-    ColumnLayout {
+    RowLayout {
         id: statusBarContents
-        anchors { left: parent.left; top: parent.top; right: parent.right }
+        anchors { left: parent.left; right: parent.right; leftMargin: units.gu(1); rightMargin: units.gu(1); verticalCenter: parent.verticalCenter }
         spacing: units.gu(1)
-
-        Row {
-            anchors { left: parent.left; right: parent.right; margins: units.gu(1) }
+        Column {
             spacing: units.gu(1)
-            height: label.height
+            Layout.fillWidth: true
 
-            Icon {
-                id: icon
-                height: units.gu(3)
-                width: height
-                color: UbuntuColors.red
-                anchors.verticalCenter: parent.verticalCenter
-            }
+            Row {
+                anchors { left: parent.left; right: parent.right }
+                spacing: units.gu(1)
+                height: label.height
 
-            Label {
-                id: label
-                width: parent.width - x
-                wrapMode: Text.WordWrap
+                Icon {
+                    id: icon
+                    height: units.gu(3)
+                    width: height
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+
+                Label {
+                    id: label
+                    width: parent.width - x
+                    wrapMode: Text.WordWrap
+                    anchors.verticalCenter: parent.verticalCenter
+                }
             }
+        }
+
+        Button {
+            id: cancelButton
+            Layout.preferredWidth: height
+            iconName: "cancel"
+            onClicked: root.cancel();
         }
     }
 }

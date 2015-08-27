@@ -14,8 +14,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.2
-import Ubuntu.Components 1.1
+import QtQuick 2.3
+import QtFeedback 5.0
+import Ubuntu.Components 1.3
+import Ubuntu.Components.ListItems 1.0 as ListItem
 
 Item {
     id: root
@@ -29,8 +31,10 @@ Item {
     property bool triggerActionOnMouseRelease: false
     property color color: Theme.palette.normal.background
     property color selectedColor: "#E6E6E6"
+    property color selectedRightActionColor: UbuntuColors.lightAubergine
     property bool selected: false
     property bool selectionMode: false
+    property alias showDivider: divider.visible
     property alias internalAnchors: mainContents.anchors
     default property alias contents: mainContents.children
 
@@ -48,46 +52,36 @@ Item {
     signal itemClicked(var mouse)
     signal itemPressAndHold(var mouse)
 
-    function returnToBoundsRTL(direction)
+    function returnToBoundsRTL()
     {
         var actionFullWidth = actionWidth + units.gu(2)
-
-        // go back to normal state if swipping reverse
-        if (direction === "LTR") {
-            updatePosition(0)
-            return
-        } else if (!triggerActionOnMouseRelease) {
-            updatePosition(-rightActionsView.width + units.gu(2))
-            return
-        }
-
         var xOffset = Math.abs(main.x)
         var index = Math.min(Math.floor(xOffset / actionFullWidth), _visibleRightSideActions.length)
-        var newX = 0
-      if (index === _visibleRightSideActions.length) {
-            newX = -(rightActionsView.width - units.gu(2))
-        } else if (index >= 1) {
-            newX = -(actionFullWidth * index)
+
+        if (index < 1) {
+            main.x = 0
+        } else if (index === _visibleRightSideActions.length) {
+            main.x = -(rightActionsView.width - units.gu(2))
+        } else {
+            main.x = -(actionFullWidth * index)
         }
-        updatePosition(newX)
     }
 
-    function returnToBoundsLTR(direction)
+    function returnToBoundsLTR()
     {
         var finalX = leftActionWidth
-        if ((direction === "RTL") || (main.x <= (finalX * root.threshold)))
-            finalX = 0
-        updatePosition(finalX)
+        if (main.x > (finalX * root.threshold))
+            main.x = finalX
+        else
+            main.x = 0
     }
 
-    function returnToBounds(direction)
+    function returnToBounds()
     {
         if (main.x < 0) {
-            returnToBoundsRTL(direction)
+            returnToBoundsRTL()
         } else if (main.x > 0) {
-            returnToBoundsLTR(direction)
-        } else {
-            updatePosition(0)
+            returnToBoundsLTR()
         }
     }
 
@@ -117,8 +111,7 @@ Item {
 
     function updateActiveAction()
     {
-        if (triggerActionOnMouseRelease &&
-            (main.x <= -(root.actionWidth + units.gu(2))) &&
+        if ((main.x <= -(root.actionWidth + units.gu(2))) &&
             (main.x > -(rightActionsView.width - units.gu(2)))) {
             var actionFullWidth = actionWidth + units.gu(2)
             var xOffset = Math.abs(main.x)
@@ -135,7 +128,7 @@ Item {
 
     function resetSwipe()
     {
-        updatePosition(0)
+        main.x = 0
     }
 
     function filterVisibleActions(actions)
@@ -148,16 +141,6 @@ Item {
             }
         }
         return visibleActions
-    }
-
-    function updatePosition(pos)
-    {
-        if (!root.triggerActionOnMouseRelease && (pos !== 0)) {
-            mouseArea.state = pos > 0 ? "RightToLeft" : "LeftToRight"
-        } else {
-            mouseArea.state = ""
-        }
-        main.x = pos
     }
 
     states: [
@@ -182,6 +165,15 @@ Item {
 
     height: defaultHeight
     clip: height !== defaultHeight
+    HapticsEffect {
+        id: clickEffect
+        attackIntensity: 0.0
+        attackTime: 50
+        intensity: 1.0
+        duration: 10
+        fadeTime: 50
+        fadeIntensity: 0.0
+    }
 
     Rectangle {
         id: leftActionView
@@ -207,7 +199,7 @@ Item {
         }
     }
 
-    Rectangle {
+    Item {
        id: rightActionsView
 
        anchors {
@@ -217,7 +209,12 @@ Item {
        }
        visible: _visibleRightSideActions.length > 0
        width: rightActionsRepeater.count > 0 ? rightActionsRepeater.count * (root.actionWidth + units.gu(2)) + root.actionThreshold + units.gu(2) : 0
-       color: "white"
+
+       Rectangle {
+            anchors.fill: parent
+            color: 'white'
+       }
+
        Row {
            anchors{
                top: parent.top
@@ -233,6 +230,7 @@ Item {
 
                model: _showActions ? _visibleRightSideActions : []
                Item {
+                   id: actItem
                    property alias image: img
 
                    height: rightActionsView.height
@@ -244,9 +242,27 @@ Item {
                        anchors.centerIn: parent
                        width: units.gu(3)
                        height: units.gu(3)
-                       name: modelData.iconName
-                       source: modelData.iconSource
-                       color: root.activeAction === modelData ? UbuntuColors.lightAubergine : UbuntuColors.lightGrey
+                       source: modelData.iconSource ? modelData.iconSource : ''
+                       name: modelData.iconName ? modelData.iconName : ''
+                       color: root.activeAction === modelData || !root.triggerActionOnMouseRelease ? root.selectedRightActionColor : UbuntuColors.lightGrey
+                   }
+                   Rectangle {
+                       id: underscore
+                       width: actItem.width
+                       height: units.gu(0.2)
+                       anchors {
+                           bottom: actItem.bottom
+                           bottomMargin: units.gu(1.5)
+
+                       }
+                       // Both this and the action icon should match the header color when active
+                       color: root.selectedRightActionColor
+                       visible: root.activeAction === modelData
+                       onVisibleChanged: {
+                           if (visible) {
+                               clickEffect.start()
+                           }
+                       }
                    }
               }
            }
@@ -254,7 +270,7 @@ Item {
     }
 
 
-    Rectangle {
+    Item {
         id: main
         objectName: "mainItem"
 
@@ -264,7 +280,6 @@ Item {
         }
 
         width: parent.width
-        color: root.selected ? root.selectedColor : root.color
 
         Loader {
             id: selectionIcon
@@ -288,13 +303,13 @@ Item {
 
             anchors {
                 left: selectionIcon.right
-//                leftMargin: units.gu(2)
+                //leftMargin: units.gu(2)
                 top: parent.top
-//                topMargin: units.gu(1)
+                //topMargin: units.gu(1)
                 right: parent.right
-//                rightMargin: units.gu(2)
+                //rightMargin: units.gu(2)
                 bottom: parent.bottom
-//                bottomMargin: units.gu(1)
+                //bottomMargin: units.gu(1)
             }
         }
 
@@ -306,9 +321,7 @@ Item {
                 duration: UbuntuAnimation.SlowDuration
             }
         }
-        Behavior on color {
-           ColorAnimation {}
-        }
+
     }
 
     SequentialAnimation {
@@ -349,7 +362,6 @@ Item {
             script: {
                 root.activeAction.triggered(root)
                 root.activeAction = null;
-                mouseArea.state = ""
             }
         }
         PauseAnimation {
@@ -359,6 +371,7 @@ Item {
             target: main
             property: "x"
             to: 0
+
         }
     }
 
@@ -367,10 +380,14 @@ Item {
 
         property bool locked: root.locked || ((root.leftSideAction === null) && (root._visibleRightSideActions.count === 0))
         property bool manual: false
-        property string direction: "None"
-        property real lastX: -1
 
-        anchors.fill: parent
+        anchors {
+            top: parent.top
+            bottom: parent.bottom
+            right: parent.right
+            left: parent.left
+            leftMargin: mouseArea.drag.active ? units.gu(4) : 0
+        }
         drag {
             target: locked ? null : main
             axis: Drag.XAxis
@@ -379,47 +396,20 @@ Item {
             threshold: root.actionThreshold
         }
 
-        states: [
-            State {
-                name: "LeftToRight"
-                PropertyChanges {
-                    target: mouseArea
-                    drag.maximumX: 0
-                }
-            },
-            State {
-                name: "RightToLeft"
-                PropertyChanges {
-                    target: mouseArea
-                    drag.minimumX: 0
-                }
-            }
-        ]
-
-        onMouseXChanged: {
-            var offset = (lastX - mouseX)
-            if (Math.abs(offset) <= root.actionThreshold) {
-                return
-            }
-            lastX = mouseX
-            direction = offset > 0 ? "RTL" : "LTR";
-        }
-
-        onPressed: {
-            lastX = mouse.x
-        }
-
         onReleased: {
-            if (root.triggerActionOnMouseRelease && root.activeAction) {
+            // if the mouse reach the safe are we should handle it as full swipe
+            if (mouse.x < 0) {
+                main.x = -(rightActionsView.width - units.gu(2))
+            } else if (root.triggerActionOnMouseRelease && root.activeAction) {
+                clickEffect.start()
                 triggerAction.start()
             } else {
-                root.returnToBounds(direction)
+                root.returnToBounds()
                 root.activeAction = null
             }
-            lastX = -1
-            direction = "None"
         }
         onClicked: {
+            clickEffect.start()
             if (main.x === 0) {
                 root.itemClicked(mouse)
             } else if (main.x > 0) {
@@ -451,5 +441,16 @@ Item {
         }
         z: -1
     }
-}
 
+    ListItem.ThinDivider {
+        id: divider
+        visible: false
+        width: parent.width + units.gu(4)
+        anchors {
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+            bottomMargin: units.gu(-0.15)
+        }
+    }
+}

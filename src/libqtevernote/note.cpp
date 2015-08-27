@@ -41,7 +41,8 @@ Note::Note(const QString &guid, quint32 updateSequenceNumber, QObject *parent) :
     m_loaded(false),
     m_needsContentSync(false),
     m_syncError(false),
-    m_conflicting(false)
+    m_conflicting(false),
+    m_conflictingNote(nullptr)
 {
     setGuid(guid);
     m_cacheFile.setFileName(NotesStore::instance()->storageLocation() + "note-" + guid + ".enml");
@@ -276,7 +277,7 @@ void Note::setRichTextContent(const QString &richTextContent)
 
 QString Note::plaintextContent() const
 {
-    return m_content.toPlaintext().trimmed();
+    return m_content.toPlaintext();
 }
 
 QString Note::tagline() const
@@ -471,6 +472,11 @@ QList<Resource*> Note::resources() const
     return m_resources.values();
 }
 
+Note *Note::conflictingNote() const
+{
+    return m_conflictingNote;
+}
+
 QStringList Note::resourceUrls() const
 {
     QList<QString> ret;
@@ -531,9 +537,18 @@ void Note::attachFile(int position, const QUrl &fileName)
         return;
     }
 
-    Resource *resource = new Resource(fileName.path());
+    Resource *resource = new Resource(fileName.path(), this);
     m_resources.insert(resource->hash(), resource);
     m_content.attachFile(position, resource->hash(), resource->type());
+
+    QSettings infoFile(m_infoFile, QSettings::IniFormat);
+    infoFile.beginGroup("resources");
+    infoFile.beginGroup(resource->hash());
+    infoFile.setValue("fileName", resource->fileName());
+    infoFile.setValue("type", resource->type());
+    infoFile.endGroup();
+    infoFile.endGroup();
+
     emit resourcesChanged();
     emit contentChanged();
 
@@ -553,6 +568,20 @@ void Note::addTag(const QString &tagGuid)
 void Note::removeTag(const QString &tagGuid)
 {
     NotesStore::instance()->untagNote(m_guid, tagGuid);
+}
+
+void Note::insertText(int position, const QString &text)
+{
+    m_content.insertText(position, text);
+    m_tagline = m_content.toPlaintext().left(100);
+    emit contentChanged();
+}
+
+void Note::insertLink(int position, const QString &url)
+{
+    m_content.insertLink(position, url);
+    m_tagline = m_content.toPlaintext().left(100);
+    emit contentChanged();
 }
 
 int Note::renderWidth() const
@@ -732,4 +761,16 @@ void Note::setConflicting(bool conflicting)
         m_conflicting = conflicting;
         emit conflictingChanged();
     }
+}
+
+void Note::setConflictingNote(Note *note)
+{
+    if (m_conflictingNote) {
+        m_conflictingNote->deleteLater();
+    }
+    m_conflictingNote = note;
+    if (m_conflictingNote) {
+        m_conflictingNote->setParent(this);
+    }
+    emit conflictingNoteChanged();
 }

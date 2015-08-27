@@ -18,7 +18,7 @@
 
 import QtQuick 2.3
 import QtQuick.Layouts 1.0
-import Ubuntu.Components 1.1
+import Ubuntu.Components 1.3
 import Ubuntu.Components.ListItems 1.0
 import Evernote 0.1
 
@@ -37,12 +37,16 @@ ListItemWithActions {
     property bool synced
     property bool syncError
     property bool conflicting
+    property bool deleted
     property string notebookColor
 
     signal deleteNote()
     signal editNote()
     signal editReminder()
     signal editTags()
+
+    // For conflict handling
+    signal keepThis();
 
     leftSideAction: Action {
         iconName: "delete"
@@ -52,7 +56,18 @@ ListItemWithActions {
         }
     }
 
-    rightSideActions: [
+    selectedRightActionColor: UbuntuColors.green
+    triggerActionOnMouseRelease: true
+    rightSideActions: root.conflicting ? conflictActions : enabledRightSideActions
+    property list<Action> conflictActions: [
+        Action {
+            iconName: "tick"
+            onTriggered: {
+                root.keepThis();
+            }
+        }
+    ]
+    property list<Action> enabledRightSideActions: [
         Action {
             iconName: "alarm-clock"
             text: i18n.tr("Reminder")
@@ -114,18 +129,20 @@ ListItemWithActions {
                                 font.weight: Font.Light
                                 elide: Text.ElideRight
                                 color: root.notebookColor
+                                font.strikeout: root.deleted
                             }
                             Label {
                                 Layout.fillWidth: true
                                 Layout.fillHeight: true
                                 text: "<font color=\"" + root.notebookColor + "\">" +
                                     Qt.formatDateTime(root.date, Qt.LocalDate) +
-                                    " </font>" + root.content
-                                wrapMode: Text.WordWrap
+                                    " </font>" + root.content.replace("\n", " ").trim()
+                                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                                 textFormat: Text.StyledText
                                 maximumLineCount: 2
                                 fontSize: "small"
                                 color: "black"
+                                font.strikeout: root.deleted
                             }
 
                             Label {

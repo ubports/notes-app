@@ -42,12 +42,10 @@ void FetchUsernameJob::attachToDuplicate(const EvernoteJob *other)
 
 void FetchUsernameJob::startJob()
 {
-    evernote::edam::User user;
-    client()->getUser(user, token().toStdString());
-    m_result = QString::fromStdString(user.username);
+    client()->getUser(m_user, token().toStdString());
 }
 
 void FetchUsernameJob::emitJobDone(EvernoteConnection::ErrorCode errorCode, const QString &errorMessage)
 {
-    emit jobDone(errorCode, errorMessage, m_result);
+    emit jobDone(errorCode, errorMessage, m_user.id, QString::fromStdString(m_user.username));
 }

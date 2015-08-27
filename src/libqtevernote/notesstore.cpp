@@ -41,6 +41,7 @@
 #include "jobs/fetchtagsjob.h"
 #include "jobs/createtagjob.h"
 #include "jobs/savetagjob.h"
+#include "jobs/expungetagjob.h"
 
 #include "libintl.h"
 
@@ -60,7 +61,7 @@ NotesStore::NotesStore(QObject *parent) :
     m_tagsLoading(false)
 {
     qCDebug(dcNotesStore) << "Creating NotesStore instance.";
-    connect(UserStore::instance(), &UserStore::usernameChanged, this, &NotesStore::userStoreConnected);
+    connect(UserStore::instance(), &UserStore::userChanged, this, &NotesStore::userStoreConnected);
 
     qRegisterMetaType<evernote::edam::NotesMetadataList>("evernote::edam::NotesMetadataList");
     qRegisterMetaType<evernote::edam::Note>("evernote::edam::Note");
@@ -97,7 +98,7 @@ void NotesStore::setUsername(const QString &username)
         // We don't accept an empty username.
         return;
     }
-    if (!UserStore::instance()->username().isEmpty() && username != UserStore::instance()->username()) {
+    if (!UserStore::instance()->userName().isEmpty() && username != UserStore::instance()->userName()) {
         qCWarning(dcNotesStore) << "Logged in to Evernote. Can't change account manually. User EvernoteConnection to log in to another account or log out and change this manually.";
         return;
     }
@@ -117,8 +118,9 @@ QString NotesStore::storageLocation()
     return QStandardPaths::standardLocations(QStandardPaths::DataLocation).first() + "/" + m_username + "/";
 }
 
-void NotesStore::userStoreConnected(const QString &username)
+void NotesStore::userStoreConnected()
 {
+    QString username = UserStore::instance()->userName();
     qCDebug(dcNotesStore) << "User store connected! Using username:" << username;
     setUsername(username);
 
@@ -317,9 +319,11 @@ void NotesStore::createNotebookJobDone(EvernoteConnection::ErrorCode errorCode, 
 
     notebook->setLoading(false);
 
+    handleUserError(errorCode);
     if (errorCode != EvernoteConnection::ErrorCodeNoError) {
         qCWarning(dcSync) << "Error creating notebook:" << errorMessage;
         notebook->setSyncError(true);
+        emit notebookChanged(notebook->guid());
         return;
     }
     QString guid = QString::fromStdString(result.guid);
@@ -412,12 +416,17 @@ void NotesStore::saveTag(const QString &guid)
 
 void NotesStore::expungeNotebook(const QString &guid)
 {
+#ifdef NO_EXPUNGE_NOTEBOOKS
+    // This snipped can be used if the app is compiled with a restricted api key
+    // that can't expunge notebooks on Evernote. Compile with
+    // cmake -DNO_EXPUNGE_NOTEBOOKS=1
     if (m_username != "@local") {
         qCWarning(dcNotesStore) << "Account managed by Evernote. Cannot delete notebooks.";
         m_errorQueue.append(QString(gettext("This account is managed by Evernote. Use the Evernote website to delete notebooks.")));
         emit errorChanged();
         return;
     }
+#endif
 
     Notebook* notebook = m_notebooksHash.value(guid);
     if (!notebook) {
@@ -461,17 +470,32 @@ void NotesStore::expungeNotebook(const QString &guid)
         }
     }
 
-    m_notebooks.removeAll(notebook);
-    m_notebooksHash.remove(notebook->guid());
-    emit notebookRemoved(notebook->guid());
+    if (notebook->lastSyncedSequenceNumber() == 0) {
+        emit notebookRemoved(notebook->guid());
+        m_notebooks.removeAll(notebook);
+        m_notebooksHash.remove(notebook->guid());
+        emit notebookRemoved(notebook->guid());
 
-    QSettings settings(m_cacheFile, QSettings::IniFormat);
-    settings.beginGroup("notebooks");
-    settings.remove(notebook->guid());
-    settings.endGroup();
+        QSettings settings(m_cacheFile, QSettings::IniFormat);
+        settings.beginGroup("notebooks");
+        settings.remove(notebook->guid());
+        settings.endGroup();
 
-    notebook->deleteInfoFile();
-    notebook->deleteLater();
+        notebook->deleteInfoFile();
+        notebook->deleteLater();
+    } else {
+        qCDebug(dcNotesStore) << "Setting notebook to deleted:" << notebook->guid();
+        notebook->setDeleted(true);
+        notebook->setUpdateSequenceNumber(notebook->updateSequenceNumber()+1);
+        emit notebookChanged(notebook->guid());
+        syncToCacheFile(notebook);
+
+        if (EvernoteConnection::instance()->isConnected()) {
+            ExpungeNotebookJob *job = new ExpungeNotebookJob(guid, this);
+            connect(job, &ExpungeNotebookJob::jobDone, this, &NotesStore::expungeNotebookJobDone);
+            EvernoteConnection::instance()->enqueue(job);
+        }
+    }
 }
 
 QList<Tag *> NotesStore::tags() const
@@ -486,6 +510,12 @@ Tag *NotesStore::tag(const QString &guid)
 
 Tag* NotesStore::createTag(const QString &name)
 {
+    foreach (Tag *tag, m_tags) {
+        if (tag->name() == name) {
+            return tag;
+        }
+    }
+
     QString newGuid = QUuid::createUuid().toString();
     newGuid.remove("{").remove("}");
     Tag *tag = new Tag(newGuid, 1, this);
@@ -513,6 +543,8 @@ void NotesStore::createTagJobDone(EvernoteConnection::ErrorCode errorCode, const
     }
 
     tag->setLoading(false);
+
+    handleUserError(errorCode);
     if (errorCode != EvernoteConnection::ErrorCodeNoError) {
         qCWarning(dcSync) << "Error creating tag on server:" << errorMessage;
         tag->setSyncError(true);
@@ -550,6 +582,8 @@ void NotesStore::saveTagJobDone(EvernoteConnection::ErrorCode errorCode, const Q
         return;
     }
     tag->setLoading(false);
+
+    handleUserError(errorCode);
     if (errorCode != EvernoteConnection::ErrorCodeNoError) {
         qCWarning(dcSync) << "Error updating tag on server" << errorMessage;
         tag->setSyncError(true);
@@ -562,6 +596,33 @@ void NotesStore::saveTagJobDone(EvernoteConnection::ErrorCode errorCode, const Q
     tag->setLastSyncedSequenceNumber(result.updateSequenceNum);
     emit tagChanged(tag->guid());
     syncToCacheFile(tag);
+}
+
+void NotesStore::expungeTagJobDone(EvernoteConnection::ErrorCode errorCode, const QString &errorMessage, const QString &guid)
+{
+    handleUserError(errorCode);
+    if (errorCode != EvernoteConnection::ErrorCodeNoError) {
+        qCWarning(dcSync) << "Error expunging tag:" << errorMessage;
+        return;
+    }
+
+    if (!m_tagsHash.contains(guid)) {
+        qCWarning(dcSync) << "Received a response for a expungeTag call, but can't find tag around any more.";
+        return;
+    }
+
+    emit tagRemoved(guid);
+    Tag *tag = m_tagsHash.take(guid);
+    m_tags.removeAll(tag);
+
+    QSettings cacheFile(m_cacheFile, QSettings::IniFormat);
+    cacheFile.beginGroup("tags");
+    cacheFile.remove(guid);
+    cacheFile.endGroup();
+    tag->syncToInfoFile();
+
+    tag->deleteInfoFile();
+    tag->deleteLater();
 }
 
 void NotesStore::tagNote(const QString &noteGuid, const QString &tagGuid)
@@ -635,26 +696,8 @@ void NotesStore::refreshNotes(const QString &filterNotebookGuid, int startIndex)
 
 void NotesStore::fetchNotesJobDone(EvernoteConnection::ErrorCode errorCode, const QString &errorMessage, const evernote::edam::NotesMetadataList &results, const QString &filterNotebookGuid)
 {
-    switch (errorCode) {
-    case EvernoteConnection::ErrorCodeNoError:
-        // All is well...
-        break;
-    case EvernoteConnection::ErrorCodeUserException:
-        qCWarning(dcSync) << "FetchNotesJobDone: EDAMUserException:" << errorMessage;
-        m_loading = false;
-        emit loadingChanged();
-        return; // silently discarding...
-    case EvernoteConnection::ErrorCodeConnectionLost:
-        qCWarning(dcSync) << "FetchNotesJobDone: Connection with evernote lost:" << errorMessage;
-        m_loading = false;
-        emit loadingChanged();
-        return; // silently discarding...
-    case EvernoteConnection::ErrorCodeNotFoundExcpetion:
-        qCWarning(dcSync) << "FetchNotesJobDone: Item not found on server:" << errorMessage;
-        m_loading = false;
-        emit loadingChanged();
-        return; // silently discarding...
-    default:
+    handleUserError(errorCode);
+    if (errorCode != EvernoteConnection::ErrorCodeNoError) {
         qCWarning(dcSync) << "FetchNotesJobDone: Failed to fetch notes list:" << errorMessage << errorCode;
         m_loading = false;
         emit loadingChanged();
@@ -706,12 +749,23 @@ void NotesStore::fetchNotesJobDone(EvernoteConnection::ErrorCode errorCode, cons
                 connect(job, &SaveNoteJob::jobDone, this, &NotesStore::saveNoteJobDone);
                 EvernoteConnection::instance()->enqueue(job);
             } else {
-                qCWarning(dcSync) << "CONFLICT: Note has been changed on server and locally!";
-                qCWarning(dcSync) << "local note sequence:" << note->updateSequenceNumber();
-                qCWarning(dcSync) << "last synced sequence:" << note->lastSyncedSequenceNumber();
-                qCWarning(dcSync) << "remote sequence:" << result.updateSequenceNum;
+                qCWarning(dcSync) << "********************************************************";
+                qCWarning(dcSync) << "* CONFLICT: Note has been changed on server and locally!";
+                qCWarning(dcSync) << "* local note sequence:" << note->updateSequenceNumber();
+                qCWarning(dcSync) << "* last synced sequence:" << note->lastSyncedSequenceNumber();
+                qCWarning(dcSync) << "* remote update sequence:" << result.updateSequenceNum;
+                qCWarning(dcSync) << "********************************************************";
                 note->setConflicting(true);
                 changedRoles << RoleConflicting;
+
+                // Not setting parent as we don't want to squash the reply.
+                FetchNoteJob::LoadWhatFlags flags = 0x0;
+                flags |= FetchNoteJob::LoadContent;
+                flags |= FetchNoteJob::LoadResources;
+                FetchNoteJob *fetchNoteJob = new FetchNoteJob(note->guid(), flags);
+                fetchNoteJob->setJobPriority(EvernoteJob::JobPriorityMedium);
+                connect(fetchNoteJob, &FetchNoteJob::resultReady, this, &NotesStore::fetchConflictingNoteJobDone);
+                EvernoteConnection::instance()->enqueue(fetchNoteJob);
             }
         }
 
@@ -731,7 +785,7 @@ void NotesStore::fetchNotesJobDone(EvernoteConnection::ErrorCode errorCode, cons
         qCDebug(dcSync) << "Not all notes fetched yet. Fetching next batch.";
         refreshNotes(filterNotebookGuid, results.startIndex + results.notes.size());
     } else {
-        qCDebug(dcSync) << "Fetched all notes from Evernote. Starting merge of local changes...";
+        qCDebug(dcSync) << "Fetched all notes from Evernote. Starting sync of local-only notes.";
         m_organizerAdapter->startSync();
         m_loading = false;
         emit loadingChanged();
@@ -777,26 +831,30 @@ void NotesStore::fetchNotesJobDone(EvernoteConnection::ErrorCode errorCode, cons
                 connect(job, &CreateNoteJob::jobDone, this, &NotesStore::createNoteJobDone);
                 EvernoteConnection::instance()->enqueue(job);
             } else {
-                // This note has been deleted from the server... drop it
                 int idx = m_notes.indexOf(note);
-                if (idx > -1) {
-                    beginRemoveRows(QModelIndex(), idx, idx);
-                    m_notes.removeAt(idx);
-                    m_notesHash.remove(note->guid());
-                    endRemoveRows();
-                    emit noteRemoved(note->guid(), note->notebookGuid());
-                    emit countChanged();
+                if (idx == -1) {
+                    qCWarning(dcSync) << "Should sync unhandled note but it is gone by now...";
+                    continue;
+                }
 
-                    QSettings settings(m_cacheFile, QSettings::IniFormat);
-                    settings.beginGroup("notes");
-                    settings.remove(note->guid());
-                    settings.endGroup();
+                if (note->synced()) {
+                    qCDebug(dcSync) << "Note has been deleted from the server and not changed locally. Deleting local note:" << note->guid();
+                    removeNote(note->guid());
+                } else {
+                    qCDebug(dcSync) << "CONFLICT: Note has been deleted from the server but we have unsynced local changes for note:" << note->guid();
+                    FetchNoteJob::LoadWhatFlags flags = 0x0;
+                    flags |= FetchNoteJob::LoadContent;
+                    flags |= FetchNoteJob::LoadResources;
+                    FetchNoteJob *job = new FetchNoteJob(note->guid(), flags);
+                    connect(job, &FetchNoteJob::resultReady, this, &NotesStore::fetchConflictingNoteJobDone);
+                    EvernoteConnection::instance()->enqueue(job);
 
-                    note->deleteLater();
+                    note->setConflicting(true);
+                    emit dataChanged(index(idx), index(idx), QVector<int>() << RoleConflicting);
                 }
             }
         }
-        qCDebug(dcSync) << "Local changes merged.";
+        qCDebug(dcSync) << "Local-only notes synced.";
     }
 }
 
@@ -822,7 +880,7 @@ void NotesStore::refreshNoteContent(const QString &guid, FetchNoteJob::LoadWhat 
     }
 }
 
-void NotesStore::fetchNoteJobDone(EvernoteConnection::ErrorCode errorCode, const QString &errorMessage, const evernote::edam::Note &result, FetchNoteJob::LoadWhat what)
+void NotesStore::fetchNoteJobDone(EvernoteConnection::ErrorCode errorCode, const QString &errorMessage, const evernote::edam::Note &result, FetchNoteJob::LoadWhatFlags what)
 {
     FetchNoteJob *job = static_cast<FetchNoteJob*>(sender());
     Note *note = m_notesHash.value(QString::fromStdString(result.guid));
@@ -834,27 +892,20 @@ void NotesStore::fetchNoteJobDone(EvernoteConnection::ErrorCode errorCode, const
     QModelIndex noteIndex = index(m_notes.indexOf(note));
     QVector<int> roles;
 
-    switch (errorCode) {
-    case EvernoteConnection::ErrorCodeNoError:
-        // All is well
-        break;
-    case EvernoteConnection::ErrorCodeUserException:
-        qCWarning(dcSync) << "FetchNoteJobDone: EDAMUserException:" << errorMessage;
-        emit dataChanged(noteIndex, noteIndex, roles);
-        return; // silently discarding...
-    case EvernoteConnection::ErrorCodeConnectionLost:
-        qCWarning(dcSync) << "FetchNoteJobDone: Connection with evernote lost:" << errorMessage;
-        emit dataChanged(noteIndex, noteIndex, roles);
-        return; // silently discarding...
-    case EvernoteConnection::ErrorCodeNotFoundExcpetion:
-        qCWarning(dcSync) << "FetchNoteJobDone: Item not found on server:" << errorMessage;
-        emit dataChanged(noteIndex, noteIndex, roles);
-        return; // silently discarding...
-    default:
-        qCWarning(dcSync) << "FetchNoteJobDone: Failed to fetch note content:" << errorMessage << errorCode;
+    handleUserError(errorCode);
+    if (errorCode != EvernoteConnection::ErrorCodeNoError) {
+        qWarning(dcSync) << "Fetch note job failed:" << errorMessage;
+        note->setLoading(false);
+        roles << RoleLoading;
         note->setSyncError(true);
         roles << RoleSyncError;
         emit dataChanged(noteIndex, noteIndex, roles);
+        return;
+    }
+
+    if (result.deleted > 0) {
+        qCDebug(dcSync) << "Note has been deleted on server. Deleting locally.";
+        removeNote(note->guid());
         return;
     }
 
@@ -869,6 +920,18 @@ void NotesStore::fetchNoteJobDone(EvernoteConnection::ErrorCode errorCode, const
     if (note->updated() != QDateTime::fromMSecsSinceEpoch(result.updated)) {
         note->setUpdated(QDateTime::fromMSecsSinceEpoch(result.updated));
         roles << RoleUpdated << RoleUpdatedString;
+    }
+    QStringList tagGuids;
+    for (quint32 i = 0; i < result.tagGuids.size(); i++) {
+        QString tag = QString::fromStdString(result.tagGuids.at(i));
+        if (m_tagsHash.contains(tag)) {
+            refreshTags();
+        }
+        tagGuids << tag;
+    }
+    if (note->tagGuids() != tagGuids) {
+        note->setTagGuids(tagGuids);
+        roles << RoleTagGuids;
     }
 
     // Notes are fetched without resources by default. if we discover one or more resources where we don't have
@@ -904,11 +967,14 @@ void NotesStore::fetchNoteJobDone(EvernoteConnection::ErrorCode errorCode, const
     if (what == FetchNoteJob::LoadContent) {
         note->setEnmlContent(QString::fromStdString(result.content));
         note->setUpdateSequenceNumber(result.updateSequenceNum);
+        note->setLastSyncedSequenceNumber(result.updateSequenceNum);
         roles << RoleHtmlContent << RoleEnmlContent << RoleTagline << RolePlaintextContent;
     }
+    bool syncReminders = false;
     if (note->reminderOrder() != result.attributes.reminderOrder) {
         note->setReminderOrder(result.attributes.reminderOrder);
         roles << RoleReminder;
+        syncReminders = true;
     }
     QDateTime reminderTime;
     if (result.attributes.reminderTime > 0) {
@@ -917,6 +983,7 @@ void NotesStore::fetchNoteJobDone(EvernoteConnection::ErrorCode errorCode, const
     if (note->reminderTime() != reminderTime) {
         note->setReminderTime(reminderTime);
         roles << RoleReminderTime << RoleReminderTimeString;
+        syncReminders = true;
     }
     QDateTime reminderDoneTime;
     if (result.attributes.reminderDoneTime > 0) {
@@ -925,6 +992,10 @@ void NotesStore::fetchNoteJobDone(EvernoteConnection::ErrorCode errorCode, const
     if (note->reminderDoneTime() != reminderDoneTime) {
         note->setReminderDoneTime(reminderDoneTime);
         roles << RoleReminderDone << RoleReminderDoneTime;
+        syncReminders = true;
+    }
+    if (syncReminders) {
+        m_organizerAdapter->startSync();
     }
 
     note->setLoading(false);
@@ -940,6 +1011,55 @@ void NotesStore::fetchNoteJobDone(EvernoteConnection::ErrorCode errorCode, const
     }
     syncToCacheFile(note); // Syncs into the list cache
     note->syncToCacheFile(); // Syncs note's content into notes cache
+}
+
+void NotesStore::fetchConflictingNoteJobDone(EvernoteConnection::ErrorCode errorCode, const QString &errorMessage, const evernote::edam::Note &result, FetchNoteJob::LoadWhatFlags what)
+{
+    Q_UNUSED(what) // We always fetch everything when sensing a conflict
+
+    Note *note = m_notesHash.value(QString::fromStdString(result.guid));
+    if (!note) {
+        qCWarning(dcSync) << "Fetched conflicting note from server but local note can't be found any more:" << QString::fromStdString(result.guid);
+        return;
+    }
+
+    handleUserError(errorCode);
+    if (errorCode != EvernoteConnection::ErrorCodeNoError) {
+        qCWarning(dcSync) << "Failed to fetch conflicting note for" << note->guid() << errorMessage;
+        return;
+    }
+
+    qCDebug(dcSync) << "Fetched conflicting note:" << note->guid();
+
+    // Make sure local note is loaded
+    note->loadFromCacheFile();
+
+    Note *serverNote = new Note("conflict-" + note->guid(), result.updateSequenceNum, note);
+    serverNote->setUpdateSequenceNumber(result.updateSequenceNum);
+    serverNote->setLastSyncedSequenceNumber(result.updateSequenceNum);
+    serverNote->setTitle(QString::fromStdString(result.title));
+    serverNote->setNotebookGuid(QString::fromStdString(result.notebookGuid));
+    serverNote->setCreated(QDateTime::fromMSecsSinceEpoch(result.created));
+    serverNote->setUpdated(QDateTime::fromMSecsSinceEpoch(result.updated));
+    serverNote->setDeleted(result.deleted > 0);
+    QStringList tagGuids;
+    foreach (const std::string &guid, result.tagGuids) {
+        tagGuids << QString::fromStdString(guid);
+    }
+    serverNote->setTagGuids(tagGuids);
+    serverNote->setReminderOrder(result.attributes.reminderOrder);
+    serverNote->setReminderTime(QDateTime::fromMSecsSinceEpoch(result.attributes.reminderTime));
+    serverNote->setReminderDoneTime(QDateTime::fromMSecsSinceEpoch(result.attributes.reminderDoneTime));
+
+    serverNote->setEnmlContent(QString::fromStdString(result.content));
+
+    foreach (const evernote::edam::Resource &resource, result.resources) {
+        serverNote->addResource(QString::fromStdString(resource.data.bodyHash), QString::fromStdString(resource.attributes.fileName), QString::fromStdString(resource.mime));
+    }
+
+    note->setConflictingNote(serverNote);
+    note->setLoading(false);
+
 }
 
 void NotesStore::refreshNotebooks()
@@ -961,20 +1081,10 @@ void NotesStore::fetchNotebooksJobDone(EvernoteConnection::ErrorCode errorCode, 
     m_notebooksLoading = false;
     emit notebooksLoadingChanged();
 
-    switch (errorCode) {
-    case EvernoteConnection::ErrorCodeNoError:
-        // All is well...
-        break;
-    case EvernoteConnection::ErrorCodeUserException:
-        qCWarning(dcSync) << "FetchNotebooksJobDone: EDAMUserException:" << errorMessage;
-        // silently discarding...
-        return;
-    case EvernoteConnection::ErrorCodeConnectionLost:
-        qCWarning(dcSync) << "FetchNotebooksJobDone: Connection lost:" << errorMessage;
-        return; // silently discarding
-    default:
+    handleUserError(errorCode);
+    if (errorCode != EvernoteConnection::ErrorCodeNoError) {
         qCWarning(dcSync) << "FetchNotebooksJobDone: Failed to fetch notes list:" << errorMessage << errorCode;
-        return; // silently discarding
+        return;
     }
 
     QList<Notebook*> unhandledNotebooks = m_notebooks;
@@ -1001,14 +1111,19 @@ void NotesStore::fetchNotebooksJobDone(EvernoteConnection::ErrorCode errorCode, 
                 syncToCacheFile(notebook);
             }
         } else {
-            // Local notebook changed. See if we can push our changes
             if (result.updateSequenceNum == notebook->lastSyncedSequenceNumber()) {
-                qCDebug(dcNotesStore) << "Local Notebook changed. Uploading changes to Evernote:" << notebook->guid();
-                SaveNotebookJob *job = new SaveNotebookJob(notebook);
-                connect(job, &SaveNotebookJob::jobDone, this, &NotesStore::saveNotebookJobDone);
-                EvernoteConnection::instance()->enqueue(job);
-                notebook->setLoading(true);
-                emit notebookChanged(notebook->guid());
+                // Local notebook changed. See if we can push our changes
+                if (notebook->deleted()) {
+                    qCDebug(dcNotesStore) << "Local notebook has been deleted. Deleting from server";
+                    expungeNotebook(notebook->guid());
+                } else {
+                    qCDebug(dcNotesStore) << "Local Notebook changed. Uploading changes to Evernote:" << notebook->guid();
+                    SaveNotebookJob *job = new SaveNotebookJob(notebook);
+                    connect(job, &SaveNotebookJob::jobDone, this, &NotesStore::saveNotebookJobDone);
+                    EvernoteConnection::instance()->enqueue(job);
+                    notebook->setLoading(true);
+                    emit notebookChanged(notebook->guid());
+                }
             } else {
                 qCWarning(dcNotesStore) << "Sync conflict in notebook:" << notebook->name();
                 qCWarning(dcNotesStore) << "Resolving of sync conflicts is not implemented yet.";
@@ -1073,20 +1188,10 @@ void NotesStore::fetchTagsJobDone(EvernoteConnection::ErrorCode errorCode, const
     m_tagsLoading = false;
     emit tagsLoadingChanged();
 
-    switch (errorCode) {
-    case EvernoteConnection::ErrorCodeNoError:
-        // All is well...
-        break;
-    case EvernoteConnection::ErrorCodeUserException:
-        qCWarning(dcSync) << "FetchTagsJobDone: EDAMUserException:" << errorMessage;
-        // silently discarding...
-        return;
-    case EvernoteConnection::ErrorCodeConnectionLost:
-        qCWarning(dcSync) << "FetchTagsJobDone: Connection lost:" << errorMessage;
-        return; // silently discarding
-    default:
+    handleUserError(errorCode);
+    if (errorCode != EvernoteConnection::ErrorCodeNoError) {
         qCWarning(dcSync) << "FetchTagsJobDone: Failed to fetch notes list:" << errorMessage << errorCode;
-        return; // silently discarding
+        return;
     }
 
     QHash<QString, Tag*> unhandledTags = m_tagsHash;
@@ -1115,11 +1220,16 @@ void NotesStore::fetchTagsJobDone(EvernoteConnection::ErrorCode errorCode, const
         } else {
             // local tag changed. See if we can sync it to the server
             if (result.updateSequenceNum == tag->lastSyncedSequenceNumber()) {
-                SaveTagJob *job = new SaveTagJob(tag);
-                connect(job, &SaveTagJob::jobDone, this, &NotesStore::saveTagJobDone);
-                EvernoteConnection::instance()->enqueue(job);
-                tag->setLoading(true);
-                emit tagChanged(tag->guid());
+                if (tag->deleted()) {
+                    qCDebug(dcNotesStore) << "Tag has been deleted locally";
+                    expungeTag(tag->guid());
+                } else {
+                    SaveTagJob *job = new SaveTagJob(tag);
+                    connect(job, &SaveTagJob::jobDone, this, &NotesStore::saveTagJobDone);
+                    EvernoteConnection::instance()->enqueue(job);
+                    tag->setLoading(true);
+                    emit tagChanged(tag->guid());
+                }
             } else {
                 qCWarning(dcSync) << "CONFLICT in tag" << tag->name();
                 tag->setSyncError(true);
@@ -1213,6 +1323,7 @@ void NotesStore::createNoteJobDone(EvernoteConnection::ErrorCode errorCode, cons
     note->setLoading(false);
     roles << RoleLoading;
 
+    handleUserError(errorCode);
     if (errorCode != EvernoteConnection::ErrorCodeNoError) {
         qCWarning(dcSync) << "Error creating note on server:" << tmpGuid << errorMessage;
         note->setSyncError(true);
@@ -1276,6 +1387,7 @@ void NotesStore::saveNote(const QString &guid)
         qCWarning(dcNotesStore) << "Can't save note. Guid not found:" << guid;
         return;
     }
+    qCDebug(dcNotesStore) << "Saving note. Setting updateSequenceNumber to:" << note->updateSequenceNumber()+1;
     note->setUpdateSequenceNumber(note->updateSequenceNumber()+1);
     note->setUpdated(QDateTime::currentDateTime());
     syncToCacheFile(note);
@@ -1314,13 +1426,13 @@ void NotesStore::saveNoteJobDone(EvernoteConnection::ErrorCode errorCode, const 
     int idx = m_notes.indexOf(note);
     note->setLoading(false);
 
+    handleUserError(errorCode);
     if (errorCode != EvernoteConnection::ErrorCodeNoError) {
-        qCWarning(dcSync) << "Error saving note:" << errorMessage;
+        qCWarning(dcSync) << "Unhandled error saving note:" << errorCode << "Message:" << errorMessage;
         note->setSyncError(true);
         emit dataChanged(index(idx), index(idx), QVector<int>() << RoleLoading << RoleSyncError);
         return;
     }
-    note->setSyncError(false);
 
     note->setUpdateSequenceNumber(result.updateSequenceNum);
     note->setLastSyncedSequenceNumber(result.updateSequenceNum);
@@ -1337,19 +1449,25 @@ void NotesStore::saveNoteJobDone(EvernoteConnection::ErrorCode errorCode, const 
 
 void NotesStore::saveNotebookJobDone(EvernoteConnection::ErrorCode errorCode, const QString &errorMessage, const evernote::edam::Notebook &result)
 {
-    if (errorCode != EvernoteConnection::ErrorCodeNoError) {
-        qCWarning(dcSync) << "Error saving notebook to server" << errorMessage;
-        return;
-    }
-
     Notebook *notebook = m_notebooksHash.value(QString::fromStdString(result.guid));
     if (!notebook) {
         qCWarning(dcSync) << "Save notebook job done but notebook can't be found any more!";
         return;
     }
+
+    handleUserError(errorCode);
+    if (errorCode != EvernoteConnection::ErrorCodeNoError) {
+        qCWarning(dcSync) << "Error saving notebook to server" << errorCode << errorMessage;
+        notebook->setSyncError(true);
+        emit notebookChanged(notebook->guid());
+        return;
+    }
+
+    notebook->setLoading(false);
+    notebook->setSyncError(false);
+
     qCDebug(dcSync) << "Notebooks saved to server:" << notebook->guid();
     updateFromEDAM(result, notebook);
-    notebook->setLoading(false);
     emit notebookChanged(notebook->guid());
     syncToCacheFile(notebook);
 }
@@ -1365,14 +1483,7 @@ void NotesStore::deleteNote(const QString &guid)
     int idx = m_notes.indexOf(note);
 
     if (note->lastSyncedSequenceNumber() == 0) {
-        emit noteRemoved(note->guid(), note->notebookGuid());
-        beginRemoveRows(QModelIndex(), idx, idx);
-        m_notes.takeAt(idx);
-        m_notesHash.take(guid);
-        endRemoveRows();
-        emit countChanged();
-        deleteFromCacheFile(note);
-        note->deleteLater();
+        removeNote(guid);
     } else {
 
         qCDebug(dcNotesStore) << "Setting note to deleted:" << note->guid();
@@ -1420,33 +1531,37 @@ void NotesStore::clearSearchResults()
 
 void NotesStore::deleteNoteJobDone(EvernoteConnection::ErrorCode errorCode, const QString &errorMessage, const QString &guid)
 {
+    handleUserError(errorCode);
     if (errorCode != EvernoteConnection::ErrorCodeNoError) {
         qCWarning(dcSync) << "Cannot delete note from server:" << errorMessage;
         return;
     }
-    Note *note = m_notesHash.value(guid);
-    int noteIndex = m_notes.indexOf(note);
-
-    emit noteRemoved(guid, note->notebookGuid());
-
-    beginRemoveRows(QModelIndex(), noteIndex, noteIndex);
-    m_notes.takeAt(noteIndex);
-    m_notesHash.take(guid);
-    endRemoveRows();
-    emit countChanged();
-    deleteFromCacheFile(note);
-    note->deleteLater();
+    removeNote(guid);
 }
 
 void NotesStore::expungeNotebookJobDone(EvernoteConnection::ErrorCode errorCode, const QString &errorMessage, const QString &guid)
 {
+    handleUserError(errorCode);
     if (errorCode != EvernoteConnection::ErrorCodeNoError) {
         qCWarning(dcSync) << "Error expunging notebook:" << errorMessage;
         return;
     }
+
+    if (!m_notebooksHash.contains(guid)) {
+        qCWarning(dcSync) << "Received a response for a expungeNotebook call, but can't find notebook around any more.";
+        return;
+    }
+
     emit notebookRemoved(guid);
     Notebook *notebook = m_notebooksHash.take(guid);
     m_notebooks.removeAll(notebook);
+
+    QSettings settings(m_cacheFile, QSettings::IniFormat);
+    settings.beginGroup("notebooks");
+    settings.remove(notebook->guid());
+    settings.endGroup();
+
+    notebook->deleteInfoFile();
     notebook->deleteLater();
 }
 
@@ -1606,6 +1721,10 @@ QVector<int> NotesStore::updateFromEDAM(const evernote::edam::NoteMetadata &evNo
             roles << RoleTagGuids;
         }
     }
+    if (evNote.__isset.attributes && evNote.attributes.__isset.reminderOrder) {
+        note->setReminderOrder(evNote.attributes.reminderOrder);
+        roles << RoleReminder;
+    }
     if (evNote.__isset.attributes && evNote.attributes.__isset.reminderTime) {
         QDateTime reminderTime;
         if (evNote.attributes.reminderTime > 0) {
@@ -1625,6 +1744,10 @@ QVector<int> NotesStore::updateFromEDAM(const evernote::edam::NoteMetadata &evNo
             note->setReminderDoneTime(reminderDoneTime);
             roles << RoleReminderDoneTime;
         }
+    }
+    if (evNote.__isset.deleted) {
+        note->setDeleted(evNote.deleted);
+        roles << RoleDeleted;
     }
     note->setLastSyncedSequenceNumber(evNote.updateSequenceNum);
     return roles;
@@ -1653,15 +1776,60 @@ void NotesStore::updateFromEDAM(const evernote::edam::Notebook &evNotebook, Note
     notebook->setLastSyncedSequenceNumber(evNotebook.updateSequenceNum);
 }
 
+bool NotesStore::handleUserError(EvernoteConnection::ErrorCode errorCode)
+{
+    switch (errorCode) {
+    case EvernoteConnection::ErrorCodeAuthExpired:
+        m_errorQueue.append(gettext("Authentication for Evernote server expired. Please renew login information in the accounts settings."));
+        break;
+    case EvernoteConnection::ErrorCodeLimitExceeded:
+        m_errorQueue.append(gettext("Rate limit for Evernote server exceeded. Please try again later."));
+        break;
+    case EvernoteConnection::ErrorCodeQutaExceeded:
+        m_errorQueue.append(gettext("Upload quota for Evernote server exceed. Please try again later."));
+        break;
+    default:
+        return false;
+    }
+    emit errorChanged();
+    return true;
+}
+
+void NotesStore::removeNote(const QString &guid)
+{
+    Note *note = m_notesHash.value(guid);
+    int idx = m_notes.indexOf(note);
+
+    emit noteRemoved(note->guid(), note->notebookGuid());
+
+    beginRemoveRows(QModelIndex(), idx, idx);
+    m_notes.removeAt(idx);
+    m_notesHash.remove(note->guid());
+    endRemoveRows();
+    emit countChanged();
+
+    QSettings settings(m_cacheFile, QSettings::IniFormat);
+    settings.beginGroup("notes");
+    settings.remove(note->guid());
+    settings.endGroup();
+
+    note->deleteLater();
+}
 
 void NotesStore::expungeTag(const QString &guid)
 {
+#ifdef NO_EXPUNGE_TAGS
+    // This snipped can be used if the app is compiled with a restricted api key
+    // that can't expunge tags on Evernote. Compile with
+    // cmake -DNO_EXPUNGE_TAGS=1
+
     if (m_username != "@local") {
         qCWarning(dcNotesStore) << "This account is managed by Evernote. Cannot delete tags.";
         m_errorQueue.append(gettext("This account is managed by Evernote. Please use the Evernote website to delete tags."));
         emit errorChanged();
         return;
     }
+#endif
 
     Tag *tag = m_tagsHash.value(guid);
     if (!tag) {
@@ -1674,21 +1842,68 @@ void NotesStore::expungeTag(const QString &guid)
         Note *note = m_notesHash.value(noteGuid);
         if (!note) {
             qCWarning(dcNotesStore) << "Tag holds note" << noteGuid << "which hasn't been found in Notes Store";
+            Q_ASSERT(false);
             continue;
         }
         untagNote(noteGuid, guid);
     }
 
-    emit tagRemoved(guid);
-    m_tagsHash.remove(guid);
-    m_tags.removeAll(tag);
+    if (tag->lastSyncedSequenceNumber() == 0) {
+        emit tagRemoved(guid);
+        m_tagsHash.remove(guid);
+        m_tags.removeAll(tag);
 
-    QSettings cacheFile(m_cacheFile, QSettings::IniFormat);
-    cacheFile.beginGroup("tags");
-    cacheFile.remove(guid);
-    cacheFile.endGroup();
-    tag->syncToInfoFile();
+        QSettings cacheFile(m_cacheFile, QSettings::IniFormat);
+        cacheFile.beginGroup("tags");
+        cacheFile.remove(guid);
+        cacheFile.endGroup();
+        tag->syncToInfoFile();
 
-    tag->deleteInfoFile();
-    tag->deleteLater();
+        tag->deleteInfoFile();
+        tag->deleteLater();
+    } else {
+        qCDebug(dcNotesStore) << "Setting tag to deleted:" << tag->guid();
+        tag->setDeleted(true);
+        tag->setUpdateSequenceNumber(tag->updateSequenceNumber()+1);
+        emit tagChanged(tag->guid());
+        syncToCacheFile(tag);
+
+        if (EvernoteConnection::instance()->isConnected()) {
+            ExpungeTagJob *job = new ExpungeTagJob(guid, this);
+            connect(job, &ExpungeTagJob::jobDone, this, &NotesStore::expungeTagJobDone);
+            EvernoteConnection::instance()->enqueue(job);
+        }
+    }
+}
+
+void NotesStore::resolveConflict(const QString &noteGuid, NotesStore::ConflictResolveMode mode)
+{
+    Note *note = m_notesHash.value(noteGuid);
+    if (!note) {
+        qCWarning(dcNotesStore) << "Should resolve a conflict but can't find note for guid:" << noteGuid;
+        return;
+    }
+    if (!note->conflictingNote()) {
+        qCWarning(dcNotesStore) << "Should resolve a conflict but note doesn't have a conflicting note:" << noteGuid;
+        return;
+    }
+    if (mode == KeepLocal) {
+        qCDebug(dcNotesStore) << "Resolving conflict using local note for note guid:" << noteGuid;
+        note->setUpdateSequenceNumber(note->conflictingNote()->updateSequenceNumber() + 1);
+        note->setConflicting(false);
+        saveNote(note->guid());
+    } else {
+        qCDebug(dcNotesStore) << "Resolving conflict using remote note for note guid:" << noteGuid;
+        Note *newNote = note->conflictingNote();
+        newNote->setParent(this);
+        // Conflicting notes have their guid prefixed, lets correct that
+        newNote->setGuid(note->guid());
+        newNote->setConflicting(false);
+        int idx = m_notes.indexOf(note);
+        m_notesHash[note->guid()] = newNote;
+        m_notes.replace(idx, newNote);
+        emit noteChanged(newNote->guid(), newNote->notebookGuid());
+        emit dataChanged(index(idx), index(idx));
+        saveNote(note->guid());
+    }
 }

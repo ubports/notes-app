@@ -45,7 +45,7 @@ Depends: account-plugin-evernote,
          suru-icon-theme | ubuntu-mobile-icons,
          ${misc:Depends},
          ${shlibs:Depends}
-Description: Reminders application
+Description: Notes application
  Note taking application powered by Evernote
 
 Package: qtdeclarative5-evernote0.1
@@ -90,5 +90,5 @@ Depends: account-plugin-evernote-sandbox,
          reminders-app (>= ${source:Version}),
          ubuntu-ui-toolkit-autopilot,
          ${misc:Depends}
-Description: Test package for the Reminders app
- Autopilot tests for the Reminders app package
+Description: Test package for the Notes app
+ Autopilot tests for the Notes app package

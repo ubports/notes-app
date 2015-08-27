@@ -1,6 +1,6 @@
 {
-    "description": "Ubuntu Reminders app, powered by Evernote",
-    "framework": "ubuntu-sdk-14.10",
+    "description": "Ubuntu Notes app, powered by Evernote",
+    "framework": "ubuntu-sdk-15.04",
     "architecture": "@CLICK_ARCH@",
     "hooks": {
         "reminders": {
@@ -8,7 +8,8 @@
             "account-service": "@ACCOUNT_SERVICE_DIR@/com.ubuntu.reminders_reminders.service",
             "apparmor": "reminders.apparmor",
             "desktop": "com.ubuntu.reminders.desktop",
-            "urls": "reminders.url-dispatcher"
+            "urls": "reminders.url-dispatcher",
+            "content-hub": "reminders-contenthub.json"
         },
         "evernote-account-plugin": {
             "account-qml-plugin": "@ACCOUNT_QML_PLUGIN_DIR@/evernote",
@@ -21,10 +22,10 @@
     },
     "maintainer": "Ubuntu App Cats <ubuntu-touch-coreapps@lists.launchpad.net>",
     "name": "com.ubuntu.reminders",
-    "title": "Reminders",
+    "title": "Notes",
     "version": "0.5.@BZR_REVNO@",
     "x-source": {
-        "vcs-bzr": "lp:reminders-app",
+        "vcs-bzr": "@BZR_SOURCE@",
         "vcs-bzr-revno": "@BZR_REVNO@"
     },
     "x-test": {

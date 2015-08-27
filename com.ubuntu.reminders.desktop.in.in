@@ -1,6 +1,6 @@
 [Desktop Entry]
-_Name=Reminders
-_Comment=Ubuntu Reminders app, powered by Evernote
+_Name=Notes
+_Comment=Ubuntu Notes app, powered by Evernote
 Exec=@EXEC@
 Icon=@ICON@
 Terminal=false

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright: 2013 - 2014 Canonical, Ltd
  *
  * This file is part of reminders
@@ -18,7 +18,7 @@
 
 import QtQuick 2.3
 import QtQuick.Layouts 1.1
-import Ubuntu.Components 1.1
+import Ubuntu.Components 1.3
 import Ubuntu.Components.Popups 1.0
 import Ubuntu.Components.ListItems 1.0
 import Ubuntu.Connectivity 1.0
@@ -26,25 +26,15 @@ import Evernote 0.1
 import Ubuntu.OnlineAccounts 0.1
 import Ubuntu.OnlineAccounts.Client 0.1
 import Ubuntu.PushNotifications 0.1
+import Ubuntu.Content 1.0
 import "components"
 import "ui"
 
 MainView {
     id: root
 
-    // objectName for functional testing purposes (autopilot-qt5)
     objectName: "mainView"
-
-    // Note! applicationName needs to match the "name" field of the click manifest
     applicationName: "com.ubuntu.reminders"
-
-    useDeprecatedToolbar: false
-
-    /*
-     This property enables the application to change orientation
-     when the device is rotated. The default is false.
-    */
-    automaticOrientation: true
 
     property bool narrowMode: root.width < units.gu(80)
     property var uri: undefined
@@ -79,6 +69,45 @@ MainView {
         }
     }
 
+    property var importTransfer: null
+    function handleImportTransfer(note) {
+        if (importTransfer == null) return;
+
+        for (var i = 0; i < importTransfer.items.length; i++) {
+            var url = importTransfer.items[i].url;
+            switch (importTransfer.contentType) {
+            case ContentType.Links:
+                note.insertLink(note.plaintextContent.length, url)
+                break;
+            default:
+                note.attachFile(note.plaintextContent.length, url)
+                break;
+            }
+        }
+        note.save();
+        importTransfer = null;
+    }
+
+    Connections {
+        target: ContentHub
+        onImportRequested: {
+            importTransfer = transfer;
+            var popup = PopupUtils.open(importQuestionComponent);
+            popup.accepted.connect(function(createNew) {
+                PopupUtils.close(popup);
+                if (createNew) {
+                    var note = NotesStore.createNote(i18n.tr("Untitled"));
+                    handleImportTransfer(note);
+                }
+            })
+
+            popup.rejected.connect(function() {
+                PopupUtils.close(popup);
+                importTransfer = null;
+            })
+        }
+    }
+
     Timer {
         id: connectDelayTimer
         interval: 2000
@@ -96,33 +125,60 @@ MainView {
 
     backgroundColor: "#dddddd"
 
-    property var accountPage;
-
-    function openAccountPage(isChangingAccount) {
+    function openAccountPage() {
         var unauthorizedAccounts = allAccounts.count - accounts.count > 0 ? true : false
-        if (accountPage) {
-            accountPage.destroy(100)
-        }
-        var component = Qt.createComponent(Qt.resolvedUrl("ui/AccountSelectorPage.qml"));
-        accountPage = component.createObject(root, { accounts: accounts, unauthorizedAccounts: unauthorizedAccounts, oaSetup: setup });
+        var accountPage = pagestack.push(Qt.createComponent(Qt.resolvedUrl("ui/AccountSelectorPage.qml")), { accounts: accounts, unauthorizedAccounts: unauthorizedAccounts, oaSetup: setup });
         accountPage.accountSelected.connect(function(username, handle) { accountService.startAuthentication(username, handle); pagestack.pop(); root.accountPage = null });
-        pagestack.push(accountPage);
     }
 
-    function displayNote(note) {
+    function displayNote(note, conflictMode) {
+        if (conflictMode == undefined) {
+            conflictMode = false;
+        }
+
+        if (importTransfer != null) {
+            handleImportTransfer(note);
+        }
+
         print("displayNote:", note.guid)
         note.load(true);
         if (root.narrowMode) {
             print("creating noteview");
-            var component = Qt.createComponent(Qt.resolvedUrl("ui/NotePage.qml"));
-            var page = component.createObject(root);
-            page.note = note;
-            page.editNote.connect(function(note) {root.switchToEditMode(note)})
-            page.openTaggedNotes.connect(function(title, tagGuid) {pagestack.pop();root.openTaggedNotes(title, tagGuid, true)})
-            pagestack.push(page)
+            if (!conflictMode && note.conflicting) {
+                // User wants to open the note even though it is conflicting! Show the Conflict page instead.
+                var page = pagestack.push(Qt.createComponent(Qt.resolvedUrl("ui/NoteConflictPage.qml")), {note: note});
+                page.displayNote.connect(function(note) { root.displayNote(note, true); } );
+                page.resolveConflict.connect(function(keepLocal) {
+                    var confirmation = PopupUtils.open(Qt.resolvedUrl("components/ResolveConflictConfirmationDialog.qml"), page, {keepLocal: keepLocal, remoteDeleted: note.conflictingNote.deleted, localDeleted: note.deleted});
+                    confirmation.accepted.connect(function() {
+                        NotesStore.resolveConflict(note.guid, keepLocal ? NotesStore.KeepLocal : NotesStore.KeepRemote);
+                        pagestack.pop();
+                    });
+                })
+            } else {
+                var page = pagestack.push(Qt.createComponent(Qt.resolvedUrl("ui/NotePage.qml")), {readOnly: conflictMode, note: note })
+                page.editNote.connect(function(note) {root.switchToEditMode(note)})
+            }
         } else {
-            var view = sideViewLoader.embed(Qt.resolvedUrl("ui/NoteView.qml"))
-            view.openTaggedNotes.connect(function(title, tagGuid) {root.openTaggedNotes(title, tagGuid, false)})
+            var view;
+            if (!conflictMode && note.conflicting) {
+                // User wants to open the note even though it is conflicting! Show the Conflict page instead.
+                notesPage.conflictMode = true;
+                sideViewLoader.clear();
+                view = sideViewLoader.embed(Qt.resolvedUrl("ui/NoteConflictView.qml"))
+                view.displayNote.connect(function(note) {root.displayNote(note,true)})
+                view.resolveConflict.connect(function(keepLocal) {
+                    var confirmation = PopupUtils.open(Qt.resolvedUrl("components/ResolveConflictConfirmationDialog.qml"), page, {keepLocal: keepLocal, remoteDeleted: note.conflictingNote.deleted, localDeleted: note.deleted});
+                    confirmation.accepted.connect(function() {
+                        NotesStore.resolveConflict(note.guid, keepLocal ? NotesStore.KeepLocal : NotesStore.KeepRemote);
+                    });
+                })
+            } else {
+                notesPage.conflictMode = conflictMode;
+                sideViewLoader.clear();
+                view = sideViewLoader.embed(Qt.resolvedUrl("ui/NoteView.qml"))
+                view.editNote.connect(function() {root.switchToEditMode(view.note)})
+            }
             view.note = note;
         }
     }
@@ -133,14 +189,6 @@ MainView {
             if (pagestack.depth > 1) {
                 pagestack.pop();
             }
-            var component = Qt.createComponent(Qt.resolvedUrl("ui/EditNotePage.qml"));
-            var page = component.createObject();
-            page.exitEditMode.connect(function() {
-                    Qt.inputMethod.hide();
-                    pagestack.pop();
-                    page.destroy();
-                });
-            pagestack.push(page, {note: note});
         } else {
             sideViewLoader.clear();
             var view = sideViewLoader.embed(Qt.resolvedUrl("ui/EditNoteView.qml"))
@@ -151,9 +199,7 @@ MainView {
     }
 
     function openSearch() {
-        var component = Qt.createComponent(Qt.resolvedUrl("ui/SearchNotesPage.qml"))
-        var page = component.createObject();
-        pagestack.push(page)
+        var page = pagestack.push(Qt.createComponent(Qt.resolvedUrl("ui/SearchNotesPage.qml")))
         page.noteSelected.connect(function(note) {root.displayNote(note)})
         page.editNote.connect(function(note) {root.switchToEditMode(note)})
     }
@@ -188,7 +234,7 @@ MainView {
             break;
         default:
             print("There are multiple accounts. Allowing user to select one.");
-            openAccountPage(false);
+            openAccountPage();
         }
     }
 
@@ -266,9 +312,13 @@ MainView {
     }
 
     function registerPushClient() {
-        console.log("Registering push client");
+        console.log("Registering push client", JSON.stringify({
+                                                                  "userId" : "" +  UserStore.userId,
+                                                                  "appId": root.applicationName + "_reminders",
+                                                                  "token": pushClient.token
+                                                              }));
         var req = new XMLHttpRequest();
-        req.open("post", "http://162.213.35.108/register", true);
+        req.open("post", "https://push.ubuntu.com/gateway/register", true);
         req.setRequestHeader("content-type", "application/json");
         req.onreadystatechange = function() {//Call a function when the state changes.
             print("push client register response")
@@ -281,17 +331,15 @@ MainView {
             }
         }
         req.send(JSON.stringify({
-            "userId" : UserStore.username,
+            "userId" : "" + UserStore.userId,
             "appId": root.applicationName + "_reminders",
             "token": pushClient.token
         }))
     }
 
     function openTaggedNotes(title, tagGuid, narrowMode) {
-        var component = Qt.createComponent(Qt.resolvedUrl("ui/NotesPage.qml"))
-        var page = component.createObject();
-        print("opening note page for tag", tagGuid)
-        pagestack.push(page, {title: title, filterTagGuid: tagGuid, narrowMode: narrowMode});
+        print("!!!opening note page for tag", tagGuid)
+        var page = pagestack.push(Qt.createComponent(Qt.resolvedUrl("ui/NotesPage.qml")), {title: title, filterTagGuid: tagGuid, narrowMode: narrowMode});
         page.selectedNoteChanged.connect(function() {
             if (page.selectedNote) {
                 root.displayNote(page.selectedNote);
@@ -312,18 +360,30 @@ MainView {
         onNotificationsChanged: {
             print("PushClient notification:", notifications)
             var notification = JSON.parse(notifications)["payload"];
-            print("user", notification["userId"])
-            if (notification["userId"] !== UserStore.username) {
-                console.warn("user mismatch:", notification["userId"], "!=", UserStore.username)
+
+            if (notification["userId"] != UserStore.userId) { // Yes, we want type coercion here.
+                console.warn("user mismatch:", notification["userId"], "!=", UserStore.userId)
                 return;
             }
 
-            if (notification["notebookGUID"] !== undefined) {
+            switch(notification["reason"]) {
+            case "update":
+                print("Note updated on server:", notification["guid"])
+                if (NotesStore.note(notification["guid"]) === null) {
+                    NotesStore.refreshNotes();
+                } else {
+                    NotesStore.refreshNoteContent(notification["guid"]);
+                }
+                break;
+            case "create":
+                print("New note appeared on server:", notification["guid"])
+                NotesStore.refreshNotes();
+                break;
+            case "notebook_update":
                 NotesStore.refreshNotebooks();
-                NotesStore.refreshNotes(notification["notebookGUID"]);
-            }
-            if (notification["noteGUID"] !== undefined) {
-                NotesStore.refreshNoteContent(notification["noteGUID"]);
+                break;
+            default:
+                console.warn("Unhandled push notification:", notification["reason"])
             }
         }
 
@@ -371,7 +431,8 @@ MainView {
         onAuthenticated: {
             EvernoteConnection.token = reply.AccessToken;
             print("token is:", EvernoteConnection.token)
-            if (NetworkingStatus.online) {
+            print("NetworkingStatus.online:", NetworkingStatus.Online)
+            if (NetworkingStatus.Online) {
                 EvernoteConnection.connectToEvernote();
             }
         }
@@ -399,10 +460,12 @@ MainView {
 
     Connections {
         target: UserStore
-        onUsernameChanged: {
-            print("Logged in as user:", UserStore.username);
-            // Disabling push notifications as we haven't had a chance to properly test that yet
-            //registerPushClient();
+        onUserChanged: {
+            print("Logged in as user:", UserStore.userId, UserStore.userName);
+            preferences.setTokenForUser(UserStore.userId, EvernoteConnection.token);
+            if (UserStore.userId >= 0) {
+                registerPushClient();
+            }
         }
     }
 
@@ -412,10 +475,8 @@ MainView {
             var note = NotesStore.note(guid);
             print("note created:", note.guid);
             if (root.narrowMode) {
-                var component = Qt.createComponent(Qt.resolvedUrl("ui/EditNotePage.qml"));
-                var page = component.createObject();
-                page.exitEditMode.connect(function() {Qt.inputMethod.hide(); pagestack.pop(); page.destroy()});
-                pagestack.push(page, {note: note});
+                var page = pagestack.push(Qt.resolvedUrl("ui/EditNotePage.qml"), {note: note});
+                page.exitEditMode.connect(function() {Qt.inputMethod.hide(); pagestack.pop();});
             } else {
                 notesPage.selectedNote = note;
                 var view = sideViewLoader.embed(Qt.resolvedUrl("ui/EditNoteView.qml"));
@@ -425,26 +486,43 @@ MainView {
         }
     }
 
-    StatusBar {
+    Column {
         id: statusBar
-        anchors { left: parent.left; right: parent.right; top: parent.top; topMargin: units.gu(9) }
-        color: root.backgroundColor
-        shown: text
-        text: EvernoteConnection.error || NotesStore.error
-        iconName: "sync-error"
+        anchors { left: parent.left; right: parent.right; top: parent.top; topMargin: units.gu(6)}
 
-        Timer {
-            interval: 5000
-            repeat: true
-            running: NotesStore.error
-            onTriggered: NotesStore.clearError();
+        StatusBar {
+            anchors { left: parent.left; right: parent.right }
+            color: root.backgroundColor
+            shown: text
+            text: EvernoteConnection.error || NotesStore.error
+            iconName: "sync-error"
+            iconColor: UbuntuColors.red
+            showCancelButton: true
+
+            onCancel: {
+                NotesStore.clearError();
+            }
+
+            Timer {
+                interval: 5000
+                repeat: true
+                running: NotesStore.error
+                onTriggered: NotesStore.clearError();
+            }
         }
 
-        MouseArea {
-            anchors.fill: parent
-            onClicked: NotesStore.clearError();
-        }
+        StatusBar {
+            anchors { left: parent.left; right: parent.right }
+            color: root.backgroundColor
+            shown: importTransfer != null
+            text: importTransfer.items.length === 1 ? i18n.tr("Select note to attach imported file") : i18n.tr("Select note to attach imported files")
+            iconName: "document-save"
+            showCancelButton: true
 
+            onCancel: {
+                importTransfer = null;
+            }
+        }
     }
 
     PageStack {
@@ -463,6 +541,8 @@ MainView {
                 objectName: "NotesTab"
                 page: NotesPage {
                     id: notesPage
+                    readOnly: conflictMode
+                    property bool conflictMode: false
 
                     narrowMode: root.narrowMode
 
@@ -495,10 +575,8 @@ MainView {
                     onOpenNotebook: {
                         var notebook = NotesStore.notebook(notebookGuid)
                         print("have notebook:", notebook, notebook.name)
-                        var component = Qt.createComponent(Qt.resolvedUrl("ui/NotesPage.qml"))
-                        var page = component.createObject();
                         print("opening note page for notebook", notebookGuid)
-                        pagestack.push(page, {title: notebook.name, filterNotebookGuid: notebookGuid, narrowMode: root.narrowMode});
+                        var page = pagestack.push(Qt.createComponent(Qt.resolvedUrl("ui/NotesPage.qml")), {title: notebook.name, filterNotebookGuid: notebookGuid, narrowMode: root.narrowMode});
                         page.selectedNoteChanged.connect(function() {
                             if (page.selectedNote) {
                                 root.displayNote(page.selectedNote);
@@ -544,22 +622,7 @@ MainView {
 
                     onOpenTaggedNotes: {
                         var tag = NotesStore.tag(tagGuid);
-                        var component = Qt.createComponent(Qt.resolvedUrl("ui/NotesPage.qml"))
-                        var page = component.createObject();
-                        print("opening note page for tag", tagGuid)
-                        pagestack.push(page, {title: tag.name, filterTagGuid: tagGuid, narrowMode: root.narrowMode});
-                        page.selectedNoteChanged.connect(function() {
-                            if (page.selectedNote) {
-                                root.displayNote(page.selectedNote);
-                                if (root.narrowMode) {
-                                    page.selectedNote = null;
-                                }
-                            }
-                        })
-                        page.editNote.connect(function(note) {
-                            root.switchToEditMode(note)
-                        })
-                        NotesStore.refreshNotes();
+                        root.openTaggedNotes(tag.name, tag.guid, root.narrowMode)
                     }
 
                     onOpenSearch: root.openSearch();
@@ -629,9 +692,9 @@ MainView {
             id: noAccount
             objectName: "noAccountDialog"
             title: i18n.tr("Setup Evernote connection?")
-            text: i18n.tr("Reminders can store your notes and reminders locally on this device. "
-                          + "In order to synchronize notes with Evernote, an account at Evernote is required. "
-                          + "Do you want to setup an account now?")
+            text: i18n.tr("Notes can be stored on this device, or optionally synced with Evernote.") + " "
+                          + i18n.tr("In order to synchronize notes with Evernote, an account at Evernote is required.") + " "
+                          + i18n.tr("Do you want to setup an account now?")
 
             Connections {
                 target: accounts
@@ -661,6 +724,39 @@ MainView {
                     onClicked: setup.exec()
                     Layout.fillWidth: true
                 }
+            }
+        }
+    }
+
+    Component {
+        id: importQuestionComponent
+
+        Dialog {
+            id: importDialog
+            title: importTransfer.items.length > 1 ?
+                       i18n.tr("Importing %1 items").arg(importTransfer.items.length)
+                     : i18n.tr("Importing 1 item")
+            text: importTransfer.items.length > 1 ?
+                      i18n.tr("Do you want to create a new note for those items or do you want to attach them to an existing note?")
+                    : i18n.tr("Do you want to create a new note for this item or do you want to attach it to an existing note?")
+
+            signal accepted(bool createNew);
+            signal rejected();
+
+            Button {
+                text: i18n.tr("Create new note")
+                onClicked: importDialog.accepted(true)
+                color: UbuntuColors.green
+            }
+            Button {
+                text: i18n.tr("Attach to existing note")
+                onClicked: importDialog.accepted(false);
+                color: UbuntuColors.blue
+            }
+            Button {
+                text: i18n.tr("Cancel import")
+                onClicked: importDialog.rejected();
+                color: UbuntuColors.red
             }
         }
     }

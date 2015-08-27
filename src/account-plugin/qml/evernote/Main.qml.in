@@ -24,7 +24,7 @@ OAuthMain {
     creationComponent: OAuth {
         Connections {
             target: UserStore
-            onUsernameChanged: saveUsername()
+            onUserChanged: saveUsername()
         }
 
         function completeCreation(reply) {
@@ -37,7 +37,7 @@ OAuthMain {
         }
 
         function saveUsername() {
-            account.updateDisplayName(UserStore.username)
+            account.updateDisplayName(UserStore.userName)
             account.synced.connect(finished)
             account.sync()
         }

@@ -45,6 +45,9 @@ public:
 
     Q_INVOKABLE QString colorForNotebook(const QString &notebookGuid);
 
+    Q_INVOKABLE QString tokenForUser(const QString &user);
+    Q_INVOKABLE void setTokenForUser(const QString &user, const QString &token);
+
 signals:
     void accountNameChanged();
     void haveLocalUserChanged();

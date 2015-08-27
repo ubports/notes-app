@@ -67,6 +67,7 @@ class Note : public QObject
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
     Q_PROPERTY(bool synced READ synced NOTIFY syncedChanged)
     Q_PROPERTY(bool syncError READ syncError NOTIFY syncErrorChanged)
+    Q_PROPERTY(Note* conflictingNote READ conflictingNote NOTIFY conflictingNoteChanged)
 
     // When asking the note's richTextContent, usually the embedded images will have their original size.
     // For rendering that content in a WebView or TextEdit, that might not be appropriate as images might
@@ -158,11 +159,14 @@ public:
     Q_INVOKABLE Resource* resource(const QString &hash);
     QList<Resource*> resources() const;
 
+    Note *conflictingNote() const;
 
     Q_INVOKABLE void markTodo(const QString &todoId, bool checked);
     Q_INVOKABLE void attachFile(int position, const QUrl &fileName);
     Q_INVOKABLE void addTag(const QString &tagGuid);
     Q_INVOKABLE void removeTag(const QString &tagGuid);
+    Q_INVOKABLE void insertText(int position, const QString &text);
+    Q_INVOKABLE void insertLink(int position, const QString &url);
 
     int renderWidth() const;
     void setRenderWidth(int renderWidth);
@@ -194,6 +198,7 @@ signals:
     void syncedChanged();
     void syncErrorChanged();
     void conflictingChanged();
+    void conflictingNoteChanged();
 
     void renderWidthChanged();
 
@@ -212,6 +217,7 @@ private:
     void setUpdateSequenceNumber(qint32 updateSequenceNumber);
     void setLastSyncedSequenceNumber(qint32 lastSyncedSequenceNumber);
     void setConflicting(bool conflicting);
+    void setConflictingNote(Note *serverNote);
     Resource *addResource(const QString &hash, const QString &fileName, const QString &type, const QByteArray &data = QByteArray());
     void addMissingResource();
     void setMissingResources(int missingResources);
@@ -244,6 +250,8 @@ private:
     bool m_needsContentSync;
     bool m_syncError;
     bool m_conflicting;
+
+    Note *m_conflictingNote;
 
     // Needed to be able to call private setLoading (we don't want to have that set by anyone except the NotesStore)
     friend class NotesStore;

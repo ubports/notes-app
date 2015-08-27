@@ -61,6 +61,8 @@ QVariant Tags::data(const QModelIndex &index, int role) const
         return tag->synced();
     case RoleSyncError:
         return tag->syncError();
+    case RoleDeleted:
+        return tag->deleted();
     }
     return QVariant();
 }
@@ -80,6 +82,7 @@ QHash<int, QByteArray> Tags::roleNames() const
     roles.insert(RoleLoading, "loading");
     roles.insert(RoleSynced, "synced");
     roles.insert(RoleSyncError, "syncError");
+    roles.insert(RoleDeleted, "deleted");
     return roles;
 }
 
@@ -104,6 +107,7 @@ void Tags::tagAdded(const QString &guid)
     connect(tag, &Tag::loadingChanged, this, &Tags::tagLoadingChanged);
     connect(tag, &Tag::syncedChanged, this, &Tags::syncedChanged);
     connect(tag, &Tag::syncErrorChanged, this, &Tags::syncErrorChanged);
+    connect(tag, &Tag::deletedChanged, this, &Tags::deletedChanged);
 
     beginInsertRows(QModelIndex(), m_list.count(), m_list.count());
     m_list.append(guid);
@@ -126,6 +130,13 @@ void Tags::tagGuidChanged(const QString &oldGuid, const QString &newGuid)
         m_list.replace(idx, newGuid);
         emit dataChanged(index(idx), index(idx), QVector<int>() << RoleGuid);
     }
+}
+
+void Tags::deletedChanged()
+{
+    Tag *tag = static_cast<Tag*>(sender());
+    int idx = m_list.indexOf(tag->guid());
+    emit dataChanged(index(idx), index(idx), QVector<int>() << RoleDeleted);
 }
 
 void Tags::nameChanged()

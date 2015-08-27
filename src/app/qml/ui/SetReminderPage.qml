@@ -17,7 +17,7 @@
  */
 
 import QtQuick 2.3
-import Ubuntu.Components 1.1
+import Ubuntu.Components 1.3
 import Evernote 0.1
 import "../components"
 
@@ -25,8 +25,6 @@ Page {
     id: root
     title: setReminderView.title
     property alias note: setReminderView.note
-
-    signal editNote(var note)
 
     SetReminderView {
         id: setReminderView

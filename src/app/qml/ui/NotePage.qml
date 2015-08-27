@@ -17,56 +17,30 @@
  */
 
 import QtQuick 2.3
-import Ubuntu.Components 1.1
+import Ubuntu.Components 1.3
 import Evernote 0.1
 import "../components"
 
 Page {
     id: root
-    title: noteView.title
     property alias note: noteView.note
+    property bool readOnly: false
+
+    head {
+        visible: false
+        locked: true
+        backAction: Action {visible: false}
+    }
 
     signal editNote(var note)
-    signal openTaggedNotes(string title, string tagGuid)
-
-    tools: ToolbarItems {
-       ToolbarButton {
-            action: Action {
-                text: i18n.tr("Edit")
-                iconName: "edit"
-                onTriggered: {
-                    root.editNote(root.note)
-                }
-            }
-        }
-        ToolbarButton {
-            action: Action {
-                text: note.reminder ? i18n.tr("Edit reminder") : i18n.tr("Set reminder")
-                iconName: note.reminder ? "reminder" : "reminder-new"
-                onTriggered: {
-                    pageStack.push(Qt.resolvedUrl("SetReminderPage.qml"), { note: root.note});
-                }
-            }
-        }
-        ToolbarButton {
-            action: Action {
-                text: i18n.tr("Delete")
-                iconName: "delete"
-                onTriggered: {
-                    NotesStore.deleteNote(note.guid);
-                    pagestack.pop();
-                }
-            }
-        }
-   }
 
     NoteView {
         id: noteView
         anchors.fill: parent
+        canClose: true
 
-        onOpenTaggedNotes: {
-            console.log('babbo natale')
-            root.openTaggedNotes(title, tagGuid);
+        onEditNote: {
+            root.editNote(root.note)
         }
     }
 }

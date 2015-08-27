@@ -80,3 +80,19 @@ QString Preferences::colorForNotebook(const QString &notebookGuid)
     m_settings.endGroup();
     return colorName;
 }
+
+QString Preferences::tokenForUser(const QString &user)
+{
+    QString token;
+    m_settings.beginGroup("accounts");
+    token = m_settings.value(user).toString();
+    m_settings.endGroup();
+    return token;
+}
+
+void Preferences::setTokenForUser(const QString &user, const QString &token)
+{
+    m_settings.beginGroup("accounts");
+    m_settings.setValue(user, token);
+    m_settings.endGroup();
+}

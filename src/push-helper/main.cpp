@@ -23,6 +23,7 @@ int main(int argc, char* argv[])
 
     Core core;
     QObject::connect(&core, &Core::finished, &a, &QCoreApplication::exit);
+
     core.process(data);
 
     a.exec();

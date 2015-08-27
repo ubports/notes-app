@@ -17,7 +17,7 @@
  */
 
 import QtQuick 2.3
-import Ubuntu.Components 1.1
+import Ubuntu.Components 1.3
 import Ubuntu.Components.ListItems 1.0
 import Ubuntu.Components.Popups 1.0
 import Evernote 0.1
@@ -90,8 +90,8 @@ Page {
                 loading: model.loading
                 syncError: model.syncError
                 conflicting: model.conflicting
+                deleted: model.deleted
 
-                triggerActionOnMouseRelease: true
                 tags: {
                     var tags = new Array();
                     for (var i = 0; i < model.tagGuids.length; i++) {

@@ -18,7 +18,7 @@
 
 import QtQuick 2.3
 import QtQuick.Layouts 1.0
-import Ubuntu.Components 1.1
+import Ubuntu.Components 1.3
 import Ubuntu.Components.ListItems 1.0
 import Ubuntu.Components.Popups 1.0
 import Evernote 0.1
@@ -30,6 +30,7 @@ PageWithBottomEdge {
     objectName: "notesPage"
 
     property var selectedNote: null
+    property bool readOnly: false
     property bool narrowMode
 
     property alias filterNotebookGuid: notes.filterNotebookGuid
@@ -42,8 +43,6 @@ PageWithBottomEdge {
     bottomEdgeLabelVisible: narrowMode && (!notes.filterNotebookGuid || !notes.loading)
     bottomEdgeTitle: i18n.tr("Add note")
     bottomEdgePageComponent: EditNotePage {
-        isBottomEdge: true;
-
         MouseArea {
             anchors.fill: parent
         }
@@ -58,20 +57,17 @@ PageWithBottomEdge {
     signal openSearch()
     signal editNote(var note)
 
-    tools: ToolbarItems {
-        ToolbarButton {
-            action: Action {
+    head {
+        actions: [
+            Action {
                 visible: !narrowMode
                 text: i18n.tr("Add note")
                 iconName: "add"
                 onTriggered: {
                     NotesStore.createNote(i18n.tr("Untitled"), filterNotebookGuid);
                 }
-            }
-        }
-
-        ToolbarButton {
-            action: Action {
+            },
+            Action {
                 iconSource: "../images/sorting.svg"
                 text: i18n.tr("Sorting")
                 onTriggered: {
@@ -83,31 +79,23 @@ PageWithBottomEdge {
                     })
                     popup.sortOrder = notes.sortOrder;
                 }
-            }
-        }
-
-        ToolbarButton {
-            action: Action {
+            },
+            Action {
                 text: i18n.tr("Search")
                 iconName: "search"
                 onTriggered: {
                     root.openSearch();
                 }
-            }
-        }
-
-        ToolbarButton {
-            action: Action {
+            },
+            Action {
                 text: i18n.tr("Delete")
                 iconName: "delete"
-                visible: root.selectedNote !== null
+                visible: root.selectedNote !== null && !root.readOnly
                 onTriggered: {
                     NotesStore.deleteNote(root.selectedNote.guid);
                 }
-            }
-        }
-        ToolbarButton {
-            action: Action {
+            },
+            Action {
                 text: root.selectedNote.reminder ? i18n.tr("Edit reminder") : i18n.tr("Set reminder")
                 // TODO: use this instead when the toolkit switches from using the
                 // ubuntu-mobile-icons theme to suru:
@@ -115,24 +103,22 @@ PageWithBottomEdge {
                 iconSource: root.selectedNote.reminder ?
                     Qt.resolvedUrl("/usr/share/icons/suru/actions/scalable/reminder.svg") :
                     Qt.resolvedUrl("/usr/share/icons/suru/actions/scalable/reminder-new.svg")
-                visible: root.selectedNote !== null
+                visible: root.selectedNote !== null && !root.readOnly
                 onTriggered: {
                     root.selectedNote.reminder = !root.selectedNote.reminder
                     NotesStore.saveNote(root.selectedNote.guid)
                 }
-            }
-        }
-        ToolbarButton {
-            action: Action {
+            },
+            Action {
                 text: i18n.tr("Edit")
                 iconName: "edit"
-                visible: root.selectedNote !== null
+                visible: root.selectedNote !== null && !root.readOnly
                 onTriggered: {
                     print("should edit note")
                     root.editNote(root.selectedNote)
                 }
             }
-        }
+        ]
     }
 
     Settings {
@@ -141,6 +127,21 @@ PageWithBottomEdge {
 
     Notes {
         id: notes
+    }
+
+    function sortOrderToString(sortOrder){
+        switch(sortOrder) {
+        case Notes.SortOrderDateCreatedNewest:
+        case Notes.SortOrderDateCreatedOldest:
+            return "createdString";
+        case Notes.SortOrderDateUpdatedNewest:
+        case Notes.SortOrderDateUpdatedOldest:
+            return "updatedString";
+        case Notes.SortOrderTitleAscending:
+        case Notes.SortOrderTitleDescending:
+            return "title";
+        }
+        return "";
     }
 
     PulldownListView {
@@ -163,7 +164,6 @@ PageWithBottomEdge {
                       model.updated : model.created
 
             content: model.tagline
-            triggerActionOnMouseRelease: true
             tags: {
                 var tags = new Array();
                 for (var i = 0; i < model.tagGuids.length; i++) {
@@ -178,15 +178,15 @@ PageWithBottomEdge {
             loading: model.loading
             syncError: model.syncError
             conflicting: model.conflicting
+            locked: conflicting
+            deleted: model.deleted
 
             Component.onCompleted: {
                 notes.note(model.guid).load(false);
             }
 
             onItemClicked: {
-                if (!model.conflicting) {
-                    root.selectedNote = NotesStore.note(guid);
-                }
+                root.selectedNote = NotesStore.note(guid);
             }
 
             onDeleteNote: {
@@ -214,33 +214,19 @@ PageWithBottomEdge {
 
             return ViewSection.FullString
         }
-        section.property: {
-            switch(notes.sortOrder) {
-            case Notes.SortOrderDateCreatedNewest:
-            case Notes.SortOrderDateCreatedOldest:
-                return "createdString";
-            case Notes.SortOrderDateUpdatedNewest:
-            case Notes.SortOrderDateUpdatedOldest:
-                return "updatedString";
-            case Notes.SortOrderTitleAscending:
-            case Notes.SortOrderTitleDescending:
-                return "title";
-            }
-            return "";
-        }
-
+        section.property: root.sortOrderToString(notes.sortOrder);
 
         section.delegate: Empty {
             height: units.gu(5)
             showDivider: false
             RowLayout {
-                anchors { left: parent.left; right: parent.right; verticalCenter: parent.verticalCenter; margins: units.gu(2) }
+                anchors { left: parent.left; right: parent.right; verticalCenter: parent.verticalCenter; margins: units.gu(1) }
                 Label {
                     text: section
                     Layout.fillWidth: true
                 }
                 Label {
-                    text: "(" + notes.sectionCount("createdString", section) + ")"
+                    text: "(" + notes.sectionCount(root.sortOrderToString(notes.sortOrder), section) + ")"
                 }
             }
         }
@@ -255,7 +241,7 @@ PageWithBottomEdge {
             width: parent.width - units.gu(4)
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignHCenter
-            text: i18n.tr("No notes available. You can create new notes using the \"Add note\" button.")
+            text: i18n.tr("No notes available. You can create new notes by pulling the note editor up from the bottom edge.")
         }
 
         Scrollbar {

@@ -17,7 +17,7 @@
  */
 
 import QtQuick 2.3
-import Ubuntu.Components 1.1
+import Ubuntu.Components 1.3
 import Ubuntu.Components.ListItems 1.0
 import Ubuntu.Components.Popups 1.0
 import Evernote 0.1
@@ -46,16 +46,16 @@ Page {
         }
     }
 
-    tools: ToolbarItems {
-        ToolbarButton {
-            action: Action {
+    head {
+        actions: [
+            Action {
                 text: i18n.tr("Search")
                 iconName: "search"
                 onTriggered: {
                     root.openSearch();
                 }
             }
-        }
+        ]
     }
 
     Tags {
@@ -83,10 +83,8 @@ Page {
             delegate: TagsDelegate {
                 width: parent.width
                 height: units.gu(10)
-                triggerActionOnMouseRelease: true
 
                 onItemClicked: {
-                    print("selected tag:", model.guid)
                     root.openTaggedNotes(model.guid)
                 }
                 onDeleteTag: {

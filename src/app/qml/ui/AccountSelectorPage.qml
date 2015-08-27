@@ -17,7 +17,7 @@
  */
 
 import QtQuick 2.3
-import Ubuntu.Components 1.1
+import Ubuntu.Components 1.3
 import Ubuntu.Components.ListItems 1.0
 import Ubuntu.OnlineAccounts 0.1
 import Ubuntu.OnlineAccounts.Client 0.1
@@ -75,7 +75,7 @@ Page {
                 }
 
                 Component.onCompleted: {
-                    if (isChangingAccount && displayName == preferences.accountName) {
+                    if (displayName == preferences.accountName) {
                         optionSelector.selectedIndex = index;
                     }
                     if (!model.enabled) {

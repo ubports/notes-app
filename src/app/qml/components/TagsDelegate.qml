@@ -18,7 +18,7 @@
 
 import QtQuick 2.3
 import QtQuick.Layouts 1.0
-import Ubuntu.Components 1.1
+import Ubuntu.Components 1.3
 import Ubuntu.Components.ListItems 1.0
 import Evernote 0.1
 
@@ -37,6 +37,8 @@ ListItemWithActions {
         }
     }
 
+    selectedRightActionColor: UbuntuColors.green
+    triggerActionOnMouseRelease: true
     rightSideActions: [
         Action {
             iconName: "edit"
@@ -78,6 +80,7 @@ ListItemWithActions {
                 text: model.name
                 fontSize: "large"
                 Layout.fillWidth: true
+                font.strikeout: model.deleted
             }
         }
 
