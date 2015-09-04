@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-16 17:45+0200\n"
-"PO-Revision-Date: 2015-04-18 08:42+0000\n"
-"Last-Translator: rob <linuxned@gmail.com>\n"
+"PO-Revision-Date: 2015-09-03 08:49+0000\n"
+"Last-Translator: Daniel Kamp <dwkiziko@gmail.com>\n"
 "Language-Team: Dutch <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-08-15 05:35+0000\n"
-"X-Generator: Launchpad (build 17686)\n"
+"X-Launchpad-Export-Date: 2015-09-04 05:35+0000\n"
+"X-Generator: Launchpad (build 17706)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
 msgid "Reminders"
@@ -90,7 +90,7 @@ msgstr "Naamloos"
 
 #: src/app/qml/components/PulldownListView.qml:40
 msgid "Release to refresh"
-msgstr "Vrijgeven om te verversen"
+msgstr "Loslaten om te verversen"
 
 #: src/app/qml/components/PulldownListView.qml:40
 msgid "Pull down to refresh"
