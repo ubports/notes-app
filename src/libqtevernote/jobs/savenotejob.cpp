@@ -37,13 +37,22 @@ bool SaveNoteJob::operator==(const EvernoteJob *other) const
     if (!otherJob) {
         return false;
     }
-    return this->m_note == otherJob->m_note;
+    return this->m_note == otherJob->m_note
+            && this->m_note->updateSequenceNumber() == otherJob->m_note->updateSequenceNumber();
 }
 
 void SaveNoteJob::attachToDuplicate(const EvernoteJob *other)
 {
     const SaveNoteJob *otherJob = static_cast<const SaveNoteJob*>(other);
     connect(otherJob, &SaveNoteJob::jobDone, this, &SaveNoteJob::jobDone);
+}
+
+QString SaveNoteJob::toString() const
+{
+    return QString("%1, NoteGuid: %2, UpdateSeq: %3")
+            .arg(metaObject()->className())
+            .arg(m_note->guid())
+            .arg(m_note->updateSequenceNumber());
 }
 
 void SaveNoteJob::startJob()

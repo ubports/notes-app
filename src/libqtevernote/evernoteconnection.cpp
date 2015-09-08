@@ -446,6 +446,7 @@ void EvernoteConnection::enqueue(EvernoteJob *job)
         }
         return;
     }
+
     EvernoteJob *existingJob = findExistingDuplicate(job);
     if (existingJob) {
         qCDebug(dcJobQueue) << "Duplicate job already queued:" << job->toString();
@@ -491,6 +492,20 @@ void EvernoteConnection::enqueue(EvernoteJob *job)
     }
 }
 
+void EvernoteConnection::enqueueWrite(EvernoteJob *job)
+{
+    if (!isConnected()) {
+        qCWarning(dcJobQueue) << "Not connected to evernote. Can't enqueue job.";
+        job->emitJobDone(ErrorCodeConnectionLost, gettext("Disconnected from Evernote."));
+        job->deleteLater();
+        return;
+    }
+    connect(job, &EvernoteJob::jobFinished, job, &EvernoteJob::deleteLater);
+    connect(job, &EvernoteJob::jobFinished, this, &EvernoteConnection::startNextJob);
+    m_writeJobQueue.append(job);
+    startJobQueue();
+}
+
 bool EvernoteConnection::isConnected() const
 {
     return m_userstoreClient != nullptr &&
@@ -512,7 +527,9 @@ void EvernoteConnection::startJobQueue()
         return;
     }
 
-    if (!m_highPriorityJobQueue.isEmpty()) {
+    if (!m_writeJobQueue.isEmpty()) {
+        m_currentJob = m_writeJobQueue.takeFirst();
+    } else if (!m_highPriorityJobQueue.isEmpty()) {
         m_currentJob = m_highPriorityJobQueue.takeFirst();
     } else if (!m_mediumPriorityJobQueue.isEmpty()){
         m_currentJob = m_mediumPriorityJobQueue.takeFirst();
