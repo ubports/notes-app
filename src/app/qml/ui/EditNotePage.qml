@@ -25,6 +25,8 @@ import "../components"
 Page {
     id: root
     property alias note: editNoteView.note
+    property alias newNote: editNoteView.newNote
+    property alias isBottomEdge: editNoteView.isBottomEdge
 
     signal exitEditMode(var note)
 

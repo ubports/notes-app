@@ -480,12 +480,13 @@ MainView {
             var note = NotesStore.note(guid);
             print("note created:", note.guid);
             if (root.narrowMode) {
-                var page = pagestack.push(Qt.resolvedUrl("ui/EditNotePage.qml"), {note: note});
+                var page = pagestack.push(Qt.resolvedUrl("ui/EditNotePage.qml"), {note: note, newNote: true});
                 page.exitEditMode.connect(function() {Qt.inputMethod.hide(); pagestack.pop();});
             } else {
                 notesPage.selectedNote = note;
                 var view = sideViewLoader.embed(Qt.resolvedUrl("ui/EditNoteView.qml"));
                 view.note = note;
+                view.newNote = true;
                 view.exitEditMode.connect(function(note) {root.displayNote(note)});
             }
         }
