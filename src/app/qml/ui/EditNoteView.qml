@@ -622,7 +622,7 @@ Item {
                 width: height
                 onClicked: {
                     var pos = noteTextArea.cursorPosition
-                    noteTextArea.insert(pos, "<img src=\"../images/unchecked.svg\" height=" + units.gu(2) + ">")
+                    noteTextArea.insert(pos, "<img src=\"image://theme/select-none\" height=" + units.gu(2) + ">")
                     noteTextArea.cursorPosition = pos + 1;
                 }
             }
