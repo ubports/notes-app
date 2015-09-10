@@ -27,6 +27,7 @@ import Ubuntu.OnlineAccounts 0.1
 import Ubuntu.OnlineAccounts.Client 0.1
 import Ubuntu.PushNotifications 0.1
 import Ubuntu.Content 1.0
+import com.canonical.Oxide 1.5
 import "components"
 import "ui"
 
@@ -489,6 +490,21 @@ MainView {
                 view.exitEditMode.connect(function(note) {root.displayNote(note)});
             }
         }
+    }
+
+    // FIXME: This is currently located here so it is always ready
+    // when we're constructing a WebView. Due to bug
+    // https://bugs.launchpad.net/oxide/+bug/1471779
+    // there's a race condition when creating both at the same time
+    WebContext {
+        id: webContext
+
+        userScripts: [
+            UserScript {
+                context: 'reminders://interaction'
+                url: Qt.resolvedUrl("ui/reminders-scripts.js");
+            }
+        ]
     }
 
     Column {
