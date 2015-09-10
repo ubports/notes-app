@@ -141,7 +141,7 @@ Dialog {
             id: okButton
             text: i18n.tr("OK")
             color: UbuntuColors.orange
-            enabled: textField.text.replace(/\s+/g, '') !== ''; // Not only whitespaces!
+            enabled: textField.text.replace(/\s+/g, '') !== '' || textField.inputMethodComposing === true; // Not only whitespaces!
             onClicked: textField.accept()
         }
     }
