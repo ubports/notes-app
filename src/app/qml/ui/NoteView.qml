@@ -39,17 +39,6 @@ Item {
         z: 10
     }
 
-    WebContext {
-        id: webContext
-
-        userScripts: [
-            UserScript {
-                context: 'reminders://interaction'
-                url: Qt.resolvedUrl("reminders-scripts.js");
-            }
-        ]
-    }
-
     Rectangle {
         id: locationBar
         y: noteTextArea.locationBarController.offset
@@ -59,7 +48,7 @@ Item {
         color: "white"
         z: 2
 
-        Header {
+        NoteHeader {
             id: headerContent
             note: root.note
             editingEnabled: false

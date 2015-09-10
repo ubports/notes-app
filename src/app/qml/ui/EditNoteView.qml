@@ -131,7 +131,7 @@ Item {
                      width: parent.width
                      height: childrenRect.height
 
-                     Header {
+                     NoteHeader {
                         id: header
                         note: root.note
 
