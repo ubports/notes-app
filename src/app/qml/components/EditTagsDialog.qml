@@ -98,7 +98,7 @@ Dialog {
                 border.width: units.dp(1)
                 border.color: "black"
                 height: Math.min(5, tagsListView.count) * units.gu(4)
-                visible: textField.text.length > 0 && (textField.focus || tagsListView.focus)
+                visible: (textField.text.length > 0 || textField.inputMethodComposing) && (textField.focus || tagsListView.focus)
 
                 ListView {
                     id: tagsListView
