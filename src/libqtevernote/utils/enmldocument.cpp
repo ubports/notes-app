@@ -236,7 +236,7 @@ QString EnmlDocument::convert(const QString &noteGuid, EnmlDocument::Type type) 
 
                 if (type == TypeRichText) {
                     writer.writeStartElement("img");
-                    writer.writeAttribute("src", checked ? "image://theme/select" : "../images/unchecked.svg");
+                    writer.writeAttribute("src", checked ? "image://theme/select" : "image://theme/select-none");
                     writer.writeAttribute("height", QString::number(gu(2)));
                 } else if (type == TypeHtml){
                     writer.writeStartElement("input");
