@@ -361,32 +361,35 @@ MainView {
         appId: root.applicationName + "_reminders"
 
         onNotificationsChanged: {
-            print("PushClient notification:", notifications)
-            var notification = JSON.parse(notifications)["payload"];
+            print("Received PushClient notifications:", notifications.length)
+            for (var i = 0; i < notifications.length; i++) {
+                print("notification", i, ":", notifications[i])
+                var notification = JSON.parse(notifications[i])["payload"];
 
-            if (notification["userId"] != UserStore.userId) { // Yes, we want type coercion here.
-                console.warn("user mismatch:", notification["userId"], "!=", UserStore.userId)
-                return;
-            }
-
-            switch(notification["reason"]) {
-            case "update":
-                print("Note updated on server:", notification["guid"])
-                if (NotesStore.note(notification["guid"]) === null) {
-                    NotesStore.refreshNotes();
-                } else {
-                    NotesStore.refreshNoteContent(notification["guid"]);
+                if (notification["userId"] != UserStore.userId) { // Yes, we want type coercion here.
+                    console.warn("user mismatch:", notification["userId"], "!=", UserStore.userId)
+                    return;
                 }
-                break;
-            case "create":
-                print("New note appeared on server:", notification["guid"])
-                NotesStore.refreshNotes();
-                break;
-            case "notebook_update":
-                NotesStore.refreshNotebooks();
-                break;
-            default:
-                console.warn("Unhandled push notification:", notification["reason"])
+
+                switch(notification["reason"]) {
+                case "update":
+                    print("Note updated on server:", notification["guid"])
+                    if (NotesStore.note(notification["guid"]) === null) {
+                        NotesStore.refreshNotes();
+                    } else {
+                        NotesStore.refreshNoteContent(notification["guid"]);
+                    }
+                    break;
+                case "create":
+                    print("New note appeared on server:", notification["guid"])
+                    NotesStore.refreshNotes();
+                    break;
+                case "notebook_update":
+                    NotesStore.refreshNotebooks();
+                    break;
+                default:
+                    console.warn("Unhandled push notification:", notification["reason"])
+                }
             }
         }
 

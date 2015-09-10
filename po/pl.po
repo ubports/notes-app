@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-16 17:45+0200\n"
-"PO-Revision-Date: 2015-08-28 14:44+0000\n"
-"Last-Translator: Beniamin Pawlus <webdesajner@gmail.com>\n"
+"PO-Revision-Date: 2015-09-09 06:34+0000\n"
+"Last-Translator: Bartosz Kosiorek <Unknown>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-08-29 05:40+0000\n"
-"X-Generator: Launchpad (build 17690)\n"
+"X-Launchpad-Export-Date: 2015-09-10 06:17+0000\n"
+"X-Generator: Launchpad (build 17706)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
 msgid "Reminders"
@@ -377,8 +377,8 @@ msgid ""
 "No notes available. You can create new notes by pulling the note editor up "
 "from the bottom edge."
 msgstr ""
-"Brak dostępnych notatek. Utworzenie nowej notatki następuje poprzez "
-"przeciągniecie edytora od dolnej krawędzi w górę."
+"Brak notatek. Utworzenie nowej notatki następuje poprzez przeciągniecie "
+"edytora od dolnej krawędzi w górę."
 
 #: src/app/qml/ui/RemindersPage.qml:97
 msgid ""
@@ -397,7 +397,7 @@ msgstr "Wybierz datę i porę dla tego przypomnienia:"
 #. TRANSLATORS: A checkbox with marks the reminder as done
 #: src/app/qml/ui/SetReminderView.qml:64
 msgid "Reminder done"
-msgstr "Utworzono przypomnienie"
+msgstr "Zakończ przypomnienie"
 
 #: src/app/qml/ui/TagsPage.qml:127
 msgid "No tags available. You can tag notes while viewing them."
@@ -405,7 +405,7 @@ msgstr "Brak etykiet. Możesz je dodawać podczas przeglądania notatek."
 
 #: src/app/qml/ui/TagsPage.qml:134
 msgid "Rename tag"
-msgstr "Zmień etykietę"
+msgstr "Zmień nazwę etykiety"
 
 #: src/app/qml/ui/TagsPage.qml:135
 #, qt-format
@@ -419,7 +419,7 @@ msgstr "Tryb offline"
 #: src/libqtevernote/evernoteconnection.cpp:273
 #: src/libqtevernote/evernoteconnection.cpp:362
 msgid "Unknown error connecting to Evernote."
-msgstr "Nierozpoznany błąd połączenia z Evernote."
+msgstr "Wystąpił nieznany błąd podczas połączenia z Evernote."
 
 #: src/libqtevernote/evernoteconnection.cpp:286
 msgid ""
