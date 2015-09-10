@@ -30,6 +30,8 @@ import "../components"
 Item {
     id: root
     property var note
+    property bool newNote: false
+    property bool isBottomEdge: false
 
     onNoteChanged: {
         note.renderWidth = noteTextArea.width - noteTextArea.textMargin * 2
@@ -50,6 +52,28 @@ Item {
             NotesStore.createNote(title, notebookGuid, text);
         }
     }
+
+    Component.onCompleted: {
+        init();
+    }
+
+    onNewNoteChanged: {
+        init();
+    }
+
+    function init() {
+        if (root.isBottomEdge) {
+            return;
+        }
+
+        if (root.newNote) {
+            header.title = "";
+            header.forceActiveFocus();
+        } else {
+            noteTextArea.forceActiveFocus();
+        }
+    }
+
 
     QtObject {
         id: priv
@@ -134,6 +158,7 @@ Item {
                      NoteHeader {
                         id: header
                         note: root.note
+                        focus: root.newNote
 
                         onEditReminders: {
                             pageStack.push(Qt.resolvedUrl("SetReminderPage.qml"), { note: root.note});
