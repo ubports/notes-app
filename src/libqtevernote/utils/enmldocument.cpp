@@ -391,7 +391,7 @@ void EnmlDocument::setRichText(const QString &richText)
                     writer.writeStartElement("en-media");
                     writer.writeAttribute("hash", hash);
                     writer.writeAttribute("type", type);
-                } else if (imageUrl.authority() == "theme" || imageUrl.path() == "../images/unchecked.svg") {
+                } else if (imageUrl.authority() == "theme") {
                     writer.writeStartElement("en-todo");
                     writer.writeAttribute("checked", imageUrl.path() == "/select" ? "true" : "false");
                 } else {
