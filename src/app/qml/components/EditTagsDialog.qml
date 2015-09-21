@@ -65,7 +65,7 @@ Dialog {
                 onAccepted: accept();
 
                 function accept() {
-                    var tagName = text;
+                    var tagName = displayText;
                     text = '';
 
                     // Check if the tag exists
