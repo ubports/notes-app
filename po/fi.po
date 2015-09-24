@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-09-21 18:39+0200\n"
-"PO-Revision-Date: 2015-04-21 07:31+0000\n"
+"PO-Revision-Date: 2015-09-23 07:07+0000\n"
 "Last-Translator: Jiri Grönroos <Unknown>\n"
 "Language-Team: Finnish <fi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-09-22 06:01+0000\n"
+"X-Launchpad-Export-Date: 2015-09-24 05:56+0000\n"
 "X-Generator: Launchpad (build 17749)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:562
@@ -23,7 +23,7 @@ msgstr "Muistiinpanot"
 
 #: com.ubuntu.reminders.desktop.in.in.h:2
 msgid "Ubuntu Notes app, powered by Evernote"
-msgstr ""
+msgstr "Ubuntun muistiinpanosovellus, taustavoimana Evernote"
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
@@ -35,20 +35,22 @@ msgstr "Muistutus:"
 
 #: src/app/qml/components/EditTagsDialog.qml:29
 msgid "Edit tags"
-msgstr ""
+msgstr "Muokkaa tunnisteita"
 
 #: src/app/qml/components/EditTagsDialog.qml:32
 msgid "Enter a tag name to attach it to the note."
-msgstr ""
+msgstr "Kirjoita tunnisteen nimi kiinnittääksesi sen muistiinpanoon."
 
 #: src/app/qml/components/EditTagsDialog.qml:33
 msgid ""
 "Enter a tag name or select one from the list to attach it to the note."
 msgstr ""
+"Kirjoita tunnisteen nimi tai valitse listasta kiinnittääksesi sen "
+"muistiinpanoon."
 
 #: src/app/qml/components/EditTagsDialog.qml:62
 msgid "Tag name"
-msgstr ""
+msgstr "Tunnisteen nimi"
 
 #: src/app/qml/components/EditTagsDialog.qml:142
 #: src/app/qml/ui/NotebooksPage.qml:209 src/app/qml/ui/TagsPage.qml:147
@@ -60,7 +62,7 @@ msgstr "OK"
 #: src/app/qml/components/EditTagsDialog.qml:190
 #: src/app/qml/ui/EditNoteView.qml:605 src/app/qml/ui/NoteView.qml:150
 msgid "Close"
-msgstr ""
+msgstr "Sulje"
 
 #: src/app/qml/components/NoteHeader.qml:52
 #: src/app/qml/components/PageWithBottomEdge.qml:123
@@ -223,11 +225,11 @@ msgstr "Oletusmuistivihko"
 
 #: src/app/qml/reminders.qml:540
 msgid "Select note to attach imported file"
-msgstr ""
+msgstr "Valitse muistiinpano liittääksesi tuodun tiedoston"
 
 #: src/app/qml/reminders.qml:540
 msgid "Select note to attach imported files"
-msgstr ""
+msgstr "Valitse muistiinpano liittääksesi tuotuja tiedostoja"
 
 #: src/app/qml/reminders.qml:590
 msgid "Notebooks"
@@ -257,6 +259,8 @@ msgstr "Tehdäänkö Evernote-yhteyden asetukset?"
 msgid ""
 "Notes can be stored on this device, or optionally synced with Evernote."
 msgstr ""
+"Muistiinpanot on mahdollista tallentaa tälle laitteelle tai synkronoida "
+"Evernoten kanssa."
 
 #: src/app/qml/reminders.qml:718
 msgid ""
@@ -271,35 +275,39 @@ msgstr "Haluatko määrittää tilin nyt?"
 #: src/app/qml/reminders.qml:759
 #, qt-format
 msgid "Importing %1 items"
-msgstr ""
+msgstr "Tuodaan %1 kohdetta"
 
 #: src/app/qml/reminders.qml:760
 msgid "Importing 1 item"
-msgstr ""
+msgstr "Tuodaan 1 kohde"
 
 #: src/app/qml/reminders.qml:762
 msgid ""
 "Do you want to create a new note for those items or do you want to attach "
 "them to an existing note?"
 msgstr ""
+"Haluatko luoda uuden muistiinpanon kyseisistä kohteista vai haluatko liittää "
+"ne olemassa olevaan muistiinpanoon?"
 
 #: src/app/qml/reminders.qml:763
 msgid ""
 "Do you want to create a new note for this item or do you want to attach it "
 "to an existing note?"
 msgstr ""
+"Haluatko luoda uuden muistiinpanon tästä kohteesta vai haluatko liittää sen "
+"olemassa olevaan muistiinpanoon?"
 
 #: src/app/qml/reminders.qml:769
 msgid "Create new note"
-msgstr ""
+msgstr "Luo uusi muistiinpano"
 
 #: src/app/qml/reminders.qml:774
 msgid "Attach to existing note"
-msgstr ""
+msgstr "Kiinnitä olemassa olevaan muistiinpanoon"
 
 #: src/app/qml/reminders.qml:779
 msgid "Cancel import"
-msgstr ""
+msgstr "Peru tuonti"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
@@ -307,7 +315,7 @@ msgstr "Valitse tili"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:44
 msgid "Store notes locally only"
-msgstr "Tallenna muistiot vain paikallisesti"
+msgstr "Tallenna muistiinpanot vain paikallisesti"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:52
 msgid "Accounts on www.evernote.com"
