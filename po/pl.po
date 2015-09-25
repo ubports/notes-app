@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-09-21 18:39+0200\n"
-"PO-Revision-Date: 2015-09-09 06:34+0000\n"
-"Last-Translator: Bartosz Kosiorek <Unknown>\n"
+"PO-Revision-Date: 2015-09-24 14:39+0000\n"
+"Last-Translator: GTriderXC <gtriderxc@yahoo.com>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-09-22 06:02+0000\n"
-"X-Generator: Launchpad (build 17749)\n"
+"X-Launchpad-Export-Date: 2015-09-25 05:51+0000\n"
+"X-Generator: Launchpad (build 17754)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:562
 msgid "Notes"
@@ -35,20 +35,21 @@ msgstr "Przypomnienie:"
 
 #: src/app/qml/components/EditTagsDialog.qml:29
 msgid "Edit tags"
-msgstr ""
+msgstr "Edytuj znaczniki"
 
 #: src/app/qml/components/EditTagsDialog.qml:32
 msgid "Enter a tag name to attach it to the note."
-msgstr ""
+msgstr "Wpisz nazwę znacznika, aby przypisać go do notatki."
 
 #: src/app/qml/components/EditTagsDialog.qml:33
 msgid ""
 "Enter a tag name or select one from the list to attach it to the note."
 msgstr ""
+"Wpisz nazwę znacznika lub wybierz jeden z listy, aby przypisać go do notatki."
 
 #: src/app/qml/components/EditTagsDialog.qml:62
 msgid "Tag name"
-msgstr ""
+msgstr "Nazwa znacznika"
 
 #: src/app/qml/components/EditTagsDialog.qml:142
 #: src/app/qml/ui/NotebooksPage.qml:209 src/app/qml/ui/TagsPage.qml:147
@@ -97,7 +98,7 @@ msgstr "Przypomnienie"
 
 #: src/app/qml/components/NotesDelegate.qml:80 src/app/qml/reminders.qml:641
 msgid "Tags"
-msgstr "Etykiety"
+msgstr "Znaczniki"
 
 #. TRANSLATORS: Button to go from note viewer to note editor
 #: src/app/qml/components/NotesDelegate.qml:87 src/app/qml/ui/NoteView.qml:172
@@ -454,16 +455,16 @@ msgstr "Zakończ przypomnienie"
 
 #: src/app/qml/ui/TagsPage.qml:126
 msgid "No tags available. You can tag notes while viewing them."
-msgstr "Brak etykiet. Możesz je dodawać podczas przeglądania notatek."
+msgstr "Brak znaczników. Możesz je dodawać podczas przeglądania notatek."
 
 #: src/app/qml/ui/TagsPage.qml:133
 msgid "Rename tag"
-msgstr "Zmień nazwę etykiety"
+msgstr "Zmień nazwę znacznika"
 
 #: src/app/qml/ui/TagsPage.qml:134
 #, qt-format
 msgid "Enter a new name for tag %1"
-msgstr "Nowa nazwa dla etykiety %1"
+msgstr "Nowa nazwa dla znacznika %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:268
 msgid "Offline mode"
@@ -657,7 +658,7 @@ msgid ""
 "This account is managed by Evernote. Please use the Evernote website to "
 "delete tags."
 msgstr ""
-"To konto zarządzane jest przez Evernote. Aby usunąć tagi, skorzystaj ze "
+"To konto zarządzane jest przez Evernote. Aby usunąć znaczniki, skorzystaj ze "
 "strony internetowej Evernote."
 
 #. TRANSLATORS: A default file name if we don't get one from the server. Avoid weird characters.
