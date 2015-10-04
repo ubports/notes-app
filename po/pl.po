@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-09-21 18:39+0200\n"
-"PO-Revision-Date: 2015-09-24 14:39+0000\n"
-"Last-Translator: GTriderXC <gtriderxc@yahoo.com>\n"
+"PO-Revision-Date: 2015-10-03 13:48+0000\n"
+"Last-Translator: Krzysztof Tataradziński <Unknown>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-09-25 05:51+0000\n"
-"X-Generator: Launchpad (build 17754)\n"
+"X-Launchpad-Export-Date: 2015-10-04 06:11+0000\n"
+"X-Generator: Launchpad (build 17783)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:562
 msgid "Notes"
@@ -23,7 +23,7 @@ msgstr "Notatki"
 
 #: com.ubuntu.reminders.desktop.in.in.h:2
 msgid "Ubuntu Notes app, powered by Evernote"
-msgstr ""
+msgstr "Aplikacja Ubuntu Notatki wspierająca Evernote"
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
@@ -61,7 +61,7 @@ msgstr "OK"
 #: src/app/qml/components/EditTagsDialog.qml:190
 #: src/app/qml/ui/EditNoteView.qml:605 src/app/qml/ui/NoteView.qml:150
 msgid "Close"
-msgstr ""
+msgstr "Zamknij"
 
 #: src/app/qml/components/NoteHeader.qml:52
 #: src/app/qml/components/PageWithBottomEdge.qml:123
@@ -223,11 +223,11 @@ msgstr "Domyślny notes"
 
 #: src/app/qml/reminders.qml:540
 msgid "Select note to attach imported file"
-msgstr ""
+msgstr "Wybierz notatkę, do której przypisać zaimportowany plik"
 
 #: src/app/qml/reminders.qml:540
 msgid "Select note to attach imported files"
-msgstr ""
+msgstr "Wybierz notatkę, do której przypisać zaimportowane pliki"
 
 #: src/app/qml/reminders.qml:590
 msgid "Notebooks"
@@ -257,6 +257,8 @@ msgstr "Skonfigurować połączenia Evernote?"
 msgid ""
 "Notes can be stored on this device, or optionally synced with Evernote."
 msgstr ""
+"Notatki mogą być przechowywane tylko na urządzeniu lub opcjonalnie "
+"synchronizowane z Evernote."
 
 #: src/app/qml/reminders.qml:718
 msgid ""
@@ -271,35 +273,39 @@ msgstr "Czy chcesz skonfigurować konto?"
 #: src/app/qml/reminders.qml:759
 #, qt-format
 msgid "Importing %1 items"
-msgstr ""
+msgstr "Importowanie %1 pozycji"
 
 #: src/app/qml/reminders.qml:760
 msgid "Importing 1 item"
-msgstr ""
+msgstr "Importowanie 1 pozycji"
 
 #: src/app/qml/reminders.qml:762
 msgid ""
 "Do you want to create a new note for those items or do you want to attach "
 "them to an existing note?"
 msgstr ""
+"Czy chcesz utworzyć nową notatkę dla tych elementów, czy dodać je do notatki "
+"już istniejącej?"
 
 #: src/app/qml/reminders.qml:763
 msgid ""
 "Do you want to create a new note for this item or do you want to attach it "
 "to an existing note?"
 msgstr ""
+"Czy chcesz utworzyć nową notatkę dla tego elementu, czy dodać go do notatki "
+"już istniejącej?"
 
 #: src/app/qml/reminders.qml:769
 msgid "Create new note"
-msgstr ""
+msgstr "Utwórz nową notatkę"
 
 #: src/app/qml/reminders.qml:774
 msgid "Attach to existing note"
-msgstr ""
+msgstr "Załącz do istniejącej notatki"
 
 #: src/app/qml/reminders.qml:779
 msgid "Cancel import"
-msgstr ""
+msgstr "Anuluj importowanie"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
