@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-09-21 18:39+0200\n"
-"PO-Revision-Date: 2015-04-22 06:38+0000\n"
+"PO-Revision-Date: 2015-10-05 06:21+0000\n"
 "Last-Translator: Fohanno Thierry <thierry.fohanno@ofis-bzh.org>\n"
 "Language-Team: Breton <br@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-09-22 06:01+0000\n"
-"X-Generator: Launchpad (build 17749)\n"
+"X-Launchpad-Export-Date: 2015-10-06 05:48+0000\n"
+"X-Generator: Launchpad (build 17796)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:562
 msgid "Notes"
@@ -23,7 +23,7 @@ msgstr "Notennoù"
 
 #: com.ubuntu.reminders.desktop.in.in.h:2
 msgid "Ubuntu Notes app, powered by Evernote"
-msgstr ""
+msgstr "Arload Notennoù Ubuntu, kaset en-dro gant Evernote"
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
@@ -35,20 +35,22 @@ msgstr "Degas-soñj :"
 
 #: src/app/qml/components/EditTagsDialog.qml:29
 msgid "Edit tags"
-msgstr ""
+msgstr "Aozañ ar balizennoù"
 
 #: src/app/qml/components/EditTagsDialog.qml:32
 msgid "Enter a tag name to attach it to the note."
-msgstr ""
+msgstr "Skrivit un anv balizenn da stagañ ouzh an notenn"
 
 #: src/app/qml/components/EditTagsDialog.qml:33
 msgid ""
 "Enter a tag name or select one from the list to attach it to the note."
 msgstr ""
+"Skrivit un anv balizenn pe diuzit unan er roll evit stagañ anezhi ouzh an "
+"notenn."
 
 #: src/app/qml/components/EditTagsDialog.qml:62
 msgid "Tag name"
-msgstr ""
+msgstr "Anv ar valizenn"
 
 #: src/app/qml/components/EditTagsDialog.qml:142
 #: src/app/qml/ui/NotebooksPage.qml:209 src/app/qml/ui/TagsPage.qml:147
@@ -60,7 +62,7 @@ msgstr "Mat eo"
 #: src/app/qml/components/EditTagsDialog.qml:190
 #: src/app/qml/ui/EditNoteView.qml:605 src/app/qml/ui/NoteView.qml:150
 msgid "Close"
-msgstr ""
+msgstr "Serriñ"
 
 #: src/app/qml/components/NoteHeader.qml:52
 #: src/app/qml/components/PageWithBottomEdge.qml:123
@@ -222,11 +224,11 @@ msgstr "Bloc'h-notennañ dre ziouer"
 
 #: src/app/qml/reminders.qml:540
 msgid "Select note to attach imported file"
-msgstr ""
+msgstr "Diuzit an notenn da stagañ ouzh ar restr enporzhiet"
 
 #: src/app/qml/reminders.qml:540
 msgid "Select note to attach imported files"
-msgstr ""
+msgstr "Diuzit an notenn da stagañ ouzh ar restroù enporzhiet"
 
 #: src/app/qml/reminders.qml:590
 msgid "Notebooks"
@@ -256,6 +258,8 @@ msgstr "Arventennañ ar c'hevreañ ouzh Evernote ?"
 msgid ""
 "Notes can be stored on this device, or optionally synced with Evernote."
 msgstr ""
+"Gallout a ra an notennoù bezañ stoket er benveg-mañ pe sinkronelaet gant "
+"Evernote ma karit."
 
 #: src/app/qml/reminders.qml:718
 msgid ""
@@ -271,35 +275,39 @@ msgstr "Ha fellout a ra deoc'h arventennañ ur gont bremañ ?"
 #: src/app/qml/reminders.qml:759
 #, qt-format
 msgid "Importing %1 items"
-msgstr ""
+msgstr "Oc'h enporzhiañ %1 a elfennoù"
 
 #: src/app/qml/reminders.qml:760
 msgid "Importing 1 item"
-msgstr ""
+msgstr "Oc'h enporzhiañ 1 elfenn"
 
 #: src/app/qml/reminders.qml:762
 msgid ""
 "Do you want to create a new note for those items or do you want to attach "
 "them to an existing note?"
 msgstr ""
+"Ha fellout a ra deoc'h sevel un notenn nevez evit an elfennoù-se pe stagañ "
+"anezho ouzh un notenn hag a zo anezhi dija ?"
 
 #: src/app/qml/reminders.qml:763
 msgid ""
 "Do you want to create a new note for this item or do you want to attach it "
 "to an existing note?"
 msgstr ""
+"Ha fellout a ra deoc'h sevel un notenn nevez evit an elfenn-mañ pe stagañ "
+"anezhi ouzh un notenn hag a zo anezhi dija ?"
 
 #: src/app/qml/reminders.qml:769
 msgid "Create new note"
-msgstr ""
+msgstr "Krouiñ un notenn nevez"
 
 #: src/app/qml/reminders.qml:774
 msgid "Attach to existing note"
-msgstr ""
+msgstr "Stagañ ouzh un notenn hag a zo anezhi dija"
 
 #: src/app/qml/reminders.qml:779
 msgid "Cancel import"
-msgstr ""
+msgstr "Nullañ an enporzhiañ"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
