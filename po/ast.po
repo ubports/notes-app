@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-09-21 18:39+0200\n"
-"PO-Revision-Date: 2015-02-11 21:06+0000\n"
-"Last-Translator: ivarela <ivarela@ubuntu.com>\n"
+"PO-Revision-Date: 2015-10-06 12:21+0000\n"
+"Last-Translator: Xuacu Saturio <xuacusk8@gmail.com>\n"
 "Language-Team: Asturian <ast@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-09-22 06:01+0000\n"
-"X-Generator: Launchpad (build 17749)\n"
+"X-Launchpad-Export-Date: 2015-10-07 06:06+0000\n"
+"X-Generator: Launchpad (build 17802)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:562
 msgid "Notes"
@@ -23,44 +23,46 @@ msgstr "Notes"
 
 #: com.ubuntu.reminders.desktop.in.in.h:2
 msgid "Ubuntu Notes app, powered by Evernote"
-msgstr ""
+msgstr "App Notes d'Ubuntu, basada n'Evernote"
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
-msgstr ""
+msgstr "Cuadernu:"
 
 #: src/app/qml/components/ConflictDelegate.qml:63
 msgid "Reminder:"
-msgstr ""
+msgstr "Recordatoriu:"
 
 #: src/app/qml/components/EditTagsDialog.qml:29
 msgid "Edit tags"
-msgstr ""
+msgstr "Editar etiquetes"
 
 #: src/app/qml/components/EditTagsDialog.qml:32
 msgid "Enter a tag name to attach it to the note."
-msgstr ""
+msgstr "Escribe un nome d'etiqueta p'axuntala a la nota."
 
 #: src/app/qml/components/EditTagsDialog.qml:33
 msgid ""
 "Enter a tag name or select one from the list to attach it to the note."
 msgstr ""
+"Escribe un nome d'etiqueta o seleiciona una de la llista p'axuntala a la "
+"nota."
 
 #: src/app/qml/components/EditTagsDialog.qml:62
 msgid "Tag name"
-msgstr ""
+msgstr "Nome de la etiqueta"
 
 #: src/app/qml/components/EditTagsDialog.qml:142
 #: src/app/qml/ui/NotebooksPage.qml:209 src/app/qml/ui/TagsPage.qml:147
 msgid "OK"
-msgstr ""
+msgstr "Aceutar"
 
 #. TRANSLATORS: Button to close the edit mode
 #. TRANSLATORS: Button to close the note viewer
 #: src/app/qml/components/EditTagsDialog.qml:190
 #: src/app/qml/ui/EditNoteView.qml:605 src/app/qml/ui/NoteView.qml:150
 msgid "Close"
-msgstr ""
+msgstr "Zarrar"
 
 #: src/app/qml/components/NoteHeader.qml:52
 #: src/app/qml/components/PageWithBottomEdge.qml:123
@@ -93,7 +95,7 @@ msgstr "Priváu"
 
 #: src/app/qml/components/NotesDelegate.qml:73
 msgid "Reminder"
-msgstr ""
+msgstr "Recordatoriu"
 
 #: src/app/qml/components/NotesDelegate.qml:80 src/app/qml/reminders.qml:641
 msgid "Tags"
@@ -119,7 +121,7 @@ msgstr "Llimpiar recordatoriu"
 
 #: src/app/qml/components/RemindersDelegate.qml:49
 msgid "Mark as undone"
-msgstr ""
+msgstr "Marcar como desfecho"
 
 #: src/app/qml/components/RemindersDelegate.qml:49
 msgid "Mark as done"
@@ -132,23 +134,27 @@ msgstr "Editar recordatoriu"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:25
 msgid "Resolve conflict"
-msgstr ""
+msgstr "Resolver conflictu"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:30
 msgid ""
 "This will <b>keep the changes made on this device</b> and <b>restore the "
 "note on Evernote</b>."
 msgstr ""
+"Esto <b>caltendrá los cambios fechos nesti preséu</b> y <b>restaurará la "
+"nota en Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:32
 msgid "This will <b>delete the changed note on Evernote</b>."
-msgstr ""
+msgstr "Esto <b>desaniciará la nota cambiada en Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:34
 msgid ""
 "This will <b>keep the changes made on this device</b> and <b>discard any "
 "changes made on Evernote</b>."
 msgstr ""
+"Esto <b>caltendrá los cambios fechos nesti preséu</b> y <b>descartará "
+"cualquier cambiu fechu en Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:38
 msgid "This will <b>delete the changed note on this device</b>."
@@ -168,49 +174,49 @@ msgstr ""
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:45
 msgid "Are you sure you want to continue?"
-msgstr ""
+msgstr "¿Daveres quies siguir?"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:57
 #: src/app/qml/reminders.qml:744
 msgid "Yes"
-msgstr ""
+msgstr "Sí"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:66
 #: src/app/qml/reminders.qml:734
 msgid "No"
-msgstr ""
+msgstr "Non"
 
 #: src/app/qml/components/SortingDialog.qml:20
 msgid "Sort by"
-msgstr ""
+msgstr "Ordenar per"
 
 #: src/app/qml/components/SortingDialog.qml:29
 msgid "Date created (newest first)"
-msgstr ""
+msgstr "Data de creación (nuevos primero)"
 
 #: src/app/qml/components/SortingDialog.qml:30
 msgid "Date created (oldest first)"
-msgstr ""
+msgstr "Data de creación (antiguos primero)"
 
 #: src/app/qml/components/SortingDialog.qml:31
 msgid "Date updated (newest first)"
-msgstr ""
+msgstr "Data d'anovamientu (nuevos primero)"
 
 #: src/app/qml/components/SortingDialog.qml:32
 msgid "Date updated (oldest first)"
-msgstr ""
+msgstr "Data d'anovamientu (antiguos primero)"
 
 #: src/app/qml/components/SortingDialog.qml:33
 msgid "Title (ascending)"
-msgstr ""
+msgstr "Títulu (ascendiente)"
 
 #: src/app/qml/components/SortingDialog.qml:34
 msgid "Title (descending)"
-msgstr ""
+msgstr "Títulu (descendiente)"
 
 #: src/app/qml/reminders.qml:422
 msgid "Default notebook"
-msgstr ""
+msgstr "Cuadernu predetermináu"
 
 #: src/app/qml/reminders.qml:540
 msgid "Select note to attach imported file"
