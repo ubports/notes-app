@@ -209,7 +209,7 @@ Page {
                 text: i18n.tr("OK")
                 enabled: nameTextField.text || nameTextField.inputMethodComposing
                 onClicked: {
-                    renameNotebookDialog.accepted(nameTextField.text)
+                    renameNotebookDialog.accepted(nameTextField.displayText)
                     PopupUtils.close(renameNotebookDialog)
                 }
             }
