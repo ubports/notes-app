@@ -1,6 +1,6 @@
 {
     "description": "Ubuntu Notes app, powered by Evernote",
-    "framework": "ubuntu-sdk-15.04",
+    "framework": "ubuntu-sdk-15.04.1",
     "architecture": "@CLICK_ARCH@",
     "hooks": {
         "reminders": {
