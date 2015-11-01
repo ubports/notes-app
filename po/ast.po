@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-09-21 18:39+0200\n"
-"PO-Revision-Date: 2015-10-06 12:21+0000\n"
-"Last-Translator: Xuacu Saturio <xuacusk8@gmail.com>\n"
+"PO-Revision-Date: 2015-10-31 15:55+0000\n"
+"Last-Translator: enolp <enolp@softastur.org>\n"
 "Language-Team: Asturian <ast@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-10-07 06:06+0000\n"
-"X-Generator: Launchpad (build 17802)\n"
+"X-Launchpad-Export-Date: 2015-11-01 05:35+0000\n"
+"X-Generator: Launchpad (build 17838)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:562
 msgid "Notes"
@@ -158,19 +158,23 @@ msgstr ""
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:38
 msgid "This will <b>delete the changed note on this device</b>."
-msgstr ""
+msgstr "Esto <b>desaniciará la nota camudada nesti preséu</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:40
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>restore it "
 "on this device</b>."
 msgstr ""
+"Esto <b>baxará la nota camudada d'Evernote</b> y <b>restaurarála nesti "
+"preséu</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:42
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>discard any "
 "changes made on this device</b>."
 msgstr ""
+"Esto <b>baxará la nota camudada d'Evernote</b> y <b>descartará cualesquier "
+"camudancia fecha nesti preséu</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:45
 msgid "Are you sure you want to continue?"
@@ -220,11 +224,11 @@ msgstr "Cuadernu predetermináu"
 
 #: src/app/qml/reminders.qml:540
 msgid "Select note to attach imported file"
-msgstr ""
+msgstr "Esbillar nota p'axuntala al ficheru importáu"
 
 #: src/app/qml/reminders.qml:540
 msgid "Select note to attach imported files"
-msgstr ""
+msgstr "Esbillar nota p'axuntala a los ficheros importaos"
 
 #: src/app/qml/reminders.qml:590
 msgid "Notebooks"
@@ -248,67 +252,74 @@ msgstr ""
 
 #: src/app/qml/reminders.qml:716
 msgid "Setup Evernote connection?"
-msgstr ""
+msgstr "¿Configurar conexón d'Evernote?"
 
 #: src/app/qml/reminders.qml:717
 msgid ""
 "Notes can be stored on this device, or optionally synced with Evernote."
 msgstr ""
+"Les notes puen atroxase nesti preséu u opcionalmente sincronizase con "
+"Evernote."
 
 #: src/app/qml/reminders.qml:718
 msgid ""
 "In order to synchronize notes with Evernote, an account at Evernote is "
 "required."
 msgstr ""
+"Pa sincronizar les notes con Evernote, ríquese una cuenta en Evernote."
 
 #: src/app/qml/reminders.qml:719
 msgid "Do you want to setup an account now?"
-msgstr ""
+msgstr "¿Quies configurar agora una cuenta?"
 
 #: src/app/qml/reminders.qml:759
 #, qt-format
 msgid "Importing %1 items"
-msgstr ""
+msgstr "Importando %1 elementos"
 
 #: src/app/qml/reminders.qml:760
 msgid "Importing 1 item"
-msgstr ""
+msgstr "Importando 1 elementu"
 
 #: src/app/qml/reminders.qml:762
 msgid ""
 "Do you want to create a new note for those items or do you want to attach "
 "them to an existing note?"
 msgstr ""
+"¿Quies crear una nota nueva pa esos elementos o quies axuntalos a una "
+"esistente?"
 
 #: src/app/qml/reminders.qml:763
 msgid ""
 "Do you want to create a new note for this item or do you want to attach it "
 "to an existing note?"
 msgstr ""
+"¿Quies crear una nota nueva pa esti elementu o quies axuntalu a una "
+"esistente?"
 
 #: src/app/qml/reminders.qml:769
 msgid "Create new note"
-msgstr ""
+msgstr "Crear nota nueva"
 
 #: src/app/qml/reminders.qml:774
 msgid "Attach to existing note"
-msgstr ""
+msgstr "Axuntar a nota esistente"
 
 #: src/app/qml/reminders.qml:779
 msgid "Cancel import"
-msgstr ""
+msgstr "Encaboxar importación"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
-msgstr ""
+msgstr "Esbillar cuenta"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:44
 msgid "Store notes locally only"
-msgstr ""
+msgstr "Namái atroxar notes llocalmente"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:52
 msgid "Accounts on www.evernote.com"
-msgstr ""
+msgstr "Cuentes en www.evernote.com"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:82
 #, qt-format
@@ -349,33 +360,35 @@ msgstr "T"
 
 #: src/app/qml/ui/NoteConflictPage.qml:27
 msgid "Conflicting changes"
-msgstr ""
+msgstr "Camudancies con problemes"
 
 #: src/app/qml/ui/NoteConflictView.qml:54
 msgid ""
 "This note has been modified in multiple places. Please choose the version to "
 "be opened and delete the other."
 msgstr ""
+"Esta nota modificóse en múltiples llugares. Escueyi la versión p'abrir y "
+"desanicia la otra, por favor."
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Deleted on this device:"
-msgstr ""
+msgstr "Desanicióse nesti preséu:"
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Modified on this device:"
-msgstr ""
+msgstr "Modificóse nesti preséu:"
 
 #: src/app/qml/ui/NoteConflictView.qml:85
 msgid "Deleted from Evernote:"
-msgstr ""
+msgstr "Desanicióse d'Evernote:"
 
 #: src/app/qml/ui/NoteConflictView.qml:85
 msgid "Modified somewhere else:"
-msgstr ""
+msgstr "Modificóse per dayures:"
 
 #: src/app/qml/ui/NoteView.qml:184
 msgid "Attachment"
-msgstr ""
+msgstr "Axuntu"
 
 #: src/app/qml/ui/NotebooksPage.qml:45
 msgid "Add notebook"
@@ -398,16 +411,16 @@ msgstr "Guardar"
 
 #: src/app/qml/ui/NotebooksPage.qml:195
 msgid "Rename notebook"
-msgstr ""
+msgstr "Renomar llibri de notes"
 
 #: src/app/qml/ui/NotebooksPage.qml:196
 #, qt-format
 msgid "Enter a new name for notebook %1"
-msgstr ""
+msgstr "Introduz un nome nuevu pal llibru de notes %1"
 
 #: src/app/qml/ui/NotebooksPage.qml:205 src/app/qml/ui/TagsPage.qml:143
 msgid "Name cannot be empty"
-msgstr ""
+msgstr "Nun pue tar baleru'l nome"
 
 #: src/app/qml/ui/NotesPage.qml:43 src/app/qml/ui/NotesPage.qml:64
 msgid "Add note"
@@ -415,7 +428,7 @@ msgstr "Amestar nota"
 
 #: src/app/qml/ui/NotesPage.qml:72
 msgid "Sorting"
-msgstr ""
+msgstr "Orde"
 
 #: src/app/qml/ui/NotesPage.qml:99
 msgid "Set reminder"
@@ -455,16 +468,16 @@ msgstr ""
 
 #: src/app/qml/ui/TagsPage.qml:133
 msgid "Rename tag"
-msgstr ""
+msgstr "Renomar etiqueta"
 
 #: src/app/qml/ui/TagsPage.qml:134
 #, qt-format
 msgid "Enter a new name for tag %1"
-msgstr ""
+msgstr "Introduz un nome nuevu pa la etiqueta %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:268
 msgid "Offline mode"
-msgstr ""
+msgstr "Mou fuera de llinia"
 
 #: src/libqtevernote/evernoteconnection.cpp:273
 #: src/libqtevernote/evernoteconnection.cpp:362
@@ -508,17 +521,21 @@ msgid ""
 "Authentication for Evernote server expired. Please renew login information "
 "in the accounts settings."
 msgstr ""
+"Caducó l'autenticación pal sirvidor d'Evernote. Renueva l'aniciu de sesión "
+"nos axustes de cuentes, por favor."
 
 #: src/libqtevernote/evernoteconnection.cpp:332
 #: src/libqtevernote/evernoteconnection.cpp:350
 #, qt-format
 msgid "Unknown error connecting to Evernote: %1"
-msgstr ""
+msgstr "Fallu desconocíu coneutándo a Evernote: %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:341
 msgid ""
 "Error connecting to Evernote: Rate limit exceeded. Please try again later."
 msgstr ""
+"Fallu coneutando a Evernote: Perpasose la tasa llímite. Inténtalo de nueves "
+"sero, por favor."
 
 #: src/libqtevernote/evernoteconnection.cpp:357
 msgid ""
@@ -539,7 +556,7 @@ msgstr "Fallu desconocíu al coneutar con Evernote"
 #: src/libqtevernote/evernoteconnection.cpp:435
 #: src/libqtevernote/evernoteconnection.cpp:499
 msgid "Disconnected from Evernote."
-msgstr ""
+msgstr "Desconeutáu d'Evernote."
 
 #: src/libqtevernote/note.cpp:162 src/libqtevernote/note.cpp:196
 #: src/libqtevernote/note.cpp:381
@@ -624,6 +641,8 @@ msgid ""
 "This account is managed by Evernote. Use the Evernote website to delete "
 "notebooks."
 msgstr ""
+"Esta cuenta ta xestionada por Evernote. Usa'l sitiu d'Evernote pa desaniciar "
+"llibros de notes."
 
 #: src/libqtevernote/notesstore.cpp:429
 msgid ""
@@ -634,6 +653,8 @@ msgstr ""
 #: src/libqtevernote/notesstore.cpp:1775
 msgid "Rate limit for Evernote server exceeded. Please try again later."
 msgstr ""
+"Perpasose la tasa llímite pal sirvidor d'Evernote. Inténtalo de nueves sero, "
+"por favor."
 
 #: src/libqtevernote/notesstore.cpp:1778
 msgid "Upload quota for Evernote server exceed. Please try again later."
@@ -644,6 +665,8 @@ msgid ""
 "This account is managed by Evernote. Please use the Evernote website to "
 "delete tags."
 msgstr ""
+"Esta cuenta ta xestionada por Evernote. Usa'l sitiu d'Evernote pa desaniciar "
+"etiquetes."
 
 #. TRANSLATORS: A default file name if we don't get one from the server. Avoid weird characters.
 #: src/libqtevernote/resource.cpp:39
