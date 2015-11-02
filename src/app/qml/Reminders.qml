@@ -16,17 +16,18 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.3
+import QtQuick 2.4
 import QtQuick.Layouts 1.1
 import Ubuntu.Components 1.3
-import Ubuntu.Components.Popups 1.0
-import Ubuntu.Components.ListItems 1.0
+import Ubuntu.Components.Popups 1.3
+import Ubuntu.Components.ListItems 1.3
 import Ubuntu.Connectivity 1.0
 import Evernote 0.1
 import Ubuntu.OnlineAccounts 0.1
 import Ubuntu.OnlineAccounts.Client 0.1
 import Ubuntu.PushNotifications 0.1
 import Ubuntu.Content 1.0
+import com.canonical.Oxide 1.5
 import "components"
 import "ui"
 
@@ -358,32 +359,35 @@ MainView {
         appId: root.applicationName + "_reminders"
 
         onNotificationsChanged: {
-            print("PushClient notification:", notifications)
-            var notification = JSON.parse(notifications)["payload"];
+            print("Received PushClient notifications:", notifications.length)
+            for (var i = 0; i < notifications.length; i++) {
+                print("notification", i, ":", notifications[i])
+                var notification = JSON.parse(notifications[i])["payload"];
 
-            if (notification["userId"] != UserStore.userId) { // Yes, we want type coercion here.
-                console.warn("user mismatch:", notification["userId"], "!=", UserStore.userId)
-                return;
-            }
-
-            switch(notification["reason"]) {
-            case "update":
-                print("Note updated on server:", notification["guid"])
-                if (NotesStore.note(notification["guid"]) === null) {
-                    NotesStore.refreshNotes();
-                } else {
-                    NotesStore.refreshNoteContent(notification["guid"]);
+                if (notification["userId"] != UserStore.userId) { // Yes, we want type coercion here.
+                    console.warn("user mismatch:", notification["userId"], "!=", UserStore.userId)
+                    return;
                 }
-                break;
-            case "create":
-                print("New note appeared on server:", notification["guid"])
-                NotesStore.refreshNotes();
-                break;
-            case "notebook_update":
-                NotesStore.refreshNotebooks();
-                break;
-            default:
-                console.warn("Unhandled push notification:", notification["reason"])
+
+                switch(notification["reason"]) {
+                case "update":
+                    print("Note updated on server:", notification["guid"])
+                    if (NotesStore.note(notification["guid"]) === null) {
+                        NotesStore.refreshNotes();
+                    } else {
+                        NotesStore.refreshNoteContent(notification["guid"]);
+                    }
+                    break;
+                case "create":
+                    print("New note appeared on server:", notification["guid"])
+                    NotesStore.refreshNotes();
+                    break;
+                case "notebook_update":
+                    NotesStore.refreshNotebooks();
+                    break;
+                default:
+                    console.warn("Unhandled push notification:", notification["reason"])
+                }
             }
         }
 
@@ -475,15 +479,31 @@ MainView {
             var note = NotesStore.note(guid);
             print("note created:", note.guid);
             if (root.narrowMode) {
-                var page = pagestack.push(Qt.resolvedUrl("ui/EditNotePage.qml"), {note: note});
+                var page = pagestack.push(Qt.resolvedUrl("ui/EditNotePage.qml"), {note: note, newNote: true});
                 page.exitEditMode.connect(function() {Qt.inputMethod.hide(); pagestack.pop();});
             } else {
                 notesPage.selectedNote = note;
                 var view = sideViewLoader.embed(Qt.resolvedUrl("ui/EditNoteView.qml"));
                 view.note = note;
+                view.newNote = true;
                 view.exitEditMode.connect(function(note) {root.displayNote(note)});
             }
         }
+    }
+
+    // FIXME: This is currently located here so it is always ready
+    // when we're constructing a WebView. Due to bug
+    // https://bugs.launchpad.net/oxide/+bug/1471779
+    // there's a race condition when creating both at the same time
+    WebContext {
+        id: webContext
+
+        userScripts: [
+            UserScript {
+                context: 'reminders://interaction'
+                url: Qt.resolvedUrl("ui/reminders-scripts.js");
+            }
+        ]
     }
 
     Column {

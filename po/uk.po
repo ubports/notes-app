@@ -7,23 +7,23 @@ msgid ""
 msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-04-16 17:45+0200\n"
+"POT-Creation-Date: 2015-09-21 18:39+0200\n"
 "PO-Revision-Date: 2015-04-17 18:21+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@gmail.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-08-15 05:35+0000\n"
-"X-Generator: Launchpad (build 17686)\n"
+"X-Launchpad-Export-Date: 2015-09-22 06:02+0000\n"
+"X-Generator: Launchpad (build 17749)\n"
 
-#: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
-msgid "Reminders"
-msgstr "Нагадування"
+#: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:562
+msgid "Notes"
+msgstr "Нотатки"
 
 #: com.ubuntu.reminders.desktop.in.in.h:2
-msgid "Ubuntu Reminders app, powered by Evernote"
-msgstr "Програма Ubuntu Reminders, створена на основі Evernote"
+msgid "Ubuntu Notes app, powered by Evernote"
+msgstr ""
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
@@ -33,38 +33,61 @@ msgstr "Нотатник:"
 msgid "Reminder:"
 msgstr "Нагадування:"
 
-#: src/app/qml/components/EditTagsDialog.qml:45
-msgid "Create a new tag"
-msgstr "Створити нову мітку"
+#: src/app/qml/components/EditTagsDialog.qml:29
+msgid "Edit tags"
+msgstr ""
 
-#: src/app/qml/components/EditTagsDialog.qml:73
-msgid "Create tag"
-msgstr "Створити мітку"
+#: src/app/qml/components/EditTagsDialog.qml:32
+msgid "Enter a tag name to attach it to the note."
+msgstr ""
+
+#: src/app/qml/components/EditTagsDialog.qml:33
+msgid ""
+"Enter a tag name or select one from the list to attach it to the note."
+msgstr ""
+
+#: src/app/qml/components/EditTagsDialog.qml:62
+msgid "Tag name"
+msgstr ""
+
+#: src/app/qml/components/EditTagsDialog.qml:142
+#: src/app/qml/ui/NotebooksPage.qml:209 src/app/qml/ui/TagsPage.qml:147
+msgid "OK"
+msgstr "Гаразд"
 
 #. TRANSLATORS: Button to close the edit mode
-#: src/app/qml/components/EditTagsDialog.qml:120
-#: src/app/qml/ui/EditNoteView.qml:628 src/libqtevernote/note.cpp:369
-msgid "Done"
-msgstr "Виконано"
+#. TRANSLATORS: Button to close the note viewer
+#: src/app/qml/components/EditTagsDialog.qml:190
+#: src/app/qml/ui/EditNoteView.qml:605 src/app/qml/ui/NoteView.qml:150
+msgid "Close"
+msgstr ""
+
+#: src/app/qml/components/NoteHeader.qml:52
+#: src/app/qml/components/PageWithBottomEdge.qml:123
+#: src/app/qml/reminders.qml:100 src/app/qml/reminders.qml:266
+#: src/app/qml/reminders.qml:271 src/app/qml/ui/EditNoteView.qml:43
+#: src/app/qml/ui/NotesPage.qml:67
+msgid "Untitled"
+msgstr "Без назви"
 
 #. TRANSLATORS: Button that deletes a reminder
 #: src/app/qml/components/NotebooksDelegate.qml:36
 #: src/app/qml/components/NotesDelegate.qml:53
-#: src/app/qml/components/TagsDelegate.qml:34 src/app/qml/ui/NotePage.qml:51
-#: src/app/qml/ui/NotesPage.qml:99 src/app/qml/ui/SetReminderView.qml:76
+#: src/app/qml/components/TagsDelegate.qml:34 src/app/qml/ui/NotesPage.qml:91
+#: src/app/qml/ui/SetReminderView.qml:76
 msgid "Delete"
 msgstr "Вилучити"
 
-#: src/app/qml/components/NotebooksDelegate.qml:96
+#: src/app/qml/components/NotebooksDelegate.qml:97
 #, qt-format
 msgid "Last edited %1"
 msgstr "Востаннє змінено %1"
 
-#: src/app/qml/components/NotebooksDelegate.qml:115
+#: src/app/qml/components/NotebooksDelegate.qml:116
 msgid "Shared"
 msgstr "Спільна"
 
-#: src/app/qml/components/NotebooksDelegate.qml:115
+#: src/app/qml/components/NotebooksDelegate.qml:116
 msgid "Private"
 msgstr "Особиста"
 
@@ -72,21 +95,15 @@ msgstr "Особиста"
 msgid "Reminder"
 msgstr "Нагадування"
 
-#: src/app/qml/components/NotesDelegate.qml:80 src/app/qml/reminders.qml:572
+#: src/app/qml/components/NotesDelegate.qml:80 src/app/qml/reminders.qml:641
 msgid "Tags"
 msgstr "Мітки"
 
-#: src/app/qml/components/NotesDelegate.qml:87 src/app/qml/ui/NotePage.qml:37
-#: src/app/qml/ui/NotesPage.qml:125
+#. TRANSLATORS: Button to go from note viewer to note editor
+#: src/app/qml/components/NotesDelegate.qml:87 src/app/qml/ui/NoteView.qml:172
+#: src/app/qml/ui/NotesPage.qml:113
 msgid "Edit"
 msgstr "Змінити"
-
-#: src/app/qml/components/PageWithBottomEdge.qml:123
-#: src/app/qml/reminders.qml:246 src/app/qml/reminders.qml:251
-#: src/app/qml/ui/EditNoteView.qml:45 src/app/qml/ui/EditNoteView.qml:131
-#: src/app/qml/ui/NoteView.qml:29 src/app/qml/ui/NotesPage.qml:66
-msgid "Untitled"
-msgstr "Без назви"
 
 #: src/app/qml/components/PulldownListView.qml:40
 msgid "Release to refresh"
@@ -109,7 +126,7 @@ msgid "Mark as done"
 msgstr "Позначити як виконане"
 
 #: src/app/qml/components/RemindersDelegate.qml:57
-#: src/app/qml/ui/NotePage.qml:44 src/app/qml/ui/NotesPage.qml:109
+#: src/app/qml/ui/NotesPage.qml:99
 msgid "Edit reminder"
 msgstr "Змінити нагадування"
 
@@ -162,12 +179,12 @@ msgid "Are you sure you want to continue?"
 msgstr "Продовжити?"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:57
-#: src/app/qml/reminders.qml:690
+#: src/app/qml/reminders.qml:744
 msgid "Yes"
 msgstr "Так"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:66
-#: src/app/qml/reminders.qml:680
+#: src/app/qml/reminders.qml:734
 msgid "No"
 msgstr "Ні"
 
@@ -199,23 +216,31 @@ msgstr "Заголовок (за зростанням)"
 msgid "Title (descending)"
 msgstr "Заголовок (за спаданням)"
 
-#: src/app/qml/reminders.qml:385
+#: src/app/qml/reminders.qml:422
 msgid "Default notebook"
 msgstr "Типовий нотатник"
 
-#: src/app/qml/reminders.qml:491
-msgid "Notes"
-msgstr "Нотатки"
+#: src/app/qml/reminders.qml:540
+msgid "Select note to attach imported file"
+msgstr ""
 
-#: src/app/qml/reminders.qml:519
+#: src/app/qml/reminders.qml:540
+msgid "Select note to attach imported files"
+msgstr ""
+
+#: src/app/qml/reminders.qml:590
 msgid "Notebooks"
 msgstr "Записники"
 
-#: src/app/qml/reminders.qml:600
+#: src/app/qml/reminders.qml:624
+msgid "Reminders"
+msgstr "Нагадування"
+
+#: src/app/qml/reminders.qml:654
 msgid "Accounts"
 msgstr "Облікові записи"
 
-#: src/app/qml/reminders.qml:619
+#: src/app/qml/reminders.qml:673
 msgid ""
 "No note selected.\n"
 "Select a note to see it in detail."
@@ -223,17 +248,16 @@ msgstr ""
 "Не позначено нотаток.\n"
 "Позначте нотатку, що переглянути її параметри."
 
-#: src/app/qml/reminders.qml:662
+#: src/app/qml/reminders.qml:716
 msgid "Setup Evernote connection?"
 msgstr "Налаштувати з’єднання із Evernote?"
 
-#: src/app/qml/reminders.qml:663
-msgid "Reminders can store your notes and reminders locally on this device."
+#: src/app/qml/reminders.qml:717
+msgid ""
+"Notes can be stored on this device, or optionally synced with Evernote."
 msgstr ""
-"Нагадування можуть зберігати ваші нотатки та нагадування локально на цьому "
-"пристрої."
 
-#: src/app/qml/reminders.qml:664
+#: src/app/qml/reminders.qml:718
 msgid ""
 "In order to synchronize notes with Evernote, an account at Evernote is "
 "required."
@@ -241,9 +265,42 @@ msgstr ""
 "Для синхронізації нотаток із Evernote вам знадобиться обліковий запис "
 "Evernote."
 
-#: src/app/qml/reminders.qml:665
+#: src/app/qml/reminders.qml:719
 msgid "Do you want to setup an account now?"
 msgstr "Хочете налаштувати обліковий запис зараз?"
+
+#: src/app/qml/reminders.qml:759
+#, qt-format
+msgid "Importing %1 items"
+msgstr ""
+
+#: src/app/qml/reminders.qml:760
+msgid "Importing 1 item"
+msgstr ""
+
+#: src/app/qml/reminders.qml:762
+msgid ""
+"Do you want to create a new note for those items or do you want to attach "
+"them to an existing note?"
+msgstr ""
+
+#: src/app/qml/reminders.qml:763
+msgid ""
+"Do you want to create a new note for this item or do you want to attach it "
+"to an existing note?"
+msgstr ""
+
+#: src/app/qml/reminders.qml:769
+msgid "Create new note"
+msgstr ""
+
+#: src/app/qml/reminders.qml:774
+msgid "Attach to existing note"
+msgstr ""
+
+#: src/app/qml/reminders.qml:779
+msgid "Cancel import"
+msgstr ""
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
@@ -266,31 +323,31 @@ msgstr "%1 — торкніться, щоб уповноважити"
 msgid "Add new account"
 msgstr "Додати обліковий запис"
 
-#: src/app/qml/ui/EditNoteView.qml:448
+#: src/app/qml/ui/EditNoteView.qml:425
 msgid "Font"
 msgstr "Шрифт"
 
-#: src/app/qml/ui/EditNoteView.qml:460
+#: src/app/qml/ui/EditNoteView.qml:437
 msgid "Size"
 msgstr "Розмір"
 
 #. TRANSLATORS: Toolbar button for "Bold"
-#: src/app/qml/ui/EditNoteView.qml:483
+#: src/app/qml/ui/EditNoteView.qml:460
 msgid "B"
 msgstr "Ж"
 
 #. TRANSLATORS: Toolbar button for "Italic"
-#: src/app/qml/ui/EditNoteView.qml:496
+#: src/app/qml/ui/EditNoteView.qml:473
 msgid "I"
 msgstr "К"
 
 #. TRANSLATORS: Toolbar button for "Underline"
-#: src/app/qml/ui/EditNoteView.qml:510
+#: src/app/qml/ui/EditNoteView.qml:487
 msgid "U"
 msgstr "П"
 
 #. TRANSLATORS: Toolbar button for "Strikeout"
-#: src/app/qml/ui/EditNoteView.qml:524
+#: src/app/qml/ui/EditNoteView.qml:501
 msgid "T"
 msgstr "З"
 
@@ -322,11 +379,7 @@ msgstr "Вилучено з Evernote:"
 msgid "Modified somewhere else:"
 msgstr "Змінено деінде:"
 
-#: src/app/qml/ui/NotePage.qml:44 src/app/qml/ui/NotesPage.qml:109
-msgid "Set reminder"
-msgstr "Встановити нагадування"
-
-#: src/app/qml/ui/NoteView.qml:146
+#: src/app/qml/ui/NoteView.qml:184
 msgid "Attachment"
 msgstr "Долучення"
 
@@ -334,47 +387,47 @@ msgstr "Долучення"
 msgid "Add notebook"
 msgstr "Додати записник"
 
-#: src/app/qml/ui/NotebooksPage.qml:55 src/app/qml/ui/NotesPage.qml:89
+#: src/app/qml/ui/NotebooksPage.qml:52 src/app/qml/ui/NotesPage.qml:84
 #: src/app/qml/ui/RemindersPage.qml:36 src/app/qml/ui/SearchNotesPage.qml:60
 #: src/app/qml/ui/TagsPage.qml:52
 msgid "Search"
 msgstr "Знайти"
 
-#: src/app/qml/ui/NotebooksPage.qml:169
+#: src/app/qml/ui/NotebooksPage.qml:166
 msgid "Cancel"
 msgstr "Скасувати"
 
 #. TRANSLATORS: Button that saves a reminder
-#: src/app/qml/ui/NotebooksPage.qml:178 src/app/qml/ui/SetReminderView.qml:88
+#: src/app/qml/ui/NotebooksPage.qml:175 src/app/qml/ui/SetReminderView.qml:88
 msgid "Save"
 msgstr "Зберегти"
 
-#: src/app/qml/ui/NotebooksPage.qml:198
+#: src/app/qml/ui/NotebooksPage.qml:195
 msgid "Rename notebook"
 msgstr "Перейменувати нотатник"
 
-#: src/app/qml/ui/NotebooksPage.qml:199
+#: src/app/qml/ui/NotebooksPage.qml:196
 #, qt-format
 msgid "Enter a new name for notebook %1"
 msgstr "Введіть нову назву для нотатника %1"
 
-#: src/app/qml/ui/NotebooksPage.qml:208 src/app/qml/ui/TagsPage.qml:144
+#: src/app/qml/ui/NotebooksPage.qml:205 src/app/qml/ui/TagsPage.qml:143
 msgid "Name cannot be empty"
 msgstr "Назва не може бути порожньою"
 
-#: src/app/qml/ui/NotebooksPage.qml:212 src/app/qml/ui/TagsPage.qml:148
-msgid "OK"
-msgstr "Гаразд"
-
-#: src/app/qml/ui/NotesPage.qml:43 src/app/qml/ui/NotesPage.qml:63
+#: src/app/qml/ui/NotesPage.qml:43 src/app/qml/ui/NotesPage.qml:64
 msgid "Add note"
 msgstr "Додати нотатку"
 
-#: src/app/qml/ui/NotesPage.qml:74
+#: src/app/qml/ui/NotesPage.qml:72
 msgid "Sorting"
 msgstr "Упорядкування"
 
-#: src/app/qml/ui/NotesPage.qml:254
+#: src/app/qml/ui/NotesPage.qml:99
+msgid "Set reminder"
+msgstr "Встановити нагадування"
+
+#: src/app/qml/ui/NotesPage.qml:243
 msgid ""
 "No notes available. You can create new notes by pulling the note editor up "
 "from the bottom edge."
@@ -403,15 +456,15 @@ msgstr "Виберіть дату і час нагадування:"
 msgid "Reminder done"
 msgstr "Дію за нагадуванням виконано"
 
-#: src/app/qml/ui/TagsPage.qml:127
+#: src/app/qml/ui/TagsPage.qml:126
 msgid "No tags available. You can tag notes while viewing them."
 msgstr "Немає міток. Додати до нотатки мітку можна під час її перегляду."
 
-#: src/app/qml/ui/TagsPage.qml:134
+#: src/app/qml/ui/TagsPage.qml:133
 msgid "Rename tag"
 msgstr "Перейменувати мітку"
 
-#: src/app/qml/ui/TagsPage.qml:135
+#: src/app/qml/ui/TagsPage.qml:134
 #, qt-format
 msgid "Enter a new name for tag %1"
 msgstr "Введіть нову назву мітки %1"
@@ -461,7 +514,7 @@ msgstr ""
 "дані з сервера."
 
 #: src/libqtevernote/evernoteconnection.cpp:329
-#: src/libqtevernote/notesstore.cpp:1697
+#: src/libqtevernote/notesstore.cpp:1772
 msgid ""
 "Authentication for Evernote server expired. Please renew login information "
 "in the accounts settings."
@@ -502,6 +555,7 @@ msgstr ""
 "Під час спроби встановити з’єднання із Evernote сталася невідома помилка"
 
 #: src/libqtevernote/evernoteconnection.cpp:435
+#: src/libqtevernote/evernoteconnection.cpp:499
 msgid "Disconnected from Evernote."
 msgstr "Від’єднано від Evernote."
 
@@ -528,6 +582,10 @@ msgstr "Два тижні тому"
 msgid "%1 %2"
 msgstr "%1 %2"
 
+#: src/libqtevernote/note.cpp:369
+msgid "Done"
+msgstr "Виконано"
+
 #: src/libqtevernote/note.cpp:375
 msgid "No date"
 msgstr "Без дати"
@@ -553,33 +611,33 @@ msgid "Later"
 msgstr "Пізніше"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: today"
-#: src/libqtevernote/notebook.cpp:120
+#: src/libqtevernote/notebook.cpp:122
 msgid "today"
 msgstr "сьогодні"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: yesterday"
-#: src/libqtevernote/notebook.cpp:124
+#: src/libqtevernote/notebook.cpp:126
 msgid "yesterday"
 msgstr "вчора"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: last week"
-#: src/libqtevernote/notebook.cpp:128
+#: src/libqtevernote/notebook.cpp:130
 msgid "last week"
 msgstr "минулого тижня"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: two weeks ago"
-#: src/libqtevernote/notebook.cpp:132
+#: src/libqtevernote/notebook.cpp:134
 msgid "two weeks ago"
 msgstr "два тижні тому"
 
 #. TRANSLATORS: this is used in the notes list to group notes created on the same month
 #. the first parameter refers to a month name and the second to a year
-#: src/libqtevernote/notebook.cpp:136
+#: src/libqtevernote/notebook.cpp:138
 #, qt-format
 msgid "on %1 %2"
 msgstr "%1 %2"
 
-#: src/libqtevernote/notesstore.cpp:409
+#: src/libqtevernote/notesstore.cpp:415
 msgid ""
 "This account is managed by Evernote. Use the Evernote website to delete "
 "notebooks."
@@ -587,7 +645,7 @@ msgstr ""
 "Цим обліковим записом керує Evernote. Скористайтеся сайтом Evernote для "
 "вилучення нотатників."
 
-#: src/libqtevernote/notesstore.cpp:422
+#: src/libqtevernote/notesstore.cpp:429
 msgid ""
 "Cannot delete the default notebook. Set another notebook to be the default "
 "first."
@@ -595,19 +653,19 @@ msgstr ""
 "Не можна вилучати типовий нотатник. Спочатку слід зробити типовим інший "
 "нотатник."
 
-#: src/libqtevernote/notesstore.cpp:1700
+#: src/libqtevernote/notesstore.cpp:1775
 msgid "Rate limit for Evernote server exceeded. Please try again later."
 msgstr ""
 "Перевищено обмеження на швидкість з’єднання із сервером Evernote. Будь "
 "ласка, повторіть спробу пізніше."
 
-#: src/libqtevernote/notesstore.cpp:1703
+#: src/libqtevernote/notesstore.cpp:1778
 msgid "Upload quota for Evernote server exceed. Please try again later."
 msgstr ""
 "Перевищено квоту вивантаження для сервера Evernote. Будь ласка, повторіть "
 "спробу пізніше."
 
-#: src/libqtevernote/notesstore.cpp:1717
+#: src/libqtevernote/notesstore.cpp:1817
 msgid ""
 "This account is managed by Evernote. Please use the Evernote website to "
 "delete tags."

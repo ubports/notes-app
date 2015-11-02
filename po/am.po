@@ -7,23 +7,23 @@ msgid ""
 msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-04-16 17:45+0200\n"
-"PO-Revision-Date: 2015-04-18 00:26+0000\n"
+"POT-Creation-Date: 2015-09-21 18:39+0200\n"
+"PO-Revision-Date: 2015-09-22 18:32+0000\n"
 "Last-Translator: samson <Unknown>\n"
 "Language-Team: Amharic <am@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-08-15 05:35+0000\n"
-"X-Generator: Launchpad (build 17686)\n"
+"X-Launchpad-Export-Date: 2015-09-23 06:32+0000\n"
+"X-Generator: Launchpad (build 17749)\n"
 
-#: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
-msgid "Reminders"
-msgstr "አስታዋሾች"
+#: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:562
+msgid "Notes"
+msgstr "ማስታወሻዎች"
 
 #: com.ubuntu.reminders.desktop.in.in.h:2
-msgid "Ubuntu Reminders app, powered by Evernote"
-msgstr "የ ኡቡንቱ አስታዋሽ መተግበሪያ በ ሁልጊዜ ማስታወሻ"
+msgid "Ubuntu Notes app, powered by Evernote"
+msgstr "የ ኡቡንቱ ማስታወሻ መተግበሪያ በ ሁልጊዜ ማስታወሻ"
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
@@ -33,38 +33,61 @@ msgstr "ማስታወሻ ደብተር:"
 msgid "Reminder:"
 msgstr "አስታዋሽ:"
 
-#: src/app/qml/components/EditTagsDialog.qml:45
-msgid "Create a new tag"
-msgstr "አዲስ መለያ መፍጠሪያ"
+#: src/app/qml/components/EditTagsDialog.qml:29
+msgid "Edit tags"
+msgstr "ምልክት ማረሚያ"
 
-#: src/app/qml/components/EditTagsDialog.qml:73
-msgid "Create tag"
-msgstr "መለያ መፍጠሪያ"
+#: src/app/qml/components/EditTagsDialog.qml:32
+msgid "Enter a tag name to attach it to the note."
+msgstr "የ ምልክት ስም ያስገቡ ከ ማስታወሻው ጋር ለ ማያያዝ"
+
+#: src/app/qml/components/EditTagsDialog.qml:33
+msgid ""
+"Enter a tag name or select one from the list to attach it to the note."
+msgstr "የ ምልክት ስም ያስገቡ ወይንም ይምረጡ አንድ ከ ዝርዝር ውስጥ ከ ማስታወሻው ጋር ለ ማያያዝ"
+
+#: src/app/qml/components/EditTagsDialog.qml:62
+msgid "Tag name"
+msgstr "የ ምልክት ስም"
+
+#: src/app/qml/components/EditTagsDialog.qml:142
+#: src/app/qml/ui/NotebooksPage.qml:209 src/app/qml/ui/TagsPage.qml:147
+msgid "OK"
+msgstr "እሺ"
 
 #. TRANSLATORS: Button to close the edit mode
-#: src/app/qml/components/EditTagsDialog.qml:120
-#: src/app/qml/ui/EditNoteView.qml:628 src/libqtevernote/note.cpp:369
-msgid "Done"
-msgstr "ጨርሷል"
+#. TRANSLATORS: Button to close the note viewer
+#: src/app/qml/components/EditTagsDialog.qml:190
+#: src/app/qml/ui/EditNoteView.qml:605 src/app/qml/ui/NoteView.qml:150
+msgid "Close"
+msgstr "መዝጊያ"
+
+#: src/app/qml/components/NoteHeader.qml:52
+#: src/app/qml/components/PageWithBottomEdge.qml:123
+#: src/app/qml/reminders.qml:100 src/app/qml/reminders.qml:266
+#: src/app/qml/reminders.qml:271 src/app/qml/ui/EditNoteView.qml:43
+#: src/app/qml/ui/NotesPage.qml:67
+msgid "Untitled"
+msgstr "ያልተሰየመ"
 
 #. TRANSLATORS: Button that deletes a reminder
 #: src/app/qml/components/NotebooksDelegate.qml:36
 #: src/app/qml/components/NotesDelegate.qml:53
-#: src/app/qml/components/TagsDelegate.qml:34 src/app/qml/ui/NotePage.qml:51
-#: src/app/qml/ui/NotesPage.qml:99 src/app/qml/ui/SetReminderView.qml:76
+#: src/app/qml/components/TagsDelegate.qml:34 src/app/qml/ui/NotesPage.qml:91
+#: src/app/qml/ui/SetReminderView.qml:76
 msgid "Delete"
 msgstr "ማጥፊያ"
 
-#: src/app/qml/components/NotebooksDelegate.qml:96
+#: src/app/qml/components/NotebooksDelegate.qml:97
 #, qt-format
 msgid "Last edited %1"
 msgstr "መጨረሻ የታረመው %1"
 
-#: src/app/qml/components/NotebooksDelegate.qml:115
+#: src/app/qml/components/NotebooksDelegate.qml:116
 msgid "Shared"
 msgstr "ተካፍሏል"
 
-#: src/app/qml/components/NotebooksDelegate.qml:115
+#: src/app/qml/components/NotebooksDelegate.qml:116
 msgid "Private"
 msgstr "የ ግል"
 
@@ -72,21 +95,15 @@ msgstr "የ ግል"
 msgid "Reminder"
 msgstr "አስታዋሽ"
 
-#: src/app/qml/components/NotesDelegate.qml:80 src/app/qml/reminders.qml:572
+#: src/app/qml/components/NotesDelegate.qml:80 src/app/qml/reminders.qml:641
 msgid "Tags"
 msgstr "ምልክት"
 
-#: src/app/qml/components/NotesDelegate.qml:87 src/app/qml/ui/NotePage.qml:37
-#: src/app/qml/ui/NotesPage.qml:125
+#. TRANSLATORS: Button to go from note viewer to note editor
+#: src/app/qml/components/NotesDelegate.qml:87 src/app/qml/ui/NoteView.qml:172
+#: src/app/qml/ui/NotesPage.qml:113
 msgid "Edit"
 msgstr "ማረሚያ"
-
-#: src/app/qml/components/PageWithBottomEdge.qml:123
-#: src/app/qml/reminders.qml:246 src/app/qml/reminders.qml:251
-#: src/app/qml/ui/EditNoteView.qml:45 src/app/qml/ui/EditNoteView.qml:131
-#: src/app/qml/ui/NoteView.qml:29 src/app/qml/ui/NotesPage.qml:66
-msgid "Untitled"
-msgstr "ያልተሰየመ"
 
 #: src/app/qml/components/PulldownListView.qml:40
 msgid "Release to refresh"
@@ -109,7 +126,7 @@ msgid "Mark as done"
 msgstr "እንደ ተፈጸመ ምልክት ምድረጊያ"
 
 #: src/app/qml/components/RemindersDelegate.qml:57
-#: src/app/qml/ui/NotePage.qml:44 src/app/qml/ui/NotesPage.qml:109
+#: src/app/qml/ui/NotesPage.qml:99
 msgid "Edit reminder"
 msgstr "አስታዋሽ ማረሚያ"
 
@@ -162,12 +179,12 @@ msgid "Are you sure you want to continue?"
 msgstr "በእርግጥ መቀጠል ይፈልጋሉ?"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:57
-#: src/app/qml/reminders.qml:690
+#: src/app/qml/reminders.qml:744
 msgid "Yes"
 msgstr "አዎ"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:66
-#: src/app/qml/reminders.qml:680
+#: src/app/qml/reminders.qml:734
 msgid "No"
 msgstr "አይ"
 
@@ -199,23 +216,31 @@ msgstr "አርእስት ( እየጨመረ በሚሄድ)"
 msgid "Title (descending)"
 msgstr "አርእስት ( እየቀነሰ በሚሄድ)"
 
-#: src/app/qml/reminders.qml:385
+#: src/app/qml/reminders.qml:422
 msgid "Default notebook"
 msgstr "ነባር ማስታወሻ ደብተር"
 
-#: src/app/qml/reminders.qml:491
-msgid "Notes"
-msgstr "ማስታወሻዎች"
+#: src/app/qml/reminders.qml:540
+msgid "Select note to attach imported file"
+msgstr "ይምረጡ ማስታወሻ ከ መጣው ፋይል ጋር ለ ማያያዝ"
 
-#: src/app/qml/reminders.qml:519
+#: src/app/qml/reminders.qml:540
+msgid "Select note to attach imported files"
+msgstr "ይምረጡ አንድ ማስታወሻ ከ መጣው ፋይል ጋር ለ ማያያዝ"
+
+#: src/app/qml/reminders.qml:590
 msgid "Notebooks"
 msgstr "የ ማስታወሻ ደብተሮች"
 
-#: src/app/qml/reminders.qml:600
+#: src/app/qml/reminders.qml:624
+msgid "Reminders"
+msgstr "አስታዋሾች"
+
+#: src/app/qml/reminders.qml:654
 msgid "Accounts"
 msgstr "መግለጫ"
 
-#: src/app/qml/reminders.qml:619
+#: src/app/qml/reminders.qml:673
 msgid ""
 "No note selected.\n"
 "Select a note to see it in detail."
@@ -223,23 +248,58 @@ msgstr ""
 "ምንም ማስታወሻ አልተመረጠም\n"
 "ማስታወሻ ይምረጡ በ ዝርዝር ለማየት"
 
-#: src/app/qml/reminders.qml:662
+#: src/app/qml/reminders.qml:716
 msgid "Setup Evernote connection?"
 msgstr "የ ሁልጊዜ ማስታወሻ ግንኙነት ላሰናዳ?"
 
-#: src/app/qml/reminders.qml:663
-msgid "Reminders can store your notes and reminders locally on this device."
-msgstr "አስታዋሾች የ እርስዎን ማስታወሻዎች ያስቀምጣሉ እና በ ዚህ አካል ላይ ያሳያሉ"
+#: src/app/qml/reminders.qml:717
+msgid ""
+"Notes can be stored on this device, or optionally synced with Evernote."
+msgstr "ማስታወሻዎች በዚህ አካል ላይ ማስቀመጥ ይችላሉ ወይንም ከ ሁልጊዜ ማስታወሻ ጋር ያስማሙ"
 
-#: src/app/qml/reminders.qml:664
+#: src/app/qml/reminders.qml:718
 msgid ""
 "In order to synchronize notes with Evernote, an account at Evernote is "
 "required."
 msgstr "ማስታወሻዎችን ከ ሁልጊዜ ማስታወሻ ጋር ለማስማማት ከ ሁልጊዜ ማስታወሻ ጋር መግለጫ መፍጠር ያስፈልጋል"
 
-#: src/app/qml/reminders.qml:665
+#: src/app/qml/reminders.qml:719
 msgid "Do you want to setup an account now?"
 msgstr "መግለጫ አሁን ማሰናዳት ይፈልጋሉ?"
+
+#: src/app/qml/reminders.qml:759
+#, qt-format
+msgid "Importing %1 items"
+msgstr "በማምጣት ላይ %1 እቃዎች"
+
+#: src/app/qml/reminders.qml:760
+msgid "Importing 1 item"
+msgstr "በማምጣት ላይ 1 እቃ"
+
+#: src/app/qml/reminders.qml:762
+msgid ""
+"Do you want to create a new note for those items or do you want to attach "
+"them to an existing note?"
+msgstr ""
+"አዲስ ማስታወሻ መፍጠር ይፈልጋሉ ለ እነዚህ እቃዎች ወይንም ከ ነበረው ማስታወሻ ጋር ማያያዝ ነው የሚፈልጉት?"
+
+#: src/app/qml/reminders.qml:763
+msgid ""
+"Do you want to create a new note for this item or do you want to attach it "
+"to an existing note?"
+msgstr "አዲስ ማስታወሻ መፍጠር ይፈልጋሉ ለዚህ እቃ ወይንም ከ ነበረው ማስታወሻ ጋር ማያያዝ ነው የሚፈልጉት?"
+
+#: src/app/qml/reminders.qml:769
+msgid "Create new note"
+msgstr "አዲስ ማስታወሻ መፍጠሪያ"
+
+#: src/app/qml/reminders.qml:774
+msgid "Attach to existing note"
+msgstr "ከ ነበረው ማስታወሻ ጋር ማያያዣ"
+
+#: src/app/qml/reminders.qml:779
+msgid "Cancel import"
+msgstr "ማምጫውን መሰረዣ"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
@@ -262,31 +322,31 @@ msgstr "%1 - መታ ያድርጉ ለመፍቀድ"
 msgid "Add new account"
 msgstr "አዲስ መግለጫ መጨመሪያ"
 
-#: src/app/qml/ui/EditNoteView.qml:448
+#: src/app/qml/ui/EditNoteView.qml:425
 msgid "Font"
 msgstr "ፊደል"
 
-#: src/app/qml/ui/EditNoteView.qml:460
+#: src/app/qml/ui/EditNoteView.qml:437
 msgid "Size"
 msgstr "መጠን"
 
 #. TRANSLATORS: Toolbar button for "Bold"
-#: src/app/qml/ui/EditNoteView.qml:483
+#: src/app/qml/ui/EditNoteView.qml:460
 msgid "B"
 msgstr "ማድመቂያ"
 
 #. TRANSLATORS: Toolbar button for "Italic"
-#: src/app/qml/ui/EditNoteView.qml:496
+#: src/app/qml/ui/EditNoteView.qml:473
 msgid "I"
 msgstr "ማዝመሚያ"
 
 #. TRANSLATORS: Toolbar button for "Underline"
-#: src/app/qml/ui/EditNoteView.qml:510
+#: src/app/qml/ui/EditNoteView.qml:487
 msgid "U"
 msgstr "ከስሩ ማስመሪያ"
 
 #. TRANSLATORS: Toolbar button for "Strikeout"
-#: src/app/qml/ui/EditNoteView.qml:524
+#: src/app/qml/ui/EditNoteView.qml:501
 msgid "T"
 msgstr "በላዩ ላይ መሰረዣ"
 
@@ -316,11 +376,7 @@ msgstr "ከ ሁልጊዜ ማስታወሻ ላይ ጠፍቷል:"
 msgid "Modified somewhere else:"
 msgstr "ሌላ ቦታ ተሻሽሏል:"
 
-#: src/app/qml/ui/NotePage.qml:44 src/app/qml/ui/NotesPage.qml:109
-msgid "Set reminder"
-msgstr "አስታዋሽ ማሰናጃ"
-
-#: src/app/qml/ui/NoteView.qml:146
+#: src/app/qml/ui/NoteView.qml:184
 msgid "Attachment"
 msgstr "ማያያዣ"
 
@@ -328,47 +384,47 @@ msgstr "ማያያዣ"
 msgid "Add notebook"
 msgstr "ማስታዋሽ መጨመሪያ"
 
-#: src/app/qml/ui/NotebooksPage.qml:55 src/app/qml/ui/NotesPage.qml:89
+#: src/app/qml/ui/NotebooksPage.qml:52 src/app/qml/ui/NotesPage.qml:84
 #: src/app/qml/ui/RemindersPage.qml:36 src/app/qml/ui/SearchNotesPage.qml:60
 #: src/app/qml/ui/TagsPage.qml:52
 msgid "Search"
 msgstr "መፈለጊያ"
 
-#: src/app/qml/ui/NotebooksPage.qml:169
+#: src/app/qml/ui/NotebooksPage.qml:166
 msgid "Cancel"
 msgstr "መሰረዣ"
 
 #. TRANSLATORS: Button that saves a reminder
-#: src/app/qml/ui/NotebooksPage.qml:178 src/app/qml/ui/SetReminderView.qml:88
+#: src/app/qml/ui/NotebooksPage.qml:175 src/app/qml/ui/SetReminderView.qml:88
 msgid "Save"
 msgstr "ማስቀመጫ"
 
-#: src/app/qml/ui/NotebooksPage.qml:198
+#: src/app/qml/ui/NotebooksPage.qml:195
 msgid "Rename notebook"
 msgstr "ማስታወሻ ደብተር እንደገና መሰየሚያ"
 
-#: src/app/qml/ui/NotebooksPage.qml:199
+#: src/app/qml/ui/NotebooksPage.qml:196
 #, qt-format
 msgid "Enter a new name for notebook %1"
 msgstr "ለ ማስታወሻ ደብተር ሌላ ስም ያስገቡ %1"
 
-#: src/app/qml/ui/NotebooksPage.qml:208 src/app/qml/ui/TagsPage.qml:144
+#: src/app/qml/ui/NotebooksPage.qml:205 src/app/qml/ui/TagsPage.qml:143
 msgid "Name cannot be empty"
 msgstr "ስም ባዶ መሆን የለበትም"
 
-#: src/app/qml/ui/NotebooksPage.qml:212 src/app/qml/ui/TagsPage.qml:148
-msgid "OK"
-msgstr "እሺ"
-
-#: src/app/qml/ui/NotesPage.qml:43 src/app/qml/ui/NotesPage.qml:63
+#: src/app/qml/ui/NotesPage.qml:43 src/app/qml/ui/NotesPage.qml:64
 msgid "Add note"
 msgstr "ማስታዋሽ መጨመሪያ"
 
-#: src/app/qml/ui/NotesPage.qml:74
+#: src/app/qml/ui/NotesPage.qml:72
 msgid "Sorting"
 msgstr "መለያ"
 
-#: src/app/qml/ui/NotesPage.qml:254
+#: src/app/qml/ui/NotesPage.qml:99
+msgid "Set reminder"
+msgstr "አስታዋሽ ማሰናጃ"
+
+#: src/app/qml/ui/NotesPage.qml:243
 msgid ""
 "No notes available. You can create new notes by pulling the note editor up "
 "from the bottom edge."
@@ -394,15 +450,15 @@ msgstr "ሰአት እና ቀን ይምረጡ ለ አስታዋሽ"
 msgid "Reminder done"
 msgstr "አስታዋሽ ጨርሷል"
 
-#: src/app/qml/ui/TagsPage.qml:127
+#: src/app/qml/ui/TagsPage.qml:126
 msgid "No tags available. You can tag notes while viewing them."
 msgstr "ምንም ምልክት አልተገኘም: ማስታወሻዎችን በሚያዩ ጊዜ ምልክት ማድረግ ይችላሉ"
 
-#: src/app/qml/ui/TagsPage.qml:134
+#: src/app/qml/ui/TagsPage.qml:133
 msgid "Rename tag"
 msgstr "ምልክት እንደገና መሰየሚያ"
 
-#: src/app/qml/ui/TagsPage.qml:135
+#: src/app/qml/ui/TagsPage.qml:134
 #, qt-format
 msgid "Enter a new name for tag %1"
 msgstr "ለምልክቱ አዲስ ስም ያስገቡ %1"
@@ -445,7 +501,7 @@ msgid "Error connecting to Evernote: Cannot download server information."
 msgstr "ስህተት ተፈጥሯል ወደ ኤቨርኖት በመገናኘት ላይ እንዳለ: የ ሰርቨሩን መረጃ ማውረድ አልተቻለም"
 
 #: src/libqtevernote/evernoteconnection.cpp:329
-#: src/libqtevernote/notesstore.cpp:1697
+#: src/libqtevernote/notesstore.cpp:1772
 msgid ""
 "Authentication for Evernote server expired. Please renew login information "
 "in the accounts settings."
@@ -480,6 +536,7 @@ msgid "Unknown Error connecting to Evernote"
 msgstr "ያልታወቀ ስህተት ተፈጥሯል ወደ ኤቨርኖት በመገናኘት ላይ እንዳለ"
 
 #: src/libqtevernote/evernoteconnection.cpp:435
+#: src/libqtevernote/evernoteconnection.cpp:499
 msgid "Disconnected from Evernote."
 msgstr "ከ ሁልጊዜ ማስታወሻ ጋር ግንኙነት ተቋርጧል"
 
@@ -506,6 +563,10 @@ msgstr "ከ ሁለት ሳምንት በፊት"
 msgid "%1 %2"
 msgstr "%1 %2"
 
+#: src/libqtevernote/note.cpp:369
+msgid "Done"
+msgstr "ጨርሷል"
+
 #: src/libqtevernote/note.cpp:375
 msgid "No date"
 msgstr "ቀን የለም"
@@ -531,33 +592,33 @@ msgid "Later"
 msgstr "በኋላ"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: today"
-#: src/libqtevernote/notebook.cpp:120
+#: src/libqtevernote/notebook.cpp:122
 msgid "today"
 msgstr "ዛሬ"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: yesterday"
-#: src/libqtevernote/notebook.cpp:124
+#: src/libqtevernote/notebook.cpp:126
 msgid "yesterday"
 msgstr "ትናንትና"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: last week"
-#: src/libqtevernote/notebook.cpp:128
+#: src/libqtevernote/notebook.cpp:130
 msgid "last week"
 msgstr "ባለፈው ሳምንት"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: two weeks ago"
-#: src/libqtevernote/notebook.cpp:132
+#: src/libqtevernote/notebook.cpp:134
 msgid "two weeks ago"
 msgstr "ከ ሁለት ሳምንት በፊት"
 
 #. TRANSLATORS: this is used in the notes list to group notes created on the same month
 #. the first parameter refers to a month name and the second to a year
-#: src/libqtevernote/notebook.cpp:136
+#: src/libqtevernote/notebook.cpp:138
 #, qt-format
 msgid "on %1 %2"
 msgstr "በ %1 %2"
 
-#: src/libqtevernote/notesstore.cpp:409
+#: src/libqtevernote/notesstore.cpp:415
 msgid ""
 "This account is managed by Evernote. Use the Evernote website to delete "
 "notebooks."
@@ -565,21 +626,21 @@ msgstr ""
 "ይህ መግለጫ የሚተዳደረው በ ሁል ጊዜ ማስታወሻ ነው: የ ሁል ጊዜ ማስታወሻን ድህረ ገጽ ይጠቀሙ ማስታወሻ ደብተሩን "
 "ለማጥፋት"
 
-#: src/libqtevernote/notesstore.cpp:422
+#: src/libqtevernote/notesstore.cpp:429
 msgid ""
 "Cannot delete the default notebook. Set another notebook to be the default "
 "first."
 msgstr "ነባር የ ማስታወሻ ደብተሩን ማጥፋት አይቻልም: በመጀመሪያ ሌላ የ ማስታወሻ ደብተር ያሰናዱ ነባር እንዲሆን"
 
-#: src/libqtevernote/notesstore.cpp:1700
+#: src/libqtevernote/notesstore.cpp:1775
 msgid "Rate limit for Evernote server exceeded. Please try again later."
 msgstr "ለ ሁል ጊዜ ማስታወሻ ሰርቨር መገናኛ ጊዜው አልፏል: እባክዎን ትንሽ ቆይተው እንደገና ይሞክሩ"
 
-#: src/libqtevernote/notesstore.cpp:1703
+#: src/libqtevernote/notesstore.cpp:1778
 msgid "Upload quota for Evernote server exceed. Please try again later."
 msgstr "ለ ሁል ጊዜ ማስታወሻ ሰርቨር መጫኛ መጠኑን አልፏል: እባክዎን ትንሽ ቆይተው እንደገና ይሞክሩ"
 
-#: src/libqtevernote/notesstore.cpp:1717
+#: src/libqtevernote/notesstore.cpp:1817
 msgid ""
 "This account is managed by Evernote. Please use the Evernote website to "
 "delete tags."

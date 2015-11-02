@@ -16,11 +16,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.3
-import QtQuick.Layouts 1.0
+import QtQuick 2.4
+import QtQuick.Layouts 1.1
 import Ubuntu.Components 1.3
-import Ubuntu.Components.ListItems 1.0
-import Ubuntu.Components.Popups 1.0
+import Ubuntu.Components.ListItems 1.3
+import Ubuntu.Components.Popups 1.3
 import Evernote 0.1
 import "../components"
 import Qt.labs.settings 1.0
@@ -43,6 +43,7 @@ PageWithBottomEdge {
     bottomEdgeLabelVisible: narrowMode && (!notes.filterNotebookGuid || !notes.loading)
     bottomEdgeTitle: i18n.tr("Add note")
     bottomEdgePageComponent: EditNotePage {
+        isBottomEdge: true
         MouseArea {
             anchors.fill: parent
         }

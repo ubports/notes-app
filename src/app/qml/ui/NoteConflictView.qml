@@ -16,9 +16,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.3
+import QtQuick 2.4
 import Ubuntu.Components 1.3
-import Ubuntu.Components.ListItems 1.0
+import Ubuntu.Components.ListItems 1.3
 import QtQuick.Layouts 1.1
 import Evernote 0.1
 import "../components"
@@ -51,7 +51,7 @@ Item {
                     name: "weather-severe-alert-symbolic"
                 }
                 Label {
-                    text: i18n.tr("This note has been modified in multiple places. Please choose the version to be opened and delete the other.")
+                    text: i18n.tr("This note has been modified in multiple places. Open each version to check the content, then swipe to delete one of them.")
                     Layout.fillWidth: true
                     wrapMode: Text.WordWrap
                 }

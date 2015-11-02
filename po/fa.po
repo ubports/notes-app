@@ -7,23 +7,23 @@ msgid ""
 msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-04-16 17:45+0200\n"
-"PO-Revision-Date: 2015-04-21 22:27+0000\n"
+"POT-Creation-Date: 2015-09-21 18:39+0200\n"
+"PO-Revision-Date: 2015-09-27 06:26+0000\n"
 "Last-Translator: Danial Behzadi <dani.behzi@gmail.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-08-15 05:35+0000\n"
-"X-Generator: Launchpad (build 17686)\n"
+"X-Launchpad-Export-Date: 2015-09-28 06:23+0000\n"
+"X-Generator: Launchpad (build 17754)\n"
 
-#: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
-msgid "Reminders"
-msgstr "یادآورها"
+#: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:562
+msgid "Notes"
+msgstr "یادداشت‌ها"
 
 #: com.ubuntu.reminders.desktop.in.in.h:2
-msgid "Ubuntu Reminders app, powered by Evernote"
-msgstr "اپ یادآور اوبونتو، قدرت گرفته از اورنوت"
+msgid "Ubuntu Notes app, powered by Evernote"
+msgstr "کارهٔ یادداشت اوبونتو، قدرت‌گرفته از اورنوت"
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
@@ -33,38 +33,62 @@ msgstr "دفترچه یادداشت:"
 msgid "Reminder:"
 msgstr "یادآور:"
 
-#: src/app/qml/components/EditTagsDialog.qml:45
-msgid "Create a new tag"
-msgstr "ایجاد برچسب جدید"
+#: src/app/qml/components/EditTagsDialog.qml:29
+msgid "Edit tags"
+msgstr "ویرایش برچسب‌ها"
 
-#: src/app/qml/components/EditTagsDialog.qml:73
-msgid "Create tag"
-msgstr "ایجاد برچسب"
+#: src/app/qml/components/EditTagsDialog.qml:32
+msgid "Enter a tag name to attach it to the note."
+msgstr "نام برچسبی را برای چسباندن به یادداشت وارد کنید."
+
+#: src/app/qml/components/EditTagsDialog.qml:33
+msgid ""
+"Enter a tag name or select one from the list to attach it to the note."
+msgstr ""
+"نام برچسبی را برای چسباندن به یادداشت وارد کرده، یا یکی را از فهرست برگزینید."
+
+#: src/app/qml/components/EditTagsDialog.qml:62
+msgid "Tag name"
+msgstr "نام برچسب"
+
+#: src/app/qml/components/EditTagsDialog.qml:142
+#: src/app/qml/ui/NotebooksPage.qml:209 src/app/qml/ui/TagsPage.qml:147
+msgid "OK"
+msgstr "قبول"
 
 #. TRANSLATORS: Button to close the edit mode
-#: src/app/qml/components/EditTagsDialog.qml:120
-#: src/app/qml/ui/EditNoteView.qml:628 src/libqtevernote/note.cpp:369
-msgid "Done"
-msgstr "انجام شد"
+#. TRANSLATORS: Button to close the note viewer
+#: src/app/qml/components/EditTagsDialog.qml:190
+#: src/app/qml/ui/EditNoteView.qml:605 src/app/qml/ui/NoteView.qml:150
+msgid "Close"
+msgstr "بستن"
+
+#: src/app/qml/components/NoteHeader.qml:52
+#: src/app/qml/components/PageWithBottomEdge.qml:123
+#: src/app/qml/reminders.qml:100 src/app/qml/reminders.qml:266
+#: src/app/qml/reminders.qml:271 src/app/qml/ui/EditNoteView.qml:43
+#: src/app/qml/ui/NotesPage.qml:67
+msgid "Untitled"
+msgstr "بی‌عنوان"
 
 #. TRANSLATORS: Button that deletes a reminder
 #: src/app/qml/components/NotebooksDelegate.qml:36
 #: src/app/qml/components/NotesDelegate.qml:53
-#: src/app/qml/components/TagsDelegate.qml:34 src/app/qml/ui/NotePage.qml:51
-#: src/app/qml/ui/NotesPage.qml:99 src/app/qml/ui/SetReminderView.qml:76
+#: src/app/qml/components/TagsDelegate.qml:34 src/app/qml/ui/NotesPage.qml:91
+#: src/app/qml/ui/SetReminderView.qml:76
 msgid "Delete"
 msgstr "حذف"
 
-#: src/app/qml/components/NotebooksDelegate.qml:96
+#: src/app/qml/components/NotebooksDelegate.qml:97
 #, qt-format
 msgid "Last edited %1"
 msgstr "آخرین ویرایش در %1"
 
-#: src/app/qml/components/NotebooksDelegate.qml:115
+#: src/app/qml/components/NotebooksDelegate.qml:116
 msgid "Shared"
 msgstr "به اشتراک گذاشته شده"
 
-#: src/app/qml/components/NotebooksDelegate.qml:115
+#: src/app/qml/components/NotebooksDelegate.qml:116
 msgid "Private"
 msgstr "خصوصی"
 
@@ -72,21 +96,15 @@ msgstr "خصوصی"
 msgid "Reminder"
 msgstr "یادآور"
 
-#: src/app/qml/components/NotesDelegate.qml:80 src/app/qml/reminders.qml:572
+#: src/app/qml/components/NotesDelegate.qml:80 src/app/qml/reminders.qml:641
 msgid "Tags"
 msgstr "برچسب‌ها"
 
-#: src/app/qml/components/NotesDelegate.qml:87 src/app/qml/ui/NotePage.qml:37
-#: src/app/qml/ui/NotesPage.qml:125
+#. TRANSLATORS: Button to go from note viewer to note editor
+#: src/app/qml/components/NotesDelegate.qml:87 src/app/qml/ui/NoteView.qml:172
+#: src/app/qml/ui/NotesPage.qml:113
 msgid "Edit"
 msgstr "ویرایش"
-
-#: src/app/qml/components/PageWithBottomEdge.qml:123
-#: src/app/qml/reminders.qml:246 src/app/qml/reminders.qml:251
-#: src/app/qml/ui/EditNoteView.qml:45 src/app/qml/ui/EditNoteView.qml:131
-#: src/app/qml/ui/NoteView.qml:29 src/app/qml/ui/NotesPage.qml:66
-msgid "Untitled"
-msgstr "بی‌عنوان"
 
 #: src/app/qml/components/PulldownListView.qml:40
 msgid "Release to refresh"
@@ -109,7 +127,7 @@ msgid "Mark as done"
 msgstr "علامت گذاری به عنوان انجام شده"
 
 #: src/app/qml/components/RemindersDelegate.qml:57
-#: src/app/qml/ui/NotePage.qml:44 src/app/qml/ui/NotesPage.qml:109
+#: src/app/qml/ui/NotesPage.qml:99
 msgid "Edit reminder"
 msgstr "ویرایش یادآور"
 
@@ -162,12 +180,12 @@ msgid "Are you sure you want to continue?"
 msgstr "مطمئنید که می‌خواهید ادامه دهید؟"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:57
-#: src/app/qml/reminders.qml:690
+#: src/app/qml/reminders.qml:744
 msgid "Yes"
 msgstr "بله"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:66
-#: src/app/qml/reminders.qml:680
+#: src/app/qml/reminders.qml:734
 msgid "No"
 msgstr "نه"
 
@@ -199,23 +217,31 @@ msgstr "عنوان (صعودی)"
 msgid "Title (descending)"
 msgstr "عنوان (نزولی)"
 
-#: src/app/qml/reminders.qml:385
+#: src/app/qml/reminders.qml:422
 msgid "Default notebook"
 msgstr "دفترچه یادداشت پیش‌گزیده"
 
-#: src/app/qml/reminders.qml:491
-msgid "Notes"
-msgstr "یادداشت‌ها"
+#: src/app/qml/reminders.qml:540
+msgid "Select note to attach imported file"
+msgstr "یادداشتی را برای چسباندن پروندهٔ وارد شده، برگزینید."
 
-#: src/app/qml/reminders.qml:519
+#: src/app/qml/reminders.qml:540
+msgid "Select note to attach imported files"
+msgstr "یادداشتی را برای چسباندن پرونده‌های وارد شده، برگزینید."
+
+#: src/app/qml/reminders.qml:590
 msgid "Notebooks"
 msgstr "دفترچه‌های یادداشت"
 
-#: src/app/qml/reminders.qml:600
+#: src/app/qml/reminders.qml:624
+msgid "Reminders"
+msgstr "یادآورها"
+
+#: src/app/qml/reminders.qml:654
 msgid "Accounts"
 msgstr "حساب‌های کاربری"
 
-#: src/app/qml/reminders.qml:619
+#: src/app/qml/reminders.qml:673
 msgid ""
 "No note selected.\n"
 "Select a note to see it in detail."
@@ -223,25 +249,63 @@ msgstr ""
 "هیچ یادداشتی انتخاب نشده.\n"
 "یادداشتی را برای دیدن جزئیاتش انتخاب کنید."
 
-#: src/app/qml/reminders.qml:662
+#: src/app/qml/reminders.qml:716
 msgid "Setup Evernote connection?"
 msgstr "برپاسازی اتّصال اورنوت؟"
 
-#: src/app/qml/reminders.qml:663
-msgid "Reminders can store your notes and reminders locally on this device."
+#: src/app/qml/reminders.qml:717
+msgid ""
+"Notes can be stored on this device, or optionally synced with Evernote."
 msgstr ""
-"یادآورها می‌تواندد یادداشت‌ها و یادآورهایتان را به صورت محلّی روی این دستگاه "
-"ذخیره کنند."
+"یادداشت‌ها می‌توانند روی این دستگاه دخیره شده، یا به صورت اختیاری با اورنوت "
+"هم‌گام شوند."
 
-#: src/app/qml/reminders.qml:664
+#: src/app/qml/reminders.qml:718
 msgid ""
 "In order to synchronize notes with Evernote, an account at Evernote is "
 "required."
 msgstr "برای هم‌گام سازی با اورنوت، یک حساب کاربری اورنوت مورد نیاز است."
 
-#: src/app/qml/reminders.qml:665
+#: src/app/qml/reminders.qml:719
 msgid "Do you want to setup an account now?"
 msgstr "آیا می‌خواهید الآن یک حساب برپا کنید؟"
+
+#: src/app/qml/reminders.qml:759
+#, qt-format
+msgid "Importing %1 items"
+msgstr "در حال وارد کردن %1 یادداشت"
+
+#: src/app/qml/reminders.qml:760
+msgid "Importing 1 item"
+msgstr "در حال وارد کردن ۱ مورد"
+
+#: src/app/qml/reminders.qml:762
+msgid ""
+"Do you want to create a new note for those items or do you want to attach "
+"them to an existing note?"
+msgstr ""
+"می‌خواهید برای این موردها، یک یادداشت جدید ایحاد کنید، یا می‌خواهید آن‌ها را "
+"به یک یادداشت موجود بچسبانید؟"
+
+#: src/app/qml/reminders.qml:763
+msgid ""
+"Do you want to create a new note for this item or do you want to attach it "
+"to an existing note?"
+msgstr ""
+"می‌خواهید برای این مورد، یک یادداشت جدید ایحاد کنید، یا می‌خواهید آن را به "
+"یک یادداشت موجود بچسبانید؟"
+
+#: src/app/qml/reminders.qml:769
+msgid "Create new note"
+msgstr "ایحاد یادداشت جدید"
+
+#: src/app/qml/reminders.qml:774
+msgid "Attach to existing note"
+msgstr "چسباندن به یادداشت موجود"
+
+#: src/app/qml/reminders.qml:779
+msgid "Cancel import"
+msgstr "لغو ورود"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
@@ -264,31 +328,31 @@ msgstr "%1 - برای تأیید هویت ضربه بزنید"
 msgid "Add new account"
 msgstr "افزودن حساب کاربری جدید"
 
-#: src/app/qml/ui/EditNoteView.qml:448
+#: src/app/qml/ui/EditNoteView.qml:425
 msgid "Font"
 msgstr "قلم"
 
-#: src/app/qml/ui/EditNoteView.qml:460
+#: src/app/qml/ui/EditNoteView.qml:437
 msgid "Size"
 msgstr "اندازه"
 
 #. TRANSLATORS: Toolbar button for "Bold"
-#: src/app/qml/ui/EditNoteView.qml:483
+#: src/app/qml/ui/EditNoteView.qml:460
 msgid "B"
 msgstr "س"
 
 #. TRANSLATORS: Toolbar button for "Italic"
-#: src/app/qml/ui/EditNoteView.qml:496
+#: src/app/qml/ui/EditNoteView.qml:473
 msgid "I"
 msgstr "ک"
 
 #. TRANSLATORS: Toolbar button for "Underline"
-#: src/app/qml/ui/EditNoteView.qml:510
+#: src/app/qml/ui/EditNoteView.qml:487
 msgid "U"
 msgstr "ز"
 
 #. TRANSLATORS: Toolbar button for "Strikeout"
-#: src/app/qml/ui/EditNoteView.qml:524
+#: src/app/qml/ui/EditNoteView.qml:501
 msgid "T"
 msgstr "خ"
 
@@ -320,11 +384,7 @@ msgstr "حذف شده از این اورنوت:"
 msgid "Modified somewhere else:"
 msgstr "تغییر کرده در جایی دیگر:"
 
-#: src/app/qml/ui/NotePage.qml:44 src/app/qml/ui/NotesPage.qml:109
-msgid "Set reminder"
-msgstr "نظیم یادآور"
-
-#: src/app/qml/ui/NoteView.qml:146
+#: src/app/qml/ui/NoteView.qml:184
 msgid "Attachment"
 msgstr "پیوست"
 
@@ -332,47 +392,47 @@ msgstr "پیوست"
 msgid "Add notebook"
 msgstr "افزودن دفترچه یادداشت"
 
-#: src/app/qml/ui/NotebooksPage.qml:55 src/app/qml/ui/NotesPage.qml:89
+#: src/app/qml/ui/NotebooksPage.qml:52 src/app/qml/ui/NotesPage.qml:84
 #: src/app/qml/ui/RemindersPage.qml:36 src/app/qml/ui/SearchNotesPage.qml:60
 #: src/app/qml/ui/TagsPage.qml:52
 msgid "Search"
 msgstr "جست‌وجو"
 
-#: src/app/qml/ui/NotebooksPage.qml:169
+#: src/app/qml/ui/NotebooksPage.qml:166
 msgid "Cancel"
 msgstr "انصراف"
 
 #. TRANSLATORS: Button that saves a reminder
-#: src/app/qml/ui/NotebooksPage.qml:178 src/app/qml/ui/SetReminderView.qml:88
+#: src/app/qml/ui/NotebooksPage.qml:175 src/app/qml/ui/SetReminderView.qml:88
 msgid "Save"
 msgstr "ذخیره"
 
-#: src/app/qml/ui/NotebooksPage.qml:198
+#: src/app/qml/ui/NotebooksPage.qml:195
 msgid "Rename notebook"
 msgstr "تغییر نام دفترچه یادداشت"
 
-#: src/app/qml/ui/NotebooksPage.qml:199
+#: src/app/qml/ui/NotebooksPage.qml:196
 #, qt-format
 msgid "Enter a new name for notebook %1"
 msgstr "تام جدیدی برای دفترچه یادداشت %1 وارد کنید"
 
-#: src/app/qml/ui/NotebooksPage.qml:208 src/app/qml/ui/TagsPage.qml:144
+#: src/app/qml/ui/NotebooksPage.qml:205 src/app/qml/ui/TagsPage.qml:143
 msgid "Name cannot be empty"
 msgstr "نام نمی‌تواند خالی باشد"
 
-#: src/app/qml/ui/NotebooksPage.qml:212 src/app/qml/ui/TagsPage.qml:148
-msgid "OK"
-msgstr "قبول"
-
-#: src/app/qml/ui/NotesPage.qml:43 src/app/qml/ui/NotesPage.qml:63
+#: src/app/qml/ui/NotesPage.qml:43 src/app/qml/ui/NotesPage.qml:64
 msgid "Add note"
 msgstr "افزودن يادداشت"
 
-#: src/app/qml/ui/NotesPage.qml:74
+#: src/app/qml/ui/NotesPage.qml:72
 msgid "Sorting"
 msgstr "چینش"
 
-#: src/app/qml/ui/NotesPage.qml:254
+#: src/app/qml/ui/NotesPage.qml:99
+msgid "Set reminder"
+msgstr "نظیم یادآور"
+
+#: src/app/qml/ui/NotesPage.qml:243
 msgid ""
 "No notes available. You can create new notes by pulling the note editor up "
 "from the bottom edge."
@@ -401,17 +461,17 @@ msgstr "انتخاب تاریخ و زمان یادآور:"
 msgid "Reminder done"
 msgstr "یادآور انجام شد"
 
-#: src/app/qml/ui/TagsPage.qml:127
+#: src/app/qml/ui/TagsPage.qml:126
 msgid "No tags available. You can tag notes while viewing them."
 msgstr ""
 "هیچ برچسبی موجود نیست. می‌توانید هنگام مشاهده‌ی یادداشت‌ها، آن‌ها را برچسب "
 "بزنید."
 
-#: src/app/qml/ui/TagsPage.qml:134
+#: src/app/qml/ui/TagsPage.qml:133
 msgid "Rename tag"
 msgstr "تغییر نام برچسب"
 
-#: src/app/qml/ui/TagsPage.qml:135
+#: src/app/qml/ui/TagsPage.qml:134
 #, qt-format
 msgid "Enter a new name for tag %1"
 msgstr "نام جدید برای برچسب %1 وارد کنید"
@@ -457,7 +517,7 @@ msgstr ""
 "خطا در وصل شدن به اور نوت: نمی‌توان اطّلاعات سرویس دهنده را بارگیری کرد."
 
 #: src/libqtevernote/evernoteconnection.cpp:329
-#: src/libqtevernote/notesstore.cpp:1697
+#: src/libqtevernote/notesstore.cpp:1772
 msgid ""
 "Authentication for Evernote server expired. Please renew login information "
 "in the accounts settings."
@@ -494,6 +554,7 @@ msgid "Unknown Error connecting to Evernote"
 msgstr "خطای نامعلوم در وصل شدن به اور نوت"
 
 #: src/libqtevernote/evernoteconnection.cpp:435
+#: src/libqtevernote/evernoteconnection.cpp:499
 msgid "Disconnected from Evernote."
 msgstr "از اورنوت قطع شد."
 
@@ -520,6 +581,10 @@ msgstr "دو هفته پیش"
 msgid "%1 %2"
 msgstr "‫%1 %2"
 
+#: src/libqtevernote/note.cpp:369
+msgid "Done"
+msgstr "انجام شد"
+
 #: src/libqtevernote/note.cpp:375
 msgid "No date"
 msgstr "بدون تاریخ"
@@ -545,33 +610,33 @@ msgid "Later"
 msgstr "بعداً"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: today"
-#: src/libqtevernote/notebook.cpp:120
+#: src/libqtevernote/notebook.cpp:122
 msgid "today"
 msgstr "امروز"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: yesterday"
-#: src/libqtevernote/notebook.cpp:124
+#: src/libqtevernote/notebook.cpp:126
 msgid "yesterday"
 msgstr "دیروز"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: last week"
-#: src/libqtevernote/notebook.cpp:128
+#: src/libqtevernote/notebook.cpp:130
 msgid "last week"
 msgstr "هفته‌ی پیش"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: two weeks ago"
-#: src/libqtevernote/notebook.cpp:132
+#: src/libqtevernote/notebook.cpp:134
 msgid "two weeks ago"
 msgstr "دو هفته پیش"
 
 #. TRANSLATORS: this is used in the notes list to group notes created on the same month
 #. the first parameter refers to a month name and the second to a year
-#: src/libqtevernote/notebook.cpp:136
+#: src/libqtevernote/notebook.cpp:138
 #, qt-format
 msgid "on %1 %2"
 msgstr "در %1 %2"
 
-#: src/libqtevernote/notesstore.cpp:409
+#: src/libqtevernote/notesstore.cpp:415
 msgid ""
 "This account is managed by Evernote. Use the Evernote website to delete "
 "notebooks."
@@ -579,7 +644,7 @@ msgstr ""
 "این جساب توسّط اورنوت مدیریت می‌شود. برای حذف دفترچه‌های یادداشت از پایگاه "
 "وب اورنوت استفاده کنید."
 
-#: src/libqtevernote/notesstore.cpp:422
+#: src/libqtevernote/notesstore.cpp:429
 msgid ""
 "Cannot delete the default notebook. Set another notebook to be the default "
 "first."
@@ -587,18 +652,18 @@ msgstr ""
 "نمی‌توان دفترچه یادداشت پیش‌گزیده را حذف کرد. ابتدا دفترچه یادداشت دیگری را "
 "به عنوان پیش‌گزیده تنظیم کنید."
 
-#: src/libqtevernote/notesstore.cpp:1700
+#: src/libqtevernote/notesstore.cpp:1775
 msgid "Rate limit for Evernote server exceeded. Please try again later."
 msgstr ""
 "از محدوده‌ی سرعت برای سرویس‌دهنده‌ی اورنوت تجاوز شد. لطفاً دوباره تلاش کنید."
 
-#: src/libqtevernote/notesstore.cpp:1703
+#: src/libqtevernote/notesstore.cpp:1778
 msgid "Upload quota for Evernote server exceed. Please try again later."
 msgstr ""
 "از سهمیه‌ی بارگذاری برای سرویس‌دهنده‌ی اورنوت تجاوز شد. لطفاً دوباره تلاش "
 "کنید."
 
-#: src/libqtevernote/notesstore.cpp:1717
+#: src/libqtevernote/notesstore.cpp:1817
 msgid ""
 "This account is managed by Evernote. Please use the Evernote website to "
 "delete tags."

@@ -16,19 +16,21 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.3
+import QtQuick 2.4
 import QtQuick.Layouts 1.1
 import Ubuntu.Components 1.3
-import Ubuntu.Components.Popups 1.0
-import Ubuntu.Components.ListItems 1.0
+import Ubuntu.Components.Popups 1.3
+import Ubuntu.Components.ListItems 1.3
 import Ubuntu.Content 0.1
-import Ubuntu.Components.Themes.Ambiance 1.1
+import Ubuntu.Components.Themes.Ambiance 1.3
 import Evernote 0.1
 import "../components"
 
 Item {
     id: root
     property var note
+    property bool newNote: false
+    property bool isBottomEdge: false
 
     onNoteChanged: {
         note.renderWidth = noteTextArea.width - noteTextArea.textMargin * 2
@@ -49,6 +51,28 @@ Item {
             NotesStore.createNote(title, notebookGuid, text);
         }
     }
+
+    Component.onCompleted: {
+        init();
+    }
+
+    onNewNoteChanged: {
+        init();
+    }
+
+    function init() {
+        if (root.isBottomEdge) {
+            return;
+        }
+
+        if (root.newNote) {
+            header.title = "";
+            header.forceActiveFocus();
+        } else {
+            noteTextArea.forceActiveFocus();
+        }
+    }
+
 
     QtObject {
         id: priv
@@ -130,9 +154,10 @@ Item {
                      width: parent.width
                      height: childrenRect.height
 
-                     Header {
+                     NoteHeader {
                         id: header
                         note: root.note
+                        focus: root.newNote
 
                         onEditReminders: {
                             pageStack.push(Qt.resolvedUrl("SetReminderPage.qml"), { note: root.note});
@@ -622,7 +647,7 @@ Item {
                 width: height
                 onClicked: {
                     var pos = noteTextArea.cursorPosition
-                    noteTextArea.insert(pos, "<img src=\"../images/unchecked.svg\" height=" + units.gu(2) + ">")
+                    noteTextArea.insert(pos, "<img src=\"image://theme/select-none\" height=" + units.gu(2) + ">")
                     noteTextArea.cursorPosition = pos + 1;
                 }
             }

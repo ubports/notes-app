@@ -7,23 +7,23 @@ msgid ""
 msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-04-16 17:45+0200\n"
-"PO-Revision-Date: 2015-04-22 07:01+0000\n"
-"Last-Translator: Milo Casagrande <milo.casagrande@gmail.com>\n"
+"POT-Creation-Date: 2015-09-21 18:39+0200\n"
+"PO-Revision-Date: 2015-09-23 13:52+0000\n"
+"Last-Translator: Claudio Arseni <claudio.arseni@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-08-15 05:35+0000\n"
-"X-Generator: Launchpad (build 17686)\n"
+"X-Launchpad-Export-Date: 2015-09-24 05:57+0000\n"
+"X-Generator: Launchpad (build 17749)\n"
 
-#: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:555
-msgid "Reminders"
-msgstr "Promemoria"
+#: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:562
+msgid "Notes"
+msgstr "Note"
 
 #: com.ubuntu.reminders.desktop.in.in.h:2
-msgid "Ubuntu Reminders app, powered by Evernote"
-msgstr "App per i promemoria di Ubuntu, basata su Evernote"
+msgid "Ubuntu Notes app, powered by Evernote"
+msgstr "App per le note di Ubuntu, basata su Evernote"
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
@@ -33,38 +33,63 @@ msgstr "Taccuino:"
 msgid "Reminder:"
 msgstr "Promemoria:"
 
-#: src/app/qml/components/EditTagsDialog.qml:45
-msgid "Create a new tag"
-msgstr "Crea un nuovo tag"
+#: src/app/qml/components/EditTagsDialog.qml:29
+msgid "Edit tags"
+msgstr "Modifica tag"
 
-#: src/app/qml/components/EditTagsDialog.qml:73
-msgid "Create tag"
-msgstr "Crea tag"
+#: src/app/qml/components/EditTagsDialog.qml:32
+msgid "Enter a tag name to attach it to the note."
+msgstr "Inserire il nome di un tag per allegarlo alla nota."
+
+#: src/app/qml/components/EditTagsDialog.qml:33
+msgid ""
+"Enter a tag name or select one from the list to attach it to the note."
+msgstr ""
+"Inserire il nome di un tag e selezionarne uno dall'elenco per allegarlo alla "
+"nota."
+
+#: src/app/qml/components/EditTagsDialog.qml:62
+msgid "Tag name"
+msgstr "Nome del tag"
+
+#: src/app/qml/components/EditTagsDialog.qml:142
+#: src/app/qml/ui/NotebooksPage.qml:209 src/app/qml/ui/TagsPage.qml:147
+msgid "OK"
+msgstr "OK"
 
 #. TRANSLATORS: Button to close the edit mode
-#: src/app/qml/components/EditTagsDialog.qml:120
-#: src/app/qml/ui/EditNoteView.qml:628 src/libqtevernote/note.cpp:369
-msgid "Done"
-msgstr "Completata"
+#. TRANSLATORS: Button to close the note viewer
+#: src/app/qml/components/EditTagsDialog.qml:190
+#: src/app/qml/ui/EditNoteView.qml:605 src/app/qml/ui/NoteView.qml:150
+msgid "Close"
+msgstr "Chiudi"
+
+#: src/app/qml/components/NoteHeader.qml:52
+#: src/app/qml/components/PageWithBottomEdge.qml:123
+#: src/app/qml/reminders.qml:100 src/app/qml/reminders.qml:266
+#: src/app/qml/reminders.qml:271 src/app/qml/ui/EditNoteView.qml:43
+#: src/app/qml/ui/NotesPage.qml:67
+msgid "Untitled"
+msgstr "Senza titolo"
 
 #. TRANSLATORS: Button that deletes a reminder
 #: src/app/qml/components/NotebooksDelegate.qml:36
 #: src/app/qml/components/NotesDelegate.qml:53
-#: src/app/qml/components/TagsDelegate.qml:34 src/app/qml/ui/NotePage.qml:51
-#: src/app/qml/ui/NotesPage.qml:99 src/app/qml/ui/SetReminderView.qml:76
+#: src/app/qml/components/TagsDelegate.qml:34 src/app/qml/ui/NotesPage.qml:91
+#: src/app/qml/ui/SetReminderView.qml:76
 msgid "Delete"
 msgstr "Elimina"
 
-#: src/app/qml/components/NotebooksDelegate.qml:96
+#: src/app/qml/components/NotebooksDelegate.qml:97
 #, qt-format
 msgid "Last edited %1"
 msgstr "Ultima modifica %1"
 
-#: src/app/qml/components/NotebooksDelegate.qml:115
+#: src/app/qml/components/NotebooksDelegate.qml:116
 msgid "Shared"
 msgstr "Condivisa"
 
-#: src/app/qml/components/NotebooksDelegate.qml:115
+#: src/app/qml/components/NotebooksDelegate.qml:116
 msgid "Private"
 msgstr "Privata"
 
@@ -72,21 +97,15 @@ msgstr "Privata"
 msgid "Reminder"
 msgstr "Promemoria"
 
-#: src/app/qml/components/NotesDelegate.qml:80 src/app/qml/reminders.qml:572
+#: src/app/qml/components/NotesDelegate.qml:80 src/app/qml/reminders.qml:641
 msgid "Tags"
 msgstr "Tag"
 
-#: src/app/qml/components/NotesDelegate.qml:87 src/app/qml/ui/NotePage.qml:37
-#: src/app/qml/ui/NotesPage.qml:125
+#. TRANSLATORS: Button to go from note viewer to note editor
+#: src/app/qml/components/NotesDelegate.qml:87 src/app/qml/ui/NoteView.qml:172
+#: src/app/qml/ui/NotesPage.qml:113
 msgid "Edit"
 msgstr "Modifica"
-
-#: src/app/qml/components/PageWithBottomEdge.qml:123
-#: src/app/qml/reminders.qml:246 src/app/qml/reminders.qml:251
-#: src/app/qml/ui/EditNoteView.qml:45 src/app/qml/ui/EditNoteView.qml:131
-#: src/app/qml/ui/NoteView.qml:29 src/app/qml/ui/NotesPage.qml:66
-msgid "Untitled"
-msgstr "Senza titolo"
 
 #: src/app/qml/components/PulldownListView.qml:40
 msgid "Release to refresh"
@@ -109,7 +128,7 @@ msgid "Mark as done"
 msgstr "Completata"
 
 #: src/app/qml/components/RemindersDelegate.qml:57
-#: src/app/qml/ui/NotePage.qml:44 src/app/qml/ui/NotesPage.qml:109
+#: src/app/qml/ui/NotesPage.qml:99
 msgid "Edit reminder"
 msgstr "Modifica promemoria"
 
@@ -162,12 +181,12 @@ msgid "Are you sure you want to continue?"
 msgstr "Continuare veramente?"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:57
-#: src/app/qml/reminders.qml:690
+#: src/app/qml/reminders.qml:744
 msgid "Yes"
 msgstr "Sì"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:66
-#: src/app/qml/reminders.qml:680
+#: src/app/qml/reminders.qml:734
 msgid "No"
 msgstr "No"
 
@@ -199,23 +218,31 @@ msgstr "Titolo (crescente)"
 msgid "Title (descending)"
 msgstr "Titolo (decrescente)"
 
-#: src/app/qml/reminders.qml:385
+#: src/app/qml/reminders.qml:422
 msgid "Default notebook"
 msgstr "Taccuino predefinito"
 
-#: src/app/qml/reminders.qml:491
-msgid "Notes"
-msgstr "Note"
+#: src/app/qml/reminders.qml:540
+msgid "Select note to attach imported file"
+msgstr "Selezionare la nota per allegare il file importato"
 
-#: src/app/qml/reminders.qml:519
+#: src/app/qml/reminders.qml:540
+msgid "Select note to attach imported files"
+msgstr "Selezionare la nota per allegare i file importati"
+
+#: src/app/qml/reminders.qml:590
 msgid "Notebooks"
 msgstr "Taccuini"
 
-#: src/app/qml/reminders.qml:600
+#: src/app/qml/reminders.qml:624
+msgid "Reminders"
+msgstr "Promemoria"
+
+#: src/app/qml/reminders.qml:654
 msgid "Accounts"
 msgstr "Account"
 
-#: src/app/qml/reminders.qml:619
+#: src/app/qml/reminders.qml:673
 msgid ""
 "No note selected.\n"
 "Select a note to see it in detail."
@@ -223,26 +250,64 @@ msgstr ""
 "Nessuna nota selezionata.\n"
 "Selezionare una nota per vedere i dettagli."
 
-#: src/app/qml/reminders.qml:662
+#: src/app/qml/reminders.qml:716
 msgid "Setup Evernote connection?"
 msgstr "Configurare connessione a Evernote?"
 
-#: src/app/qml/reminders.qml:663
-msgid "Reminders can store your notes and reminders locally on this device."
+#: src/app/qml/reminders.qml:717
+msgid ""
+"Notes can be stored on this device, or optionally synced with Evernote."
 msgstr ""
-"L'applicazione può archiviare note e promemoria localmente su questo "
-"dispositivo."
+"Le note possono essere archiviate su questo dispositivo o , opzionalmente, "
+"sincronizzate con Evernote."
 
-#: src/app/qml/reminders.qml:664
+#: src/app/qml/reminders.qml:718
 msgid ""
 "In order to synchronize notes with Evernote, an account at Evernote is "
 "required."
 msgstr ""
 "Per sincronizzare le note con Evernote, è necessario un account Evernote."
 
-#: src/app/qml/reminders.qml:665
+#: src/app/qml/reminders.qml:719
 msgid "Do you want to setup an account now?"
 msgstr "Configurare un account adesso?"
+
+#: src/app/qml/reminders.qml:759
+#, qt-format
+msgid "Importing %1 items"
+msgstr "Importazione di %1 elementi"
+
+#: src/app/qml/reminders.qml:760
+msgid "Importing 1 item"
+msgstr "Importazione di un elemento"
+
+#: src/app/qml/reminders.qml:762
+msgid ""
+"Do you want to create a new note for those items or do you want to attach "
+"them to an existing note?"
+msgstr ""
+"Creare una nuova nuova nota per questi elementi o allegarli a una nota "
+"esistente?"
+
+#: src/app/qml/reminders.qml:763
+msgid ""
+"Do you want to create a new note for this item or do you want to attach it "
+"to an existing note?"
+msgstr ""
+"Creare una nuova nuova nota per questo elemento o allegarlo a una nota "
+"esistente?"
+
+#: src/app/qml/reminders.qml:769
+msgid "Create new note"
+msgstr "Crea nuova nota"
+
+#: src/app/qml/reminders.qml:774
+msgid "Attach to existing note"
+msgstr "Allega a nota esistente"
+
+#: src/app/qml/reminders.qml:779
+msgid "Cancel import"
+msgstr "Annulla importazione"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
@@ -265,31 +330,31 @@ msgstr "%1 - Toccare per autorizzare"
 msgid "Add new account"
 msgstr "Aggiungi nuovo account"
 
-#: src/app/qml/ui/EditNoteView.qml:448
+#: src/app/qml/ui/EditNoteView.qml:425
 msgid "Font"
 msgstr "Carattere"
 
-#: src/app/qml/ui/EditNoteView.qml:460
+#: src/app/qml/ui/EditNoteView.qml:437
 msgid "Size"
 msgstr "Dimensione"
 
 #. TRANSLATORS: Toolbar button for "Bold"
-#: src/app/qml/ui/EditNoteView.qml:483
+#: src/app/qml/ui/EditNoteView.qml:460
 msgid "B"
 msgstr "G"
 
 #. TRANSLATORS: Toolbar button for "Italic"
-#: src/app/qml/ui/EditNoteView.qml:496
+#: src/app/qml/ui/EditNoteView.qml:473
 msgid "I"
 msgstr "I"
 
 #. TRANSLATORS: Toolbar button for "Underline"
-#: src/app/qml/ui/EditNoteView.qml:510
+#: src/app/qml/ui/EditNoteView.qml:487
 msgid "U"
 msgstr "S"
 
 #. TRANSLATORS: Toolbar button for "Strikeout"
-#: src/app/qml/ui/EditNoteView.qml:524
+#: src/app/qml/ui/EditNoteView.qml:501
 msgid "T"
 msgstr "T"
 
@@ -321,11 +386,7 @@ msgstr "Eliminata da Evernote:"
 msgid "Modified somewhere else:"
 msgstr "Modificata in altri posti:"
 
-#: src/app/qml/ui/NotePage.qml:44 src/app/qml/ui/NotesPage.qml:109
-msgid "Set reminder"
-msgstr "Imposta promemoria"
-
-#: src/app/qml/ui/NoteView.qml:146
+#: src/app/qml/ui/NoteView.qml:184
 msgid "Attachment"
 msgstr "Allegato"
 
@@ -333,47 +394,47 @@ msgstr "Allegato"
 msgid "Add notebook"
 msgstr "Aggiungi taccuino"
 
-#: src/app/qml/ui/NotebooksPage.qml:55 src/app/qml/ui/NotesPage.qml:89
+#: src/app/qml/ui/NotebooksPage.qml:52 src/app/qml/ui/NotesPage.qml:84
 #: src/app/qml/ui/RemindersPage.qml:36 src/app/qml/ui/SearchNotesPage.qml:60
 #: src/app/qml/ui/TagsPage.qml:52
 msgid "Search"
 msgstr "Cerca"
 
-#: src/app/qml/ui/NotebooksPage.qml:169
+#: src/app/qml/ui/NotebooksPage.qml:166
 msgid "Cancel"
 msgstr "Annulla"
 
 #. TRANSLATORS: Button that saves a reminder
-#: src/app/qml/ui/NotebooksPage.qml:178 src/app/qml/ui/SetReminderView.qml:88
+#: src/app/qml/ui/NotebooksPage.qml:175 src/app/qml/ui/SetReminderView.qml:88
 msgid "Save"
 msgstr "Salva"
 
-#: src/app/qml/ui/NotebooksPage.qml:198
+#: src/app/qml/ui/NotebooksPage.qml:195
 msgid "Rename notebook"
 msgstr "Rinomina taccuino"
 
-#: src/app/qml/ui/NotebooksPage.qml:199
+#: src/app/qml/ui/NotebooksPage.qml:196
 #, qt-format
 msgid "Enter a new name for notebook %1"
 msgstr "Inserire un nuovo nome per il taccuino %1"
 
-#: src/app/qml/ui/NotebooksPage.qml:208 src/app/qml/ui/TagsPage.qml:144
+#: src/app/qml/ui/NotebooksPage.qml:205 src/app/qml/ui/TagsPage.qml:143
 msgid "Name cannot be empty"
 msgstr "Il nome non può essere vuoto"
 
-#: src/app/qml/ui/NotebooksPage.qml:212 src/app/qml/ui/TagsPage.qml:148
-msgid "OK"
-msgstr "OK"
-
-#: src/app/qml/ui/NotesPage.qml:43 src/app/qml/ui/NotesPage.qml:63
+#: src/app/qml/ui/NotesPage.qml:43 src/app/qml/ui/NotesPage.qml:64
 msgid "Add note"
 msgstr "Aggiungi nota"
 
-#: src/app/qml/ui/NotesPage.qml:74
+#: src/app/qml/ui/NotesPage.qml:72
 msgid "Sorting"
 msgstr "Ordinamento"
 
-#: src/app/qml/ui/NotesPage.qml:254
+#: src/app/qml/ui/NotesPage.qml:99
+msgid "Set reminder"
+msgstr "Imposta promemoria"
+
+#: src/app/qml/ui/NotesPage.qml:243
 msgid ""
 "No notes available. You can create new notes by pulling the note editor up "
 "from the bottom edge."
@@ -402,17 +463,17 @@ msgstr "Seleziona data e ora per il promemoria:"
 msgid "Reminder done"
 msgstr "Contrassegna come fatto"
 
-#: src/app/qml/ui/TagsPage.qml:127
+#: src/app/qml/ui/TagsPage.qml:126
 msgid "No tags available. You can tag notes while viewing them."
 msgstr ""
 "Nessun tag disponibile: è possibile aggiungere un tag alle note mentre "
 "vengono visualizzate."
 
-#: src/app/qml/ui/TagsPage.qml:134
+#: src/app/qml/ui/TagsPage.qml:133
 msgid "Rename tag"
 msgstr "Rinomina tag"
 
-#: src/app/qml/ui/TagsPage.qml:135
+#: src/app/qml/ui/TagsPage.qml:134
 #, qt-format
 msgid "Enter a new name for tag %1"
 msgstr "Inserire un nuovo nome per il tag %1"
@@ -459,7 +520,7 @@ msgstr ""
 "server."
 
 #: src/libqtevernote/evernoteconnection.cpp:329
-#: src/libqtevernote/notesstore.cpp:1697
+#: src/libqtevernote/notesstore.cpp:1772
 msgid ""
 "Authentication for Evernote server expired. Please renew login information "
 "in the accounts settings."
@@ -497,6 +558,7 @@ msgid "Unknown Error connecting to Evernote"
 msgstr "Errore sconosciuto nel connettersi a Evernote"
 
 #: src/libqtevernote/evernoteconnection.cpp:435
+#: src/libqtevernote/evernoteconnection.cpp:499
 msgid "Disconnected from Evernote."
 msgstr "Disconnessi da Evernote."
 
@@ -523,6 +585,10 @@ msgstr "Due settimane fa"
 msgid "%1 %2"
 msgstr "%1 %2"
 
+#: src/libqtevernote/note.cpp:369
+msgid "Done"
+msgstr "Completata"
+
 #: src/libqtevernote/note.cpp:375
 msgid "No date"
 msgstr "Nessuna data"
@@ -548,33 +614,33 @@ msgid "Later"
 msgstr "Più tardi"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: today"
-#: src/libqtevernote/notebook.cpp:120
+#: src/libqtevernote/notebook.cpp:122
 msgid "today"
 msgstr "oggi"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: yesterday"
-#: src/libqtevernote/notebook.cpp:124
+#: src/libqtevernote/notebook.cpp:126
 msgid "yesterday"
 msgstr "ieri"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: last week"
-#: src/libqtevernote/notebook.cpp:128
+#: src/libqtevernote/notebook.cpp:130
 msgid "last week"
 msgstr "ultima settimana"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: two weeks ago"
-#: src/libqtevernote/notebook.cpp:132
+#: src/libqtevernote/notebook.cpp:134
 msgid "two weeks ago"
 msgstr "due settimane fa"
 
 #. TRANSLATORS: this is used in the notes list to group notes created on the same month
 #. the first parameter refers to a month name and the second to a year
-#: src/libqtevernote/notebook.cpp:136
+#: src/libqtevernote/notebook.cpp:138
 #, qt-format
 msgid "on %1 %2"
 msgstr "nel %1 %2"
 
-#: src/libqtevernote/notesstore.cpp:409
+#: src/libqtevernote/notesstore.cpp:415
 msgid ""
 "This account is managed by Evernote. Use the Evernote website to delete "
 "notebooks."
@@ -582,7 +648,7 @@ msgstr ""
 "Questo account è gestito da Evernote. Usare il sito web di Evernote per "
 "eliminare i taccuini."
 
-#: src/libqtevernote/notesstore.cpp:422
+#: src/libqtevernote/notesstore.cpp:429
 msgid ""
 "Cannot delete the default notebook. Set another notebook to be the default "
 "first."
@@ -590,16 +656,16 @@ msgstr ""
 "Impossibile eliminare il taccuino predefinito. Impostare prima un altro "
 "taccuino come predefinito."
 
-#: src/libqtevernote/notesstore.cpp:1700
+#: src/libqtevernote/notesstore.cpp:1775
 msgid "Rate limit for Evernote server exceeded. Please try again later."
 msgstr "Errore nel connettersi a Evernote. Riprovare più tardi."
 
-#: src/libqtevernote/notesstore.cpp:1703
+#: src/libqtevernote/notesstore.cpp:1778
 msgid "Upload quota for Evernote server exceed. Please try again later."
 msgstr ""
 "Capacità di upload per il server Evernote superata. Riprovare più tardi."
 
-#: src/libqtevernote/notesstore.cpp:1717
+#: src/libqtevernote/notesstore.cpp:1817
 msgid ""
 "This account is managed by Evernote. Please use the Evernote website to "
 "delete tags."

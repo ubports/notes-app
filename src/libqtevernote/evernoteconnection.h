@@ -88,6 +88,9 @@ public:
     //   multiple times.
     void enqueue(EvernoteJob *job);
 
+    // Use this to queue write calls. They won't be deduped and will be ordered
+    void enqueueWrite(EvernoteJob *job);
+
     bool isConnected() const;
 
     QString error() const;
@@ -134,6 +137,7 @@ private:
     QList<EvernoteJob*> m_highPriorityJobQueue;
     QList<EvernoteJob*> m_mediumPriorityJobQueue;
     QList<EvernoteJob*> m_lowPriorityJobQueue;
+    QList<EvernoteJob*> m_writeJobQueue;
     EvernoteJob *m_currentJob;
 
     // Those need to be mutexed

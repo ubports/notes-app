@@ -16,11 +16,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.3
+import QtQuick 2.4
 import QtQuick.Layouts 1.1
 import Ubuntu.Components 1.3
-import Ubuntu.Components.Popups 1.0
-import Ubuntu.Components.ListItems 1.0
+import Ubuntu.Components.Popups 1.3
+import Ubuntu.Components.ListItems 1.3
 import Evernote 0.1
 
 Dialog {
@@ -65,7 +65,7 @@ Dialog {
                 onAccepted: accept();
 
                 function accept() {
-                    var tagName = text;
+                    var tagName = displayText;
                     text = '';
 
                     // Check if the tag exists
@@ -98,7 +98,7 @@ Dialog {
                 border.width: units.dp(1)
                 border.color: "black"
                 height: Math.min(5, tagsListView.count) * units.gu(4)
-                visible: textField.text.length > 0 && (textField.focus || tagsListView.focus)
+                visible: (textField.text.length > 0 || textField.inputMethodComposing) && (textField.focus || tagsListView.focus)
 
                 ListView {
                     id: tagsListView
@@ -141,7 +141,7 @@ Dialog {
             id: okButton
             text: i18n.tr("OK")
             color: UbuntuColors.orange
-            enabled: textField.text.replace(/\s+/g, '') !== ''; // Not only whitespaces!
+            enabled: textField.text.replace(/\s+/g, '') !== '' || textField.inputMethodComposing === true; // Not only whitespaces!
             onClicked: textField.accept()
         }
     }

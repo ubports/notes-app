@@ -236,7 +236,7 @@ QString EnmlDocument::convert(const QString &noteGuid, EnmlDocument::Type type) 
 
                 if (type == TypeRichText) {
                     writer.writeStartElement("img");
-                    writer.writeAttribute("src", checked ? "image://theme/select" : "../images/unchecked.svg");
+                    writer.writeAttribute("src", checked ? "image://theme/select" : "image://theme/select-none");
                     writer.writeAttribute("height", QString::number(gu(2)));
                 } else if (type == TypeHtml){
                     writer.writeStartElement("input");
@@ -391,7 +391,7 @@ void EnmlDocument::setRichText(const QString &richText)
                     writer.writeStartElement("en-media");
                     writer.writeAttribute("hash", hash);
                     writer.writeAttribute("type", type);
-                } else if (imageUrl.authority() == "theme" || imageUrl.path() == "../images/unchecked.svg") {
+                } else if (imageUrl.authority() == "theme") {
                     writer.writeStartElement("en-todo");
                     writer.writeAttribute("checked", imageUrl.path() == "/select" ? "true" : "false");
                 } else {
