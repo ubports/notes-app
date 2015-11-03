@@ -9,6 +9,7 @@ include_directories(
 
 set(evernoteplugin_SRCS
     evernoteplugin.cpp
+    formattinghelper.cpp
 )
 
 add_library(evernoteplugin MODULE
@@ -30,4 +31,3 @@ endif(NOT "${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
 # Install plugin file
 install(TARGETS evernoteplugin DESTINATION ${QT_IMPORTS_DIR}/Evernote/)
 install(FILES qmldir DESTINATION ${QT_IMPORTS_DIR}/Evernote/)
-

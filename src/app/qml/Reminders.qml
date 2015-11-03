@@ -190,8 +190,6 @@ MainView {
             if (pagestack.depth > 1) {
                 pagestack.pop();
             }
-            var page = pagestack.push(Qt.resolvedUrl("ui/EditNotePage.qml"), {note: note});
-            page.exitEditMode.connect(function() {Qt.inputMethod.hide(); pagestack.pop()});
         } else {
             sideViewLoader.clear();
             var view = sideViewLoader.embed(Qt.resolvedUrl("ui/EditNoteView.qml"))

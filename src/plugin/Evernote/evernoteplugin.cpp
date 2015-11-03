@@ -19,6 +19,7 @@
  */
 
 #include "evernoteplugin.h"
+#include "formattinghelper.h"
 
 #include "evernoteconnection.h"
 #include "userstore.h"
@@ -62,6 +63,10 @@ void EvernotePlugin::registerTypes(const char *uri)
     qmlRegisterUncreatableType<Notebook>(uri, 0, 1, "Notebook", "Cannot create Notes in QML. Use NotesStore.createNotebook() instead.");
     qmlRegisterUncreatableType<Tag>(uri, 0, 1, "Tag", "Cannot create Tags in QML. Use NotesStore.createTag() instead.");
     qmlRegisterUncreatableType<Resource>(uri, 0, 1, "Resource", "Cannot create Resources. Use Note.attachFile() instead.");
+
+    // Register FormattingHelper
+    qmlRegisterType<FormattingHelper>(uri, 0, 1, "FormattingHelper");
+
 }
 
 void EvernotePlugin::initializeEngine(QQmlEngine *engine, const char *uri)

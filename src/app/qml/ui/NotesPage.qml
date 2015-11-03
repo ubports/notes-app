@@ -27,6 +27,7 @@ import Qt.labs.settings 1.0
 
 PageWithBottomEdge {
     id: root
+    objectName: "notesPage"
 
     property var selectedNote: null
     property bool readOnly: false
@@ -158,6 +159,7 @@ PageWithBottomEdge {
         }
 
         delegate: NotesDelegate {
+            objectName: "notesDelegate" + index
             title: model.title
             date: notes.sortOrder == Notes.SortOrderUpdatedOldest || notes.sortOrder == Notes.SortOrderUpdatedNewest ?
                       model.updated : model.created

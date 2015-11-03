@@ -24,7 +24,6 @@ import Ubuntu.Components.ListItems 1.3
 import Ubuntu.Content 0.1
 import Ubuntu.Components.Themes.Ambiance 1.3
 import Evernote 0.1
-import reminders 1.0
 import "../components"
 
 Item {
@@ -170,6 +169,7 @@ Item {
 
                      TextArea {
                          id: noteTextArea
+                         objectName: "noteTextArea"
                          width: flick.width
 //                         height: Math.max(flick.height - header.height, paintedHeight + units.gu(2))
                          autoSize: true

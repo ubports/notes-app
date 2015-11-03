@@ -33,7 +33,9 @@ Item {
                     i18n.tr("Title (ascending)"),
                     i18n.tr("Title (descending)")
                 ]
-
+                delegate: OptionSelectorDelegate {
+                    objectName: "sortingOption" + index
+                }
                 onDelegateClicked: {
                     root.sortOrder = index
                     root.accepted();
@@ -43,4 +45,3 @@ Item {
         }
     }
 }
-
