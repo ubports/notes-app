@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-09-21 18:39+0200\n"
-"PO-Revision-Date: 2015-02-04 19:46+0000\n"
-"Last-Translator: Volkan Gezer <Unknown>\n"
+"PO-Revision-Date: 2015-11-10 06:53+0000\n"
+"Last-Translator: Mutlu Can YILMAZ <mtlcnylmz@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-09-22 06:02+0000\n"
-"X-Generator: Launchpad (build 17749)\n"
+"X-Launchpad-Export-Date: 2015-11-11 05:48+0000\n"
+"X-Generator: Launchpad (build 17843)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:562
 msgid "Notes"
@@ -27,15 +27,15 @@ msgstr ""
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
-msgstr ""
+msgstr "Not Defteri"
 
 #: src/app/qml/components/ConflictDelegate.qml:63
 msgid "Reminder:"
-msgstr ""
+msgstr "Hatırlatıcı:"
 
 #: src/app/qml/components/EditTagsDialog.qml:29
 msgid "Edit tags"
-msgstr ""
+msgstr "Etiketleri düzenle"
 
 #: src/app/qml/components/EditTagsDialog.qml:32
 msgid "Enter a tag name to attach it to the note."
@@ -119,7 +119,7 @@ msgstr "Hatırlatıcıyı Sil"
 
 #: src/app/qml/components/RemindersDelegate.qml:49
 msgid "Mark as undone"
-msgstr ""
+msgstr "Tamamlanmamış olarak işaretle"
 
 #: src/app/qml/components/RemindersDelegate.qml:49
 msgid "Mark as done"
@@ -132,7 +132,7 @@ msgstr "Hatırlatıcıyı düzenle"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:25
 msgid "Resolve conflict"
-msgstr ""
+msgstr "Çakışmayı çöz"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:30
 msgid ""
@@ -202,15 +202,15 @@ msgstr ""
 
 #: src/app/qml/components/SortingDialog.qml:33
 msgid "Title (ascending)"
-msgstr ""
+msgstr "Başlık(Artan)"
 
 #: src/app/qml/components/SortingDialog.qml:34
 msgid "Title (descending)"
-msgstr ""
+msgstr "Başlık(Azalan)"
 
 #: src/app/qml/reminders.qml:422
 msgid "Default notebook"
-msgstr ""
+msgstr "Öntanımlı not defteri"
 
 #: src/app/qml/reminders.qml:540
 msgid "Select note to attach imported file"
@@ -242,7 +242,7 @@ msgstr ""
 
 #: src/app/qml/reminders.qml:716
 msgid "Setup Evernote connection?"
-msgstr ""
+msgstr "Evernote bağlantısı kurulsun mu?"
 
 #: src/app/qml/reminders.qml:717
 msgid ""
@@ -257,7 +257,7 @@ msgstr ""
 
 #: src/app/qml/reminders.qml:719
 msgid "Do you want to setup an account now?"
-msgstr ""
+msgstr "Şimdi bir hesap oluşturmak ister misiniz?"
 
 #: src/app/qml/reminders.qml:759
 #, qt-format
@@ -294,15 +294,15 @@ msgstr ""
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
-msgstr ""
+msgstr "Hesap seç"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:44
 msgid "Store notes locally only"
-msgstr ""
+msgstr "Sadece yerel notları sakla"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:52
 msgid "Accounts on www.evernote.com"
-msgstr ""
+msgstr "www.evernote.com üzerindeki hesaplar"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:82
 #, qt-format
@@ -353,7 +353,7 @@ msgstr ""
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Deleted on this device:"
-msgstr ""
+msgstr "Aygıt üzerinden silindi:"
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Modified on this device:"

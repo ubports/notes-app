@@ -1,16 +1,16 @@
-# Romanian translation for reminders-app
-# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
+# Shan translation for reminders-app
+# Copyright (c) 2015 Rosetta Contributors and Canonical Ltd 2015
 # This file is distributed under the same license as the reminders-app package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-09-21 18:39+0200\n"
-"PO-Revision-Date: 2015-09-04 15:52+0000\n"
-"Last-Translator: Meriuță Cornel <meriutacornel@neacornel.eu>\n"
-"Language-Team: Romanian <ro@li.org>\n"
+"PO-Revision-Date: 2015-11-10 11:57+0000\n"
+"Last-Translator: Rockworld <sumoisrock@gmail.com>\n"
+"Language-Team: Shan <shn@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:562
 msgid "Notes"
-msgstr "Notițe"
+msgstr ""
 
 #: com.ubuntu.reminders.desktop.in.in.h:2
 msgid "Ubuntu Notes app, powered by Evernote"
@@ -27,11 +27,11 @@ msgstr ""
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
-msgstr "Blocnotes:"
+msgstr ""
 
 #: src/app/qml/components/ConflictDelegate.qml:63
 msgid "Reminder:"
-msgstr "Memento:"
+msgstr ""
 
 #: src/app/qml/components/EditTagsDialog.qml:29
 msgid "Edit tags"
@@ -53,14 +53,14 @@ msgstr ""
 #: src/app/qml/components/EditTagsDialog.qml:142
 #: src/app/qml/ui/NotebooksPage.qml:209 src/app/qml/ui/TagsPage.qml:147
 msgid "OK"
-msgstr "În regulă"
+msgstr "တူၵ်းလူင်း တႃႇ ဢူၼ်းသႂ်ႇ"
 
 #. TRANSLATORS: Button to close the edit mode
 #. TRANSLATORS: Button to close the note viewer
 #: src/app/qml/components/EditTagsDialog.qml:190
 #: src/app/qml/ui/EditNoteView.qml:605 src/app/qml/ui/NoteView.qml:150
 msgid "Close"
-msgstr ""
+msgstr "ဢိုတ်း"
 
 #: src/app/qml/components/NoteHeader.qml:52
 #: src/app/qml/components/PageWithBottomEdge.qml:123
@@ -68,7 +68,7 @@ msgstr ""
 #: src/app/qml/reminders.qml:271 src/app/qml/ui/EditNoteView.qml:43
 #: src/app/qml/ui/NotesPage.qml:67
 msgid "Untitled"
-msgstr "Fără nume"
+msgstr ""
 
 #. TRANSLATORS: Button that deletes a reminder
 #: src/app/qml/components/NotebooksDelegate.qml:36
@@ -76,149 +76,141 @@ msgstr "Fără nume"
 #: src/app/qml/components/TagsDelegate.qml:34 src/app/qml/ui/NotesPage.qml:91
 #: src/app/qml/ui/SetReminderView.qml:76
 msgid "Delete"
-msgstr "Șterge"
+msgstr "မွတ်ႇပႅတ်ႈ"
 
 #: src/app/qml/components/NotebooksDelegate.qml:97
 #, qt-format
 msgid "Last edited %1"
-msgstr "Ultima modificare %1"
+msgstr ""
 
 #: src/app/qml/components/NotebooksDelegate.qml:116
 msgid "Shared"
-msgstr "Partajat"
+msgstr ""
 
 #: src/app/qml/components/NotebooksDelegate.qml:116
 msgid "Private"
-msgstr "Personal"
+msgstr ""
 
 #: src/app/qml/components/NotesDelegate.qml:73
 msgid "Reminder"
-msgstr "Alarmă"
+msgstr ""
 
 #: src/app/qml/components/NotesDelegate.qml:80 src/app/qml/reminders.qml:641
 msgid "Tags"
-msgstr "Etichete"
+msgstr ""
 
 #. TRANSLATORS: Button to go from note viewer to note editor
 #: src/app/qml/components/NotesDelegate.qml:87 src/app/qml/ui/NoteView.qml:172
 #: src/app/qml/ui/NotesPage.qml:113
 msgid "Edit"
-msgstr "Editare"
+msgstr "မႄးထတ်း"
 
 #: src/app/qml/components/PulldownListView.qml:40
 msgid "Release to refresh"
-msgstr "Eliberați pentru reîmprospătare"
+msgstr ""
 
 #: src/app/qml/components/PulldownListView.qml:40
 msgid "Pull down to refresh"
-msgstr "Trageți pentru reîmprospătare"
+msgstr ""
 
 #: src/app/qml/components/RemindersDelegate.qml:36
 msgid "Clear reminder"
-msgstr "Ștergere memento"
+msgstr ""
 
 #: src/app/qml/components/RemindersDelegate.qml:49
 msgid "Mark as undone"
-msgstr "Marcați ca nerezolvat"
+msgstr ""
 
 #: src/app/qml/components/RemindersDelegate.qml:49
 msgid "Mark as done"
-msgstr "Marcare ca finalizat"
+msgstr ""
 
 #: src/app/qml/components/RemindersDelegate.qml:57
 #: src/app/qml/ui/NotesPage.qml:99
 msgid "Edit reminder"
-msgstr "Editare memento"
+msgstr ""
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:25
 msgid "Resolve conflict"
-msgstr "Rezolvați conflictul"
+msgstr ""
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:30
 msgid ""
 "This will <b>keep the changes made on this device</b> and <b>restore the "
 "note on Evernote</b>."
 msgstr ""
-"Acesta o să <b>păstreze modificările făcute pe acest dispozitiv</b> și <b> "
-"va restaura nota în Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:32
 msgid "This will <b>delete the changed note on Evernote</b>."
-msgstr "Acesta o să <b>șteargă nota modificată în Evernote</b>."
+msgstr ""
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:34
 msgid ""
 "This will <b>keep the changes made on this device</b> and <b>discard any "
 "changes made on Evernote</b>."
 msgstr ""
-"Acesta o să <b>păstreze modificările făcute pe acest dispozitiv</b> și <b> "
-"va anula orice modificări făcute în Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:38
 msgid "This will <b>delete the changed note on this device</b>."
-msgstr "Acesta o să <b>șteargă nota modificată de pe acest dispozitiv</b>."
+msgstr ""
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:40
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>restore it "
 "on this device</b>."
 msgstr ""
-"Acesta va <b>descărca notele modificate din Evernote</b> și <b>le v-a "
-"restaura pe acest dispozitiv</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:42
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>discard any "
 "changes made on this device</b>."
 msgstr ""
-"Acesta va <b>descărca notele modificate din Evernote</b> și <b>va anula "
-"orice modificare făcută pe acest dispozitiv</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:45
 msgid "Are you sure you want to continue?"
-msgstr "Doriți să continuați?"
+msgstr ""
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:57
 #: src/app/qml/reminders.qml:744
 msgid "Yes"
-msgstr "Da"
+msgstr ""
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:66
 #: src/app/qml/reminders.qml:734
 msgid "No"
-msgstr "Nu"
+msgstr ""
 
 #: src/app/qml/components/SortingDialog.qml:20
 msgid "Sort by"
-msgstr "Sortare după"
+msgstr ""
 
 #: src/app/qml/components/SortingDialog.qml:29
 msgid "Date created (newest first)"
-msgstr "Data creării (cea mai nouă)"
+msgstr ""
 
 #: src/app/qml/components/SortingDialog.qml:30
 msgid "Date created (oldest first)"
-msgstr "Data creării (cea mai veche)"
+msgstr ""
 
 #: src/app/qml/components/SortingDialog.qml:31
 msgid "Date updated (newest first)"
-msgstr "Data actualizării (cea mai nouă)"
+msgstr ""
 
 #: src/app/qml/components/SortingDialog.qml:32
 msgid "Date updated (oldest first)"
-msgstr "Data actualizării (cea mai veche)"
+msgstr ""
 
 #: src/app/qml/components/SortingDialog.qml:33
 msgid "Title (ascending)"
-msgstr "Titlu (crescător)"
+msgstr ""
 
 #: src/app/qml/components/SortingDialog.qml:34
 msgid "Title (descending)"
-msgstr "Titlu (descărcător)"
+msgstr ""
 
 #: src/app/qml/reminders.qml:422
 msgid "Default notebook"
-msgstr "Blocnotesul implicit"
+msgstr ""
 
 #: src/app/qml/reminders.qml:540
 msgid "Select note to attach imported file"
@@ -230,27 +222,25 @@ msgstr ""
 
 #: src/app/qml/reminders.qml:590
 msgid "Notebooks"
-msgstr "Carnețele"
+msgstr ""
 
 #: src/app/qml/reminders.qml:624
 msgid "Reminders"
-msgstr "Mementouri"
+msgstr ""
 
 #: src/app/qml/reminders.qml:654
 msgid "Accounts"
-msgstr "Conturi"
+msgstr ""
 
 #: src/app/qml/reminders.qml:673
 msgid ""
 "No note selected.\n"
 "Select a note to see it in detail."
 msgstr ""
-"Nu este selectată nicio notiță.\n"
-"Selectați o notiță pentru a o vizualiza în detaliu."
 
 #: src/app/qml/reminders.qml:716
 msgid "Setup Evernote connection?"
-msgstr "Configurați o conexiune Evernote?"
+msgstr ""
 
 #: src/app/qml/reminders.qml:717
 msgid ""
@@ -262,11 +252,10 @@ msgid ""
 "In order to synchronize notes with Evernote, an account at Evernote is "
 "required."
 msgstr ""
-"Pentru a sincroniza notele cu Evernote, este necesar un cont Evernote."
 
 #: src/app/qml/reminders.qml:719
 msgid "Do you want to setup an account now?"
-msgstr "Doriți să configurați un cont acum?"
+msgstr ""
 
 #: src/app/qml/reminders.qml:759
 #, qt-format
@@ -303,212 +292,199 @@ msgstr ""
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
-msgstr "Selectați contul"
+msgstr ""
 
 #: src/app/qml/ui/AccountSelectorPage.qml:44
 msgid "Store notes locally only"
-msgstr "Păstrați notele doar local"
+msgstr ""
 
 #: src/app/qml/ui/AccountSelectorPage.qml:52
 msgid "Accounts on www.evernote.com"
-msgstr "Conturi pe www.evernote.com"
+msgstr ""
 
 #: src/app/qml/ui/AccountSelectorPage.qml:82
 #, qt-format
 msgid "%1 - Tap to authorize"
-msgstr "%1 - Atinge pentru autorizare"
+msgstr ""
 
 #: src/app/qml/ui/AccountSelectorPage.qml:91
 msgid "Add new account"
-msgstr "Adaugă cont nou"
+msgstr ""
 
 #: src/app/qml/ui/EditNoteView.qml:425
 msgid "Font"
-msgstr "Font"
+msgstr ""
 
 #: src/app/qml/ui/EditNoteView.qml:437
 msgid "Size"
-msgstr "Dimensiune"
+msgstr ""
 
 #. TRANSLATORS: Toolbar button for "Bold"
 #: src/app/qml/ui/EditNoteView.qml:460
 msgid "B"
-msgstr "A"
+msgstr ""
 
 #. TRANSLATORS: Toolbar button for "Italic"
 #: src/app/qml/ui/EditNoteView.qml:473
 msgid "I"
-msgstr "C"
+msgstr ""
 
 #. TRANSLATORS: Toolbar button for "Underline"
 #: src/app/qml/ui/EditNoteView.qml:487
 msgid "U"
-msgstr "S"
+msgstr ""
 
 #. TRANSLATORS: Toolbar button for "Strikeout"
 #: src/app/qml/ui/EditNoteView.qml:501
 msgid "T"
-msgstr "T"
+msgstr ""
 
 #: src/app/qml/ui/NoteConflictPage.qml:27
 msgid "Conflicting changes"
-msgstr "Modificări în conflict"
+msgstr ""
 
 #: src/app/qml/ui/NoteConflictView.qml:54
 msgid ""
 "This note has been modified in multiple places. Please choose the version to "
 "be opened and delete the other."
 msgstr ""
-"Această notă a fost modificată în mai multe locuri. Alegeți versiunea pentru "
-"a fi deschisă și ștergețile pe celelalte."
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Deleted on this device:"
-msgstr "Șterse de pe acest dispozitiv:"
+msgstr ""
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Modified on this device:"
-msgstr "Modificate pe acest dispozitiv:"
+msgstr ""
 
 #: src/app/qml/ui/NoteConflictView.qml:85
 msgid "Deleted from Evernote:"
-msgstr "Șterse din Evernote:"
+msgstr ""
 
 #: src/app/qml/ui/NoteConflictView.qml:85
 msgid "Modified somewhere else:"
-msgstr "Modificate în altă parte"
+msgstr ""
 
 #: src/app/qml/ui/NoteView.qml:184
 msgid "Attachment"
-msgstr "Atașament"
+msgstr ""
 
 #: src/app/qml/ui/NotebooksPage.qml:45
 msgid "Add notebook"
-msgstr "Adăugare carnețel"
+msgstr ""
 
 #: src/app/qml/ui/NotebooksPage.qml:52 src/app/qml/ui/NotesPage.qml:84
 #: src/app/qml/ui/RemindersPage.qml:36 src/app/qml/ui/SearchNotesPage.qml:60
 #: src/app/qml/ui/TagsPage.qml:52
 msgid "Search"
-msgstr "Căutare"
+msgstr ""
 
 #: src/app/qml/ui/NotebooksPage.qml:166
 msgid "Cancel"
-msgstr "Anulează"
+msgstr ""
 
 #. TRANSLATORS: Button that saves a reminder
 #: src/app/qml/ui/NotebooksPage.qml:175 src/app/qml/ui/SetReminderView.qml:88
 msgid "Save"
-msgstr "Salvează"
+msgstr ""
 
 #: src/app/qml/ui/NotebooksPage.qml:195
 msgid "Rename notebook"
-msgstr "Redenumiți blocnotesul"
+msgstr ""
 
 #: src/app/qml/ui/NotebooksPage.qml:196
 #, qt-format
 msgid "Enter a new name for notebook %1"
-msgstr "Introduceți un  nou nume pentru blocnotesul %1"
+msgstr ""
 
 #: src/app/qml/ui/NotebooksPage.qml:205 src/app/qml/ui/TagsPage.qml:143
 msgid "Name cannot be empty"
-msgstr "Numele nu poate fi gol"
+msgstr ""
 
 #: src/app/qml/ui/NotesPage.qml:43 src/app/qml/ui/NotesPage.qml:64
 msgid "Add note"
-msgstr "Adăugare notiță"
+msgstr ""
 
 #: src/app/qml/ui/NotesPage.qml:72
 msgid "Sorting"
-msgstr "Se sortează"
+msgstr ""
 
 #: src/app/qml/ui/NotesPage.qml:99
 msgid "Set reminder"
-msgstr "Stabilire memento"
+msgstr ""
 
 #: src/app/qml/ui/NotesPage.qml:243
 msgid ""
 "No notes available. You can create new notes by pulling the note editor up "
 "from the bottom edge."
 msgstr ""
-"Nicio notă disponibilă. Puteți crea note noi trăgând editorul de note de la "
-"marginea de jos."
 
 #: src/app/qml/ui/RemindersPage.qml:97
 msgid ""
 "No reminders available. You can create new reminders by setting a reminder "
 "when viewing a note."
 msgstr ""
-"Nicio alarmă disponibilă. Puteți crea alarme noi prin configurarea unei "
-"alarme la citirea unei notițe."
 
 #: src/app/qml/ui/SearchNotesPage.qml:32
 msgid "Search notes"
-msgstr "Caută notițe"
+msgstr ""
 
 #: src/app/qml/ui/SetReminderView.qml:36
 msgid "Select date and time for the reminder:"
-msgstr "Alegeți data și ora pentru memento:"
+msgstr ""
 
 #. TRANSLATORS: A checkbox with marks the reminder as done
 #: src/app/qml/ui/SetReminderView.qml:64
 msgid "Reminder done"
-msgstr "Memento creat"
+msgstr ""
 
 #: src/app/qml/ui/TagsPage.qml:126
 msgid "No tags available. You can tag notes while viewing them."
 msgstr ""
-"Nu este disponibilă nicio etichetă. Puteți asocia etichete notițelor în timp "
-"ce le vizionați."
 
 #: src/app/qml/ui/TagsPage.qml:133
 msgid "Rename tag"
-msgstr "Redenumiți eticheta"
+msgstr ""
 
 #: src/app/qml/ui/TagsPage.qml:134
 #, qt-format
 msgid "Enter a new name for tag %1"
-msgstr "Introduceți un nou nume pentru eticheta %1"
+msgstr ""
 
 #: src/libqtevernote/evernoteconnection.cpp:268
 msgid "Offline mode"
-msgstr "Mod deconectat"
+msgstr ""
 
 #: src/libqtevernote/evernoteconnection.cpp:273
 #: src/libqtevernote/evernoteconnection.cpp:362
 msgid "Unknown error connecting to Evernote."
-msgstr "Eroare necunoscută la conectarea la Evernote."
+msgstr ""
 
 #: src/libqtevernote/evernoteconnection.cpp:286
 msgid ""
 "Error connecting to Evernote: Server version does not match app version. "
 "Please update the application."
 msgstr ""
-"Eroare la conectarea la Evernote: versiunea de pe server nu se potrivește cu "
-"versiunea aplicației. Actualizați aplicația."
 
 #: src/libqtevernote/evernoteconnection.cpp:292
 #: src/libqtevernote/evernoteconnection.cpp:297
 #, qt-format
 msgid "Error connecting to Evernote: Error code %1"
-msgstr "Eroare la conectarea la Evernote: Cod de eroare %1"
+msgstr ""
 
 #: src/libqtevernote/evernoteconnection.cpp:302
 msgid ""
 "Error connecting to Evernote: Cannot download version information from "
 "server."
 msgstr ""
-"Eroare la conectarea la Evernote: nu se pot descărca informațiile despre "
-"versiune de pe server."
 
 #: src/libqtevernote/evernoteconnection.cpp:307
 msgid "Unknown error connecting to Evernote"
-msgstr "Eroare necunoscută la conectarea la Evernote"
+msgstr ""
 
 #: src/libqtevernote/evernoteconnection.cpp:321
 msgid "Error connecting to Evernote: Cannot download server information."
 msgstr ""
-"Eroare la conectarea la Evernote: nu se pot descărca informațiile din server."
 
 #: src/libqtevernote/evernoteconnection.cpp:329
 #: src/libqtevernote/notesstore.cpp:1772
@@ -516,158 +492,142 @@ msgid ""
 "Authentication for Evernote server expired. Please renew login information "
 "in the accounts settings."
 msgstr ""
-"Autentificarea pentru serverul Evernote a expirat.Reînnoiți informațiile de "
-"autentificare în configurările conturilor."
 
 #: src/libqtevernote/evernoteconnection.cpp:332
 #: src/libqtevernote/evernoteconnection.cpp:350
 #, qt-format
 msgid "Unknown error connecting to Evernote: %1"
-msgstr "Eroare necunoscută la conectarea la Evernote: %1"
+msgstr ""
 
 #: src/libqtevernote/evernoteconnection.cpp:341
 msgid ""
 "Error connecting to Evernote: Rate limit exceeded. Please try again later."
 msgstr ""
-"Eroare la conectarea la Evernote. Limita ratei a fost depășită. Încercați "
-"din nou."
 
 #: src/libqtevernote/evernoteconnection.cpp:357
 msgid ""
 "Error connecting to Evernote: Connection failure when downloading server "
 "information."
 msgstr ""
-"Eroare la conectarea la Evernote: conexiunea s-a întrerupt în timpul "
-"descărcării informațiilor despre server."
 
 #: src/libqtevernote/evernoteconnection.cpp:383
 msgid "Error connecting to Evernote: Connection failure"
-msgstr "Eroare la conectarea la Evernote: eșec la conectare"
+msgstr ""
 
 #: src/libqtevernote/evernoteconnection.cpp:387
 msgid "Unknown Error connecting to Evernote"
-msgstr "Eroare necunoscută la conectarea la Evernote"
+msgstr ""
 
 #: src/libqtevernote/evernoteconnection.cpp:435
 #: src/libqtevernote/evernoteconnection.cpp:499
 msgid "Disconnected from Evernote."
-msgstr "Deconectat de la Evernote."
+msgstr ""
 
 #: src/libqtevernote/note.cpp:162 src/libqtevernote/note.cpp:196
 #: src/libqtevernote/note.cpp:381
 msgid "Today"
-msgstr "Astăzi"
+msgstr ""
 
 #: src/libqtevernote/note.cpp:165 src/libqtevernote/note.cpp:199
 msgid "Yesterday"
-msgstr "Ieri"
+msgstr ""
 
 #: src/libqtevernote/note.cpp:168 src/libqtevernote/note.cpp:202
 msgid "Last week"
-msgstr "Săptămâna trecută"
+msgstr ""
 
 #: src/libqtevernote/note.cpp:171 src/libqtevernote/note.cpp:205
 msgid "Two weeks ago"
-msgstr "Acum două săptămâni"
+msgstr ""
 
 #. TRANSLATORS: the first argument refers to a month name and the second to a year
 #: src/libqtevernote/note.cpp:175 src/libqtevernote/note.cpp:209
 #, qt-format
 msgid "%1 %2"
-msgstr "%1 %2"
+msgstr ""
 
 #: src/libqtevernote/note.cpp:369
 msgid "Done"
-msgstr "Finalizat"
+msgstr ""
 
 #: src/libqtevernote/note.cpp:375
 msgid "No date"
-msgstr "Fără dată"
+msgstr ""
 
 #: src/libqtevernote/note.cpp:378
 msgid "Overdue"
-msgstr "Întârziat"
+msgstr ""
 
 #: src/libqtevernote/note.cpp:384
 msgid "Tomorrow"
-msgstr "Mâine"
+msgstr ""
 
 #: src/libqtevernote/note.cpp:387
 msgid "Next week"
-msgstr "Săptămâna viitoare"
+msgstr ""
 
 #: src/libqtevernote/note.cpp:390
 msgid "In two weeks"
-msgstr "În două săptămâni"
+msgstr ""
 
 #: src/libqtevernote/note.cpp:392
 msgid "Later"
-msgstr "Mai târziu"
+msgstr ""
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: today"
 #: src/libqtevernote/notebook.cpp:122
 msgid "today"
-msgstr "astăzi"
+msgstr ""
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: yesterday"
 #: src/libqtevernote/notebook.cpp:126
 msgid "yesterday"
-msgstr "ieri"
+msgstr ""
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: last week"
 #: src/libqtevernote/notebook.cpp:130
 msgid "last week"
-msgstr "săptămâna trecută"
+msgstr ""
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: two weeks ago"
 #: src/libqtevernote/notebook.cpp:134
 msgid "two weeks ago"
-msgstr "acum două săptămâni"
+msgstr ""
 
 #. TRANSLATORS: this is used in the notes list to group notes created on the same month
 #. the first parameter refers to a month name and the second to a year
 #: src/libqtevernote/notebook.cpp:138
 #, qt-format
 msgid "on %1 %2"
-msgstr "în %1 %2"
+msgstr ""
 
 #: src/libqtevernote/notesstore.cpp:415
 msgid ""
 "This account is managed by Evernote. Use the Evernote website to delete "
 "notebooks."
 msgstr ""
-"Acest cont este gestionat de către Evernote. Utilizați site-ul Evernote "
-"pentru a șterge blocnotesurile."
 
 #: src/libqtevernote/notesstore.cpp:429
 msgid ""
 "Cannot delete the default notebook. Set another notebook to be the default "
 "first."
 msgstr ""
-"Nu se poate șterge blocnotesul implicit. Stabiliți mai întâi un alt "
-"blocnotes pentru a fi implict."
 
 #: src/libqtevernote/notesstore.cpp:1775
 msgid "Rate limit for Evernote server exceeded. Please try again later."
 msgstr ""
-"Limita ratei pentru serverul Evernote a fost depăşită. Vă rugăm să încercaţi "
-"mai târziu."
 
 #: src/libqtevernote/notesstore.cpp:1778
 msgid "Upload quota for Evernote server exceed. Please try again later."
 msgstr ""
-"Cota de încărcare pentru serverul Evernote a fost depăšită. Vă rugăm să "
-"încercaţi ma târziu."
 
 #: src/libqtevernote/notesstore.cpp:1817
 msgid ""
 "This account is managed by Evernote. Please use the Evernote website to "
 "delete tags."
 msgstr ""
-"Acest cont este gestionat de Evernote. Utilizați situl Evernote pentru a "
-"șterge etichetele."
 
 #. TRANSLATORS: A default file name if we don't get one from the server. Avoid weird characters.
 #: src/libqtevernote/resource.cpp:39
 msgid "Unnamed"
-msgstr "Fără nume"
+msgstr ""
