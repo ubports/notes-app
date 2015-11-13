@@ -164,20 +164,24 @@ Page {
                 id: cancelButton
                 anchors { left: parent.left; verticalCenter: parent.verticalCenter }
                 text: i18n.tr("Cancel")
+                activeFocusOnPress: false
                 onClicked: {
                     newNoteTitleTextField.text = "";
                     contentColumn.newNotebook = false
+                    newNoteTitleTextField.focus = false;
                 }
             }
             Button {
                 objectName: "saveButton"
+                activeFocusOnPress: false
                 anchors { right: parent.right; verticalCenter: parent.verticalCenter }
                 text: i18n.tr("Save")
-                enabled: newNoteTitleTextField.text.length > 0
+                enabled: newNoteTitleTextField.text.length > 0 || newNoteTitleTextField.inputMethodComposing
                 onClicked: {
-                    NotesStore.createNotebook(newNoteTitleTextField.text);
+                    NotesStore.createNotebook(newNoteTitleTextField.displayText);
                     newNoteTitleTextField.text = "";
                     contentColumn.newNotebook = false
+                    newNoteTitleTextField.focus = false;
                 }
             }
         }
