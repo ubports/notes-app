@@ -37,7 +37,7 @@ MainView {
     objectName: "mainView"
     applicationName: "com.ubuntu.reminders"
 
-    property bool narrowMode: root.width < units.gu(80)
+    property bool narrowMode: root.width < units.gu(108)
     property var uri: undefined
 
     onNarrowModeChanged: {
