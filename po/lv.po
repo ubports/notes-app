@@ -1,21 +1,23 @@
 # Latvian translation for reminders-app
 # Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
 # This file is distributed under the same license as the reminders-app package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
 #
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-09-21 18:39+0200\n"
-"PO-Revision-Date: 2015-02-28 15:24+0000\n"
+"PO-Revision-Date: 2015-11-22 02:12+0000\n"
 "Last-Translator: Rūdolfs Mazurs <Unknown>\n"
 "Language-Team: Latvian <lv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-11-21 05:35+0000\n"
+"X-Launchpad-Export-Date: 2015-11-22 05:29+0000\n"
 "X-Generator: Launchpad (build 17850)\n"
+"Language: lv\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:562
 msgid "Notes"
@@ -23,44 +25,46 @@ msgstr "Piezīmes"
 
 #: com.ubuntu.reminders.desktop.in.in.h:2
 msgid "Ubuntu Notes app, powered by Evernote"
-msgstr ""
+msgstr "Ubuntu piezīmju lietotne, darbina Evernote"
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
-msgstr ""
+msgstr "Piezīmju grāmatiņa:"
 
 #: src/app/qml/components/ConflictDelegate.qml:63
 msgid "Reminder:"
-msgstr ""
+msgstr "Atgādinājums:"
 
 #: src/app/qml/components/EditTagsDialog.qml:29
 msgid "Edit tags"
-msgstr ""
+msgstr "Rediģēt tagus"
 
 #: src/app/qml/components/EditTagsDialog.qml:32
 msgid "Enter a tag name to attach it to the note."
-msgstr ""
+msgstr "Ievadiet nosaukumu tagam, kuru pievienosiet piezīmei."
 
 #: src/app/qml/components/EditTagsDialog.qml:33
 msgid ""
 "Enter a tag name or select one from the list to attach it to the note."
 msgstr ""
+"Ievadiet nosaukumu tagam vai izvēlieties vienu no saraksta, ko pievienosiet "
+"piezīmei."
 
 #: src/app/qml/components/EditTagsDialog.qml:62
 msgid "Tag name"
-msgstr ""
+msgstr "Taga nosaukums"
 
 #: src/app/qml/components/EditTagsDialog.qml:142
 #: src/app/qml/ui/NotebooksPage.qml:209 src/app/qml/ui/TagsPage.qml:147
 msgid "OK"
-msgstr ""
+msgstr "Labi"
 
 #. TRANSLATORS: Button to close the edit mode
 #. TRANSLATORS: Button to close the note viewer
 #: src/app/qml/components/EditTagsDialog.qml:190
 #: src/app/qml/ui/EditNoteView.qml:605 src/app/qml/ui/NoteView.qml:150
 msgid "Close"
-msgstr ""
+msgstr "Aizvērt"
 
 #: src/app/qml/components/NoteHeader.qml:52
 #: src/app/qml/components/PageWithBottomEdge.qml:123
@@ -93,7 +97,7 @@ msgstr "Privāts"
 
 #: src/app/qml/components/NotesDelegate.qml:73
 msgid "Reminder"
-msgstr ""
+msgstr "Atgādinājums"
 
 #: src/app/qml/components/NotesDelegate.qml:80 src/app/qml/reminders.qml:641
 msgid "Tags"
@@ -119,11 +123,11 @@ msgstr "Attīrīt atgādinātāju"
 
 #: src/app/qml/components/RemindersDelegate.qml:49
 msgid "Mark as undone"
-msgstr ""
+msgstr "Atzīmēt kā nepabeigtu"
 
 #: src/app/qml/components/RemindersDelegate.qml:49
 msgid "Mark as done"
-msgstr "Atzīmēt ka paveiktu"
+msgstr "Atzīmēt ka pabeigtu"
 
 #: src/app/qml/components/RemindersDelegate.qml:57
 #: src/app/qml/ui/NotesPage.qml:99
@@ -132,93 +136,101 @@ msgstr "Rediģēt atgādinājumu"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:25
 msgid "Resolve conflict"
-msgstr ""
+msgstr "Atrisināt konfliktu"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:30
 msgid ""
 "This will <b>keep the changes made on this device</b> and <b>restore the "
 "note on Evernote</b>."
 msgstr ""
+"Tas <b>paturēs izmaiņas, kas ir veiktas uz šīs ierīces</b>, un <b>atjaunos "
+"piezīmi uz Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:32
 msgid "This will <b>delete the changed note on Evernote</b>."
-msgstr ""
+msgstr "Tas <b>dzēsīs mainīto piezīmi uz Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:34
 msgid ""
 "This will <b>keep the changes made on this device</b> and <b>discard any "
 "changes made on Evernote</b>."
 msgstr ""
+"Tas <b>paturēs izmaiņas, kas ir veiktas uz šīs ierīces</b>, un <b>atmetīs "
+"visas izmaiņas, kas veiktas uz Evernote</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:38
 msgid "This will <b>delete the changed note on this device</b>."
-msgstr ""
+msgstr "Tas <b>dzēsīs uz šis ierīces mainīto piezīmi</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:40
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>restore it "
 "on this device</b>."
 msgstr ""
+"Tas <b>lejupielādēs mainīto piezīmi no Evernote</b> un <b>atjaunos to uz šīs "
+"ierīces</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:42
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>discard any "
 "changes made on this device</b>."
 msgstr ""
+"Tas <b>lejupielādēs mainīto piezīmi no Evernote</b> un <b>atmetīs visas uz "
+"šīs ierīces veiktās izmaiņas</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:45
 msgid "Are you sure you want to continue?"
-msgstr ""
+msgstr "Vai tiešām vēlaties turpināt?"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:57
 #: src/app/qml/reminders.qml:744
 msgid "Yes"
-msgstr ""
+msgstr "Jā"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:66
 #: src/app/qml/reminders.qml:734
 msgid "No"
-msgstr ""
+msgstr "Nē"
 
 #: src/app/qml/components/SortingDialog.qml:20
 msgid "Sort by"
-msgstr ""
+msgstr "Kārtot pēc"
 
 #: src/app/qml/components/SortingDialog.qml:29
 msgid "Date created (newest first)"
-msgstr ""
+msgstr "Izveidošanas datums (jaunākās augšā)"
 
 #: src/app/qml/components/SortingDialog.qml:30
 msgid "Date created (oldest first)"
-msgstr ""
+msgstr "Izveidošanas datums (vecākās augšā)"
 
 #: src/app/qml/components/SortingDialog.qml:31
 msgid "Date updated (newest first)"
-msgstr ""
+msgstr "Atjaunināšanas datums (jaunākās augšā)"
 
 #: src/app/qml/components/SortingDialog.qml:32
 msgid "Date updated (oldest first)"
-msgstr ""
+msgstr "Atjaunināšanas datums (vecākās augšā)"
 
 #: src/app/qml/components/SortingDialog.qml:33
 msgid "Title (ascending)"
-msgstr ""
+msgstr "Nosaukums (augoši)"
 
 #: src/app/qml/components/SortingDialog.qml:34
 msgid "Title (descending)"
-msgstr ""
+msgstr "Nosaukums (dilstoši)"
 
 #: src/app/qml/reminders.qml:422
 msgid "Default notebook"
-msgstr ""
+msgstr "Noklusējuma piezīmju grāmatiņa"
 
 #: src/app/qml/reminders.qml:540
 msgid "Select note to attach imported file"
-msgstr ""
+msgstr "Izvēlieties piezīmi, lai pievienotu importēto datni"
 
 #: src/app/qml/reminders.qml:540
 msgid "Select note to attach imported files"
-msgstr ""
+msgstr "Izvēlieties piezīmi, lai pievienotu importētās datnes"
 
 #: src/app/qml/reminders.qml:590
 msgid "Notebooks"
@@ -242,67 +254,72 @@ msgstr ""
 
 #: src/app/qml/reminders.qml:716
 msgid "Setup Evernote connection?"
-msgstr ""
+msgstr "Iestatīt Evernote savienojumu?"
 
 #: src/app/qml/reminders.qml:717
 msgid ""
 "Notes can be stored on this device, or optionally synced with Evernote."
 msgstr ""
+"Piezīmes var saglabāt uz šīs ierīces, bet var arī sinhronizēt ar Evernote."
 
 #: src/app/qml/reminders.qml:718
 msgid ""
 "In order to synchronize notes with Evernote, an account at Evernote is "
 "required."
-msgstr ""
+msgstr "Lai sinhronizētu piezīmes ar Evernote, nepieciešams Evernote konts."
 
 #: src/app/qml/reminders.qml:719
 msgid "Do you want to setup an account now?"
-msgstr ""
+msgstr "Vai vēlaties tagad iestatīt kontu?"
 
 #: src/app/qml/reminders.qml:759
 #, qt-format
 msgid "Importing %1 items"
-msgstr ""
+msgstr "Importē %1 vienumus"
 
 #: src/app/qml/reminders.qml:760
 msgid "Importing 1 item"
-msgstr ""
+msgstr "Importē 1 vienumu"
 
 #: src/app/qml/reminders.qml:762
 msgid ""
 "Do you want to create a new note for those items or do you want to attach "
 "them to an existing note?"
 msgstr ""
+"Vai vēlaties izveidot jaunu piezīmi no šiem vienumiem, vai arī vēlaties "
+"pievienot tos pie esošas piezīmes?"
 
 #: src/app/qml/reminders.qml:763
 msgid ""
 "Do you want to create a new note for this item or do you want to attach it "
 "to an existing note?"
 msgstr ""
+"Vai vēlaties izveidot jaunu piezīmi no šī vienuma, vai arī vēlaties "
+"pievienot to pie esošas piezīmes?"
 
 #: src/app/qml/reminders.qml:769
 msgid "Create new note"
-msgstr ""
+msgstr "Izveidot jaunu piezīmi"
 
 #: src/app/qml/reminders.qml:774
 msgid "Attach to existing note"
-msgstr ""
+msgstr "Pievienot pie esošas piezīmes"
 
 #: src/app/qml/reminders.qml:779
 msgid "Cancel import"
-msgstr ""
+msgstr "Atcelt importēšanu"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
-msgstr ""
+msgstr "Izvēlieties kontu"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:44
 msgid "Store notes locally only"
-msgstr ""
+msgstr "Piezīmes glabāt tikai lokāli"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:52
 msgid "Accounts on www.evernote.com"
-msgstr ""
+msgstr "Konti uz www.evernote.com"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:82
 #, qt-format
@@ -343,37 +360,39 @@ msgstr "N"
 
 #: src/app/qml/ui/NoteConflictPage.qml:27
 msgid "Conflicting changes"
-msgstr ""
+msgstr "Konfliktējošas izmaiņas"
 
 #: src/app/qml/ui/NoteConflictView.qml:54
 msgid ""
 "This note has been modified in multiple places. Please choose the version to "
 "be opened and delete the other."
 msgstr ""
+"Šī piezīme ir mainīta vairākās vietās. Izvēlieties versiju, kuru atvērt, un "
+"dzēsiet otru."
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Deleted on this device:"
-msgstr ""
+msgstr "Dzēsts uz šīs ierīces:"
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Modified on this device:"
-msgstr ""
+msgstr "Mainīts uz šīs ierīces:"
 
 #: src/app/qml/ui/NoteConflictView.qml:85
 msgid "Deleted from Evernote:"
-msgstr ""
+msgstr "Dzēsts no Evernote:"
 
 #: src/app/qml/ui/NoteConflictView.qml:85
 msgid "Modified somewhere else:"
-msgstr ""
+msgstr "Mainīts kaut kur citur:"
 
 #: src/app/qml/ui/NoteView.qml:184
 msgid "Attachment"
-msgstr ""
+msgstr "Pielikums"
 
 #: src/app/qml/ui/NotebooksPage.qml:45
 msgid "Add notebook"
-msgstr "Pievienot piezīmju grāmatu"
+msgstr "Pievienot piezīmju grāmatiņu"
 
 #: src/app/qml/ui/NotebooksPage.qml:52 src/app/qml/ui/NotesPage.qml:84
 #: src/app/qml/ui/RemindersPage.qml:36 src/app/qml/ui/SearchNotesPage.qml:60
@@ -392,16 +411,16 @@ msgstr "Saglabāt"
 
 #: src/app/qml/ui/NotebooksPage.qml:195
 msgid "Rename notebook"
-msgstr ""
+msgstr "Pārdēvēt piezīmju grāmatiņu"
 
 #: src/app/qml/ui/NotebooksPage.qml:196
 #, qt-format
 msgid "Enter a new name for notebook %1"
-msgstr ""
+msgstr "Ievadiet jaunu nosaukumu piezīmju grāmatiņai %1"
 
 #: src/app/qml/ui/NotebooksPage.qml:205 src/app/qml/ui/TagsPage.qml:143
 msgid "Name cannot be empty"
-msgstr ""
+msgstr "Nosaukums nevar būt tukšs"
 
 #: src/app/qml/ui/NotesPage.qml:43 src/app/qml/ui/NotesPage.qml:64
 msgid "Add note"
@@ -409,7 +428,7 @@ msgstr "Pievienot piezīmi"
 
 #: src/app/qml/ui/NotesPage.qml:72
 msgid "Sorting"
-msgstr ""
+msgstr "Kārtošana"
 
 #: src/app/qml/ui/NotesPage.qml:99
 msgid "Set reminder"
@@ -420,6 +439,8 @@ msgid ""
 "No notes available. You can create new notes by pulling the note editor up "
 "from the bottom edge."
 msgstr ""
+"Nav pieejamu piezīmju. Varat izveidot jaunas piezīmes, velkot piezīmju "
+"redaktoru uz augšu no ekrāna apakšējās malas."
 
 #: src/app/qml/ui/RemindersPage.qml:97
 msgid ""
@@ -440,7 +461,7 @@ msgstr "Izvēlieties atgādinājuma datumu un laiku:"
 #. TRANSLATORS: A checkbox with marks the reminder as done
 #: src/app/qml/ui/SetReminderView.qml:64
 msgid "Reminder done"
-msgstr ""
+msgstr "Atgādinājums pabeigts"
 
 #: src/app/qml/ui/TagsPage.qml:126
 msgid "No tags available. You can tag notes while viewing them."
@@ -449,16 +470,16 @@ msgstr ""
 
 #: src/app/qml/ui/TagsPage.qml:133
 msgid "Rename tag"
-msgstr ""
+msgstr "Pārdēvēt tagu"
 
 #: src/app/qml/ui/TagsPage.qml:134
 #, qt-format
 msgid "Enter a new name for tag %1"
-msgstr ""
+msgstr "Ievadiet jaunu nosaukumu tagam %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:268
 msgid "Offline mode"
-msgstr ""
+msgstr "Nesaistes režīms"
 
 #: src/libqtevernote/evernoteconnection.cpp:273
 #: src/libqtevernote/evernoteconnection.cpp:362
@@ -502,17 +523,21 @@ msgid ""
 "Authentication for Evernote server expired. Please renew login information "
 "in the accounts settings."
 msgstr ""
+"Beidzās autentifikācija Evernote serverim. Kona iestatījumos atjaunojiet "
+"ierakstīšanās informāciju."
 
 #: src/libqtevernote/evernoteconnection.cpp:332
 #: src/libqtevernote/evernoteconnection.cpp:350
 #, qt-format
 msgid "Unknown error connecting to Evernote: %1"
-msgstr ""
+msgstr "Nezināma kļūda, savienojoties ar Evernote: %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:341
 msgid ""
 "Error connecting to Evernote: Rate limit exceeded. Please try again later."
 msgstr ""
+"Kļūda, savienojoties ar Evernote: pārsniegts ātruma limits. Mēģiniet atkal "
+"vēlāk."
 
 #: src/libqtevernote/evernoteconnection.cpp:357
 msgid ""
@@ -533,7 +558,7 @@ msgstr "Nezināma kļūda, savienojoties ar Evernote"
 #: src/libqtevernote/evernoteconnection.cpp:435
 #: src/libqtevernote/evernoteconnection.cpp:499
 msgid "Disconnected from Evernote."
-msgstr ""
+msgstr "Atvienojās no Evernote."
 
 #: src/libqtevernote/note.cpp:162 src/libqtevernote/note.cpp:196
 #: src/libqtevernote/note.cpp:381
@@ -618,28 +643,35 @@ msgid ""
 "This account is managed by Evernote. Use the Evernote website to delete "
 "notebooks."
 msgstr ""
+"Šo kontu pārvalda Evernote. Piezīmju grāmatas var izdzēst Evernote tīmekļa "
+"vietnē."
 
 #: src/libqtevernote/notesstore.cpp:429
 msgid ""
 "Cannot delete the default notebook. Set another notebook to be the default "
 "first."
 msgstr ""
+"Nevar izdzēst noklusējuma piezīmju grāmatiņu. Vispirms iestatiet citu "
+"piezīmju grāmatiņu kā noklusēto."
 
 #: src/libqtevernote/notesstore.cpp:1775
 msgid "Rate limit for Evernote server exceeded. Please try again later."
 msgstr ""
+"Tika pārsniegts Evernote servera ātruma limits. Mēģiniet atkal vēlāk."
 
 #: src/libqtevernote/notesstore.cpp:1778
 msgid "Upload quota for Evernote server exceed. Please try again later."
 msgstr ""
+"Tika pārsniegta Evernote servera augšupielādes kvota. Mēģiniet atkal vēlāk."
 
 #: src/libqtevernote/notesstore.cpp:1817
 msgid ""
 "This account is managed by Evernote. Please use the Evernote website to "
 "delete tags."
 msgstr ""
+"Šo kontu pārvalda Evernote. Tagus var izdzēst Evernote tīmekļa vietnē."
 
 #. TRANSLATORS: A default file name if we don't get one from the server. Avoid weird characters.
 #: src/libqtevernote/resource.cpp:39
 msgid "Unnamed"
-msgstr ""
+msgstr "Nenosaukts"
