@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-09-21 18:39+0200\n"
-"PO-Revision-Date: 2015-09-25 21:49+0000\n"
+"PO-Revision-Date: 2015-11-28 11:57+0000\n"
 "Last-Translator: Ivo Xavier <ivofernandes12@gmail.com>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-11-21 05:35+0000\n"
+"X-Launchpad-Export-Date: 2015-11-29 05:29+0000\n"
 "X-Generator: Launchpad (build 17850)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:562
@@ -134,7 +134,7 @@ msgstr "Editar lembrete"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:25
 msgid "Resolve conflict"
-msgstr "Solucionar conflitos"
+msgstr "Resolver conflitos"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:30
 msgid ""
@@ -178,7 +178,7 @@ msgstr ""
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:45
 msgid "Are you sure you want to continue?"
-msgstr "Tem a certeza de que deseja continuar?"
+msgstr "Quer mesmo continuar?"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:57
 #: src/app/qml/reminders.qml:744
@@ -192,23 +192,23 @@ msgstr "Não"
 
 #: src/app/qml/components/SortingDialog.qml:20
 msgid "Sort by"
-msgstr "Ordenado por"
+msgstr "Ordenar por"
 
 #: src/app/qml/components/SortingDialog.qml:29
 msgid "Date created (newest first)"
-msgstr "Data de criação (mais recente primeiro)"
+msgstr "Data de criação (recentes primeiro)"
 
 #: src/app/qml/components/SortingDialog.qml:30
 msgid "Date created (oldest first)"
-msgstr "Data de criação (mais antigo primeiro)"
+msgstr "Data de criação (antigos primeiro)"
 
 #: src/app/qml/components/SortingDialog.qml:31
 msgid "Date updated (newest first)"
-msgstr "Data de atualização (mais recente primeiro)"
+msgstr "Data de atualização (recentes primeiro)"
 
 #: src/app/qml/components/SortingDialog.qml:32
 msgid "Date updated (oldest first)"
-msgstr "Data de atualização (mais antigo primeiro)"
+msgstr "Data de atualização (antigos primeiro)"
 
 #: src/app/qml/components/SortingDialog.qml:33
 msgid "Title (ascending)"
@@ -232,7 +232,7 @@ msgstr "Selecione a nota para anexar ficheiros importados"
 
 #: src/app/qml/reminders.qml:590
 msgid "Notebooks"
-msgstr "Blocos de Notas"
+msgstr "Blocos de notas"
 
 #: src/app/qml/reminders.qml:624
 msgid "Reminders"
@@ -247,12 +247,12 @@ msgid ""
 "No note selected.\n"
 "Select a note to see it in detail."
 msgstr ""
-"Nenhuma nota selecionada.\n"
+"Sem notas selecionadas.\n"
 "Selecione uma nota para ver em detalhe."
 
 #: src/app/qml/reminders.qml:716
 msgid "Setup Evernote connection?"
-msgstr "Configuração de conexão Evernote?"
+msgstr "Configurar ligação ao Evernote?"
 
 #: src/app/qml/reminders.qml:717
 msgid ""
@@ -440,15 +440,15 @@ msgid ""
 "No notes available. You can create new notes by pulling the note editor up "
 "from the bottom edge."
 msgstr ""
-"Sem notas disponíveis. Pode criar novas notas ao puxar de baixo para cima o "
-"editor de notas."
+"Sem notas disponíveis. Pode criar novas ao puxar de baixo para cima o editor "
+"de notas."
 
 #: src/app/qml/ui/RemindersPage.qml:97
 msgid ""
 "No reminders available. You can create new reminders by setting a reminder "
 "when viewing a note."
 msgstr ""
-"Não há lembretes disponíveis. Pode criar novas lembranças, definindo um "
+"Sem lembretes disponíveis. Pode criar novas lembranças, definindo um "
 "lembrete ao visualizar uma nota."
 
 #: src/app/qml/ui/SearchNotesPage.qml:32
@@ -467,7 +467,7 @@ msgstr "Feito Lembrete"
 #: src/app/qml/ui/TagsPage.qml:126
 msgid "No tags available. You can tag notes while viewing them."
 msgstr ""
-"Não há tags disponíveis. Você pode marcar notas enquanto as visualiza."
+"Sem tags disponíveis.  Pode adicionar tags nas notas enquanto as visualiza."
 
 #: src/app/qml/ui/TagsPage.qml:133
 msgid "Rename tag"
@@ -577,7 +577,7 @@ msgstr "Semana passada"
 
 #: src/libqtevernote/note.cpp:171 src/libqtevernote/note.cpp:205
 msgid "Two weeks ago"
-msgstr "Duas semanas atrás"
+msgstr "Há duas semanas"
 
 #. TRANSLATORS: the first argument refers to a month name and the second to a year
 #: src/libqtevernote/note.cpp:175 src/libqtevernote/note.cpp:209
