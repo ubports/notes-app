@@ -7,3 +7,5 @@ Terminal=false
 Type=Application
 X-Ubuntu-Touch=true
 X-Ubuntu-Default-Department-ID=accessories
+X-Ubuntu-Splash-Show-Header=true
+X-Ubuntu-Splash-Color=#E5E3E5
