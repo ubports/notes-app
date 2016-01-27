@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-09-21 18:39+0200\n"
-"PO-Revision-Date: 2015-05-03 02:05+0000\n"
-"Last-Translator: GunChleoc <Unknown>\n"
+"PO-Revision-Date: 2016-01-26 22:34+0000\n"
+"Last-Translator: Akerbeltz <fios@akerbeltz.org>\n"
 "Language-Team: Fòram na Gàidhlig\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-11-21 05:35+0000\n"
-"X-Generator: Launchpad (build 17850)\n"
+"X-Launchpad-Export-Date: 2016-01-27 05:32+0000\n"
+"X-Generator: Launchpad (build 17902)\n"
 "Language: gd\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:562
@@ -24,7 +24,7 @@ msgstr "Nòtaichean"
 
 #: com.ubuntu.reminders.desktop.in.in.h:2
 msgid "Ubuntu Notes app, powered by Evernote"
-msgstr ""
+msgstr "Aplacaid nòtaichean Ubuntu, le cumhachd Evernote"
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
@@ -36,20 +36,21 @@ msgstr "Cuimhneachan:"
 
 #: src/app/qml/components/EditTagsDialog.qml:29
 msgid "Edit tags"
-msgstr ""
+msgstr "Deasaich na tagaichean"
 
 #: src/app/qml/components/EditTagsDialog.qml:32
 msgid "Enter a tag name to attach it to the note."
-msgstr ""
+msgstr "Cuir a-steach ainm taga gus a cheangal ris an nòta."
 
 #: src/app/qml/components/EditTagsDialog.qml:33
 msgid ""
 "Enter a tag name or select one from the list to attach it to the note."
 msgstr ""
+"Cuir a-steach ainm taga no tagh fear on liosta gus a cheangal ris an nòta."
 
 #: src/app/qml/components/EditTagsDialog.qml:62
 msgid "Tag name"
-msgstr ""
+msgstr "Ainm an taga"
 
 #: src/app/qml/components/EditTagsDialog.qml:142
 #: src/app/qml/ui/NotebooksPage.qml:209 src/app/qml/ui/TagsPage.qml:147
@@ -61,7 +62,7 @@ msgstr "Ceart ma-thà"
 #: src/app/qml/components/EditTagsDialog.qml:190
 #: src/app/qml/ui/EditNoteView.qml:605 src/app/qml/ui/NoteView.qml:150
 msgid "Close"
-msgstr ""
+msgstr "Dùin"
 
 #: src/app/qml/components/NoteHeader.qml:52
 #: src/app/qml/components/PageWithBottomEdge.qml:123
@@ -224,11 +225,11 @@ msgstr "Leabhar-nòtaichean tùsail"
 
 #: src/app/qml/reminders.qml:540
 msgid "Select note to attach imported file"
-msgstr ""
+msgstr "Tagh nòta gus a cheangal ri faidhle ion-phortaichte"
 
 #: src/app/qml/reminders.qml:540
 msgid "Select note to attach imported files"
-msgstr ""
+msgstr "Tagh nòta gus a cheangal ri faidhlichean ion-phortaichte"
 
 #: src/app/qml/reminders.qml:590
 msgid "Notebooks"
@@ -258,6 +259,8 @@ msgstr "A bheil thu airson ceangal gu Evernote a shuidheachadh?"
 msgid ""
 "Notes can be stored on this device, or optionally synced with Evernote."
 msgstr ""
+"’S urrainn dhut nòtaichean a chumail air an uidheam seo no an sioncronachadh "
+"le Evernote."
 
 #: src/app/qml/reminders.qml:718
 msgid ""
@@ -285,24 +288,28 @@ msgid ""
 "Do you want to create a new note for those items or do you want to attach "
 "them to an existing note?"
 msgstr ""
+"A bheil thu airson nòta ùr a chruthachadh dha na nithean seo no a bheil thu "
+"airson an ceangal ri nòta a tha ann mu thràth?"
 
 #: src/app/qml/reminders.qml:763
 msgid ""
 "Do you want to create a new note for this item or do you want to attach it "
 "to an existing note?"
 msgstr ""
+"A bheil thu airson nòta ùr a chruthachadh dhan nì seo no a bheil thu airson "
+"a cheangal ri nòta a tha ann mu thràth?"
 
 #: src/app/qml/reminders.qml:769
 msgid "Create new note"
-msgstr ""
+msgstr "Cruthaich nòta ùr"
 
 #: src/app/qml/reminders.qml:774
 msgid "Attach to existing note"
-msgstr ""
+msgstr "Ceangail ri nòta a tha ann mu thràth"
 
 #: src/app/qml/reminders.qml:779
 msgid "Cancel import"
-msgstr ""
+msgstr "Sguir dhen ion-phortadh"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
