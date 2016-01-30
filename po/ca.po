@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-09-21 18:39+0200\n"
-"PO-Revision-Date: 2015-06-18 08:58+0000\n"
+"PO-Revision-Date: 2016-01-29 18:35+0000\n"
 "Last-Translator: David Planella <david.planella@ubuntu.com>\n"
 "Language-Team: Catalan <ca@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-11-21 05:35+0000\n"
-"X-Generator: Launchpad (build 17850)\n"
+"X-Launchpad-Export-Date: 2016-01-30 05:45+0000\n"
+"X-Generator: Launchpad (build 17908)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:562
 msgid "Notes"
@@ -48,19 +48,19 @@ msgstr ""
 
 #: src/app/qml/components/EditTagsDialog.qml:62
 msgid "Tag name"
-msgstr ""
+msgstr "Nom de l'etiqueta"
 
 #: src/app/qml/components/EditTagsDialog.qml:142
 #: src/app/qml/ui/NotebooksPage.qml:209 src/app/qml/ui/TagsPage.qml:147
 msgid "OK"
-msgstr ""
+msgstr "D’acord"
 
 #. TRANSLATORS: Button to close the edit mode
 #. TRANSLATORS: Button to close the note viewer
 #: src/app/qml/components/EditTagsDialog.qml:190
 #: src/app/qml/ui/EditNoteView.qml:605 src/app/qml/ui/NoteView.qml:150
 msgid "Close"
-msgstr ""
+msgstr "Tanca"
 
 #: src/app/qml/components/NoteHeader.qml:52
 #: src/app/qml/components/PageWithBottomEdge.qml:123
