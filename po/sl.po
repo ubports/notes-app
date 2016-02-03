@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-09-21 18:39+0200\n"
-"PO-Revision-Date: 2016-01-31 19:28+0000\n"
+"PO-Revision-Date: 2016-02-02 20:56+0000\n"
 "Last-Translator: Bernard Banko <Unknown>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-02-01 05:35+0000\n"
+"X-Launchpad-Export-Date: 2016-02-03 05:58+0000\n"
 "X-Generator: Launchpad (build 17908)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:562
@@ -39,7 +39,7 @@ msgstr "Uredi oznake"
 
 #: src/app/qml/components/EditTagsDialog.qml:32
 msgid "Enter a tag name to attach it to the note."
-msgstr "Vnesite ime oznake, da jo pripnete sporočilcu."
+msgstr "Vnesite ime oznake, da jo pripete sporočilcu."
 
 #: src/app/qml/components/EditTagsDialog.qml:33
 msgid ""
@@ -301,7 +301,7 @@ msgstr "Ustvari novo sporočilce"
 
 #: src/app/qml/reminders.qml:774
 msgid "Attach to existing note"
-msgstr "Pripni obstoječi opombi"
+msgstr "Pripni obstoječemu sporočilcu"
 
 #: src/app/qml/reminders.qml:779
 msgid "Cancel import"
