@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-09-21 18:39+0200\n"
-"PO-Revision-Date: 2016-01-29 18:35+0000\n"
+"PO-Revision-Date: 2016-02-08 09:59+0000\n"
 "Last-Translator: David Planella <david.planella@ubuntu.com>\n"
 "Language-Team: Catalan <ca@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-01-30 05:45+0000\n"
+"X-Launchpad-Export-Date: 2016-02-09 05:43+0000\n"
 "X-Generator: Launchpad (build 17908)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:562
@@ -35,16 +35,18 @@ msgstr "Recordatori:"
 
 #: src/app/qml/components/EditTagsDialog.qml:29
 msgid "Edit tags"
-msgstr ""
+msgstr "Edita etiquetes"
 
 #: src/app/qml/components/EditTagsDialog.qml:32
 msgid "Enter a tag name to attach it to the note."
-msgstr ""
+msgstr "Escriviu el nom de l'etiqueta per adjuntar a la nota"
 
 #: src/app/qml/components/EditTagsDialog.qml:33
 msgid ""
 "Enter a tag name or select one from the list to attach it to the note."
 msgstr ""
+"Escriviu un nom d'etiqueta o seleccioneu-ne una de la llista per adjuntar-la "
+"a la nota"
 
 #: src/app/qml/components/EditTagsDialog.qml:62
 msgid "Tag name"
@@ -119,7 +121,7 @@ msgstr "Suprimeix el recordatori"
 
 #: src/app/qml/components/RemindersDelegate.qml:49
 msgid "Mark as undone"
-msgstr ""
+msgstr "No ho marquis com a fet"
 
 #: src/app/qml/components/RemindersDelegate.qml:49
 msgid "Mark as done"
@@ -132,7 +134,7 @@ msgstr "Ed. el recordatori"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:25
 msgid "Resolve conflict"
-msgstr ""
+msgstr "Resol el conflicte"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:30
 msgid ""
@@ -168,7 +170,7 @@ msgstr ""
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:45
 msgid "Are you sure you want to continue?"
-msgstr ""
+msgstr "Segur que voleu continuar?"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:57
 #: src/app/qml/reminders.qml:744
@@ -186,39 +188,39 @@ msgstr "Ordena per"
 
 #: src/app/qml/components/SortingDialog.qml:29
 msgid "Date created (newest first)"
-msgstr ""
+msgstr "Data de creació (les més noves primer)"
 
 #: src/app/qml/components/SortingDialog.qml:30
 msgid "Date created (oldest first)"
-msgstr ""
+msgstr "Data de creació (les més antigues primer)"
 
 #: src/app/qml/components/SortingDialog.qml:31
 msgid "Date updated (newest first)"
-msgstr ""
+msgstr "Data d'actualització (les més noves primer)"
 
 #: src/app/qml/components/SortingDialog.qml:32
 msgid "Date updated (oldest first)"
-msgstr ""
+msgstr "Data d'actualització (les més antigues primer)"
 
 #: src/app/qml/components/SortingDialog.qml:33
 msgid "Title (ascending)"
-msgstr ""
+msgstr "Títol (ascendent)"
 
 #: src/app/qml/components/SortingDialog.qml:34
 msgid "Title (descending)"
-msgstr ""
+msgstr "Títol (descendent)"
 
 #: src/app/qml/reminders.qml:422
 msgid "Default notebook"
-msgstr ""
+msgstr "Llibreta predeterminada"
 
 #: src/app/qml/reminders.qml:540
 msgid "Select note to attach imported file"
-msgstr ""
+msgstr "Seleccioneu la nota per a adjuntar-hi el fitxer importat"
 
 #: src/app/qml/reminders.qml:540
 msgid "Select note to attach imported files"
-msgstr ""
+msgstr "Seleccioneu la nota per a adjuntar-hi els fitxers importats"
 
 #: src/app/qml/reminders.qml:590
 msgid "Notebooks"
@@ -242,7 +244,7 @@ msgstr ""
 
 #: src/app/qml/reminders.qml:716
 msgid "Setup Evernote connection?"
-msgstr ""
+msgstr "Voleu configurar la connexió amb l'Evernote?"
 
 #: src/app/qml/reminders.qml:717
 msgid ""
@@ -257,16 +259,16 @@ msgstr ""
 
 #: src/app/qml/reminders.qml:719
 msgid "Do you want to setup an account now?"
-msgstr ""
+msgstr "Voleu configurar un compte?"
 
 #: src/app/qml/reminders.qml:759
 #, qt-format
 msgid "Importing %1 items"
-msgstr ""
+msgstr "S'estan important %1 elements"
 
 #: src/app/qml/reminders.qml:760
 msgid "Importing 1 item"
-msgstr ""
+msgstr "S'està important 1 element"
 
 #: src/app/qml/reminders.qml:762
 msgid ""
@@ -282,15 +284,15 @@ msgstr ""
 
 #: src/app/qml/reminders.qml:769
 msgid "Create new note"
-msgstr ""
+msgstr "Crea una nota nova"
 
 #: src/app/qml/reminders.qml:774
 msgid "Attach to existing note"
-msgstr ""
+msgstr "Adjunta a una nota existent"
 
 #: src/app/qml/reminders.qml:779
 msgid "Cancel import"
-msgstr ""
+msgstr "Cancel·la la importació"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
@@ -369,7 +371,7 @@ msgstr ""
 
 #: src/app/qml/ui/NoteView.qml:184
 msgid "Attachment"
-msgstr ""
+msgstr "Adjunció"
 
 #: src/app/qml/ui/NotebooksPage.qml:45
 msgid "Add notebook"
@@ -392,16 +394,16 @@ msgstr "Desa"
 
 #: src/app/qml/ui/NotebooksPage.qml:195
 msgid "Rename notebook"
-msgstr ""
+msgstr "Canvia el nom de la llibreta"
 
 #: src/app/qml/ui/NotebooksPage.qml:196
 #, qt-format
 msgid "Enter a new name for notebook %1"
-msgstr ""
+msgstr "Escriviu el nom nou per a la llibreta %1"
 
 #: src/app/qml/ui/NotebooksPage.qml:205 src/app/qml/ui/TagsPage.qml:143
 msgid "Name cannot be empty"
-msgstr ""
+msgstr "Cal introduir un nom"
 
 #: src/app/qml/ui/NotesPage.qml:43 src/app/qml/ui/NotesPage.qml:64
 msgid "Add note"
@@ -409,7 +411,7 @@ msgstr "Afegeix una nota"
 
 #: src/app/qml/ui/NotesPage.qml:72
 msgid "Sorting"
-msgstr ""
+msgstr "Ordenació"
 
 #: src/app/qml/ui/NotesPage.qml:99
 msgid "Set reminder"
@@ -459,7 +461,7 @@ msgstr ""
 
 #: src/libqtevernote/evernoteconnection.cpp:268
 msgid "Offline mode"
-msgstr ""
+msgstr "Mode fora de línia"
 
 #: src/libqtevernote/evernoteconnection.cpp:273
 #: src/libqtevernote/evernoteconnection.cpp:362
@@ -636,4 +638,4 @@ msgstr ""
 #. TRANSLATORS: A default file name if we don't get one from the server. Avoid weird characters.
 #: src/libqtevernote/resource.cpp:39
 msgid "Unnamed"
-msgstr ""
+msgstr "Sense nom"
