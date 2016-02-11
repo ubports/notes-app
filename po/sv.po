@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-09-21 18:39+0200\n"
-"PO-Revision-Date: 2015-04-17 17:14+0000\n"
+"PO-Revision-Date: 2016-02-10 13:46+0000\n"
 "Last-Translator: Josef Andersson <Unknown>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-11-21 05:35+0000\n"
-"X-Generator: Launchpad (build 17850)\n"
+"X-Launchpad-Export-Date: 2016-02-11 06:16+0000\n"
+"X-Generator: Launchpad (build 17923)\n"
 "Language: sv\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:562
@@ -24,7 +24,7 @@ msgstr "Anteckningar"
 
 #: com.ubuntu.reminders.desktop.in.in.h:2
 msgid "Ubuntu Notes app, powered by Evernote"
-msgstr ""
+msgstr "Ubuntu Notes, drivet av Evernote"
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
@@ -36,20 +36,22 @@ msgstr "Påminnelse:"
 
 #: src/app/qml/components/EditTagsDialog.qml:29
 msgid "Edit tags"
-msgstr ""
+msgstr "Redigera taggar"
 
 #: src/app/qml/components/EditTagsDialog.qml:32
 msgid "Enter a tag name to attach it to the note."
-msgstr ""
+msgstr "Ange ett taggnamn för att bifpga det till anteckningen."
 
 #: src/app/qml/components/EditTagsDialog.qml:33
 msgid ""
 "Enter a tag name or select one from the list to attach it to the note."
 msgstr ""
+"Ange ett taggnamn eller välj ett från listan för att bifoga det till "
+"anteckningen."
 
 #: src/app/qml/components/EditTagsDialog.qml:62
 msgid "Tag name"
-msgstr ""
+msgstr "Taggnamn"
 
 #: src/app/qml/components/EditTagsDialog.qml:142
 #: src/app/qml/ui/NotebooksPage.qml:209 src/app/qml/ui/TagsPage.qml:147
@@ -61,7 +63,7 @@ msgstr "OK"
 #: src/app/qml/components/EditTagsDialog.qml:190
 #: src/app/qml/ui/EditNoteView.qml:605 src/app/qml/ui/NoteView.qml:150
 msgid "Close"
-msgstr ""
+msgstr "Stäng"
 
 #: src/app/qml/components/NoteHeader.qml:52
 #: src/app/qml/components/PageWithBottomEdge.qml:123
@@ -225,11 +227,11 @@ msgstr "Standardanteckningsbok"
 
 #: src/app/qml/reminders.qml:540
 msgid "Select note to attach imported file"
-msgstr ""
+msgstr "Välja anteckning för att bifoga importerad fil"
 
 #: src/app/qml/reminders.qml:540
 msgid "Select note to attach imported files"
-msgstr ""
+msgstr "Välja anteckning för att bifoga importerad filer"
 
 #: src/app/qml/reminders.qml:590
 msgid "Notebooks"
@@ -259,6 +261,8 @@ msgstr "Ställ in Evernote-anslutning?"
 msgid ""
 "Notes can be stored on this device, or optionally synced with Evernote."
 msgstr ""
+"Anteckningar kan lagras på den här enheten eller alternativt synkroniseras "
+"med Evernote."
 
 #: src/app/qml/reminders.qml:718
 msgid ""
@@ -274,35 +278,39 @@ msgstr "Vill du skapa ett konto nu?"
 #: src/app/qml/reminders.qml:759
 #, qt-format
 msgid "Importing %1 items"
-msgstr ""
+msgstr "Importerar %1 objekt"
 
 #: src/app/qml/reminders.qml:760
 msgid "Importing 1 item"
-msgstr ""
+msgstr "Importerar 1 objekt"
 
 #: src/app/qml/reminders.qml:762
 msgid ""
 "Do you want to create a new note for those items or do you want to attach "
 "them to an existing note?"
 msgstr ""
+"Vill du skapa en ny anteckning för dessa objekt eller vill du bifoga dem "
+"till en befintlig anteckning?"
 
 #: src/app/qml/reminders.qml:763
 msgid ""
 "Do you want to create a new note for this item or do you want to attach it "
 "to an existing note?"
 msgstr ""
+"Vill du skapa en ny anteckning för detta objekt eller vill du bifoga det "
+"till en befintlig anteckning?"
 
 #: src/app/qml/reminders.qml:769
 msgid "Create new note"
-msgstr ""
+msgstr "Skapa en ny anteckning"
 
 #: src/app/qml/reminders.qml:774
 msgid "Attach to existing note"
-msgstr ""
+msgstr "Bifoga till befintlig anteckning"
 
 #: src/app/qml/reminders.qml:779
 msgid "Cancel import"
-msgstr ""
+msgstr "Avbryt import"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
