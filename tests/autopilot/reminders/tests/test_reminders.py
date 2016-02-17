@@ -38,7 +38,7 @@ class RemindersTestCaseWithoutAccount(tests.RemindersAppTestCase):
 
     def test_open_application_without_account(self):
         """Test that the No account dialog is visible."""
-        self.assertTrue(self.app.main_view.no_account_dialog.visible)
+        self.assertTrue(self.app.no_account_dialog.visible)
 
     def test_go_to_account_settings(self):
         """Test that the Go to account settings button calls url-dispatcher."""
@@ -48,7 +48,7 @@ class RemindersTestCaseWithoutAccount(tests.RemindersAppTestCase):
         url_dispatcher = fixture_setup.FakeURLDispatcher()
         self.useFixture(url_dispatcher)
 
-        self.app.main_view.no_account_dialog.open_account_settings()
+        self.app.no_account_dialog.open_account_settings()
 
         def get_last_dispatch_url_call_parameter():
             # Workaround for http://pad.lv/1312384
@@ -66,7 +66,7 @@ class RemindersTestCaseWithAccount(tests.RemindersAppTestCase):
 
     def setUp(self):
         super(RemindersTestCaseWithAccount, self).setUp()
-        no_account_dialog = self.app.main_view.no_account_dialog
+        no_account_dialog = self.app.no_account_dialog
         self.add_evernote_account()
         logger.info('Waiting for the Evernote account to be created.')
         no_account_dialog.wait_until_destroyed()

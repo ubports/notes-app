@@ -41,7 +41,20 @@ class RemindersApp(object):
 
     def __init__(self, app_proxy):
         self.app = app_proxy
-        self.main_view = self.app.select_single(MainView)
+        # Use only objectName due to bug 1350532
+        self.main_view = self.app.wait_select_single(objectName="mainView")
+
+
+    @property
+    def no_account_dialog(self):
+        try:
+            self._no_account_dialog = self.app.wait_select_single(
+                objectName='noAccountDialog')
+        except dbus.StateNotFoundError:
+            raise RemindersAppException(
+                'The No Account dialog is not present')
+        else:
+            return self._no_account_dialog
 
     def open_notebooks(self):
         """Open the Notebooks page.
@@ -61,19 +74,7 @@ class MainView(ubuntuuitoolkit.MainView):
     def __init__(self, *args):
         super(MainView, self).__init__(*args)
         self.visible.wait_for(True)
-        try:
-            self._no_account_dialog = self.select_single(
-                objectName='noAccountDialog')
-        except dbus.StateNotFoundError:
-            self._no_account_dialog = None
 
-    @property
-    def no_account_dialog(self):
-        if self._no_account_dialog is None:
-            raise RemindersAppException(
-                'The No Account dialog is not present')
-        else:
-            return self._no_account_dialog
 
 
 class NoAccountDialog(ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase):
@@ -108,7 +109,8 @@ class _Page(ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase):
         super(_Page, self).__init__(*args)
         # XXX we need a better way to keep reference to the main view.
         # --elopio - 2014-02-26
-        self.main_view = self.get_root_instance().select_single(MainView)
+        self.main_view = \
+            self.get_root_instance().wait_select_single(objectName="mainView")
 
 
 class PulldownListView(ubuntuuitoolkit.QQuickListView):
