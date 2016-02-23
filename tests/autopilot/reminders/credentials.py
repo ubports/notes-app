@@ -18,6 +18,9 @@ import logging
 import time
 import threading
 
+import gi
+gi.require_version('Accounts', '1.0')
+gi.require_version('Signon', '1.0')
 from gi.repository import Accounts, GLib, Signon
 
 

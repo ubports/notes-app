@@ -16,6 +16,8 @@
 
 import logging
 
+import gi
+gi.require_version('Accounts', '1.0')
 from gi.repository import Accounts
 from testtools.matchers import HasLength
 

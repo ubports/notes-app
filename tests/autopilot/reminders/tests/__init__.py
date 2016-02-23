@@ -23,9 +23,11 @@ import shutil
 import subprocess
 
 import fixtures
+import gi
 import ubuntuuitoolkit
 from autopilot import logging as autopilot_logging
 from autopilot.testcase import AutopilotTestCase
+gi.require_version('Click', '0.4')
 from gi.repository import Click
 
 import reminders
