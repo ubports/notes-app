@@ -29,4 +29,4 @@ class RemindersTestCaseWithoutAccount(tests.RemindersAppTestCase):
 
     def test_open_application_without_account(self):
         """Test that the No account dialog is visible."""
-        self.assertTrue(self.app.main_view.no_account_dialog.visible)
+        self.assertTrue(self.app.no_account_dialog.visible)
