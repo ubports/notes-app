@@ -41,11 +41,16 @@ class BaseTestCaseWithTempHome(AutopilotTestCase):
 
     """
 
-    local_location = os.path.dirname(os.path.dirname(os.getcwd()))
+    local_build_location = os.path.dirname(os.path.dirname(os.getcwd()))
+    sdk_build_location = os.path.join(os.path.dirname(local_build_location),
+        os.path.basename(local_build_location) + '-build')
 
-    local_location_qml = os.path.join(
-        local_location, 'src/app/qml/reminders.qml')
-    local_location_binary = os.path.join(local_location, 'src/app/reminders')
+    local_build_location_qml = os.path.join(
+        local_build_location, 'src/app/qml/reminders.qml')
+    local_build_location_binary = os.path.join(local_build_location, 'src/app/reminders')
+    sdk_build_location_qml = os.path.join(
+        sdk_build_location, 'src/app/qml/reminders.qml')
+    sdk_build_location_binary = os.path.join(sdk_build_location, 'src/app/reminders')
     installed_location_binary = '/usr/bin/reminders'
     installed_location_qml = '/usr/share/reminders/qml/reminders.qml'
 
@@ -63,9 +68,12 @@ class BaseTestCaseWithTempHome(AutopilotTestCase):
         subprocess.call(['pkill', '-9', 'signond'])
 
     def get_launcher_method_and_type(self):
-        if os.path.exists(self.local_location_binary):
+        if os.path.exists(self.local_build_location_binary):
             launcher = self.launch_test_local
             test_type = 'local'
+        elif os.path.exists(self.sdk_build_location_binary):
+            launcher = self.launch_test_sdk
+            test_type = 'sdk'
         elif os.path.exists(self.installed_location_binary):
             launcher = self.launch_test_installed
             test_type = 'deb'
@@ -78,9 +86,20 @@ class BaseTestCaseWithTempHome(AutopilotTestCase):
     def launch_test_local(self):
         self.useFixture(fixtures.EnvironmentVariable(
             'QML2_IMPORT_PATH',
-            newvalue=os.path.join(self.local_location, 'src/plugin')))
+            newvalue=os.path.join(self.local_build_location, 'src/plugin')))
         return self.launch_test_application(
-            self.local_location_binary,
+            self.local_build_location_binary,
+            '-s',
+            app_type='qt',
+            emulator_base=ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase)
+
+    @autopilot_logging.log_action(logger.info)
+    def launch_test_sdk(self):
+        self.useFixture(fixtures.EnvironmentVariable(
+            'QML2_IMPORT_PATH',
+            newvalue=os.path.join(self.sdk_build_location_binary, 'src/plugin')))
+        return self.launch_test_application(
+            self.sdk_build_location_binary,
             '-s',
             app_type='qt',
             emulator_base=ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase)
