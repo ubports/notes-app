@@ -36,7 +36,6 @@ logger = logging.getLogger(__name__)
 
 
 class BaseTestCaseWithTempHome(AutopilotTestCase):
-
     """Base test case that patches the home directory.
 
     That way we start the tests with a clean environment.
@@ -45,7 +44,8 @@ class BaseTestCaseWithTempHome(AutopilotTestCase):
 
     local_build_location = os.path.dirname(os.path.dirname(os.getcwd()))
     sdk_build_location = os.path.join(os.path.dirname(local_build_location),
-        os.path.basename(local_build_location) + '-build')
+                                      os.path.basename(local_build_location)
+                                      + '-build')
 
     local_build_location_qml = os.path.join(
         local_build_location, 'src/app/qml/reminders.qml')

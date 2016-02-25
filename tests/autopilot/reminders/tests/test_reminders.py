@@ -19,16 +19,7 @@
 from __future__ import absolute_import
 
 import logging
-import uuid
-
-from autopilot import platform
-from autopilot.matchers import Eventually
-from evernote.edam.error import ttypes as evernote_errors
-from testtools.matchers import Equals
-from time import sleep
-
-import reminders
-from reminders import credentials, evernote, fixture_setup, tests
+from reminders import tests
 
 
 logger = logging.getLogger(__name__)
@@ -38,80 +29,4 @@ class RemindersTestCaseWithoutAccount(tests.RemindersAppTestCase):
 
     def test_open_application_without_account(self):
         """Test that the No account dialog is visible."""
-        self.assertTrue(self.app.no_account_dialog.visible)
-
-    def test_go_to_account_settings(self):
-        """Test that the Go to account settings button calls url-dispatcher."""
-        self.skipTest("URL dispatcher fake service fails on device")
-        if platform.model() == 'Desktop':
-            self.skipTest("URL dispatcher doesn't work on the desktop.")
-        url_dispatcher = fixture_setup.FakeURLDispatcher()
-        self.useFixture(url_dispatcher)
-
-        self.app.no_account_dialog.open_account_settings()
-
-        def get_last_dispatch_url_call_parameter():
-            # Workaround for http://pad.lv/1312384
-            try:
-                return url_dispatcher.get_last_dispatch_url_call_parameter()
-            except reminders.RemindersAppException:
-                return None
-
-        self.assertThat(
-            get_last_dispatch_url_call_parameter,
-            Eventually(Equals('settings:///system/online-accounts')))
-
-
-class RemindersTestCaseWithAccount(tests.RemindersAppTestCase):
-
-    def setUp(self):
-        super(RemindersTestCaseWithAccount, self).setUp()
-        no_account_dialog = self.app.no_account_dialog
-        self.add_evernote_account()
-        logger.info('Waiting for the Evernote account to be created.')
-        no_account_dialog.wait_until_destroyed()
-        self.evernote_client = evernote.SandboxEvernoteClient()
-
-    def add_evernote_account(self):
-        account_manager = credentials.AccountManager()
-        account = account_manager.add_evernote_account(
-            'dummy', 'dummy', evernote.TEST_OAUTH_TOKEN)
-        self.addCleanup(account_manager.delete_account, account)
-        del account_manager._manager
-        del account_manager
-
-    def expunge_test_notebook(self, notebook_name):
-        try:
-            self.evernote_client.expunge_notebook_by_name(notebook_name)
-        except evernote_errors.EDAMNotFoundException:
-            # The notebook was already deleted or not successfully created.
-            pass
-
-    def test_add_notebook_must_append_it_to_list(self):
-        """Test that an added notebook will be available for selection."""
-        test_notebook_title = 'Test notebook {}'.format(uuid.uuid1())
-        self.addCleanup(self.expunge_test_notebook, test_notebook_title)
-
-        notebooks_page = self.app.open_notebooks()
-        notebooks_page.add_notebook(test_notebook_title)
-
-        notebooks_page.swipe_to_bottom()
-        last_notebook = notebooks_page.get_notebooks()[-1]
-        self.assertEqual(
-            last_notebook,
-            (test_notebook_title, 'Last edited today', 'Private', 0))
-
-    def test_add_notebook_must_create_it_in_server(self):
-        """Test that an added notebook will be created on the server."""
-        test_notebook_title = 'Test notebook {}'.format(uuid.uuid1())
-        self.addCleanup(self.expunge_test_notebook, test_notebook_title)
-
-        notebooks_page = self.app.open_notebooks()
-        notebooks_page.add_notebook(test_notebook_title)
-
-        # FIXME: This should wait for the note "synced" property to become true
-        # instead of just sleeping 2 secs
-        sleep(2)
-
-        # An exception will be raised if the notebook is note found.
-        self.evernote_client.get_notebook_by_name(test_notebook_title)
+        self.assertTrue(self.app.main_view.no_account_dialog.visible)

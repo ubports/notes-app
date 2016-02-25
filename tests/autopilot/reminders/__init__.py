@@ -44,7 +44,6 @@ class RemindersApp(object):
         # Use only objectName due to bug 1350532
         self.main_view = self.app.wait_select_single(objectName="mainView")
 
-
     @property
     def no_account_dialog(self):
         try:
@@ -76,9 +75,7 @@ class MainView(ubuntuuitoolkit.MainView):
         self.visible.wait_for(True)
 
 
-
 class NoAccountDialog(ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase):
-
     """Autopilot custom proxy object for the no account dialog."""
 
     @classmethod
