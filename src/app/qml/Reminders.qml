@@ -227,7 +227,7 @@ MainView {
         switch (accounts.count) {
         case 0:
             PopupUtils.open(noAccountDialog, root);
-            print("No account available! Please setup an account in the system settings");
+            print("No account available. Please set up an account in System Settings.");
             break;
         case 1:
             print("Connecting to account", accounts.get(0, "displayName"), "as there is only one account available");
@@ -711,10 +711,9 @@ MainView {
         Dialog {
             id: noAccount
             objectName: "noAccountDialog"
-            title: i18n.tr("Setup Evernote connection?")
+            title: i18n.tr("Sync with Evernote")
             text: i18n.tr("Notes can be stored on this device, or optionally synced with Evernote.") + " "
-                          + i18n.tr("In order to synchronize notes with Evernote, an account at Evernote is required.") + " "
-                          + i18n.tr("Do you want to setup an account now?")
+                          + i18n.tr("To sync with Evernote, you need an Evernote account.")
 
             Connections {
                 target: accounts
@@ -729,8 +728,7 @@ MainView {
             RowLayout {
                 Button {
                     objectName: "openAccountButton"
-                    text: i18n.tr("No")
-                    color: UbuntuColors.red
+                    text: i18n.tr("Not Now")
                     onClicked: {
                         PopupUtils.close(noAccount)
                         accountService.startAuthentication("@local", null);
@@ -739,7 +737,7 @@ MainView {
                 }
                 Button {
                     objectName: "openAccountButton"
-                    text: i18n.tr("Yes")
+                    text: i18n.tr("Set Up…")
                     color: UbuntuColors.green
                     onClicked: setup.exec()
                     Layout.fillWidth: true
