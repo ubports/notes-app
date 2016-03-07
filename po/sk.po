@@ -8,18 +8,18 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-09-21 18:39+0200\n"
-"PO-Revision-Date: 2014-10-27 23:01+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2016-02-29 18:17+0000\n"
+"Last-Translator: P_E_T_O <Unknown>\n"
 "Language-Team: Slovak <sk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-11-21 05:35+0000\n"
-"X-Generator: Launchpad (build 17850)\n"
+"X-Launchpad-Export-Date: 2016-03-01 05:51+0000\n"
+"X-Generator: Launchpad (build 17925)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:562
 msgid "Notes"
-msgstr ""
+msgstr "Poznámky"
 
 #: com.ubuntu.reminders.desktop.in.in.h:2
 msgid "Ubuntu Notes app, powered by Evernote"
@@ -68,7 +68,7 @@ msgstr ""
 #: src/app/qml/reminders.qml:271 src/app/qml/ui/EditNoteView.qml:43
 #: src/app/qml/ui/NotesPage.qml:67
 msgid "Untitled"
-msgstr ""
+msgstr "Bez názvu"
 
 #. TRANSLATORS: Button that deletes a reminder
 #: src/app/qml/components/NotebooksDelegate.qml:36
@@ -76,20 +76,20 @@ msgstr ""
 #: src/app/qml/components/TagsDelegate.qml:34 src/app/qml/ui/NotesPage.qml:91
 #: src/app/qml/ui/SetReminderView.qml:76
 msgid "Delete"
-msgstr ""
+msgstr "Vymazať"
 
 #: src/app/qml/components/NotebooksDelegate.qml:97
 #, qt-format
 msgid "Last edited %1"
-msgstr ""
+msgstr "Naposledy upravené %1"
 
 #: src/app/qml/components/NotebooksDelegate.qml:116
 msgid "Shared"
-msgstr ""
+msgstr "Zdieľané"
 
 #: src/app/qml/components/NotebooksDelegate.qml:116
 msgid "Private"
-msgstr ""
+msgstr "Súkromné"
 
 #: src/app/qml/components/NotesDelegate.qml:73
 msgid "Reminder"
@@ -97,25 +97,25 @@ msgstr ""
 
 #: src/app/qml/components/NotesDelegate.qml:80 src/app/qml/reminders.qml:641
 msgid "Tags"
-msgstr ""
+msgstr "Označenia"
 
 #. TRANSLATORS: Button to go from note viewer to note editor
 #: src/app/qml/components/NotesDelegate.qml:87 src/app/qml/ui/NoteView.qml:172
 #: src/app/qml/ui/NotesPage.qml:113
 msgid "Edit"
-msgstr ""
+msgstr "Zmeniť"
 
 #: src/app/qml/components/PulldownListView.qml:40
 msgid "Release to refresh"
-msgstr ""
+msgstr "Uvoľniť pre aktualizovanie"
 
 #: src/app/qml/components/PulldownListView.qml:40
 msgid "Pull down to refresh"
-msgstr ""
+msgstr "Potiahnuť pre aktualizovanie"
 
 #: src/app/qml/components/RemindersDelegate.qml:36
 msgid "Clear reminder"
-msgstr ""
+msgstr "Vymazať pripomienku"
 
 #: src/app/qml/components/RemindersDelegate.qml:49
 msgid "Mark as undone"
@@ -123,12 +123,12 @@ msgstr ""
 
 #: src/app/qml/components/RemindersDelegate.qml:49
 msgid "Mark as done"
-msgstr ""
+msgstr "Označiť ako dokončené"
 
 #: src/app/qml/components/RemindersDelegate.qml:57
 #: src/app/qml/ui/NotesPage.qml:99
 msgid "Edit reminder"
-msgstr ""
+msgstr "Upraviť pripomienku"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:25
 msgid "Resolve conflict"
@@ -222,21 +222,23 @@ msgstr ""
 
 #: src/app/qml/reminders.qml:590
 msgid "Notebooks"
-msgstr ""
+msgstr "Zápisníky"
 
 #: src/app/qml/reminders.qml:624
 msgid "Reminders"
-msgstr ""
+msgstr "Pripomienky"
 
 #: src/app/qml/reminders.qml:654
 msgid "Accounts"
-msgstr ""
+msgstr "Účty"
 
 #: src/app/qml/reminders.qml:673
 msgid ""
 "No note selected.\n"
 "Select a note to see it in detail."
 msgstr ""
+"Nie je vybraná žiadna poznámka.\n"
+"Vyberte jednu pre jej podrobné zobrazenie."
 
 #: src/app/qml/reminders.qml:716
 msgid "Setup Evernote connection?"
@@ -305,39 +307,39 @@ msgstr ""
 #: src/app/qml/ui/AccountSelectorPage.qml:82
 #, qt-format
 msgid "%1 - Tap to authorize"
-msgstr ""
+msgstr "%1 - Stlač pre overenie"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:91
 msgid "Add new account"
-msgstr ""
+msgstr "Pridať nový účet"
 
 #: src/app/qml/ui/EditNoteView.qml:425
 msgid "Font"
-msgstr ""
+msgstr "Font"
 
 #: src/app/qml/ui/EditNoteView.qml:437
 msgid "Size"
-msgstr ""
+msgstr "Veľkosť"
 
 #. TRANSLATORS: Toolbar button for "Bold"
 #: src/app/qml/ui/EditNoteView.qml:460
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #. TRANSLATORS: Toolbar button for "Italic"
 #: src/app/qml/ui/EditNoteView.qml:473
 msgid "I"
-msgstr ""
+msgstr "I"
 
 #. TRANSLATORS: Toolbar button for "Underline"
 #: src/app/qml/ui/EditNoteView.qml:487
 msgid "U"
-msgstr ""
+msgstr "U"
 
 #. TRANSLATORS: Toolbar button for "Strikeout"
 #: src/app/qml/ui/EditNoteView.qml:501
 msgid "T"
-msgstr ""
+msgstr "T"
 
 #: src/app/qml/ui/NoteConflictPage.qml:27
 msgid "Conflicting changes"
@@ -371,22 +373,22 @@ msgstr ""
 
 #: src/app/qml/ui/NotebooksPage.qml:45
 msgid "Add notebook"
-msgstr ""
+msgstr "Pridať zápisníky"
 
 #: src/app/qml/ui/NotebooksPage.qml:52 src/app/qml/ui/NotesPage.qml:84
 #: src/app/qml/ui/RemindersPage.qml:36 src/app/qml/ui/SearchNotesPage.qml:60
 #: src/app/qml/ui/TagsPage.qml:52
 msgid "Search"
-msgstr ""
+msgstr "Hľadať"
 
 #: src/app/qml/ui/NotebooksPage.qml:166
 msgid "Cancel"
-msgstr ""
+msgstr "Zrušiť"
 
 #. TRANSLATORS: Button that saves a reminder
 #: src/app/qml/ui/NotebooksPage.qml:175 src/app/qml/ui/SetReminderView.qml:88
 msgid "Save"
-msgstr ""
+msgstr "Uložiť"
 
 #: src/app/qml/ui/NotebooksPage.qml:195
 msgid "Rename notebook"
@@ -403,7 +405,7 @@ msgstr ""
 
 #: src/app/qml/ui/NotesPage.qml:43 src/app/qml/ui/NotesPage.qml:64
 msgid "Add note"
-msgstr ""
+msgstr "Pridať poznámku"
 
 #: src/app/qml/ui/NotesPage.qml:72
 msgid "Sorting"
@@ -411,7 +413,7 @@ msgstr ""
 
 #: src/app/qml/ui/NotesPage.qml:99
 msgid "Set reminder"
-msgstr ""
+msgstr "Nastaviť pripomienku"
 
 #: src/app/qml/ui/NotesPage.qml:243
 msgid ""
@@ -424,14 +426,16 @@ msgid ""
 "No reminders available. You can create new reminders by setting a reminder "
 "when viewing a note."
 msgstr ""
+"Nie sú dostupné žiadne pripomienky. Nové pripomienky môžete vytvárať "
+"nastavením pripomienky pri zobrazení poznámky."
 
 #: src/app/qml/ui/SearchNotesPage.qml:32
 msgid "Search notes"
-msgstr ""
+msgstr "Vyhľadať poznámky"
 
 #: src/app/qml/ui/SetReminderView.qml:36
 msgid "Select date and time for the reminder:"
-msgstr ""
+msgstr "Zvoľte dátum a čas pre pripomienku:"
 
 #. TRANSLATORS: A checkbox with marks the reminder as done
 #: src/app/qml/ui/SetReminderView.qml:64
@@ -441,6 +445,8 @@ msgstr ""
 #: src/app/qml/ui/TagsPage.qml:126
 msgid "No tags available. You can tag notes while viewing them."
 msgstr ""
+"Neboli nájdené žiadne označenia. Označenia sa pridávajú pri zobrazení "
+"poznámok."
 
 #: src/app/qml/ui/TagsPage.qml:133
 msgid "Rename tag"
@@ -538,7 +544,7 @@ msgstr ""
 
 #: src/libqtevernote/note.cpp:171 src/libqtevernote/note.cpp:205
 msgid "Two weeks ago"
-msgstr ""
+msgstr "Pred dvoma týždňami"
 
 #. TRANSLATORS: the first argument refers to a month name and the second to a year
 #: src/libqtevernote/note.cpp:175 src/libqtevernote/note.cpp:209
@@ -556,7 +562,7 @@ msgstr ""
 
 #: src/libqtevernote/note.cpp:378
 msgid "Overdue"
-msgstr ""
+msgstr "Oneskorenie"
 
 #: src/libqtevernote/note.cpp:384
 msgid "Tomorrow"
@@ -564,11 +570,11 @@ msgstr ""
 
 #: src/libqtevernote/note.cpp:387
 msgid "Next week"
-msgstr ""
+msgstr "Budúci týždeň"
 
 #: src/libqtevernote/note.cpp:390
 msgid "In two weeks"
-msgstr ""
+msgstr "Za dva týždne"
 
 #: src/libqtevernote/note.cpp:392
 msgid "Later"
@@ -592,14 +598,14 @@ msgstr ""
 #. TRANSLATORS: this is part of a longer string - "Last updated: two weeks ago"
 #: src/libqtevernote/notebook.cpp:134
 msgid "two weeks ago"
-msgstr ""
+msgstr "pred dvoma týždňami"
 
 #. TRANSLATORS: this is used in the notes list to group notes created on the same month
 #. the first parameter refers to a month name and the second to a year
 #: src/libqtevernote/notebook.cpp:138
 #, qt-format
 msgid "on %1 %2"
-msgstr ""
+msgstr "v %1 %2"
 
 #: src/libqtevernote/notesstore.cpp:415
 msgid ""
