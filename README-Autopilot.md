@@ -43,7 +43,7 @@ Using terminal:
 
 * Debugging tests using autopilot vis
 
-    $ autopilot3 launch -i Qt qmlscene src/app/terminal
+    $ autopilot3 launch -i Qt qmlscene src/app/reminders
 
     $ autopilot3 vis
 
