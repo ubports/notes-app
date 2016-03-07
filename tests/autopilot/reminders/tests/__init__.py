@@ -186,12 +186,6 @@ class BaseTestCaseWithTempHome(AutopilotTestCase):
             temp_dir = temp_dir_fixture.path
             temp_xdg_config_home = os.path.join(temp_dir, '.config')
 
-            # If running under xvfb, as jenkins does,
-            # xsession will fail to start without xauthority file
-            # Thus if the Xauthority file is in the home directory
-            # make sure we copy it to our temp home directory
-            self._copy_xauthority_file(temp_dir)
-
             self.useFixture(
                 fixtures.EnvironmentVariable('HOME', newvalue=temp_dir))
             self.useFixture(
@@ -201,15 +195,6 @@ class BaseTestCaseWithTempHome(AutopilotTestCase):
             logger.debug('Patched home to fake home directory ' + temp_dir)
 
             return temp_dir
-
-    def _copy_xauthority_file(self, directory):
-        """Copy .Xauthority file to directory, if it exists in /home."""
-        xauth = os.path.expanduser(os.path.join('~', '.Xauthority'))
-        if os.path.isfile(xauth):
-            logger.debug("Copying .Xauthority to " + directory)
-            shutil.copyfile(
-                os.path.expanduser(os.path.join('~', '.Xauthority')),
-                os.path.join(directory, '.Xauthority'))
 
 
 class RemindersAppTestCase(BaseTestCaseWithTempHome):
