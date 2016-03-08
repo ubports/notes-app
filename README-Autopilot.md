@@ -57,7 +57,7 @@ Running tests on device or emulator:
 
 Using autopkg:
 
-*  Branch the code, for example,
+*  Branch the code
 
     $ bzr branch lp:reminders-app
 
