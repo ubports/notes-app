@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-09-21 18:39+0200\n"
-"PO-Revision-Date: 2016-02-29 18:17+0000\n"
+"PO-Revision-Date: 2016-03-07 14:04+0000\n"
 "Last-Translator: P_E_T_O <Unknown>\n"
 "Language-Team: Slovak <sk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-03-01 05:51+0000\n"
-"X-Generator: Launchpad (build 17925)\n"
+"X-Launchpad-Export-Date: 2016-03-08 05:52+0000\n"
+"X-Generator: Launchpad (build 17936)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:562
 msgid "Notes"
@@ -31,11 +31,11 @@ msgstr ""
 
 #: src/app/qml/components/ConflictDelegate.qml:63
 msgid "Reminder:"
-msgstr ""
+msgstr "Pripomienka:"
 
 #: src/app/qml/components/EditTagsDialog.qml:29
 msgid "Edit tags"
-msgstr ""
+msgstr "Upraviť štítky"
 
 #: src/app/qml/components/EditTagsDialog.qml:32
 msgid "Enter a tag name to attach it to the note."
@@ -48,19 +48,19 @@ msgstr ""
 
 #: src/app/qml/components/EditTagsDialog.qml:62
 msgid "Tag name"
-msgstr ""
+msgstr "Názov štítku"
 
 #: src/app/qml/components/EditTagsDialog.qml:142
 #: src/app/qml/ui/NotebooksPage.qml:209 src/app/qml/ui/TagsPage.qml:147
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #. TRANSLATORS: Button to close the edit mode
 #. TRANSLATORS: Button to close the note viewer
 #: src/app/qml/components/EditTagsDialog.qml:190
 #: src/app/qml/ui/EditNoteView.qml:605 src/app/qml/ui/NoteView.qml:150
 msgid "Close"
-msgstr ""
+msgstr "Zavrieť"
 
 #: src/app/qml/components/NoteHeader.qml:52
 #: src/app/qml/components/PageWithBottomEdge.qml:123
@@ -93,7 +93,7 @@ msgstr "Súkromné"
 
 #: src/app/qml/components/NotesDelegate.qml:73
 msgid "Reminder"
-msgstr ""
+msgstr "Pripomienka"
 
 #: src/app/qml/components/NotesDelegate.qml:80 src/app/qml/reminders.qml:641
 msgid "Tags"
@@ -168,21 +168,21 @@ msgstr ""
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:45
 msgid "Are you sure you want to continue?"
-msgstr ""
+msgstr "Ste si istý, že chcete pokračovať?"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:57
 #: src/app/qml/reminders.qml:744
 msgid "Yes"
-msgstr ""
+msgstr "Áno"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:66
 #: src/app/qml/reminders.qml:734
 msgid "No"
-msgstr ""
+msgstr "Nie"
 
 #: src/app/qml/components/SortingDialog.qml:20
 msgid "Sort by"
-msgstr ""
+msgstr "Usporiadať podľa"
 
 #: src/app/qml/components/SortingDialog.qml:29
 msgid "Date created (newest first)"
@@ -210,7 +210,7 @@ msgstr ""
 
 #: src/app/qml/reminders.qml:422
 msgid "Default notebook"
-msgstr ""
+msgstr "Predvolený zápisník"
 
 #: src/app/qml/reminders.qml:540
 msgid "Select note to attach imported file"
@@ -282,7 +282,7 @@ msgstr ""
 
 #: src/app/qml/reminders.qml:769
 msgid "Create new note"
-msgstr ""
+msgstr "Vytvoriť novú poznámku"
 
 #: src/app/qml/reminders.qml:774
 msgid "Attach to existing note"
@@ -369,7 +369,7 @@ msgstr ""
 
 #: src/app/qml/ui/NoteView.qml:184
 msgid "Attachment"
-msgstr ""
+msgstr "Príloha"
 
 #: src/app/qml/ui/NotebooksPage.qml:45
 msgid "Add notebook"
@@ -409,7 +409,7 @@ msgstr "Pridať poznámku"
 
 #: src/app/qml/ui/NotesPage.qml:72
 msgid "Sorting"
-msgstr ""
+msgstr "Triedenie"
 
 #: src/app/qml/ui/NotesPage.qml:99
 msgid "Set reminder"
@@ -459,7 +459,7 @@ msgstr ""
 
 #: src/libqtevernote/evernoteconnection.cpp:268
 msgid "Offline mode"
-msgstr ""
+msgstr "Režim offline"
 
 #: src/libqtevernote/evernoteconnection.cpp:273
 #: src/libqtevernote/evernoteconnection.cpp:362
@@ -532,15 +532,15 @@ msgstr ""
 #: src/libqtevernote/note.cpp:162 src/libqtevernote/note.cpp:196
 #: src/libqtevernote/note.cpp:381
 msgid "Today"
-msgstr ""
+msgstr "Dnes"
 
 #: src/libqtevernote/note.cpp:165 src/libqtevernote/note.cpp:199
 msgid "Yesterday"
-msgstr ""
+msgstr "Včera"
 
 #: src/libqtevernote/note.cpp:168 src/libqtevernote/note.cpp:202
 msgid "Last week"
-msgstr ""
+msgstr "Minulý týždeň"
 
 #: src/libqtevernote/note.cpp:171 src/libqtevernote/note.cpp:205
 msgid "Two weeks ago"
@@ -550,15 +550,15 @@ msgstr "Pred dvoma týždňami"
 #: src/libqtevernote/note.cpp:175 src/libqtevernote/note.cpp:209
 #, qt-format
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: src/libqtevernote/note.cpp:369
 msgid "Done"
-msgstr ""
+msgstr "Hotovo"
 
 #: src/libqtevernote/note.cpp:375
 msgid "No date"
-msgstr ""
+msgstr "Žiadny dátum"
 
 #: src/libqtevernote/note.cpp:378
 msgid "Overdue"
@@ -566,7 +566,7 @@ msgstr "Oneskorenie"
 
 #: src/libqtevernote/note.cpp:384
 msgid "Tomorrow"
-msgstr ""
+msgstr "Zajtra"
 
 #: src/libqtevernote/note.cpp:387
 msgid "Next week"
@@ -578,22 +578,22 @@ msgstr "Za dva týždne"
 
 #: src/libqtevernote/note.cpp:392
 msgid "Later"
-msgstr ""
+msgstr "Neskôr"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: today"
 #: src/libqtevernote/notebook.cpp:122
 msgid "today"
-msgstr ""
+msgstr "dnes"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: yesterday"
 #: src/libqtevernote/notebook.cpp:126
 msgid "yesterday"
-msgstr ""
+msgstr "včera"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: last week"
 #: src/libqtevernote/notebook.cpp:130
 msgid "last week"
-msgstr ""
+msgstr "minulý týždeň"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: two weeks ago"
 #: src/libqtevernote/notebook.cpp:134
@@ -636,4 +636,4 @@ msgstr ""
 #. TRANSLATORS: A default file name if we don't get one from the server. Avoid weird characters.
 #: src/libqtevernote/resource.cpp:39
 msgid "Unnamed"
-msgstr ""
+msgstr "Bez názvu"
