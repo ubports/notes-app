@@ -158,7 +158,7 @@ MainView {
                 })
             } else {
                 var page = pagestack.push(Qt.createComponent(Qt.resolvedUrl("ui/NotePage.qml")), {readOnly: conflictMode, note: note })
-                page.editNote.connect(function(note) {root.switchToEditMode(note)})
+                page.editNote.connect(function() {root.switchToEditMode(note)})
             }
         } else {
             var view;
@@ -189,11 +189,12 @@ MainView {
         if (root.narrowMode) {
             if (pagestack.depth > 1) {
                 pagestack.pop();
+                var page = pagestack.push(Qt.resolvedUrl("ui/EditNotePage.qml"), {note: note, newNote: false});
+                page.exitEditMode.connect(function() {Qt.inputMethod.hide(); pagestack.pop();});
             }
         } else {
             sideViewLoader.clear();
             var view = sideViewLoader.embed(Qt.resolvedUrl("ui/EditNoteView.qml"))
-            print("--- setting note:", note)
             view.note = note;
             view.exitEditMode.connect(function(note) {root.displayNote(note)});
         }

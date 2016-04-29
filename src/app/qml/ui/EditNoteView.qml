@@ -111,7 +111,6 @@ Item {
     Connections {
         target: Qt.application
         onActiveChanged: {
-            print("active changed", root, root.note, active)
             if (root.note) {
                 print("Saving note:", root.note.guid)
                 root.saveNote()
