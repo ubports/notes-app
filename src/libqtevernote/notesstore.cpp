@@ -107,6 +107,13 @@ void NotesStore::setUsername(const QString &username)
         m_username = username;
         emit usernameChanged();
 
+        QDir storageDir(storageLocation());
+        foreach (const QString &fileName, storageDir.entryList({"*.lock"})) {
+            qCDebug(dcNotesStore) << "Removing stale lock file" << storageLocation() + "/" + fileName;
+            QFile f(storageLocation() +  "/" + fileName);
+            f.remove();
+        }
+
         m_cacheFile = storageLocation() + "notes.cache";
         qCDebug(dcNotesStore) << "Initialized cacheFile:" << m_cacheFile;
         loadFromCacheFile();
