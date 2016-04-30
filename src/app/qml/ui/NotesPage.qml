@@ -201,7 +201,7 @@ PageWithBottomEdge {
             }
             onEditTags: {
                 var popup = PopupUtils.open(Qt.resolvedUrl("../components/EditTagsDialog.qml"), root,
-                                { note: NotesStore.note(model.guid), pageHeight: root.height });
+                                { note: NotesStore.note(model.guid) });
                 popup.done.connect(function() { NotesStore.saveNote(popup.note.guid)})
             }
         }
