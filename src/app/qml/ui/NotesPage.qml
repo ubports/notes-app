@@ -72,13 +72,11 @@ PageWithBottomEdge {
                 iconSource: "../images/sorting.svg"
                 text: i18n.tr("Sorting")
                 onTriggered: {
-                    var popupComponent = Qt.createComponent(Qt.resolvedUrl("../components/SortingDialog.qml"));
-                    var popup = popupComponent.createObject(root, {sortOrder: notes.sortOrder} )
-                    popup.accepted.connect( function() {
-                        notes.sortOrder = popup.sortOrder
+                    var popup = PopupUtils.open(Qt.resolvedUrl("../components/SortingDialog.qml"), root, {sortOrder: notes.sortOrder})
+                    popup.accepted.connect( function(sortOrder) {
+                        notes.sortOrder = sortOrder
                         popup.destroy();
                     })
-                    popup.sortOrder = notes.sortOrder;
                 }
             },
             Action {

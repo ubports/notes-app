@@ -2,46 +2,33 @@ import QtQuick 2.4
 import Ubuntu.Components 1.3
 import Ubuntu.Components.Popups 1.3
 import Ubuntu.Components.ListItems 1.3
-import reminders 1.0
+import Evernote 0.1
 
-Item {
-    id: root
+Dialog {
+    id: dialog
+    title: i18n.tr("Sort by")
 
-    property int sortOrder
+    property alias sortOrder: optionSelector.selectedIndex
 
-    signal accepted();
+    signal accepted(int sortOrder);
 
-    Component.onCompleted: PopupUtils.open(dialogComponent, root, {sortOrder: root.sortOrder})
-
-    Component {
-        id: dialogComponent
-        Dialog {
-            id: dialog
-            title: i18n.tr("Sort by")
-
-            property alias sortOrder: optionSelector.selectedIndex
-
-
-            OptionSelector {
-                id: optionSelector
-                expanded: true
-                model: [
-                    i18n.tr("Date created (newest first)"),
-                    i18n.tr("Date created (oldest first)"),
-                    i18n.tr("Date updated (newest first)"),
-                    i18n.tr("Date updated (oldest first)"),
-                    i18n.tr("Title (ascending)"),
-                    i18n.tr("Title (descending)")
-                ]
-                delegate: OptionSelectorDelegate {
-                    objectName: "sortingOption" + index
-                }
-                onDelegateClicked: {
-                    root.sortOrder = index
-                    root.accepted();
-                    PopupUtils.close(dialog);
-                }
-            }
+    OptionSelector {
+        id: optionSelector
+        expanded: true
+        model: [
+            i18n.tr("Date created (newest first)"),
+            i18n.tr("Date created (oldest first)"),
+            i18n.tr("Date updated (newest first)"),
+            i18n.tr("Date updated (oldest first)"),
+            i18n.tr("Title (ascending)"),
+            i18n.tr("Title (descending)")
+        ]
+        delegate: OptionSelectorDelegate {
+            objectName: "sortingOption" + index
+        }
+        onDelegateClicked: {
+            dialog.accepted(index);
+            PopupUtils.close(dialog);
         }
     }
 }
