@@ -33,7 +33,6 @@ Dialog {
     property string haveTagsText: i18n.tr("Enter a tag name or select one from the list to attach it to the note.")
 
     property var note
-    property int pageHeight
 
     signal done();
 
@@ -66,7 +65,12 @@ Dialog {
 
                 function accept() {
                     var tagName = displayText;
-                    text = '';
+                    // While displayText might be something useful, text will be empty when typing with
+                    // predictive keyboard. displayText is read-only though, in order to update it, we
+                    // need to actually cause a changed event on text, so let's set it and unset it again.
+                    textField.text = ' ';
+                    textField.text = '';
+
 
                     // Check if the tag exists
                     for (var i=0; i < tags.count; i++) {
@@ -146,25 +150,33 @@ Dialog {
         }
     }
 
-    OptionSelector {
-        id: optionSelector
+    Column {
+        width: parent.width
 
-        Layout.preferredWidth: parent.width - units.gu(2)
-        Layout.alignment: Qt.AlignHCenter
+        Repeater {
+            id: optionSelector
 
-        currentlyExpanded: true
-        multiSelection: true
+            model: tags
 
-        containerHeight: Math.min(root.pageHeight / 3, tags.count * itemHeight)
+            ListItem {
+                id: tagDelegate
+                height: units.gu(5)
+                property bool selected: root.note ? root.note.tagGuids.indexOf(model.guid) !== -1 : false
 
-        model: tags
+                SlotsLayout {
+                    height: units.gu(5)
+                    mainSlot: Label {
+                        text: model.name
+                    }
 
-        delegate: OptionSelectorDelegate {
-            text: model.name
-            selected: root.note ? root.note.tagGuids.indexOf(model.guid) !== -1 : false
-
-            MouseArea {
-                anchors.fill: parent
+                    Icon {
+                        name: "tick"
+                        height: units.gu(3)
+                        width: height
+                        visible: tagDelegate.selected
+                        SlotsLayout.position: SlotsLayout.Trailing
+                    }
+                }
 
                 onClicked: {
                     if (selected) {

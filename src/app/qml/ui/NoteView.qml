@@ -69,7 +69,7 @@ Item {
                 pagestack.push(Qt.resolvedUrl("SetReminderPage.qml"), { note: root.note});
             }
             onEditTags: {
-                PopupUtils.open(Qt.resolvedUrl("../components/EditTagsDialog.qml"), root, { note: root.note, pageHeight: root.height });
+                PopupUtils.open(Qt.resolvedUrl("../components/EditTagsDialog.qml"), root, { note: root.note });
             }
         }
     }
