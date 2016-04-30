@@ -124,8 +124,6 @@ MainView {
         }
     }
 
-    backgroundColor: "#dddddd"
-
     function openAccountPage() {
         var unauthorizedAccounts = allAccounts.count - accounts.count > 0 ? true : false
         var accountPage = pagestack.push(Qt.createComponent(Qt.resolvedUrl("ui/AccountSelectorPage.qml")), { accounts: accounts, unauthorizedAccounts: unauthorizedAccounts, oaSetup: setup });
