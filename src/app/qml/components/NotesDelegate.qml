@@ -189,13 +189,6 @@ ListItemWithActions {
                     fillMode: Image.PreserveAspectCrop
                 }
             }
-            Rectangle {
-                anchors.fill: parent
-                gradient: Gradient {
-                    GradientStop{ position: 0.8; color: "transparent" }
-                    GradientStop{ position: 1; color: "#d9d9d9" }
-                }
-            }
         }
 
     }
