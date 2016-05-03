@@ -215,9 +215,15 @@ PageWithBottomEdge {
         }
         section.property: root.sortOrderToString(notes.sortOrder);
 
-        section.delegate: Empty {
+        section.delegate: ListItem {
             height: units.gu(5)
-            showDivider: false
+            Rectangle {
+                anchors { left: parent.left; top: parent.top; right: parent.right }
+                height: units.dp(1)
+                color: theme.palette.normal.base
+                visible: index > 0
+            }
+
             RowLayout {
                 anchors { left: parent.left; right: parent.right; verticalCenter: parent.verticalCenter; margins: units.gu(1) }
                 Label {
