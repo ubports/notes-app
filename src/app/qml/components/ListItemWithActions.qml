@@ -29,9 +29,8 @@ Item {
     property Action activeAction: null
     property var activeItem: null
     property bool triggerActionOnMouseRelease: false
-    property color color: Theme.palette.normal.background
-    property color selectedColor: "#E6E6E6"
-    property color selectedRightActionColor: UbuntuColors.lightAubergine
+    property color color: theme.palette.normal.background
+    property color selectedRightActionColor: theme.palette.normal.positive
     property bool selected: false
     property bool selectionMode: false
     property alias showDivider: divider.visible
@@ -185,7 +184,7 @@ Item {
         }
         width: root.leftActionWidth + actionThreshold
         visible: leftSideAction
-        color: UbuntuColors.red
+        color: theme.palette.normal.negative
 
         Icon {
             anchors {
@@ -193,7 +192,7 @@ Item {
                 horizontalCenterOffset: actionThreshold / 2
             }
             name: leftSideAction && _showActions ? leftSideAction.iconName : ""
-            color: Theme.palette.selected.field
+            color: theme.palette.normal.negativeText
             height: units.gu(3)
             width: units.gu(3)
         }
@@ -244,7 +243,7 @@ Item {
                        height: units.gu(3)
                        source: modelData.iconSource ? modelData.iconSource : ''
                        name: modelData.iconName ? modelData.iconName : ''
-                       color: root.activeAction === modelData || !root.triggerActionOnMouseRelease ? root.selectedRightActionColor : UbuntuColors.lightGrey
+                       color: root.activeAction === modelData || !root.triggerActionOnMouseRelease ? root.selectedRightActionColor : theme.palette.normal.backgroundSecondaryText
                    }
                    Rectangle {
                        id: underscore

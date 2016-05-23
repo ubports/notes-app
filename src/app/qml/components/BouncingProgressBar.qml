@@ -28,7 +28,7 @@ Item {
     Rectangle {
         id: rectangle
         anchors.fill: parent
-        color: UbuntuColors.orange
+        color: theme.palette.normal.activity
         visible: animation.running // Avoid to show the orange bar before animation starts
     }
 

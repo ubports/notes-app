@@ -75,7 +75,7 @@ Item {
                 // TRANSLATORS: Button that deletes a reminder
                 text: i18n.tr("Delete")
                 Layout.fillWidth: true
-                color: UbuntuColors.red
+                color: theme.palette.normal.negative
                 onClicked: {
                     note.reminder = false;
                     NotesStore.saveNote(note.guid);
@@ -86,7 +86,7 @@ Item {
                 Layout.fillWidth: true
                 // TRANSLATORS: Button that saves a reminder
                 text: i18n.tr("Save")
-                color: UbuntuColors.green
+                color: theme.palette.normal.positive
                 onClicked: {
                     note.reminder = true;
                     var date = datePicker.date

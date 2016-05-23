@@ -149,7 +149,7 @@ Item {
                 // TRANSLATORS: Button to close the note viewer
                 text: i18n.tr("Close")
                 height: parent.height
-                iconColor: UbuntuColors.green
+                iconColor: theme.palette.normal.positive
                 visible: root.canClose
                 onClicked: {
                     pageStack.pop()
@@ -171,7 +171,7 @@ Item {
                 // TRANSLATORS: Button to go from note viewer to note editor
                 text: i18n.tr("Edit")
                 height: parent.height
-                iconColor: UbuntuColors.green
+                iconColor: theme.palette.normal.positive
                 onClicked: {
                     root.editNote()
                 }

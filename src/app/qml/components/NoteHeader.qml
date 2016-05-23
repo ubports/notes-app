@@ -117,7 +117,7 @@ FocusScope {
                             iconName: root.note && root.note.reminder ? "reminder" : "reminder-new"
                             height: parent.height
                             width: height
-                            iconColor: root.note && note.reminder ? UbuntuColors.blue : Qt.rgba(0.0, 0.0, 0.0, 0.0)
+                            iconColor: root.note && note.reminder ? theme.palette.normal.positive : Qt.rgba(0.0, 0.0, 0.0, 0.0)
                             visible: index == notebookSelector.selectedIndex
                             onClicked: {
                                 Qt.inputMethod.hide();

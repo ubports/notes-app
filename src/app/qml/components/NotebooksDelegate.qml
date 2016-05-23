@@ -39,7 +39,6 @@ ListItemWithActions {
         }
     }
 
-    selectedRightActionColor: UbuntuColors.green
     triggerActionOnMouseRelease: true
     rightSideActions: [
         Action {

@@ -48,7 +48,7 @@ Item {
 
     Rectangle {
         anchors.fill: parent
-        color: UbuntuColors.darkGrey
+        color: theme.palette.normal.backgroundSecondaryText
         opacity: root.active || mouseArea.pressed ? 0.2 : 0
     }
 

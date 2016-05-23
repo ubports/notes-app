@@ -56,7 +56,6 @@ ListItemWithActions {
         }
     }
 
-    selectedRightActionColor: UbuntuColors.green
     triggerActionOnMouseRelease: true
     rightSideActions: root.conflicting ? conflictActions : enabledRightSideActions
     property list<Action> conflictActions: [
