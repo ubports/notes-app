@@ -89,7 +89,7 @@ Page {
             anchors.horizontalCenter: parent.horizontalCenter
             width: parent.width - units.gu(2)
             text: i18n.tr("Add new account")
-            color: UbuntuColors.orange
+            color: theme.palette.normal.positive
             onClicked: root.oaSetup.exec()
         }
      }

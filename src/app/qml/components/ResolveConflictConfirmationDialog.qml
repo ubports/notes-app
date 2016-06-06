@@ -55,7 +55,7 @@ Dialog {
 
     Button {
         text: i18n.tr("Yes")
-        color: UbuntuColors.green
+        color: theme.palette.normal.positive
         onClicked: {
             root.accepted();
             PopupUtils.close(root);
@@ -64,7 +64,7 @@ Dialog {
 
     Button {
         text: i18n.tr("No")
-        color: UbuntuColors.red
+        color: theme.palette.normal.negative
         onClicked: {
             root.rejected();
             PopupUtils.close(root)

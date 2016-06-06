@@ -515,7 +515,7 @@ MainView {
             shown: text
             text: EvernoteConnection.error || NotesStore.error
             iconName: "sync-error"
-            iconColor: UbuntuColors.red
+            iconColor: theme.palette.normal.negative
             showCancelButton: true
 
             onCancel: {
@@ -737,7 +737,7 @@ MainView {
                 Button {
                     objectName: "openAccountButton"
                     text: i18n.tr("Set Up…")
-                    color: UbuntuColors.green
+                    color: theme.palette.normal.positive
                     onClicked: setup.exec()
                     Layout.fillWidth: true
                 }
@@ -763,17 +763,15 @@ MainView {
             Button {
                 text: i18n.tr("Create new note")
                 onClicked: importDialog.accepted(true)
-                color: UbuntuColors.green
+                color: theme.palette.normal.positive
             }
             Button {
                 text: i18n.tr("Attach to existing note")
                 onClicked: importDialog.accepted(false);
-                color: UbuntuColors.blue
             }
             Button {
                 text: i18n.tr("Cancel import")
                 onClicked: importDialog.rejected();
-                color: UbuntuColors.red
             }
         }
     }

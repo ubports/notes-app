@@ -165,7 +165,7 @@ Page {
         visible: bottomEdgeLabelVisible
 
         z: 1
-        color: Theme.palette.normal.background
+        color: theme.palette.normal.background
         parent: page
         anchors {
             left: parent.left
@@ -205,7 +205,7 @@ Page {
 
                 width: tipLabel.paintedWidth + units.gu(6)
                 height: bottomEdge.tipHeight + units.gu(1)
-                color: Theme.palette.normal.overlay
+                color: theme.palette.normal.overlay
                 Label {
                     id: tipLabel
 

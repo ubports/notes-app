@@ -603,7 +603,7 @@ Item {
                 // TRANSLATORS: Button to close the edit mode
                 text: i18n.tr("Close")
                 height: parent.height
-                iconColor: UbuntuColors.green
+                iconColor: theme.palette.normal.positive
                 onClicked: {
                     forceActiveFocus();
                     saveNote();

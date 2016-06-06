@@ -98,9 +98,9 @@ Dialog {
                     top: textField.bottom
                     right: textField.right
                 }
-                color: "white"
+                color: theme.palette.normal.background
                 border.width: units.dp(1)
-                border.color: "black"
+                border.color: theme.palette.normal.backgroundText
                 height: Math.min(5, tagsListView.count) * units.gu(4)
                 visible: (textField.text.length > 0 || textField.inputMethodComposing) && (textField.focus || tagsListView.focus)
 
@@ -121,7 +121,7 @@ Dialog {
                             property bool used: root.note ? root.note.tagGuids.indexOf(model.guid) !== -1 : false
                             Label {
                                 text: model.name
-                                color: textField.text === model.name ? UbuntuColors.orange : "black"
+                                color: textField.text === model.name ? theme.palette.normal.positionText : theme.palette.normal.backgroundText
                                 Layout.fillHeight: true
                                 Layout.fillWidth: true
                             }
@@ -144,7 +144,7 @@ Dialog {
         Button {
             id: okButton
             text: i18n.tr("OK")
-            color: UbuntuColors.orange
+            color: theme.palette.normal.positive
             enabled: textField.text.replace(/\s+/g, '') !== '' || textField.inputMethodComposing === true; // Not only whitespaces!
             onClicked: textField.accept()
         }
@@ -196,8 +196,6 @@ Dialog {
         id: closeButton
         Layout.preferredWidth: parent.width - units.gu(2)
         Layout.alignment: Qt.AlignHCenter
-
-        color: UbuntuColors.orange
 
         text: i18n.tr("Close")
 
