@@ -7,23 +7,126 @@ msgid ""
 msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-09-21 18:39+0200\n"
+"POT-Creation-Date: 2016-05-28 22:28+0200\n"
 "PO-Revision-Date: 2015-11-22 05:08+0000\n"
 "Last-Translator: Mutlu Can YILMAZ <mtlcnylmz@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-05-26 05:46+0000\n"
-"X-Generator: Launchpad (build 18053)\n"
+"X-Launchpad-Export-Date: 2016-06-07 05:37+0000\n"
+"X-Generator: Launchpad (build 18097)\n"
 
-#: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:562
+#: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/Reminders.qml:559
 msgid "Notes"
 msgstr "Notlar"
 
 #: com.ubuntu.reminders.desktop.in.in.h:2
 msgid "Ubuntu Notes app, powered by Evernote"
 msgstr "Ubuntu Notlar uygulaması, Evernote desteğiyle"
+
+#: src/app/qml/Reminders.qml:100 src/app/qml/Reminders.qml:263
+#: src/app/qml/Reminders.qml:268 src/app/qml/components/NoteHeader.qml:52
+#: src/app/qml/components/PageWithBottomEdge.qml:123
+#: src/app/qml/ui/EditNoteView.qml:42 src/app/qml/ui/NotesPage.qml:68
+msgid "Untitled"
+msgstr "Başlıksız"
+
+#: src/app/qml/Reminders.qml:419
+msgid "Default notebook"
+msgstr "Öntanımlı not defteri"
+
+#: src/app/qml/Reminders.qml:537
+msgid "Select note to attach imported file"
+msgstr "İçe aktarılan dosyaya eklemek için not seçin"
+
+#: src/app/qml/Reminders.qml:537
+msgid "Select note to attach imported files"
+msgstr "İçe aktarılan dosyalara eklemek için not seçin"
+
+#: src/app/qml/Reminders.qml:587
+msgid "Notebooks"
+msgstr "Not Defterleri"
+
+#: src/app/qml/Reminders.qml:621
+msgid "Reminders"
+msgstr "Hatırlatıcılar"
+
+#: src/app/qml/Reminders.qml:638 src/app/qml/components/NotesDelegate.qml:80
+msgid "Tags"
+msgstr "Etiketler"
+
+#: src/app/qml/Reminders.qml:651
+msgid "Accounts"
+msgstr "Hesaplar"
+
+#: src/app/qml/Reminders.qml:670
+msgid ""
+"No note selected.\n"
+"Select a note to see it in detail."
+msgstr ""
+"Hiçbir not seçilmedi.\n"
+"Ayrıntısını görmek için bir not seçin."
+
+#: src/app/qml/Reminders.qml:713
+msgid "Sync with Evernote"
+msgstr ""
+
+#: src/app/qml/Reminders.qml:714
+msgid ""
+"Notes can be stored on this device, or optionally synced with Evernote."
+msgstr ""
+"Notlar bu cihazda saklanabilir veya isteğe bağlı olarak Evernote ile "
+"eşitlenebilir."
+
+#: src/app/qml/Reminders.qml:715
+msgid "To sync with Evernote, you need an Evernote account."
+msgstr ""
+
+#: src/app/qml/Reminders.qml:730
+msgid "Not Now"
+msgstr ""
+
+#: src/app/qml/Reminders.qml:739
+msgid "Set Up…"
+msgstr ""
+
+#: src/app/qml/Reminders.qml:754
+#, qt-format
+msgid "Importing %1 items"
+msgstr "%1 öge içe aktarılıyor"
+
+#: src/app/qml/Reminders.qml:755
+msgid "Importing 1 item"
+msgstr "1 öge içe aktarılıyor"
+
+#: src/app/qml/Reminders.qml:757
+msgid ""
+"Do you want to create a new note for those items or do you want to attach "
+"them to an existing note?"
+msgstr ""
+"Bu ögelerle yeni bir not oluşturmak mı istersiniz, yoksa bunları var olan "
+"nota eklemek mi istesiniz?"
+
+#: src/app/qml/Reminders.qml:758
+msgid ""
+"Do you want to create a new note for this item or do you want to attach it "
+"to an existing note?"
+msgstr ""
+"Bu ögeyle yeni bir not oluşturmak mı istersiniz, yoksa bunu var olan nota "
+"eklemek mi istesiniz?"
+
+#: src/app/qml/Reminders.qml:764
+msgid "Create new note"
+msgstr "Yeni not oluştur"
+
+#: src/app/qml/Reminders.qml:769
+msgid "Attach to existing note"
+msgstr "Var olan nota ekle"
+
+#: src/app/qml/Reminders.qml:774
+msgid "Cancel import"
+msgstr "İçe aktarmayı iptal et"
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
@@ -46,34 +149,26 @@ msgid ""
 "Enter a tag name or select one from the list to attach it to the note."
 msgstr "Nota eklemek üzere etiket ismi girin veya listeden bir tane seçin."
 
-#: src/app/qml/components/EditTagsDialog.qml:62
+#: src/app/qml/components/EditTagsDialog.qml:61
 msgid "Tag name"
 msgstr "Etiket ismi"
 
-#: src/app/qml/components/EditTagsDialog.qml:142
-#: src/app/qml/ui/NotebooksPage.qml:209 src/app/qml/ui/TagsPage.qml:147
+#: src/app/qml/components/EditTagsDialog.qml:146
+#: src/app/qml/ui/NotebooksPage.qml:213 src/app/qml/ui/TagsPage.qml:147
 msgid "OK"
 msgstr "Tamam"
 
 #. TRANSLATORS: Button to close the edit mode
 #. TRANSLATORS: Button to close the note viewer
-#: src/app/qml/components/EditTagsDialog.qml:190
-#: src/app/qml/ui/EditNoteView.qml:605 src/app/qml/ui/NoteView.qml:150
+#: src/app/qml/components/EditTagsDialog.qml:202
+#: src/app/qml/ui/EditNoteView.qml:604 src/app/qml/ui/NoteView.qml:150
 msgid "Close"
 msgstr "Kapat"
-
-#: src/app/qml/components/NoteHeader.qml:52
-#: src/app/qml/components/PageWithBottomEdge.qml:123
-#: src/app/qml/reminders.qml:100 src/app/qml/reminders.qml:266
-#: src/app/qml/reminders.qml:271 src/app/qml/ui/EditNoteView.qml:43
-#: src/app/qml/ui/NotesPage.qml:67
-msgid "Untitled"
-msgstr "Başlıksız"
 
 #. TRANSLATORS: Button that deletes a reminder
 #: src/app/qml/components/NotebooksDelegate.qml:36
 #: src/app/qml/components/NotesDelegate.qml:53
-#: src/app/qml/components/TagsDelegate.qml:34 src/app/qml/ui/NotesPage.qml:91
+#: src/app/qml/components/TagsDelegate.qml:34 src/app/qml/ui/NotesPage.qml:90
 #: src/app/qml/ui/SetReminderView.qml:76
 msgid "Delete"
 msgstr "Sil"
@@ -95,13 +190,9 @@ msgstr "Özel"
 msgid "Reminder"
 msgstr "Hatırlatıcı"
 
-#: src/app/qml/components/NotesDelegate.qml:80 src/app/qml/reminders.qml:641
-msgid "Tags"
-msgstr "Etiketler"
-
 #. TRANSLATORS: Button to go from note viewer to note editor
 #: src/app/qml/components/NotesDelegate.qml:87 src/app/qml/ui/NoteView.qml:172
-#: src/app/qml/ui/NotesPage.qml:113
+#: src/app/qml/ui/NotesPage.qml:112
 msgid "Edit"
 msgstr "Düzenle"
 
@@ -126,7 +217,7 @@ msgid "Mark as done"
 msgstr "Yapılmış olarak işaretle"
 
 #: src/app/qml/components/RemindersDelegate.qml:57
-#: src/app/qml/ui/NotesPage.qml:99
+#: src/app/qml/ui/NotesPage.qml:98
 msgid "Edit reminder"
 msgstr "Hatırlatıcıyı düzenle"
 
@@ -179,132 +270,40 @@ msgid "Are you sure you want to continue?"
 msgstr "Devam etmek istediğinize emin misiniz?"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:57
-#: src/app/qml/reminders.qml:744
 msgid "Yes"
 msgstr "Evet"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:66
-#: src/app/qml/reminders.qml:734
 msgid "No"
 msgstr "Hayır"
 
-#: src/app/qml/components/SortingDialog.qml:20
+#: src/app/qml/components/SortingDialog.qml:9
 msgid "Sort by"
 msgstr "Sırala"
 
-#: src/app/qml/components/SortingDialog.qml:29
+#: src/app/qml/components/SortingDialog.qml:19
 msgid "Date created (newest first)"
 msgstr "Eklenme tarihi (önce yeniler)"
 
-#: src/app/qml/components/SortingDialog.qml:30
+#: src/app/qml/components/SortingDialog.qml:20
 msgid "Date created (oldest first)"
 msgstr "Eklenme tarihi (önce eskiler)"
 
-#: src/app/qml/components/SortingDialog.qml:31
+#: src/app/qml/components/SortingDialog.qml:21
 msgid "Date updated (newest first)"
 msgstr "Güncellenme tarihi (önce yeniler)"
 
-#: src/app/qml/components/SortingDialog.qml:32
+#: src/app/qml/components/SortingDialog.qml:22
 msgid "Date updated (oldest first)"
 msgstr "Güncellenme tarihi (önce eskiler)"
 
-#: src/app/qml/components/SortingDialog.qml:33
+#: src/app/qml/components/SortingDialog.qml:23
 msgid "Title (ascending)"
 msgstr "Başlık(Artan)"
 
-#: src/app/qml/components/SortingDialog.qml:34
+#: src/app/qml/components/SortingDialog.qml:24
 msgid "Title (descending)"
 msgstr "Başlık(Azalan)"
-
-#: src/app/qml/reminders.qml:422
-msgid "Default notebook"
-msgstr "Öntanımlı not defteri"
-
-#: src/app/qml/reminders.qml:540
-msgid "Select note to attach imported file"
-msgstr "İçe aktarılan dosyaya eklemek için not seçin"
-
-#: src/app/qml/reminders.qml:540
-msgid "Select note to attach imported files"
-msgstr "İçe aktarılan dosyalara eklemek için not seçin"
-
-#: src/app/qml/reminders.qml:590
-msgid "Notebooks"
-msgstr "Not Defterleri"
-
-#: src/app/qml/reminders.qml:624
-msgid "Reminders"
-msgstr "Hatırlatıcılar"
-
-#: src/app/qml/reminders.qml:654
-msgid "Accounts"
-msgstr "Hesaplar"
-
-#: src/app/qml/reminders.qml:673
-msgid ""
-"No note selected.\n"
-"Select a note to see it in detail."
-msgstr ""
-"Hiçbir not seçilmedi.\n"
-"Ayrıntısını görmek için bir not seçin."
-
-#: src/app/qml/reminders.qml:716
-msgid "Setup Evernote connection?"
-msgstr "Evernote bağlantısı kurulsun mu?"
-
-#: src/app/qml/reminders.qml:717
-msgid ""
-"Notes can be stored on this device, or optionally synced with Evernote."
-msgstr ""
-"Notlar bu cihazda saklanabilir veya isteğe bağlı olarak Evernote ile "
-"eşitlenebilir."
-
-#: src/app/qml/reminders.qml:718
-msgid ""
-"In order to synchronize notes with Evernote, an account at Evernote is "
-"required."
-msgstr "Notları Evernote ile eşitlemek için, Evernote hesabı gereklidir."
-
-#: src/app/qml/reminders.qml:719
-msgid "Do you want to setup an account now?"
-msgstr "Şimdi bir hesap oluşturmak ister misiniz?"
-
-#: src/app/qml/reminders.qml:759
-#, qt-format
-msgid "Importing %1 items"
-msgstr "%1 öge içe aktarılıyor"
-
-#: src/app/qml/reminders.qml:760
-msgid "Importing 1 item"
-msgstr "1 öge içe aktarılıyor"
-
-#: src/app/qml/reminders.qml:762
-msgid ""
-"Do you want to create a new note for those items or do you want to attach "
-"them to an existing note?"
-msgstr ""
-"Bu ögelerle yeni bir not oluşturmak mı istersiniz, yoksa bunları var olan "
-"nota eklemek mi istesiniz?"
-
-#: src/app/qml/reminders.qml:763
-msgid ""
-"Do you want to create a new note for this item or do you want to attach it "
-"to an existing note?"
-msgstr ""
-"Bu ögeyle yeni bir not oluşturmak mı istersiniz, yoksa bunu var olan nota "
-"eklemek mi istesiniz?"
-
-#: src/app/qml/reminders.qml:769
-msgid "Create new note"
-msgstr "Yeni not oluştur"
-
-#: src/app/qml/reminders.qml:774
-msgid "Attach to existing note"
-msgstr "Var olan nota ekle"
-
-#: src/app/qml/reminders.qml:779
-msgid "Cancel import"
-msgstr "İçe aktarmayı iptal et"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
@@ -327,31 +326,31 @@ msgstr "%1 - Yetkilendirmek için dokunun"
 msgid "Add new account"
 msgstr "Yeni hesap ekle"
 
-#: src/app/qml/ui/EditNoteView.qml:425
+#: src/app/qml/ui/EditNoteView.qml:424
 msgid "Font"
 msgstr "Yazı Tipi"
 
-#: src/app/qml/ui/EditNoteView.qml:437
+#: src/app/qml/ui/EditNoteView.qml:436
 msgid "Size"
 msgstr "Boyut"
 
 #. TRANSLATORS: Toolbar button for "Bold"
-#: src/app/qml/ui/EditNoteView.qml:460
+#: src/app/qml/ui/EditNoteView.qml:459
 msgid "B"
 msgstr "K"
 
 #. TRANSLATORS: Toolbar button for "Italic"
-#: src/app/qml/ui/EditNoteView.qml:473
+#: src/app/qml/ui/EditNoteView.qml:472
 msgid "I"
 msgstr "İ"
 
 #. TRANSLATORS: Toolbar button for "Underline"
-#: src/app/qml/ui/EditNoteView.qml:487
+#: src/app/qml/ui/EditNoteView.qml:486
 msgid "U"
 msgstr "A"
 
 #. TRANSLATORS: Toolbar button for "Strikeout"
-#: src/app/qml/ui/EditNoteView.qml:501
+#: src/app/qml/ui/EditNoteView.qml:500
 msgid "T"
 msgstr "Ü"
 
@@ -361,11 +360,9 @@ msgstr "Çakışan değişiklikler"
 
 #: src/app/qml/ui/NoteConflictView.qml:54
 msgid ""
-"This note has been modified in multiple places. Please choose the version to "
-"be opened and delete the other."
+"This note has been modified in multiple places. Open each version to check "
+"the content, then swipe to delete one of them."
 msgstr ""
-"Bu not birden fazla yerde değiştirildi. Lütfen açılacak bir sürüm seçin ve "
-"diğerini silin."
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Deleted on this device:"
@@ -391,7 +388,7 @@ msgstr "Ek"
 msgid "Add notebook"
 msgstr "Not defteri ekle"
 
-#: src/app/qml/ui/NotebooksPage.qml:52 src/app/qml/ui/NotesPage.qml:84
+#: src/app/qml/ui/NotebooksPage.qml:52 src/app/qml/ui/NotesPage.qml:83
 #: src/app/qml/ui/RemindersPage.qml:36 src/app/qml/ui/SearchNotesPage.qml:60
 #: src/app/qml/ui/TagsPage.qml:52
 msgid "Search"
@@ -402,36 +399,36 @@ msgid "Cancel"
 msgstr "İptal"
 
 #. TRANSLATORS: Button that saves a reminder
-#: src/app/qml/ui/NotebooksPage.qml:175 src/app/qml/ui/SetReminderView.qml:88
+#: src/app/qml/ui/NotebooksPage.qml:178 src/app/qml/ui/SetReminderView.qml:88
 msgid "Save"
 msgstr "Kaydet"
 
-#: src/app/qml/ui/NotebooksPage.qml:195
+#: src/app/qml/ui/NotebooksPage.qml:199
 msgid "Rename notebook"
 msgstr "Defteri yeniden adlandır"
 
-#: src/app/qml/ui/NotebooksPage.qml:196
+#: src/app/qml/ui/NotebooksPage.qml:200
 #, qt-format
 msgid "Enter a new name for notebook %1"
 msgstr "%1 defteri için yeni ad girin"
 
-#: src/app/qml/ui/NotebooksPage.qml:205 src/app/qml/ui/TagsPage.qml:143
+#: src/app/qml/ui/NotebooksPage.qml:209 src/app/qml/ui/TagsPage.qml:143
 msgid "Name cannot be empty"
 msgstr "Ad boş bırakılamaz"
 
-#: src/app/qml/ui/NotesPage.qml:43 src/app/qml/ui/NotesPage.qml:64
+#: src/app/qml/ui/NotesPage.qml:44 src/app/qml/ui/NotesPage.qml:65
 msgid "Add note"
 msgstr "Not ekle"
 
-#: src/app/qml/ui/NotesPage.qml:72
+#: src/app/qml/ui/NotesPage.qml:73
 msgid "Sorting"
 msgstr "Sıralama"
 
-#: src/app/qml/ui/NotesPage.qml:99
+#: src/app/qml/ui/NotesPage.qml:98
 msgid "Set reminder"
 msgstr "Hatırlatıcı ayarla"
 
-#: src/app/qml/ui/NotesPage.qml:243
+#: src/app/qml/ui/NotesPage.qml:249
 msgid ""
 "No notes available. You can create new notes by pulling the note editor up "
 "from the bottom edge."
@@ -512,7 +509,7 @@ msgid "Error connecting to Evernote: Cannot download server information."
 msgstr "Evernote'a bağlanılırken hata: Sunucu bilgisi indirilemiyor."
 
 #: src/libqtevernote/evernoteconnection.cpp:329
-#: src/libqtevernote/notesstore.cpp:1772
+#: src/libqtevernote/notesstore.cpp:1789
 msgid ""
 "Authentication for Evernote server expired. Please renew login information "
 "in the accounts settings."
@@ -632,7 +629,7 @@ msgstr "İki hafta önce"
 msgid "on %1 %2"
 msgstr "%1 %2 tarihinde"
 
-#: src/libqtevernote/notesstore.cpp:415
+#: src/libqtevernote/notesstore.cpp:432
 msgid ""
 "This account is managed by Evernote. Use the Evernote website to delete "
 "notebooks."
@@ -640,7 +637,7 @@ msgstr ""
 "Bu hesap Evernote tarafından yönetiliyor. Not defterlerini silmek için "
 "Evernot web sitesini kullanın."
 
-#: src/libqtevernote/notesstore.cpp:429
+#: src/libqtevernote/notesstore.cpp:446
 msgid ""
 "Cannot delete the default notebook. Set another notebook to be the default "
 "first."
@@ -648,16 +645,16 @@ msgstr ""
 "Varsayılan defter silinemez. Önce başka bir defteri varsayılan olarak "
 "ayarlayın."
 
-#: src/libqtevernote/notesstore.cpp:1775
+#: src/libqtevernote/notesstore.cpp:1792
 msgid "Rate limit for Evernote server exceeded. Please try again later."
 msgstr ""
 
-#: src/libqtevernote/notesstore.cpp:1778
+#: src/libqtevernote/notesstore.cpp:1795
 msgid "Upload quota for Evernote server exceed. Please try again later."
 msgstr ""
 "Evernote sunucusuna yükleme sınırı aşıldı. Lütfen sonra tekrar deneyin."
 
-#: src/libqtevernote/notesstore.cpp:1817
+#: src/libqtevernote/notesstore.cpp:1834
 msgid ""
 "This account is managed by Evernote. Please use the Evernote website to "
 "delete tags."

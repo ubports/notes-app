@@ -7,23 +7,126 @@ msgid ""
 msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-09-21 18:39+0200\n"
+"POT-Creation-Date: 2016-05-28 22:28+0200\n"
 "PO-Revision-Date: 2016-02-02 20:56+0000\n"
 "Last-Translator: Bernard Banko <Unknown>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-05-26 05:46+0000\n"
-"X-Generator: Launchpad (build 18053)\n"
+"X-Launchpad-Export-Date: 2016-06-07 05:37+0000\n"
+"X-Generator: Launchpad (build 18097)\n"
 
-#: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/reminders.qml:562
+#: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/Reminders.qml:559
 msgid "Notes"
 msgstr "Sporočilca"
 
 #: com.ubuntu.reminders.desktop.in.in.h:2
 msgid "Ubuntu Notes app, powered by Evernote"
 msgstr "Sporočilca Ubuntu s podporo Evernote"
+
+#: src/app/qml/Reminders.qml:100 src/app/qml/Reminders.qml:263
+#: src/app/qml/Reminders.qml:268 src/app/qml/components/NoteHeader.qml:52
+#: src/app/qml/components/PageWithBottomEdge.qml:123
+#: src/app/qml/ui/EditNoteView.qml:42 src/app/qml/ui/NotesPage.qml:68
+msgid "Untitled"
+msgstr "Neimenovano"
+
+#: src/app/qml/Reminders.qml:419
+msgid "Default notebook"
+msgstr "Privzeta beležka"
+
+#: src/app/qml/Reminders.qml:537
+msgid "Select note to attach imported file"
+msgstr "Izberite sporočilce, ki mu želite pripeti uvoženo datoteko"
+
+#: src/app/qml/Reminders.qml:537
+msgid "Select note to attach imported files"
+msgstr "Izberite sporočilce, ki mu želite pripeti uvožene datoteke"
+
+#: src/app/qml/Reminders.qml:587
+msgid "Notebooks"
+msgstr "Beležke"
+
+#: src/app/qml/Reminders.qml:621
+msgid "Reminders"
+msgstr "Opomniki"
+
+#: src/app/qml/Reminders.qml:638 src/app/qml/components/NotesDelegate.qml:80
+msgid "Tags"
+msgstr "Oznake"
+
+#: src/app/qml/Reminders.qml:651
+msgid "Accounts"
+msgstr "Računi"
+
+#: src/app/qml/Reminders.qml:670
+msgid ""
+"No note selected.\n"
+"Select a note to see it in detail."
+msgstr ""
+"Ni izbranega sporočilca.\n"
+"Izberite sporočilce za podroben ogled."
+
+#: src/app/qml/Reminders.qml:713
+msgid "Sync with Evernote"
+msgstr ""
+
+#: src/app/qml/Reminders.qml:714
+msgid ""
+"Notes can be stored on this device, or optionally synced with Evernote."
+msgstr ""
+"Sporočilca so lahko shranjena na tej napravi, lahko pa tudi usklajena s "
+"storitvijo Evernote."
+
+#: src/app/qml/Reminders.qml:715
+msgid "To sync with Evernote, you need an Evernote account."
+msgstr ""
+
+#: src/app/qml/Reminders.qml:730
+msgid "Not Now"
+msgstr ""
+
+#: src/app/qml/Reminders.qml:739
+msgid "Set Up…"
+msgstr ""
+
+#: src/app/qml/Reminders.qml:754
+#, qt-format
+msgid "Importing %1 items"
+msgstr "Uvažanje %1 stvari"
+
+#: src/app/qml/Reminders.qml:755
+msgid "Importing 1 item"
+msgstr "Uvažanje 1 stvari"
+
+#: src/app/qml/Reminders.qml:757
+msgid ""
+"Do you want to create a new note for those items or do you want to attach "
+"them to an existing note?"
+msgstr ""
+"Ali želite ustvariti novo sporočilce za te stvari ali jih želite pripeti "
+"obstoječemu?"
+
+#: src/app/qml/Reminders.qml:758
+msgid ""
+"Do you want to create a new note for this item or do you want to attach it "
+"to an existing note?"
+msgstr ""
+"Ali želite ustvariti novo sporočilce za to stvar ali jo želite pripeti "
+"obstoječemu?"
+
+#: src/app/qml/Reminders.qml:764
+msgid "Create new note"
+msgstr "Ustvari novo sporočilce"
+
+#: src/app/qml/Reminders.qml:769
+msgid "Attach to existing note"
+msgstr "Pripni obstoječemu sporočilcu"
+
+#: src/app/qml/Reminders.qml:774
+msgid "Cancel import"
+msgstr "Prekliči uvoz"
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
@@ -47,34 +150,26 @@ msgid ""
 msgstr ""
 "Vnesite ime oznake ali pa jo izberite s seznama, da jo pripnete sporočilcu."
 
-#: src/app/qml/components/EditTagsDialog.qml:62
+#: src/app/qml/components/EditTagsDialog.qml:61
 msgid "Tag name"
 msgstr "Ime oznake"
 
-#: src/app/qml/components/EditTagsDialog.qml:142
-#: src/app/qml/ui/NotebooksPage.qml:209 src/app/qml/ui/TagsPage.qml:147
+#: src/app/qml/components/EditTagsDialog.qml:146
+#: src/app/qml/ui/NotebooksPage.qml:213 src/app/qml/ui/TagsPage.qml:147
 msgid "OK"
 msgstr "V redu"
 
 #. TRANSLATORS: Button to close the edit mode
 #. TRANSLATORS: Button to close the note viewer
-#: src/app/qml/components/EditTagsDialog.qml:190
-#: src/app/qml/ui/EditNoteView.qml:605 src/app/qml/ui/NoteView.qml:150
+#: src/app/qml/components/EditTagsDialog.qml:202
+#: src/app/qml/ui/EditNoteView.qml:604 src/app/qml/ui/NoteView.qml:150
 msgid "Close"
 msgstr "Zapri"
-
-#: src/app/qml/components/NoteHeader.qml:52
-#: src/app/qml/components/PageWithBottomEdge.qml:123
-#: src/app/qml/reminders.qml:100 src/app/qml/reminders.qml:266
-#: src/app/qml/reminders.qml:271 src/app/qml/ui/EditNoteView.qml:43
-#: src/app/qml/ui/NotesPage.qml:67
-msgid "Untitled"
-msgstr "Neimenovano"
 
 #. TRANSLATORS: Button that deletes a reminder
 #: src/app/qml/components/NotebooksDelegate.qml:36
 #: src/app/qml/components/NotesDelegate.qml:53
-#: src/app/qml/components/TagsDelegate.qml:34 src/app/qml/ui/NotesPage.qml:91
+#: src/app/qml/components/TagsDelegate.qml:34 src/app/qml/ui/NotesPage.qml:90
 #: src/app/qml/ui/SetReminderView.qml:76
 msgid "Delete"
 msgstr "Izbriši"
@@ -96,13 +191,9 @@ msgstr "Zasebno"
 msgid "Reminder"
 msgstr "Opomnik"
 
-#: src/app/qml/components/NotesDelegate.qml:80 src/app/qml/reminders.qml:641
-msgid "Tags"
-msgstr "Oznake"
-
 #. TRANSLATORS: Button to go from note viewer to note editor
 #: src/app/qml/components/NotesDelegate.qml:87 src/app/qml/ui/NoteView.qml:172
-#: src/app/qml/ui/NotesPage.qml:113
+#: src/app/qml/ui/NotesPage.qml:112
 msgid "Edit"
 msgstr "Uredi"
 
@@ -127,7 +218,7 @@ msgid "Mark as done"
 msgstr "Označi kot končano"
 
 #: src/app/qml/components/RemindersDelegate.qml:57
-#: src/app/qml/ui/NotesPage.qml:99
+#: src/app/qml/ui/NotesPage.qml:98
 msgid "Edit reminder"
 msgstr "Uredi opomnik"
 
@@ -180,132 +271,40 @@ msgid "Are you sure you want to continue?"
 msgstr "Ali ste prepričani, da želite nadaljevati?"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:57
-#: src/app/qml/reminders.qml:744
 msgid "Yes"
 msgstr "Da"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:66
-#: src/app/qml/reminders.qml:734
 msgid "No"
 msgstr "Ne"
 
-#: src/app/qml/components/SortingDialog.qml:20
+#: src/app/qml/components/SortingDialog.qml:9
 msgid "Sort by"
 msgstr "Razvrsti po"
 
-#: src/app/qml/components/SortingDialog.qml:29
+#: src/app/qml/components/SortingDialog.qml:19
 msgid "Date created (newest first)"
 msgstr "Ustvarjeno dne (najprej novejši)"
 
-#: src/app/qml/components/SortingDialog.qml:30
+#: src/app/qml/components/SortingDialog.qml:20
 msgid "Date created (oldest first)"
 msgstr "Ustvarjeno dne (najprej najstarejši)"
 
-#: src/app/qml/components/SortingDialog.qml:31
+#: src/app/qml/components/SortingDialog.qml:21
 msgid "Date updated (newest first)"
 msgstr "Posodobljeno dne (najprej novejši)"
 
-#: src/app/qml/components/SortingDialog.qml:32
+#: src/app/qml/components/SortingDialog.qml:22
 msgid "Date updated (oldest first)"
 msgstr "Posodobljeno dne (najprej najstarejši)"
 
-#: src/app/qml/components/SortingDialog.qml:33
+#: src/app/qml/components/SortingDialog.qml:23
 msgid "Title (ascending)"
 msgstr "Naslov (naraščajoče)"
 
-#: src/app/qml/components/SortingDialog.qml:34
+#: src/app/qml/components/SortingDialog.qml:24
 msgid "Title (descending)"
 msgstr "Naslov (padajoče)"
-
-#: src/app/qml/reminders.qml:422
-msgid "Default notebook"
-msgstr "Privzeta beležka"
-
-#: src/app/qml/reminders.qml:540
-msgid "Select note to attach imported file"
-msgstr "Izberite sporočilce, ki mu želite pripeti uvoženo datoteko"
-
-#: src/app/qml/reminders.qml:540
-msgid "Select note to attach imported files"
-msgstr "Izberite sporočilce, ki mu želite pripeti uvožene datoteke"
-
-#: src/app/qml/reminders.qml:590
-msgid "Notebooks"
-msgstr "Beležke"
-
-#: src/app/qml/reminders.qml:624
-msgid "Reminders"
-msgstr "Opomniki"
-
-#: src/app/qml/reminders.qml:654
-msgid "Accounts"
-msgstr "Računi"
-
-#: src/app/qml/reminders.qml:673
-msgid ""
-"No note selected.\n"
-"Select a note to see it in detail."
-msgstr ""
-"Ni izbranega sporočilca.\n"
-"Izberite sporočilce za podroben ogled."
-
-#: src/app/qml/reminders.qml:716
-msgid "Setup Evernote connection?"
-msgstr "Želite nastaviti povezavo Evernote?"
-
-#: src/app/qml/reminders.qml:717
-msgid ""
-"Notes can be stored on this device, or optionally synced with Evernote."
-msgstr ""
-"Sporočilca so lahko shranjena na tej napravi, lahko pa tudi usklajena s "
-"storitvijo Evernote."
-
-#: src/app/qml/reminders.qml:718
-msgid ""
-"In order to synchronize notes with Evernote, an account at Evernote is "
-"required."
-msgstr "Za usklajevanje sporočilc z Evernote je zahtevan račun pri Evernote."
-
-#: src/app/qml/reminders.qml:719
-msgid "Do you want to setup an account now?"
-msgstr "Ali želite sedaj nastaviti račun?"
-
-#: src/app/qml/reminders.qml:759
-#, qt-format
-msgid "Importing %1 items"
-msgstr "Uvažanje %1 stvari"
-
-#: src/app/qml/reminders.qml:760
-msgid "Importing 1 item"
-msgstr "Uvažanje 1 stvari"
-
-#: src/app/qml/reminders.qml:762
-msgid ""
-"Do you want to create a new note for those items or do you want to attach "
-"them to an existing note?"
-msgstr ""
-"Ali želite ustvariti novo sporočilce za te stvari ali jih želite pripeti "
-"obstoječemu?"
-
-#: src/app/qml/reminders.qml:763
-msgid ""
-"Do you want to create a new note for this item or do you want to attach it "
-"to an existing note?"
-msgstr ""
-"Ali želite ustvariti novo sporočilce za to stvar ali jo želite pripeti "
-"obstoječemu?"
-
-#: src/app/qml/reminders.qml:769
-msgid "Create new note"
-msgstr "Ustvari novo sporočilce"
-
-#: src/app/qml/reminders.qml:774
-msgid "Attach to existing note"
-msgstr "Pripni obstoječemu sporočilcu"
-
-#: src/app/qml/reminders.qml:779
-msgid "Cancel import"
-msgstr "Prekliči uvoz"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
@@ -328,31 +327,31 @@ msgstr "%1 - Tapnite za odobritev"
 msgid "Add new account"
 msgstr "Dodaj nov račun"
 
-#: src/app/qml/ui/EditNoteView.qml:425
+#: src/app/qml/ui/EditNoteView.qml:424
 msgid "Font"
 msgstr "Pisava"
 
-#: src/app/qml/ui/EditNoteView.qml:437
+#: src/app/qml/ui/EditNoteView.qml:436
 msgid "Size"
 msgstr "Velikost"
 
 #. TRANSLATORS: Toolbar button for "Bold"
-#: src/app/qml/ui/EditNoteView.qml:460
+#: src/app/qml/ui/EditNoteView.qml:459
 msgid "B"
 msgstr "K"
 
 #. TRANSLATORS: Toolbar button for "Italic"
-#: src/app/qml/ui/EditNoteView.qml:473
+#: src/app/qml/ui/EditNoteView.qml:472
 msgid "I"
 msgstr "L"
 
 #. TRANSLATORS: Toolbar button for "Underline"
-#: src/app/qml/ui/EditNoteView.qml:487
+#: src/app/qml/ui/EditNoteView.qml:486
 msgid "U"
 msgstr "Po"
 
 #. TRANSLATORS: Toolbar button for "Strikeout"
-#: src/app/qml/ui/EditNoteView.qml:501
+#: src/app/qml/ui/EditNoteView.qml:500
 msgid "T"
 msgstr "Pr"
 
@@ -362,11 +361,9 @@ msgstr "Spremembe v sporu"
 
 #: src/app/qml/ui/NoteConflictView.qml:54
 msgid ""
-"This note has been modified in multiple places. Please choose the version to "
-"be opened and delete the other."
+"This note has been modified in multiple places. Open each version to check "
+"the content, then swipe to delete one of them."
 msgstr ""
-"Sporočilce je bilo spremenjeno na več krajih. Izberite različico, ki jo "
-"želite odpreti, in izbrišite ostale."
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Deleted on this device:"
@@ -392,7 +389,7 @@ msgstr "Priloga"
 msgid "Add notebook"
 msgstr "Dodaj beležko"
 
-#: src/app/qml/ui/NotebooksPage.qml:52 src/app/qml/ui/NotesPage.qml:84
+#: src/app/qml/ui/NotebooksPage.qml:52 src/app/qml/ui/NotesPage.qml:83
 #: src/app/qml/ui/RemindersPage.qml:36 src/app/qml/ui/SearchNotesPage.qml:60
 #: src/app/qml/ui/TagsPage.qml:52
 msgid "Search"
@@ -403,36 +400,36 @@ msgid "Cancel"
 msgstr "Prekliči"
 
 #. TRANSLATORS: Button that saves a reminder
-#: src/app/qml/ui/NotebooksPage.qml:175 src/app/qml/ui/SetReminderView.qml:88
+#: src/app/qml/ui/NotebooksPage.qml:178 src/app/qml/ui/SetReminderView.qml:88
 msgid "Save"
 msgstr "Shrani"
 
-#: src/app/qml/ui/NotebooksPage.qml:195
+#: src/app/qml/ui/NotebooksPage.qml:199
 msgid "Rename notebook"
 msgstr "Preimenuj beležko"
 
-#: src/app/qml/ui/NotebooksPage.qml:196
+#: src/app/qml/ui/NotebooksPage.qml:200
 #, qt-format
 msgid "Enter a new name for notebook %1"
 msgstr "Vnesite novo ime za beležko %1"
 
-#: src/app/qml/ui/NotebooksPage.qml:205 src/app/qml/ui/TagsPage.qml:143
+#: src/app/qml/ui/NotebooksPage.qml:209 src/app/qml/ui/TagsPage.qml:143
 msgid "Name cannot be empty"
 msgstr "Ime ne sme biti prazno"
 
-#: src/app/qml/ui/NotesPage.qml:43 src/app/qml/ui/NotesPage.qml:64
+#: src/app/qml/ui/NotesPage.qml:44 src/app/qml/ui/NotesPage.qml:65
 msgid "Add note"
 msgstr "Dodaj sporočilce"
 
-#: src/app/qml/ui/NotesPage.qml:72
+#: src/app/qml/ui/NotesPage.qml:73
 msgid "Sorting"
 msgstr "Razvrščanje"
 
-#: src/app/qml/ui/NotesPage.qml:99
+#: src/app/qml/ui/NotesPage.qml:98
 msgid "Set reminder"
 msgstr "Nastavi opomnik"
 
-#: src/app/qml/ui/NotesPage.qml:243
+#: src/app/qml/ui/NotesPage.qml:249
 msgid ""
 "No notes available. You can create new notes by pulling the note editor up "
 "from the bottom edge."
@@ -515,7 +512,7 @@ msgstr ""
 "Napaka povezovanja z Evernoteom: podatkov o strežniku ni mogoče prejeti."
 
 #: src/libqtevernote/evernoteconnection.cpp:329
-#: src/libqtevernote/notesstore.cpp:1772
+#: src/libqtevernote/notesstore.cpp:1789
 msgid ""
 "Authentication for Evernote server expired. Please renew login information "
 "in the accounts settings."
@@ -635,14 +632,14 @@ msgstr "pred dvema tednoma"
 msgid "on %1 %2"
 msgstr "dne %1 %2"
 
-#: src/libqtevernote/notesstore.cpp:415
+#: src/libqtevernote/notesstore.cpp:432
 msgid ""
 "This account is managed by Evernote. Use the Evernote website to delete "
 "notebooks."
 msgstr ""
 "Ta račun upravlja Evernote. Uporabite spletišče Evernote za izbris beležk."
 
-#: src/libqtevernote/notesstore.cpp:429
+#: src/libqtevernote/notesstore.cpp:446
 msgid ""
 "Cannot delete the default notebook. Set another notebook to be the default "
 "first."
@@ -650,19 +647,19 @@ msgstr ""
 "Ni mogoče izbrisati privzete beležke. Najprej nastavite drugo beležko kot "
 "privzeto."
 
-#: src/libqtevernote/notesstore.cpp:1775
+#: src/libqtevernote/notesstore.cpp:1792
 msgid "Rate limit for Evernote server exceeded. Please try again later."
 msgstr ""
 "Omejitev hitrosti za strežnik Evernote je prekoračena. Poskusite ponovno "
 "kasneje."
 
-#: src/libqtevernote/notesstore.cpp:1778
+#: src/libqtevernote/notesstore.cpp:1795
 msgid "Upload quota for Evernote server exceed. Please try again later."
 msgstr ""
 "Pošiljanje količinske omejitve za strežnik Evernote je prekoračena. "
 "Poskusite ponovno kasneje."
 
-#: src/libqtevernote/notesstore.cpp:1817
+#: src/libqtevernote/notesstore.cpp:1834
 msgid ""
 "This account is managed by Evernote. Please use the Evernote website to "
 "delete tags."
