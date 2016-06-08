@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-05-28 22:28+0200\n"
-"PO-Revision-Date: 2015-12-19 19:11+0000\n"
+"PO-Revision-Date: 2016-06-07 19:10+0000\n"
 "Last-Translator: Anne <anneonyme017@gmail.com>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-06-07 05:37+0000\n"
+"X-Launchpad-Export-Date: 2016-06-08 05:53+0000\n"
 "X-Generator: Launchpad (build 18097)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/Reminders.qml:559
@@ -71,7 +71,7 @@ msgstr ""
 
 #: src/app/qml/Reminders.qml:713
 msgid "Sync with Evernote"
-msgstr ""
+msgstr "Synchroniser avec Evernote"
 
 #: src/app/qml/Reminders.qml:714
 msgid ""
@@ -83,14 +83,15 @@ msgstr ""
 #: src/app/qml/Reminders.qml:715
 msgid "To sync with Evernote, you need an Evernote account."
 msgstr ""
+"Pour synchroniser avec Evernote, vous devez avoir un compte Evernote."
 
 #: src/app/qml/Reminders.qml:730
 msgid "Not Now"
-msgstr ""
+msgstr "Pas maintenant"
 
 #: src/app/qml/Reminders.qml:739
 msgid "Set Up…"
-msgstr ""
+msgstr "Configurer..."
 
 #: src/app/qml/Reminders.qml:754
 #, qt-format
@@ -366,6 +367,8 @@ msgid ""
 "This note has been modified in multiple places. Open each version to check "
 "the content, then swipe to delete one of them."
 msgstr ""
+"Cette note a été modifiée à plusieurs endroits. Ouvrez chaque version pour "
+"vérifier le contenu, puis faites glisser pour supprimer l'une d'entre elles."
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Deleted on this device:"
