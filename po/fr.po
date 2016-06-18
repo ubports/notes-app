@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-05-28 22:28+0200\n"
-"PO-Revision-Date: 2016-06-07 19:10+0000\n"
+"PO-Revision-Date: 2016-06-17 16:18+0000\n"
 "Last-Translator: Anne <anneonyme017@gmail.com>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-06-08 05:53+0000\n"
+"X-Launchpad-Export-Date: 2016-06-18 06:05+0000\n"
 "X-Generator: Launchpad (build 18097)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/Reminders.qml:559
@@ -66,8 +66,8 @@ msgid ""
 "No note selected.\n"
 "Select a note to see it in detail."
 msgstr ""
-"Aune note n'est sélectionnée.\n"
-"Sélectionnez une note pour la voir en détail."
+"Aucune note n'est sélectionnée.\n"
+"Sélectionnez-en une pour la voir en détail."
 
 #: src/app/qml/Reminders.qml:713
 msgid "Sync with Evernote"
@@ -100,7 +100,7 @@ msgstr "Importation (%1 éléments)"
 
 #: src/app/qml/Reminders.qml:755
 msgid "Importing 1 item"
-msgstr "Importation (%1 élément)"
+msgstr "Importation d'un élément"
 
 #: src/app/qml/Reminders.qml:757
 msgid ""
