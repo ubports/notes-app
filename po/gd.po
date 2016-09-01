@@ -2,19 +2,19 @@
 # Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
 # This file is distributed under the same license as the reminders-app package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
-# GunChleoc <fios@foramnagaidhlig.net>, 2014, 2015.
+# GunChleoc <fios@foramnagaidhlig.net>, 2014, 2015, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-05-28 22:28+0200\n"
-"PO-Revision-Date: 2016-08-30 13:45+0000\n"
+"PO-Revision-Date: 2016-08-31 08:15+0000\n"
 "Last-Translator: GunChleoc <Unknown>\n"
 "Language-Team: Fòram na Gàidhlig\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-08-31 06:22+0000\n"
+"X-Launchpad-Export-Date: 2016-09-01 06:38+0000\n"
 "X-Generator: Launchpad (build 18179)\n"
 "Language: gd\n"
 
@@ -71,7 +71,7 @@ msgstr ""
 
 #: src/app/qml/Reminders.qml:713
 msgid "Sync with Evernote"
-msgstr ""
+msgstr "Sioncronaich le Evernote"
 
 #: src/app/qml/Reminders.qml:714
 msgid ""
@@ -83,6 +83,7 @@ msgstr ""
 #: src/app/qml/Reminders.qml:715
 msgid "To sync with Evernote, you need an Evernote account."
 msgstr ""
+"Feumaidh tu cunntas Evernote mus urrainn dhut a shioncronachadh le Evernote."
 
 #: src/app/qml/Reminders.qml:730
 msgid "Not Now"
@@ -366,6 +367,9 @@ msgid ""
 "This note has been modified in multiple places. Open each version to check "
 "the content, then swipe to delete one of them."
 msgstr ""
+"Chaidh an nòta seo atharrachadh ann an iomadh àite. Fosgail gach tionndadh "
+"dheth gus an t-susbaint a dhearbhadh agus grad-shlaighd gus fear dhiubh a "
+"sguabadh às."
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Deleted on this device:"
