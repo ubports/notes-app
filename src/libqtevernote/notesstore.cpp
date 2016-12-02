@@ -72,7 +72,8 @@ NotesStore::NotesStore(QObject *parent) :
 
     m_organizerAdapter = new OrganizerAdapter(this);
 
-    QDir storageDir(QStandardPaths::standardLocations(QStandardPaths::DataLocation).first());
+    QDir storageDir(QStandardPaths::writableLocation(QStandardPaths::DataLocation));
+    qDebug() << "Notes storare dir" << storageDir;
     if (!storageDir.exists()) {
         qCDebug(dcNotesStore) << "Creating storage directory:" << storageDir.absolutePath();
         storageDir.mkpath(storageDir.absolutePath());
