@@ -7,7 +7,7 @@ grade: devel
 
 apps:
     ubuntu-notes-app:
-        command: desktop-launch $SNAP/usr/bin/reminders --desktop_file_hint=unity8
+        command: desktop-launch $SNAP/bin/ubuntu-notes-app "$@"
         plugs: [opengl, platform, unity7, unity8]
 
 plugs:
@@ -43,3 +43,5 @@ parts:
     environment:
         source: snap/
         plugin: dump
+        organize:
+            ubuntu-notes-app.wrapper: bin/ubuntu-notes-app
