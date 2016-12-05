@@ -36,8 +36,19 @@ parts:
             - qtpim5-dev
         stage-packages:
             - qtdeclarative5-evernote0.1
-            - qml-module-qtquick-localstorage
             - signon-plugin-oauth2
+        snap:
+            # ubuntu-notes-app
+            - usr/bin/reminders
+            - usr/bin/push-helper
+            - usr/share/accounts/applications/*
+            - usr/share/applications/*
+            - usr/share/locale
+            - usr/share/reminders/* 
+            # qtdeclarative5-evernote0.1
+            - usr/lib/*/qt5/qml/Evernote
+            # signon-plugin-oauth2
+            - usr/lib/*/signon
         after: 
             - desktop-ubuntu-app-platform
     environment:
