@@ -1,0 +1,58 @@
+name: ubuntu-notes-app
+version: 0.4
+summary: Notes application
+description: Note taking application powered by Evernote
+confinement: devmode  # use "strict" to enforce system access only via declared interfaces
+grade: devel
+
+apps:
+    ubuntu-notes-app:
+        command: desktop-launch $SNAP/bin/ubuntu-notes-app "$@"
+        plugs: [opengl, platform, unity7, unity8]
+
+plugs:
+    platform:
+        interface: content
+        content: ubuntu-app-platform1
+        target: ubuntu-app-platform
+        default-provider: ubuntu-app-platform
+
+parts:
+    ubuntu-notes-app:
+        plugin: cmake
+        configflags: [-DCMAKE_INSTALL_PREFIX=/usr, -DCLICK_MODE=off]
+        source: .
+        build-packages:
+            - cmake
+            - gettext
+            - intltool
+            - libboost-dev
+            - liboxideqt-qmlplugin
+            - libssl-dev
+            - pkg-config
+            - qt5-default
+            - qtdeclarative5-dev
+            - qtdeclarative5-dev-tools
+            - qtpim5-dev
+        stage-packages:
+            - qtdeclarative5-evernote0.1
+            - signon-plugin-oauth2
+        snap:
+            # ubuntu-notes-app
+            - usr/bin/reminders
+            - usr/bin/push-helper
+            - usr/share/accounts/applications/*
+            - usr/share/applications/*
+            - usr/share/locale
+            - usr/share/reminders/* 
+            # qtdeclarative5-evernote0.1
+            - usr/lib/*/qt5/qml/Evernote
+            # signon-plugin-oauth2
+            - usr/lib/*/signon
+        after: 
+            - desktop-ubuntu-app-platform
+    environment:
+        source: snap/
+        plugin: dump
+        organize:
+            ubuntu-notes-app.wrapper: bin/ubuntu-notes-app

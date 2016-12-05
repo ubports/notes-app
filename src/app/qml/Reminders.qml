@@ -225,7 +225,7 @@ MainView {
 
         switch (accounts.count) {
         case 0:
-            PopupUtils.open(noAccountDialog, root);
+            PopupUtils.open(noAccountDialog);
             print("No account available. Please set up an account in System Settings.");
             break;
         case 1:
