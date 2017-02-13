@@ -8,7 +8,7 @@ grade: devel
 apps:
     ubuntu-notes-app:
         command: desktop-launch $SNAP/bin/ubuntu-notes-app "$@"
-        plugs: [opengl, platform, unity7, unity8]
+        plugs: [opengl, platform, unity7, unity8, mir]
 
 plugs:
     platform:
