@@ -1,4 +1,4 @@
-Source: reminders-app
+Source: notes-app
 Priority: extra
 Maintainer: Ubuntu App Cats <ubuntu-touch-coreapps@lists.launchpad.net>
 Build-Depends: cmake,
@@ -30,7 +30,7 @@ Section: misc
 Homepage: https://launchpad.net/reminders-app
 Vcs-Bzr: https://code.launchpad.net/~reminders-app-dev/reminders-app/trunk
 
-Package: reminders-app
+Package: notes-app
 Architecture: any
 Depends: account-plugin-evernote,
          liboxideqt-qmlplugin,
@@ -77,7 +77,7 @@ Description: Allow Ubuntu applications to access Evernote sandbox accounts
  This plugin enables developers to authenticate to their Evernote developer
  sandbox account, which allows syncing of Evernote notes across Ubuntu devices.
 
-Package: reminders-app-autopilot
+Package: notes-app-autopilot
 Architecture: all
 Depends: account-plugin-evernote-sandbox,
          libautopilot-qt,
@@ -88,8 +88,8 @@ Depends: account-plugin-evernote-sandbox,
          python3-fixtures,
          python3-oauthlib,
          python3-requests-oauthlib,
-         reminders-app (<< ${source:Version}.1~),
-         reminders-app (>= ${source:Version}),
+         notes-app (<< ${source:Version}.1~),
+         notes-app (>= ${source:Version}),
          ubuntu-ui-toolkit-autopilot,
          ${misc:Depends}
 Description: Test package for the Notes app
