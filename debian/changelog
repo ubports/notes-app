@@ -1,3 +1,9 @@
+notes-app (0.5+ubports) vivid; urgency=medium
+
+  * Imported to UBports
+
+ -- Florian Leeber <florian@ubports.com>  Sun, 24 Dec 2017 22:02:48 +0100
+
 reminders-app (0.4+15.04.20141118-0ubuntu1) vivid; urgency=low
 
   [ Akiva Avraham ]
