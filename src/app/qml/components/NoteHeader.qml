@@ -17,6 +17,7 @@ FocusScope {
 
     property alias title: titleTextField.text
 
+    signal titleEntered();
     signal editReminders();
     signal editTags();
     Notebooks {
@@ -54,6 +55,9 @@ FocusScope {
             visible: root.editingEnabled
             style: TextFieldStyle {
                 background: null
+            }
+            onAccepted : {
+                titleEntered();
             }
         }
 
