@@ -31,6 +31,10 @@ Page {
 
     title: i18n.tr("Search notes")
 
+    onActiveChanged: {
+        searchField.forceActiveFocus();
+    }
+
     Column {
         anchors { fill: parent; topMargin: units.gu(2); bottomMargin: units.gu(2) }
         spacing: units.gu(2)
@@ -43,6 +47,7 @@ Page {
                 id: searchField
                 width: parent.width - searchButton.width - parent.spacing
                 anchors.verticalCenter: parent.verticalCenter
+                focus: true
 
                 primaryItem: Icon {
                     height: searchField.height - units.gu(1)
