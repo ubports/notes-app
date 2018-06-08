@@ -33,10 +33,6 @@ set(ACCOUNT_SERVICE_DIR ${CMAKE_INSTALL_DATADIR}/accounts/services)
 set(ACCOUNT_QML_PLUGIN_DIR ${CMAKE_INSTALL_DATADIR}/accounts/qml-plugins)
 
 if(CLICK_MODE)
-    if(NOT DEFINED BZR_SOURCE)
-        set(BZR_SOURCE "lp:${LP_PROJECT}")
-        message("-- Setting BZR_SOURCE to ${BZR_SOURCE}")
-    endif(NOT DEFINED BZR_SOURCE)
     execute_process(
         COMMAND dpkg-architecture -qDEB_HOST_MULTIARCH
             OUTPUT_VARIABLE ARCH_TRIPLET
@@ -48,15 +44,6 @@ if(CLICK_MODE)
     set(DATA_DIR /)
     set(DESKTOP_DIR ${DATA_DIR})
     set(APPLICATION_DIR ${DATA_DIR})
-
-    if(NOT BZR_REVNO)
-      execute_process(
-        COMMAND bzr revno
-                OUTPUT_VARIABLE BZR_REVNO
-                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-                OUTPUT_STRIP_TRAILING_WHITESPACE
-      )
-    endif(NOT BZR_REVNO)
 
     execute_process(
       COMMAND dpkg-architecture -qDEB_HOST_ARCH
