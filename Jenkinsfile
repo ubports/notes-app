@@ -63,4 +63,3 @@ build-binary.sh'''
     }
   }
 }
-
