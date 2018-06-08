@@ -70,7 +70,7 @@ Page {
         states: [
             State {
                 name: "newNotebook"; when: contentColumn.newNotebook
-                PropertyChanges { target: newNotebookContainer; opacity: 1; height: newNotebookContainer.implicitHeight }
+                PropertyChanges { target: newNotebookContainer; opacity: 1; height: newNotebookContainer.implicitHeight; enabled: true }
                 PropertyChanges { target: buttonRow; opacity: 1; height: cancelButton.height + units.gu(4) }
             }
         ]
@@ -81,6 +81,7 @@ Page {
             visible: opacity > 0
             opacity: 0
             clip: true
+            enabled: false
 
             Behavior on height {
                 UbuntuNumberAnimation {}
@@ -97,6 +98,14 @@ Page {
                 id: newNoteTitleTextField
                 objectName: "newNoteTitleTextField"
                 anchors { left: parent.left; right: parent.right; margins: units.gu(2); verticalCenter: parent.verticalCenter }
+                onAccepted: {
+                    if(newNoteTitleTextField.length > 0 || newNoteTitleTextField.inputMethodComposing) {
+                        NotesStore.createNotebook(newNoteTitleTextField.displayText);
+                        newNoteTitleTextField.text = "";
+                        contentColumn.newNotebook = false
+                        newNoteTitleTextField.focus = false;
+                    }
+                }
             }
         }
 

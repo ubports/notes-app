@@ -61,6 +61,7 @@ Item {
     }
 
     function init() {
+
         if (root.isBottomEdge) {
             return;
         }
@@ -69,10 +70,14 @@ Item {
             header.title = "";
             header.forceActiveFocus();
         } else {
-            noteTextArea.forceActiveFocus();
+            setFocusTimer.start();
         }
     }
 
+    function focusTextArea() {
+        noteTextArea.cursorPosition = noteTextArea.length - 1;
+        noteTextArea.forceActiveFocus();
+    }
 
     QtObject {
         id: priv
@@ -158,6 +163,10 @@ Item {
                         note: root.note
                         focus: root.newNote
 
+                        onTitleEntered: {
+                            focusTextArea();
+                        }
+
                         onEditReminders: {
                             pageStack.push(Qt.resolvedUrl("SetReminderPage.qml"), { note: root.note});
                         }
@@ -173,7 +182,7 @@ Item {
 //                         height: Math.max(flick.height - header.height, paintedHeight + units.gu(2))
                          autoSize: true
                          maximumLineCount: 0
-                         focus: true
+                         focus: !root.newnote
                          wrapMode: TextEdit.Wrap
                          textFormat: TextEdit.RichText
                          text: root.note ? root.note.richTextContent : ""
@@ -196,11 +205,10 @@ Item {
                          // in order to have any effect.
                          Timer {
                              id: setFocusTimer
-                             interval: 1
+                             interval: 300
                              repeat: false
                              onTriggered: {
-                                 noteTextArea.cursorPosition = noteTextArea.length;
-                                 noteTextArea.forceActiveFocus();
+                                 focusTextArea();
                              }
                          }
                      }
