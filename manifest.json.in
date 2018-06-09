@@ -23,7 +23,7 @@
     "maintainer": "UBports <dev@ubports.com>",
     "name": "com.ubuntu.reminders",
     "title": "Notes",
-    "version": "0.6.1",
+    "version": "0.6.2",
     "x-test": {
         "autopilot": {
             "autopilot_module": "@AUTOPILOT_DIR@",
