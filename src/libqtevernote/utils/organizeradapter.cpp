@@ -48,7 +48,7 @@ OrganizerAdapter::OrganizerAdapter(QObject *parent):
         m_collection.setExtendedMetaData("collection-type", "Task List");
         if (!m_manager->saveCollection(&m_collection)) {
             qCWarning(dcOrganizer) << "WARNING: Creating dedicated collection for reminders was not possible, reminders will be saved into the default collection!";
-            m_collection = m_manager->defaultCollection();
+            m_collection = m_manager->collection(m_manager->defaultCollectionId());
         }
     }
 
