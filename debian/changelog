@@ -1,3 +1,9 @@
+notes-app (0.6~0ubports1) xenial; urgency=medium
+
+  * Update to latest QtPim
+
+ -- Alberto Mardegan <mardy@users.sourceforge.net>  Sat, 15 Sep 2018 22:44:52 +0300
+
 notes-app (0.5+ubports) xenial; urgency=medium
 
   * Imported to UBports
