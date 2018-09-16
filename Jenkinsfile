@@ -23,6 +23,7 @@ build-binary.sh'''
 
 
           },
+          /* Disabled as it fails in CI (because of Oxide)
           "Build binary - arm64": {
             node(label: 'arm64') {
               cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenSuccess: true, cleanWhenUnstable: true, deleteDirs: true)
@@ -33,6 +34,7 @@ build-binary.sh'''
               cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenSuccess: true, cleanWhenUnstable: true, deleteDirs: true)
             }
           },
+          */
           "Build binary - amd64": {
             node(label: 'amd64') {
               cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenSuccess: true, cleanWhenUnstable: true, deleteDirs: true)
@@ -50,7 +52,7 @@ build-binary.sh'''
       steps {
         cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenSuccess: true, cleanWhenUnstable: true, deleteDirs: true)
         unstash 'build-armhf'
-        unstash 'build-arm64'
+        //unstash 'build-arm64'
         unstash 'build-amd64'
         archiveArtifacts(artifacts: '*.gz,*.bz2,*.xz,*.deb,*.dsc,*.changes,*.buildinfo', fingerprint: true, onlyIfSuccessful: true)
         sh '''/usr/bin/build-repo.sh'''
