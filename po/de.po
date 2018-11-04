@@ -166,7 +166,7 @@ msgstr "OK"
 #: src/app/qml/components/EditTagsDialog.qml:202
 #: src/app/qml/ui/EditNoteView.qml:604 src/app/qml/ui/NoteView.qml:150
 msgid "Close"
-msgstr "Schließen"
+msgstr "Fertig"
 
 #. TRANSLATORS: Button that deletes a reminder
 #: src/app/qml/components/NotebooksDelegate.qml:36
