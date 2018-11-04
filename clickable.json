@@ -1,7 +1,6 @@
 {
   "template": "cmake",
   "kill": "qmlscene",
-  "sdk": "ubuntu-sdk-16.04",
   "dependencies": [
     "libssl-dev",
     "libboost-dev"
