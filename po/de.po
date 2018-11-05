@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-05-28 22:28+0200\n"
-"PO-Revision-Date: 2016-07-04 14:49+0000\n"
-"Last-Translator: Tobias Bannert <tobannert@gmail.com>\n"
+"PO-Revision-Date: 2018-11-05 20:50+0100\n"
+"Last-Translator: Daniel Frost <one@frostinfo.de>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:24+0000\n"
-"X-Generator: Launchpad (build 18335)\n"
+"X-Generator: Poedit 2.0.6\n"
+"Language: de\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/Reminders.qml:559
 msgid "Notes"
@@ -73,16 +74,14 @@ msgid "Sync with Evernote"
 msgstr "Synchronisieren mit Evernote"
 
 #: src/app/qml/Reminders.qml:714
-msgid ""
-"Notes can be stored on this device, or optionally synced with Evernote."
+msgid "Notes can be stored on this device, or optionally synced with Evernote."
 msgstr ""
 "Ihre Notizen können Sie auf diesem Gerät speichern oder mit Evernote "
 "synchronisieren."
 
 #: src/app/qml/Reminders.qml:715
 msgid "To sync with Evernote, you need an Evernote account."
-msgstr ""
-"Um mit Evernote zu synchronisieren benötigen Sie einen Evernote-Konto."
+msgstr "Um mit Evernote zu synchronisieren benötigen Sie einen Evernote-Konto."
 
 #: src/app/qml/Reminders.qml:730
 msgid "Not Now"
@@ -146,8 +145,7 @@ msgid "Enter a tag name to attach it to the note."
 msgstr "Bitte einen Schlagwortnamen eingeben, um ihn einer Notiz zuzuordnen."
 
 #: src/app/qml/components/EditTagsDialog.qml:33
-msgid ""
-"Enter a tag name or select one from the list to attach it to the note."
+msgid "Enter a tag name or select one from the list to attach it to the note."
 msgstr ""
 "Bitte einen Schlagwortnamen eingeben oder einen von der Liste auswähle, um "
 "ihn einer Notiz zuzuordnen."
@@ -166,7 +164,7 @@ msgstr "OK"
 #: src/app/qml/components/EditTagsDialog.qml:202
 #: src/app/qml/ui/EditNoteView.qml:604 src/app/qml/ui/NoteView.qml:150
 msgid "Close"
-msgstr "Fertig"
+msgstr "Schließen"
 
 #. TRANSLATORS: Button that deletes a reminder
 #: src/app/qml/components/NotebooksDelegate.qml:36
@@ -250,8 +248,7 @@ msgstr ""
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:38
 msgid "This will <b>delete the changed note on this device</b>."
-msgstr ""
-"Diese Aktion wird <b>die geänderte Notiz von diesem Gerät löschen</b>."
+msgstr "Diese Aktion wird <b>die geänderte Notiz von diesem Gerät löschen</b>."
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:40
 msgid ""
