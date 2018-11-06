@@ -607,48 +607,6 @@ Item {
             height: units.gu(4)
 
             RtfButton {
-                iconName: "tick"
-                // TRANSLATORS: Button to close the edit mode
-                text: i18n.tr("Close")
-                height: parent.height
-                iconColor: theme.palette.normal.positive
-                onClicked: {
-                    forceActiveFocus();
-                    saveNote();
-                    root.exitEditMode(root.note);
-                }
-            }
-
-            RtfSeparator { }
-
-            RtfButton {
-                iconName: "undo"
-                height: parent.height
-                width: height
-                enabled: formattingHelper.canUndo
-                onClicked: {
-                    formattingHelper.undo();
-                }
-            }
-            RtfButton {
-                iconName: "redo"
-                height: parent.height
-                width: height
-                enabled: formattingHelper.canRedo
-                onClicked: {
-                    formattingHelper.redo();
-                }
-            }
-
-            RtfSeparator {}
-
-            Item {
-                Layout.fillWidth: true
-            }
-
-            RtfSeparator {}
-
-            RtfButton {
                 iconName: "select"
                 height: parent.height
                 width: height
@@ -682,8 +640,6 @@ Item {
                 }
             }
 
-            RtfSeparator {}
-
             RtfButton {
                 iconName: "navigation-menu"
                 height: parent.height
@@ -701,6 +657,44 @@ Item {
                 active: toolbox.charFormatExpanded
                 onClicked: {
                     toolbox.charFormatExpanded = !toolbox.charFormatExpanded
+                }
+            }
+
+            RtfButton {
+                iconName: "undo"
+                height: parent.height
+                width: height
+                enabled: formattingHelper.canUndo
+                onClicked: {
+                    formattingHelper.undo();
+                }
+            }
+            RtfButton {
+                iconName: "redo"
+                height: parent.height
+                width: height
+                enabled: formattingHelper.canRedo
+                onClicked: {
+                    formattingHelper.redo();
+                }
+            }
+
+            Item {
+                Layout.fillWidth: true
+            }
+
+            RtfSeparator {}
+
+            RtfButton {
+                //iconName: "tick"
+                // TRANSLATORS: Button to close the edit mode
+                text: i18n.tr("Close")
+                height: parent.height
+                iconColor: theme.palette.normal.positive
+                onClicked: {
+                    forceActiveFocus();
+                    saveNote();
+                    root.exitEditMode(root.note);
                 }
             }
         }
