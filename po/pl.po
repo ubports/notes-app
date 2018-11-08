@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-05-28 22:28+0200\n"
-"PO-Revision-Date: 2018-11-05 20:15+0000\n"
+"PO-Revision-Date: 2018-11-08 04:25+0000\n"
 "Last-Translator: Daniel Frańczak <danielfranczak5@wp.pl>\n"
 "Language-Team: Polish <https://translate.ubports.com/projects/ubports/"
 "notes-app/pl/>\n"
@@ -93,7 +93,7 @@ msgstr "Nie teraz"
 
 #: src/app/qml/Reminders.qml:739
 msgid "Set Up…"
-msgstr "Skonfiguruj..."
+msgstr "Skonfiguruj…"
 
 #: src/app/qml/Reminders.qml:754
 #, qt-format
@@ -185,7 +185,7 @@ msgstr "Ostatnia zmiana %1"
 
 #: src/app/qml/components/NotebooksDelegate.qml:116
 msgid "Shared"
-msgstr "Współdzielone"
+msgstr "Udostępnione"
 
 #: src/app/qml/components/NotebooksDelegate.qml:116
 msgid "Private"

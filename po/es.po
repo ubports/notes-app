@@ -8,14 +8,17 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-05-28 22:28+0200\n"
-"PO-Revision-Date: 2016-06-10 15:03+0000\n"
-"Last-Translator: Víctor R. Ruiz <Unknown>\n"
-"Language-Team: Spanish <es@li.org>\n"
+"PO-Revision-Date: 2018-11-08 04:25+0000\n"
+"Last-Translator: advocatux <advocatux@airpost.net>\n"
+"Language-Team: Spanish <https://translate.ubports.com/projects/ubports/"
+"notes-app/es/>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.1.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:24+0000\n"
-"X-Generator: Launchpad (build 18335)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/Reminders.qml:559
 msgid "Notes"
@@ -38,15 +41,15 @@ msgstr "Cuaderno predeterminado"
 
 #: src/app/qml/Reminders.qml:537
 msgid "Select note to attach imported file"
-msgstr "Seleccione nota a la que adjuntar el fichero importado"
+msgstr "Seleccionar nota a la que adjuntar el fichero importado"
 
 #: src/app/qml/Reminders.qml:537
 msgid "Select note to attach imported files"
-msgstr "Seleccione nota a la que adjutar los ficheros importados"
+msgstr "Seleccionar nota a la que adjuntar los ficheros importados"
 
 #: src/app/qml/Reminders.qml:587
 msgid "Notebooks"
-msgstr "Libretas"
+msgstr "Cuadernos"
 
 #: src/app/qml/Reminders.qml:621
 msgid "Reminders"
@@ -65,8 +68,8 @@ msgid ""
 "No note selected.\n"
 "Select a note to see it in detail."
 msgstr ""
-"No se seleccionó ninguna nota.\n"
-"Seleccione una nota para verla en detalle."
+"Ninguna nota seleccionada.\n"
+"Seleccionar una nota para verla en detalle."
 
 #: src/app/qml/Reminders.qml:713
 msgid "Sync with Evernote"
@@ -76,7 +79,7 @@ msgstr "Sincronizar con Evernote"
 msgid ""
 "Notes can be stored on this device, or optionally synced with Evernote."
 msgstr ""
-"Las notas se pueden guardar en el dispositivo y, opcional, sincronizarlas "
+"Las notas se pueden guardar en el dispositivo u opcionalmente sincronizarlas "
 "con Evernote."
 
 #: src/app/qml/Reminders.qml:715
@@ -105,7 +108,7 @@ msgid ""
 "Do you want to create a new note for those items or do you want to attach "
 "them to an existing note?"
 msgstr ""
-"¿Desea crear una nota nueva para estos elementos o quiere añadirlos a una "
+"¿Desea crear una nota nueva para estos elementos o desea adjuntarlos a una "
 "nota existente?"
 
 #: src/app/qml/Reminders.qml:758
@@ -113,7 +116,7 @@ msgid ""
 "Do you want to create a new note for this item or do you want to attach it "
 "to an existing note?"
 msgstr ""
-"¿Desea crear una nota nueva para este elemento o quiere añadirlos a una nota "
+"¿Desea crear una nota nueva para este elemento o desea adjuntarlo a una nota "
 "existente?"
 
 #: src/app/qml/Reminders.qml:764
@@ -122,7 +125,7 @@ msgstr "Crear nota nueva"
 
 #: src/app/qml/Reminders.qml:769
 msgid "Attach to existing note"
-msgstr "Añadir a nota existente"
+msgstr "Adjuntar a una nota existente"
 
 #: src/app/qml/Reminders.qml:774
 msgid "Cancel import"
@@ -142,13 +145,14 @@ msgstr "Editar etiquetas"
 
 #: src/app/qml/components/EditTagsDialog.qml:32
 msgid "Enter a tag name to attach it to the note."
-msgstr "Introduzca una etiqueta para añadirla a la nota."
+msgstr "Introduzca el nombre de una etiqueta para adjuntarla a la nota."
 
 #: src/app/qml/components/EditTagsDialog.qml:33
 msgid ""
 "Enter a tag name or select one from the list to attach it to the note."
 msgstr ""
-"Introduzca una etiqueta o seleccione una de la lista para añadirla a la nota."
+"Introduzca el nombre de una etiqueta o seleccione una de la lista para "
+"adjuntarla a la nota."
 
 #: src/app/qml/components/EditTagsDialog.qml:61
 msgid "Tag name"
@@ -203,15 +207,15 @@ msgstr "Soltar para actualizar"
 
 #: src/app/qml/components/PulldownListView.qml:40
 msgid "Pull down to refresh"
-msgstr "Deslice hacia abajo para actualizar"
+msgstr "Deslizar hacia abajo para actualizar"
 
 #: src/app/qml/components/RemindersDelegate.qml:36
 msgid "Clear reminder"
-msgstr "Borrar recordatorio"
+msgstr "Limpiar recordatorio"
 
 #: src/app/qml/components/RemindersDelegate.qml:49
 msgid "Mark as undone"
-msgstr "Marcar como no hecho"
+msgstr "Marcar como inacabado"
 
 #: src/app/qml/components/RemindersDelegate.qml:49
 msgid "Mark as done"
@@ -268,7 +272,7 @@ msgstr ""
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:45
 msgid "Are you sure you want to continue?"
-msgstr "¿Está seguro de que quiere continuar?"
+msgstr "¿Seguro que quiere continuar?"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:57
 msgid "Yes"
@@ -284,19 +288,19 @@ msgstr "Ordenar por"
 
 #: src/app/qml/components/SortingDialog.qml:19
 msgid "Date created (newest first)"
-msgstr "Fecha creación (nuevos primero)"
+msgstr "Fecha de creación (nuevos primero)"
 
 #: src/app/qml/components/SortingDialog.qml:20
 msgid "Date created (oldest first)"
-msgstr "Fecha creación (antiguos primero)"
+msgstr "Fecha de creación (antiguos primero)"
 
 #: src/app/qml/components/SortingDialog.qml:21
 msgid "Date updated (newest first)"
-msgstr "Fecha actualización (nuevos primero)"
+msgstr "Fecha de actualización (nuevos primero)"
 
 #: src/app/qml/components/SortingDialog.qml:22
 msgid "Date updated (oldest first)"
-msgstr "Fecha actualización (antiguos primero)"
+msgstr "Fecha de actualización (antiguos primero)"
 
 #: src/app/qml/components/SortingDialog.qml:23
 msgid "Title (ascending)"
@@ -343,7 +347,7 @@ msgstr "N"
 #. TRANSLATORS: Toolbar button for "Italic"
 #: src/app/qml/ui/EditNoteView.qml:472
 msgid "I"
-msgstr "K"
+msgstr "C"
 
 #. TRANSLATORS: Toolbar button for "Underline"
 #: src/app/qml/ui/EditNoteView.qml:486
@@ -364,8 +368,8 @@ msgid ""
 "This note has been modified in multiple places. Open each version to check "
 "the content, then swipe to delete one of them."
 msgstr ""
-"Esta nota ha sido modificada en diferentes lugares. Abra cada versión para "
-"comprobar los contenidos y deslice a la derecha para borrar una de ellas."
+"Esta nota ha sido modificada en varios lugares. Abrir cada versión para "
+"comprobar el contenido y deslizar para eliminar una de ellas."
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Deleted on this device:"
@@ -377,11 +381,11 @@ msgstr "Modificadas en este dispositivo:"
 
 #: src/app/qml/ui/NoteConflictView.qml:85
 msgid "Deleted from Evernote:"
-msgstr "Borradas en Evernote:"
+msgstr "Eliminadas en Evernote:"
 
 #: src/app/qml/ui/NoteConflictView.qml:85
 msgid "Modified somewhere else:"
-msgstr "Modificadas en algún otro sitio:"
+msgstr "Modificada en otro lugar:"
 
 #: src/app/qml/ui/NoteView.qml:184
 msgid "Attachment"
@@ -389,7 +393,7 @@ msgstr "Adjunto"
 
 #: src/app/qml/ui/NotebooksPage.qml:45
 msgid "Add notebook"
-msgstr "Añadir libreta"
+msgstr "Añadir cuaderno"
 
 #: src/app/qml/ui/NotebooksPage.qml:52 src/app/qml/ui/NotesPage.qml:83
 #: src/app/qml/ui/RemindersPage.qml:36 src/app/qml/ui/SearchNotesPage.qml:60
@@ -408,12 +412,12 @@ msgstr "Guardar"
 
 #: src/app/qml/ui/NotebooksPage.qml:199
 msgid "Rename notebook"
-msgstr "Renombrar cuaderno"
+msgstr "Renombrar el cuaderno"
 
 #: src/app/qml/ui/NotebooksPage.qml:200
 #, qt-format
 msgid "Enter a new name for notebook %1"
-msgstr "Introduzca otro nombre para el cuaderno %1"
+msgstr "Introducir un nombre nuevo para el cuaderno %1"
 
 #: src/app/qml/ui/NotebooksPage.qml:209 src/app/qml/ui/TagsPage.qml:143
 msgid "Name cannot be empty"
@@ -425,11 +429,11 @@ msgstr "Añadir nota"
 
 #: src/app/qml/ui/NotesPage.qml:73
 msgid "Sorting"
-msgstr "Ordenación"
+msgstr "Ordenar"
 
 #: src/app/qml/ui/NotesPage.qml:98
 msgid "Set reminder"
-msgstr "Definir recordatorio"
+msgstr "Establecer recordatorio"
 
 #: src/app/qml/ui/NotesPage.qml:249
 msgid ""
@@ -463,7 +467,7 @@ msgstr "Recordatorio hecho"
 #: src/app/qml/ui/TagsPage.qml:126
 msgid "No tags available. You can tag notes while viewing them."
 msgstr ""
-"No hay etiquetas disponibles. Puede etiquetas las notas mientras las ve."
+"No hay etiquetas disponibles. Puede etiquetar las notas mientras las ve."
 
 #: src/app/qml/ui/TagsPage.qml:133
 msgid "Rename tag"
@@ -472,7 +476,7 @@ msgstr "Renombrar etiqueta"
 #: src/app/qml/ui/TagsPage.qml:134
 #, qt-format
 msgid "Enter a new name for tag %1"
-msgstr "Introduzca otro nombre para la etiqueta %1"
+msgstr "Introduzca un nombre nuevo para la etiqueta %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:268
 msgid "Offline mode"
@@ -502,8 +506,8 @@ msgid ""
 "Error connecting to Evernote: Cannot download version information from "
 "server."
 msgstr ""
-"Error al conectar con Evernote: no se puede descargar información de versión "
-"desde el servidor."
+"Error al conectar con Evernote: no se puede descargar la información de la "
+"versión desde el servidor."
 
 #: src/libqtevernote/evernoteconnection.cpp:307
 msgid "Unknown error connecting to Evernote"
@@ -512,7 +516,7 @@ msgstr "Error desconocido al conectar con Evernote"
 #: src/libqtevernote/evernoteconnection.cpp:321
 msgid "Error connecting to Evernote: Cannot download server information."
 msgstr ""
-"Error al conectar con Evernote: no se puede descargar información del "
+"Error al conectar con Evernote: no se puede descargar la información del "
 "servidor."
 
 #: src/libqtevernote/evernoteconnection.cpp:329
@@ -521,21 +525,21 @@ msgid ""
 "Authentication for Evernote server expired. Please renew login information "
 "in the accounts settings."
 msgstr ""
-"Expiró la sesión en el servidor de Evernote. Por favor, renuévale en la "
-"configuración de la cuenta."
+"Caducó la autenticación para el servidor de Evernote. Renueve la información "
+"para iniciar sesión en la configuración de la cuenta."
 
 #: src/libqtevernote/evernoteconnection.cpp:332
 #: src/libqtevernote/evernoteconnection.cpp:350
 #, qt-format
 msgid "Unknown error connecting to Evernote: %1"
-msgstr "Error desconocido conectando a Evernote: %1"
+msgstr "Error desconocido al conectar con Evernote: %1"
 
 #: src/libqtevernote/evernoteconnection.cpp:341
 msgid ""
 "Error connecting to Evernote: Rate limit exceeded. Please try again later."
 msgstr ""
-"Error conectando a Evernote: Se llegó al límite de accesos. Por favor, "
-"inténtelo más tarde."
+"Error al conectar a Evernote: se superó el límite de accesos. Inténtelo más "
+"tarde."
 
 #: src/libqtevernote/evernoteconnection.cpp:357
 msgid ""
@@ -607,7 +611,7 @@ msgstr "En dos semanas"
 
 #: src/libqtevernote/note.cpp:392
 msgid "Later"
-msgstr "Más adelante"
+msgstr "Luego"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: today"
 #: src/libqtevernote/notebook.cpp:122
@@ -649,25 +653,26 @@ msgid ""
 "Cannot delete the default notebook. Set another notebook to be the default "
 "first."
 msgstr ""
-"No se pudo borrar el cuaderno predeterminado. Primero ponga como "
-"predeterminado otro cuaderno."
+"No se pudo eliminar el cuaderno predeterminado. Configure primero otro "
+"cuaderno como predeterminado."
 
 #: src/libqtevernote/notesstore.cpp:1792
 msgid "Rate limit for Evernote server exceeded. Please try again later."
-msgstr "Se alcanzó el límite de accesos a Evernote. Inténtelo más tarde."
+msgstr ""
+"Se superó el límite de accesos al servidor de Evernote. Inténtelo más tarde."
 
 #: src/libqtevernote/notesstore.cpp:1795
 msgid "Upload quota for Evernote server exceed. Please try again later."
 msgstr ""
-"Se alcanzó el límite de transferencias a Evernote. Inténtelo más tarde."
+"Se superó la cuota de subida al servidor de Evernote. Inténtelo más tarde."
 
 #: src/libqtevernote/notesstore.cpp:1834
 msgid ""
 "This account is managed by Evernote. Please use the Evernote website to "
 "delete tags."
 msgstr ""
-"Esta cuenta está gestionada por Evernote.  Utilice el sitio web para borrar "
-"etiquetas."
+"Esta cuenta está gestionada por Evernote.  Utilice la web de Evernote para "
+"eliminar etiquetas."
 
 #. TRANSLATORS: A default file name if we don't get one from the server. Avoid weird characters.
 #: src/libqtevernote/resource.cpp:39
