@@ -1,0 +1,20 @@
+0.6.4
+* solve visibility problems in portrait mode
+
+Issues:
+1. On some devices (i.e. BQ E5) in portrait mode one icon is not visible (edit-select-all button).
+2. In landscape mode  some icons are on the left, some on the right.
+
+Solution:
+1. remove separators to free up some space
+2. remove tick icon from close button to free up some space
+3. reorder icons to be more intuitive
+
+* UI match
+swapped "edit" and "close" buttons in noteview.qml to match the new button layout in editnoteview.qml
+
+* version update and solve clickable issue
+
+1. raise version to 0.6.4 due to changes (manifest.json.in)
+2. clickable threw error: sdk no longer an option --> sdk removed (clickable.json)
+
