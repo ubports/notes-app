@@ -8,14 +8,17 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-05-28 22:28+0200\n"
-"PO-Revision-Date: 2015-12-07 11:22+0000\n"
-"Last-Translator: Hannie Dumoleyn <Unknown>\n"
-"Language-Team: Dutch <nl@li.org>\n"
+"PO-Revision-Date: 2018-11-10 20:28+0000\n"
+"Last-Translator: Sander <sander.k1007@kpnmail.nl>\n"
+"Language-Team: Dutch <https://translate.ubports.com/projects/ubports/"
+"notes-app/nl/>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.1.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:24+0000\n"
-"X-Generator: Launchpad (build 18335)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/Reminders.qml:559
 msgid "Notes"
@@ -23,7 +26,7 @@ msgstr "Notities"
 
 #: com.ubuntu.reminders.desktop.in.in.h:2
 msgid "Ubuntu Notes app, powered by Evernote"
-msgstr "Ubuntu Notes-app, geleverd door Evernote"
+msgstr "Ubuntu Notes-app, aangedreven door Evernote"
 
 #: src/app/qml/Reminders.qml:100 src/app/qml/Reminders.qml:263
 #: src/app/qml/Reminders.qml:268 src/app/qml/components/NoteHeader.qml:52
@@ -38,11 +41,11 @@ msgstr "Standaard notitieboek"
 
 #: src/app/qml/Reminders.qml:537
 msgid "Select note to attach imported file"
-msgstr ""
+msgstr "Selecteer een notitie om het geïmporteerde bestand toe te voegen"
 
 #: src/app/qml/Reminders.qml:537
 msgid "Select note to attach imported files"
-msgstr ""
+msgstr "Selecteer een notitie om de geïmporteerde bestanden toe te voegen"
 
 #: src/app/qml/Reminders.qml:587
 msgid "Notebooks"
@@ -70,57 +73,65 @@ msgstr ""
 
 #: src/app/qml/Reminders.qml:713
 msgid "Sync with Evernote"
-msgstr ""
+msgstr "Synchroniseer met Evernote"
 
 #: src/app/qml/Reminders.qml:714
 msgid ""
 "Notes can be stored on this device, or optionally synced with Evernote."
 msgstr ""
+"Notities kunnen op dit apparaat worden opgeslagen, of met Evernote "
+"gesynchroniseerd worden."
 
 #: src/app/qml/Reminders.qml:715
 msgid "To sync with Evernote, you need an Evernote account."
 msgstr ""
+"Om notities met Evernote te synchroniseren, heeft u een Evernote account "
+"nodig."
 
 #: src/app/qml/Reminders.qml:730
 msgid "Not Now"
-msgstr ""
+msgstr "Niet nu"
 
 #: src/app/qml/Reminders.qml:739
 msgid "Set Up…"
-msgstr ""
+msgstr "Instellen…"
 
 #: src/app/qml/Reminders.qml:754
 #, qt-format
 msgid "Importing %1 items"
-msgstr ""
+msgstr "%1 bestanden importeren"
 
 #: src/app/qml/Reminders.qml:755
 msgid "Importing 1 item"
-msgstr ""
+msgstr "1 bestand importeren"
 
 #: src/app/qml/Reminders.qml:757
 msgid ""
 "Do you want to create a new note for those items or do you want to attach "
 "them to an existing note?"
 msgstr ""
+"Wilt u een nieuwe notitie aanmaken voor deze bestanden of wilt u deze aan "
+"een bestaande notitie toevoegen?"
 
 #: src/app/qml/Reminders.qml:758
 msgid ""
 "Do you want to create a new note for this item or do you want to attach it "
 "to an existing note?"
 msgstr ""
+"Wilt u een nieuwe notitie aanmaken voor dit bestand of wilt u het aan een "
+"bestaande notitie toevoegen?"
 
 #: src/app/qml/Reminders.qml:764
 msgid "Create new note"
-msgstr ""
+msgstr "Maak nieuwe notitie aan"
 
 #: src/app/qml/Reminders.qml:769
 msgid "Attach to existing note"
-msgstr ""
+msgstr "Voeg toe aan bestaande notitie"
 
 #: src/app/qml/Reminders.qml:774
 msgid "Cancel import"
-msgstr ""
+msgstr "Importeren annuleren"
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
@@ -153,14 +164,14 @@ msgstr "Labelnaam"
 #: src/app/qml/components/EditTagsDialog.qml:146
 #: src/app/qml/ui/NotebooksPage.qml:213 src/app/qml/ui/TagsPage.qml:147
 msgid "OK"
-msgstr "Ok"
+msgstr "Oké"
 
 #. TRANSLATORS: Button to close the edit mode
 #. TRANSLATORS: Button to close the note viewer
 #: src/app/qml/components/EditTagsDialog.qml:202
 #: src/app/qml/ui/EditNoteView.qml:604 src/app/qml/ui/NoteView.qml:150
 msgid "Close"
-msgstr "Aflsuiten"
+msgstr "Sluiten"
 
 #. TRANSLATORS: Button that deletes a reminder
 #: src/app/qml/components/NotebooksDelegate.qml:36
@@ -364,6 +375,8 @@ msgid ""
 "This note has been modified in multiple places. Open each version to check "
 "the content, then swipe to delete one of them."
 msgstr ""
+"Deze notitie is op meerdere plaatsen gewijzigd. Open elke versie om de "
+"inhoud ervan te controleren, selecteer daarna welke u wilt verwijderen."
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Deleted on this device:"

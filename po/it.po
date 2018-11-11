@@ -8,14 +8,17 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-05-28 22:28+0200\n"
-"PO-Revision-Date: 2016-09-11 09:47+0000\n"
-"Last-Translator: Claudio Arseni <claudio.arseni@gmail.com>\n"
-"Language-Team: Italian <it@li.org>\n"
+"PO-Revision-Date: 2018-11-11 00:02+0000\n"
+"Last-Translator: Aurelio Cilia <spacedriver88@gmail.com>\n"
+"Language-Team: Italian <https://translate.ubports.com/projects/ubports/"
+"notes-app/it/>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.1.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:24+0000\n"
-"X-Generator: Launchpad (build 18335)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/Reminders.qml:559
 msgid "Notes"
@@ -90,7 +93,7 @@ msgstr "Non ora"
 
 #: src/app/qml/Reminders.qml:739
 msgid "Set Up…"
-msgstr "Imposta..."
+msgstr "Imposta…"
 
 #: src/app/qml/Reminders.qml:754
 #, qt-format
@@ -183,11 +186,11 @@ msgstr "Ultima modifica %1"
 
 #: src/app/qml/components/NotebooksDelegate.qml:116
 msgid "Shared"
-msgstr "Condivisa"
+msgstr "Condiviso"
 
 #: src/app/qml/components/NotebooksDelegate.qml:116
 msgid "Private"
-msgstr "Privata"
+msgstr "Privato"
 
 #: src/app/qml/components/NotesDelegate.qml:73
 msgid "Reminder"
