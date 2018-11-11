@@ -8,22 +8,25 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-05-28 22:28+0200\n"
-"PO-Revision-Date: 2016-05-17 03:23+0000\n"
-"Last-Translator: Po-Hsu Lin <po-hsu.lin@canonical.com>\n"
-"Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
+"PO-Revision-Date: 2018-11-11 06:45+0000\n"
+"Last-Translator: Louies <louies0623@gmail.com>\n"
+"Language-Team: Chinese (Traditional) <https://translate.ubports.com/projects/"
+"ubports/notes-app/zh_Hant/>\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 3.1.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:24+0000\n"
-"X-Generator: Launchpad (build 18335)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/Reminders.qml:559
 msgid "Notes"
-msgstr "記事"
+msgstr "筆記"
 
 #: com.ubuntu.reminders.desktop.in.in.h:2
 msgid "Ubuntu Notes app, powered by Evernote"
-msgstr ""
+msgstr "Ubuntu 筆記，由Evernote提供支援"
 
 #: src/app/qml/Reminders.qml:100 src/app/qml/Reminders.qml:263
 #: src/app/qml/Reminders.qml:268 src/app/qml/components/NoteHeader.qml:52
@@ -34,19 +37,19 @@ msgstr "無題"
 
 #: src/app/qml/Reminders.qml:419
 msgid "Default notebook"
-msgstr ""
+msgstr "預設筆記本"
 
 #: src/app/qml/Reminders.qml:537
 msgid "Select note to attach imported file"
-msgstr ""
+msgstr "選擇筆記以附加導入的文件"
 
 #: src/app/qml/Reminders.qml:537
 msgid "Select note to attach imported files"
-msgstr ""
+msgstr "選擇要附加導入的筆記"
 
 #: src/app/qml/Reminders.qml:587
 msgid "Notebooks"
-msgstr "記事本"
+msgstr "筆記本"
 
 #: src/app/qml/Reminders.qml:621
 msgid "Reminders"
@@ -58,36 +61,36 @@ msgstr "標記"
 
 #: src/app/qml/Reminders.qml:651
 msgid "Accounts"
-msgstr "帳號"
+msgstr "帳戶"
 
 #: src/app/qml/Reminders.qml:670
 msgid ""
 "No note selected.\n"
 "Select a note to see it in detail."
 msgstr ""
-"未有選取記事。\n"
-"請選取記事以觀看詳情。"
+"未有選取筆記。\n"
+"請選取筆記以觀看詳情。"
 
 #: src/app/qml/Reminders.qml:713
 msgid "Sync with Evernote"
-msgstr ""
+msgstr "與 Evernote 同步"
 
 #: src/app/qml/Reminders.qml:714
 msgid ""
 "Notes can be stored on this device, or optionally synced with Evernote."
-msgstr ""
+msgstr "筆記可以存儲在此設備上，也可以選擇與 Evernote 同步。"
 
 #: src/app/qml/Reminders.qml:715
 msgid "To sync with Evernote, you need an Evernote account."
-msgstr ""
+msgstr "要與 Evernote 同步，您需要一個 Evernote 帳戶。"
 
 #: src/app/qml/Reminders.qml:730
 msgid "Not Now"
-msgstr ""
+msgstr "不是現在"
 
 #: src/app/qml/Reminders.qml:739
 msgid "Set Up…"
-msgstr ""
+msgstr "建立…"
 
 #: src/app/qml/Reminders.qml:754
 #, qt-format
@@ -102,29 +105,29 @@ msgstr "匯入 1 個項目中"
 msgid ""
 "Do you want to create a new note for those items or do you want to attach "
 "them to an existing note?"
-msgstr ""
+msgstr "是否要為這些專案創建新的筆記，還是要將其附加到現有的筆記上?"
 
 #: src/app/qml/Reminders.qml:758
 msgid ""
 "Do you want to create a new note for this item or do you want to attach it "
 "to an existing note?"
-msgstr ""
+msgstr "是否要為此專案創建新的筆記，還是要將其附加到現有的筆記？"
 
 #: src/app/qml/Reminders.qml:764
 msgid "Create new note"
-msgstr ""
+msgstr "建立新筆記"
 
 #: src/app/qml/Reminders.qml:769
 msgid "Attach to existing note"
-msgstr ""
+msgstr "附加到現有的筆記"
 
 #: src/app/qml/Reminders.qml:774
 msgid "Cancel import"
-msgstr ""
+msgstr "取消導入"
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
-msgstr ""
+msgstr "筆記本:"
 
 #: src/app/qml/components/ConflictDelegate.qml:63
 msgid "Reminder:"
@@ -132,25 +135,25 @@ msgstr "提醒："
 
 #: src/app/qml/components/EditTagsDialog.qml:29
 msgid "Edit tags"
-msgstr "編輯標籤"
+msgstr "編輯標記"
 
 #: src/app/qml/components/EditTagsDialog.qml:32
 msgid "Enter a tag name to attach it to the note."
-msgstr ""
+msgstr "輸入要將其附加到筆記的標記名稱。"
 
 #: src/app/qml/components/EditTagsDialog.qml:33
 msgid ""
 "Enter a tag name or select one from the list to attach it to the note."
-msgstr ""
+msgstr "輸入標記名稱或從清單中選擇一個標記名稱以將其附加到筆記。"
 
 #: src/app/qml/components/EditTagsDialog.qml:61
 msgid "Tag name"
-msgstr "標籤名稱"
+msgstr "標記名稱"
 
 #: src/app/qml/components/EditTagsDialog.qml:146
 #: src/app/qml/ui/NotebooksPage.qml:213 src/app/qml/ui/TagsPage.qml:147
 msgid "OK"
-msgstr ""
+msgstr "確定"
 
 #. TRANSLATORS: Button to close the edit mode
 #. TRANSLATORS: Button to close the note viewer
@@ -217,39 +220,39 @@ msgstr "編輯提醒"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:25
 msgid "Resolve conflict"
-msgstr ""
+msgstr "解決衝突"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:30
 msgid ""
 "This will <b>keep the changes made on this device</b> and <b>restore the "
 "note on Evernote</b>."
-msgstr ""
+msgstr "這將<b>保留在此設備 </b>和<b> 上所做的更改, 以恢復 Evernote  上的筆記</b>。"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:32
 msgid "This will <b>delete the changed note on Evernote</b>."
-msgstr ""
+msgstr "這將<b>刪除 Evernote 上更改的筆記</b>。"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:34
 msgid ""
 "This will <b>keep the changes made on this device</b> and <b>discard any "
 "changes made on Evernote</b>."
-msgstr ""
+msgstr "這將<b>保留在此設備</b>和<b>上所做的更改, 放棄在 Evernote 上所做的任何更改</b>。"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:38
 msgid "This will <b>delete the changed note on this device</b>."
-msgstr ""
+msgstr "這將<b>刪除此設備上更改的筆記</b>。"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:40
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>restore it "
 "on this device</b>."
-msgstr ""
+msgstr "這將<b>下載更改後的筆記從 Evernote</b>和<b>恢復它在此設備</b>。"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:42
 msgid ""
 "This will <b>download the changed note from Evernote</b> and <b>discard any "
 "changes made on this device</b>."
-msgstr ""
+msgstr "這將<b>從 Evernote </b>和<b>下載更改的筆記，放棄在此設備上所做的任何更改</b>。"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:45
 msgid "Are you sure you want to continue?"
@@ -257,11 +260,11 @@ msgstr "您確定要繼續嗎？"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:57
 msgid "Yes"
-msgstr ""
+msgstr "是"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:66
 msgid "No"
-msgstr ""
+msgstr "否"
 
 #: src/app/qml/components/SortingDialog.qml:9
 msgid "Sort by"
@@ -285,23 +288,23 @@ msgstr "更新日期 (舊的優先)"
 
 #: src/app/qml/components/SortingDialog.qml:23
 msgid "Title (ascending)"
-msgstr ""
+msgstr "標題 (升序)"
 
 #: src/app/qml/components/SortingDialog.qml:24
 msgid "Title (descending)"
-msgstr ""
+msgstr "標題 (降序)"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:29
 msgid "Select account"
-msgstr ""
+msgstr "選擇帳戶"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:44
 msgid "Store notes locally only"
-msgstr ""
+msgstr "僅在本機保存筆記"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:52
 msgid "Accounts on www.evernote.com"
-msgstr ""
+msgstr "使用 www.evernote.com 上的帳戶"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:82
 #, qt-format
@@ -310,7 +313,7 @@ msgstr "%1 - 點按以授權"
 
 #: src/app/qml/ui/AccountSelectorPage.qml:91
 msgid "Add new account"
-msgstr "加入新帳號"
+msgstr "加入新的帳戶"
 
 #: src/app/qml/ui/EditNoteView.qml:424
 msgid "Font"
@@ -342,29 +345,29 @@ msgstr "刪"
 
 #: src/app/qml/ui/NoteConflictPage.qml:27
 msgid "Conflicting changes"
-msgstr ""
+msgstr "衝突的變更"
 
 #: src/app/qml/ui/NoteConflictView.qml:54
 msgid ""
 "This note has been modified in multiple places. Open each version to check "
 "the content, then swipe to delete one of them."
-msgstr ""
+msgstr "此筆記已在多個位置進行了修改。 打開每個版本以檢查內容，然後滑動以刪除其中一個。"
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Deleted on this device:"
-msgstr ""
+msgstr "在此設備上刪除:"
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Modified on this device:"
-msgstr ""
+msgstr "在此設備上修改:"
 
 #: src/app/qml/ui/NoteConflictView.qml:85
 msgid "Deleted from Evernote:"
-msgstr ""
+msgstr "從 Evernote 中刪除:"
 
 #: src/app/qml/ui/NoteConflictView.qml:85
 msgid "Modified somewhere else:"
-msgstr ""
+msgstr "已修改到其他位置:"
 
 #: src/app/qml/ui/NoteView.qml:184
 msgid "Attachment"
@@ -372,7 +375,7 @@ msgstr "附件"
 
 #: src/app/qml/ui/NotebooksPage.qml:45
 msgid "Add notebook"
-msgstr "新增記事本"
+msgstr "新增筆記本"
 
 #: src/app/qml/ui/NotebooksPage.qml:52 src/app/qml/ui/NotesPage.qml:83
 #: src/app/qml/ui/RemindersPage.qml:36 src/app/qml/ui/SearchNotesPage.qml:60
@@ -391,20 +394,20 @@ msgstr "儲存"
 
 #: src/app/qml/ui/NotebooksPage.qml:199
 msgid "Rename notebook"
-msgstr ""
+msgstr "重命名筆記本"
 
 #: src/app/qml/ui/NotebooksPage.qml:200
 #, qt-format
 msgid "Enter a new name for notebook %1"
-msgstr ""
+msgstr "輸入筆記本的新名稱%1"
 
 #: src/app/qml/ui/NotebooksPage.qml:209 src/app/qml/ui/TagsPage.qml:143
 msgid "Name cannot be empty"
-msgstr ""
+msgstr "名稱不能為空"
 
 #: src/app/qml/ui/NotesPage.qml:44 src/app/qml/ui/NotesPage.qml:65
 msgid "Add note"
-msgstr "新增記事"
+msgstr "新增筆記"
 
 #: src/app/qml/ui/NotesPage.qml:73
 msgid "Sorting"
@@ -418,17 +421,17 @@ msgstr "設定提醒"
 msgid ""
 "No notes available. You can create new notes by pulling the note editor up "
 "from the bottom edge."
-msgstr ""
+msgstr "沒有可用的筆記。您可以通過從底部邊緣向上拉注釋編輯器來創建新的筆記。"
 
 #: src/app/qml/ui/RemindersPage.qml:97
 msgid ""
 "No reminders available. You can create new reminders by setting a reminder "
 "when viewing a note."
-msgstr "無可用提醒。可在檢視記事時設置新提醒。"
+msgstr "無可用提醒。可在檢視筆記時設置新的提醒。"
 
 #: src/app/qml/ui/SearchNotesPage.qml:32
 msgid "Search notes"
-msgstr "搜尋記事"
+msgstr "搜尋筆記"
 
 #: src/app/qml/ui/SetReminderView.qml:36
 msgid "Select date and time for the reminder:"
@@ -437,7 +440,7 @@ msgstr "請選取提醒的日期與時間："
 #. TRANSLATORS: A checkbox with marks the reminder as done
 #: src/app/qml/ui/SetReminderView.qml:64
 msgid "Reminder done"
-msgstr ""
+msgstr "提醒完成"
 
 #: src/app/qml/ui/TagsPage.qml:126
 msgid "No tags available. You can tag notes while viewing them."
@@ -445,12 +448,12 @@ msgstr "未有可提供標記。檢視筆記時同時可進行標記。"
 
 #: src/app/qml/ui/TagsPage.qml:133
 msgid "Rename tag"
-msgstr "重新命名標籤"
+msgstr "重新命名標記"
 
 #: src/app/qml/ui/TagsPage.qml:134
 #, qt-format
 msgid "Enter a new name for tag %1"
-msgstr ""
+msgstr "輸入標記% 1 的新名稱"
 
 #: src/libqtevernote/evernoteconnection.cpp:268
 msgid "Offline mode"
@@ -492,18 +495,18 @@ msgstr "連接 Evernote 時發生錯誤：無法下載伺服器資訊。"
 msgid ""
 "Authentication for Evernote server expired. Please renew login information "
 "in the accounts settings."
-msgstr ""
+msgstr "Evernote 伺服器的身份驗證已過期。請在帳戶中設置登錄資訊。"
 
 #: src/libqtevernote/evernoteconnection.cpp:332
 #: src/libqtevernote/evernoteconnection.cpp:350
 #, qt-format
 msgid "Unknown error connecting to Evernote: %1"
-msgstr ""
+msgstr "連接到 Evernote 的未知錯誤:% 1"
 
 #: src/libqtevernote/evernoteconnection.cpp:341
 msgid ""
 "Error connecting to Evernote: Rate limit exceeded. Please try again later."
-msgstr ""
+msgstr "連接到 Evernote 時出錯: 超過速度限制。請稍後再試。"
 
 #: src/libqtevernote/evernoteconnection.cpp:357
 msgid ""
@@ -522,7 +525,7 @@ msgstr "連接 Evernote 時發生不明錯誤"
 #: src/libqtevernote/evernoteconnection.cpp:435
 #: src/libqtevernote/evernoteconnection.cpp:499
 msgid "Disconnected from Evernote."
-msgstr ""
+msgstr "與 Evernote 斷開連接。"
 
 #: src/libqtevernote/note.cpp:162 src/libqtevernote/note.cpp:196
 #: src/libqtevernote/note.cpp:381
@@ -606,29 +609,29 @@ msgstr "於%2年%1"
 msgid ""
 "This account is managed by Evernote. Use the Evernote website to delete "
 "notebooks."
-msgstr ""
+msgstr "此帳戶由 Evernote 管理。請使用 Evernote 網站來刪除筆記本。"
 
 #: src/libqtevernote/notesstore.cpp:446
 msgid ""
 "Cannot delete the default notebook. Set another notebook to be the default "
 "first."
-msgstr ""
+msgstr "無法刪除預設筆記本。首先將另一個筆記本設置為預設值。"
 
 #: src/libqtevernote/notesstore.cpp:1792
 msgid "Rate limit for Evernote server exceeded. Please try again later."
-msgstr ""
+msgstr "超出 Evernote 伺服器的速度限制。請稍後再試。"
 
 #: src/libqtevernote/notesstore.cpp:1795
 msgid "Upload quota for Evernote server exceed. Please try again later."
-msgstr ""
+msgstr "上傳 Evernote 伺服器的配額過大。請稍後再試。"
 
 #: src/libqtevernote/notesstore.cpp:1834
 msgid ""
 "This account is managed by Evernote. Please use the Evernote website to "
 "delete tags."
-msgstr ""
+msgstr "此帳戶由 Evernote 管理。請使用 Evernote 網站來刪除標記。"
 
 #. TRANSLATORS: A default file name if we don't get one from the server. Avoid weird characters.
 #: src/libqtevernote/resource.cpp:39
 msgid "Unnamed"
-msgstr ""
+msgstr "未命名"
