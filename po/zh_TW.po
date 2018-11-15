@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-05-28 22:28+0200\n"
-"PO-Revision-Date: 2018-11-11 06:45+0000\n"
+"PO-Revision-Date: 2018-11-15 04:50+0000\n"
 "Last-Translator: Louies <louies0623@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://translate.ubports.com/projects/"
 "ubports/notes-app/zh_Hant/>\n"
@@ -41,11 +41,11 @@ msgstr "預設筆記本"
 
 #: src/app/qml/Reminders.qml:537
 msgid "Select note to attach imported file"
-msgstr "選擇筆記以附加導入的文件"
+msgstr "選擇筆記以附加導入的檔案"
 
 #: src/app/qml/Reminders.qml:537
 msgid "Select note to attach imported files"
-msgstr "選擇要附加導入的筆記"
+msgstr "選擇筆記以附加導入的檔案"
 
 #: src/app/qml/Reminders.qml:587
 msgid "Notebooks"
@@ -105,17 +105,17 @@ msgstr "匯入 1 個項目中"
 msgid ""
 "Do you want to create a new note for those items or do you want to attach "
 "them to an existing note?"
-msgstr "是否要為這些專案創建新的筆記，還是要將其附加到現有的筆記上?"
+msgstr "是否要為這些項目建立新的筆記，還是要將其附加到現有的筆記上?"
 
 #: src/app/qml/Reminders.qml:758
 msgid ""
 "Do you want to create a new note for this item or do you want to attach it "
 "to an existing note?"
-msgstr "是否要為此專案創建新的筆記，還是要將其附加到現有的筆記？"
+msgstr "是否要為此項目建立新的筆記，還是要將其附加到現有的筆記上？"
 
 #: src/app/qml/Reminders.qml:764
 msgid "Create new note"
-msgstr "建立新筆記"
+msgstr "建立新的筆記"
 
 #: src/app/qml/Reminders.qml:769
 msgid "Attach to existing note"
@@ -375,7 +375,7 @@ msgstr "附件"
 
 #: src/app/qml/ui/NotebooksPage.qml:45
 msgid "Add notebook"
-msgstr "新增筆記本"
+msgstr "加入筆記本"
 
 #: src/app/qml/ui/NotebooksPage.qml:52 src/app/qml/ui/NotesPage.qml:83
 #: src/app/qml/ui/RemindersPage.qml:36 src/app/qml/ui/SearchNotesPage.qml:60
@@ -399,7 +399,7 @@ msgstr "重命名筆記本"
 #: src/app/qml/ui/NotebooksPage.qml:200
 #, qt-format
 msgid "Enter a new name for notebook %1"
-msgstr "輸入筆記本的新名稱%1"
+msgstr "輸入筆記本新的名稱%1"
 
 #: src/app/qml/ui/NotebooksPage.qml:209 src/app/qml/ui/TagsPage.qml:143
 msgid "Name cannot be empty"
@@ -407,7 +407,7 @@ msgstr "名稱不能為空"
 
 #: src/app/qml/ui/NotesPage.qml:44 src/app/qml/ui/NotesPage.qml:65
 msgid "Add note"
-msgstr "新增筆記"
+msgstr "加入筆記"
 
 #: src/app/qml/ui/NotesPage.qml:73
 msgid "Sorting"
@@ -421,13 +421,13 @@ msgstr "設定提醒"
 msgid ""
 "No notes available. You can create new notes by pulling the note editor up "
 "from the bottom edge."
-msgstr "沒有可用的筆記。您可以通過從底部邊緣向上拉注釋編輯器來創建新的筆記。"
+msgstr "沒有可用的筆記。您可以通過從底部邊緣向上拉注釋編輯器來建立新的筆記。"
 
 #: src/app/qml/ui/RemindersPage.qml:97
 msgid ""
 "No reminders available. You can create new reminders by setting a reminder "
 "when viewing a note."
-msgstr "無可用提醒。可在檢視筆記時設置新的提醒。"
+msgstr "無可用提醒。可在檢視筆記時建立新的提醒。"
 
 #: src/app/qml/ui/SearchNotesPage.qml:32
 msgid "Search notes"
@@ -453,7 +453,7 @@ msgstr "重新命名標記"
 #: src/app/qml/ui/TagsPage.qml:134
 #, qt-format
 msgid "Enter a new name for tag %1"
-msgstr "輸入標記% 1 的新名稱"
+msgstr "輸入標記% 1 的新的名稱"
 
 #: src/libqtevernote/evernoteconnection.cpp:268
 msgid "Offline mode"
@@ -530,11 +530,11 @@ msgstr "與 Evernote 斷開連接。"
 #: src/libqtevernote/note.cpp:162 src/libqtevernote/note.cpp:196
 #: src/libqtevernote/note.cpp:381
 msgid "Today"
-msgstr "今日"
+msgstr "今天"
 
 #: src/libqtevernote/note.cpp:165 src/libqtevernote/note.cpp:199
 msgid "Yesterday"
-msgstr "昨日"
+msgstr "昨天"
 
 #: src/libqtevernote/note.cpp:168 src/libqtevernote/note.cpp:202
 msgid "Last week"
