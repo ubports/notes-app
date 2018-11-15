@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-05-28 22:28+0200\n"
-"PO-Revision-Date: 2018-11-10 20:28+0000\n"
+"PO-Revision-Date: 2018-11-11 08:27+0000\n"
 "Last-Translator: Sander <sander.k1007@kpnmail.nl>\n"
 "Language-Team: Dutch <https://translate.ubports.com/projects/ubports/"
 "notes-app/nl/>\n"
@@ -546,7 +546,7 @@ msgid ""
 "Error connecting to Evernote: Rate limit exceeded. Please try again later."
 msgstr ""
 "Fout bij verbinding maken met Evernote: Percentagelimiet overschreden. "
-"Probeer het later opnieuw a.u.b."
+"Probeer het later opnieuw."
 
 #: src/libqtevernote/evernoteconnection.cpp:357
 msgid ""
@@ -660,20 +660,19 @@ msgid ""
 "Cannot delete the default notebook. Set another notebook to be the default "
 "first."
 msgstr ""
-"Het standaard notitieboek kan niet verwijderd worden. Stel a.u.b. eerst een "
-"ander notitieboek in als standaard notitieboek."
+"Het standaard notitieboek kan niet verwijderd worden. Stel eerst een ander "
+"notitieboek in als standaard notitieboek."
 
 #: src/libqtevernote/notesstore.cpp:1792
 msgid "Rate limit for Evernote server exceeded. Please try again later."
 msgstr ""
 "Percentagelimiet voor Evernote-server overschreden. Probeer het later "
-"opnieuw a.u.b."
+"opnieuw."
 
 #: src/libqtevernote/notesstore.cpp:1795
 msgid "Upload quota for Evernote server exceed. Please try again later."
 msgstr ""
-"Uploadlimiet voor Evernote-server overschreden. Probeer het later opnieuw "
-"a.u.b."
+"Uploadlimiet voor Evernote-server overschreden. Probeer het later opnieuw."
 
 #: src/libqtevernote/notesstore.cpp:1834
 msgid ""
