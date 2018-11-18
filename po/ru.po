@@ -8,14 +8,18 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-05-28 22:28+0200\n"
-"PO-Revision-Date: 2015-07-28 14:07+0000\n"
-"Last-Translator: Roman Zonov <Unknown>\n"
-"Language-Team: Russian <ru@li.org>\n"
+"PO-Revision-Date: 2018-11-18 08:47+0000\n"
+"Last-Translator: ierihon <idekovets@mail.ru>\n"
+"Language-Team: Russian <https://translate.ubports.com/projects/ubports/"
+"notes-app/ru/>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.1.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:24+0000\n"
-"X-Generator: Launchpad (build 18335)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/Reminders.qml:559
 msgid "Notes"
@@ -23,7 +27,7 @@ msgstr "Заметки"
 
 #: com.ubuntu.reminders.desktop.in.in.h:2
 msgid "Ubuntu Notes app, powered by Evernote"
-msgstr ""
+msgstr "Заметки Ubuntu, работают с Evernote"
 
 #: src/app/qml/Reminders.qml:100 src/app/qml/Reminders.qml:263
 #: src/app/qml/Reminders.qml:268 src/app/qml/components/NoteHeader.qml:52
@@ -38,11 +42,11 @@ msgstr "Блокнот по умолчанию"
 
 #: src/app/qml/Reminders.qml:537
 msgid "Select note to attach imported file"
-msgstr ""
+msgstr "Выберите заметку, чтобы прикрепить импортированный файл"
 
 #: src/app/qml/Reminders.qml:537
 msgid "Select note to attach imported files"
-msgstr ""
+msgstr "Выберите заметку для прикрепления импортированных файлов"
 
 #: src/app/qml/Reminders.qml:587
 msgid "Notebooks"
@@ -70,57 +74,63 @@ msgstr ""
 
 #: src/app/qml/Reminders.qml:713
 msgid "Sync with Evernote"
-msgstr ""
+msgstr "Синхронизация с Evernote"
 
 #: src/app/qml/Reminders.qml:714
 msgid ""
 "Notes can be stored on this device, or optionally synced with Evernote."
 msgstr ""
+"Заметки могут быть сохранены на этом устройстве или, опционально, "
+"синхронизированы с Evernote."
 
 #: src/app/qml/Reminders.qml:715
 msgid "To sync with Evernote, you need an Evernote account."
-msgstr ""
+msgstr "Чтобы синхронизировать с Evernote, вам нужна учетная запись Evernote."
 
 #: src/app/qml/Reminders.qml:730
 msgid "Not Now"
-msgstr ""
+msgstr "Не сейчас"
 
 #: src/app/qml/Reminders.qml:739
 msgid "Set Up…"
-msgstr ""
+msgstr "Настроить…"
 
 #: src/app/qml/Reminders.qml:754
 #, qt-format
 msgid "Importing %1 items"
-msgstr ""
+msgstr "Импорт %1 элементов"
 
 #: src/app/qml/Reminders.qml:755
 msgid "Importing 1 item"
-msgstr ""
+msgstr "Импорт 1 элемента"
 
 #: src/app/qml/Reminders.qml:757
 msgid ""
 "Do you want to create a new note for those items or do you want to attach "
 "them to an existing note?"
 msgstr ""
+"Вы хотите создать новую заметку для этих элементов или хотите привязать их к "
+"существующей заметке?"
 
 #: src/app/qml/Reminders.qml:758
 msgid ""
 "Do you want to create a new note for this item or do you want to attach it "
 "to an existing note?"
 msgstr ""
+"Вы хотите создать новую заметку для этого элемента или вы хотите прикрепить "
+"ее к существующей заметке?"
 
 #: src/app/qml/Reminders.qml:764
 msgid "Create new note"
-msgstr ""
+msgstr "Создать новую заметку"
 
 #: src/app/qml/Reminders.qml:769
 msgid "Attach to existing note"
-msgstr ""
+msgstr "Приложить к существующей заметке"
 
 #: src/app/qml/Reminders.qml:774
 msgid "Cancel import"
-msgstr ""
+msgstr "Отменить импорт"
 
 #: src/app/qml/components/ConflictDelegate.qml:35
 msgid "Notebook:"
@@ -132,11 +142,11 @@ msgstr "Напоминание:"
 
 #: src/app/qml/components/EditTagsDialog.qml:29
 msgid "Edit tags"
-msgstr ""
+msgstr "Редактировать тэги"
 
 #: src/app/qml/components/EditTagsDialog.qml:32
 msgid "Enter a tag name to attach it to the note."
-msgstr ""
+msgstr "Введите имя тега, чтобы прикрепить его к заметке."
 
 #: src/app/qml/components/EditTagsDialog.qml:33
 msgid ""
@@ -390,7 +400,7 @@ msgstr "Поиск"
 
 #: src/app/qml/ui/NotebooksPage.qml:166
 msgid "Cancel"
-msgstr "Отмена"
+msgstr "Отменить"
 
 #. TRANSLATORS: Button that saves a reminder
 #: src/app/qml/ui/NotebooksPage.qml:178 src/app/qml/ui/SetReminderView.qml:88
