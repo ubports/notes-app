@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-05-28 22:28+0200\n"
-"PO-Revision-Date: 2018-11-18 08:47+0000\n"
+"PO-Revision-Date: 2018-11-19 06:35+0000\n"
 "Last-Translator: ierihon <idekovets@mail.ru>\n"
 "Language-Team: Russian <https://translate.ubports.com/projects/ubports/"
 "notes-app/ru/>\n"
@@ -152,10 +152,11 @@ msgstr "Введите имя тега, чтобы прикрепить его �
 msgid ""
 "Enter a tag name or select one from the list to attach it to the note."
 msgstr ""
+"Введите имя тега или выберите его в списке, чтобы прикрепить его к заметке."
 
 #: src/app/qml/components/EditTagsDialog.qml:61
 msgid "Tag name"
-msgstr ""
+msgstr "Название тэга"
 
 #: src/app/qml/components/EditTagsDialog.qml:146
 #: src/app/qml/ui/NotebooksPage.qml:213 src/app/qml/ui/TagsPage.qml:147
@@ -167,7 +168,7 @@ msgstr "ОК"
 #: src/app/qml/components/EditTagsDialog.qml:202
 #: src/app/qml/ui/EditNoteView.qml:604 src/app/qml/ui/NoteView.qml:150
 msgid "Close"
-msgstr ""
+msgstr "Закрыть"
 
 #. TRANSLATORS: Button that deletes a reminder
 #: src/app/qml/components/NotebooksDelegate.qml:36
@@ -367,6 +368,8 @@ msgid ""
 "This note has been modified in multiple places. Open each version to check "
 "the content, then swipe to delete one of them."
 msgstr ""
+"Эта заметка была изменена в нескольких местах. Откройте каждую версию, чтобы "
+"проверить содержимое, затем нажмите, чтобы удалить одну из них."
 
 #: src/app/qml/ui/NoteConflictView.qml:63
 msgid "Deleted on this device:"
