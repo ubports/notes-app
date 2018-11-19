@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-05-28 22:28+0200\n"
-"PO-Revision-Date: 2018-11-19 06:35+0000\n"
+"PO-Revision-Date: 2018-11-19 15:01+0000\n"
 "Last-Translator: ierihon <idekovets@mail.ru>\n"
 "Language-Team: Russian <https://translate.ubports.com/projects/ubports/"
 "notes-app/ru/>\n"
@@ -509,7 +509,7 @@ msgstr ""
 
 #: src/libqtevernote/evernoteconnection.cpp:307
 msgid "Unknown error connecting to Evernote"
-msgstr "Неизвестная ошибка при подключении к Evernote."
+msgstr "Неизвестная ошибка при подключении к Evernote"
 
 #: src/libqtevernote/evernoteconnection.cpp:321
 msgid "Error connecting to Evernote: Cannot download server information."
@@ -548,7 +548,7 @@ msgstr ""
 
 #: src/libqtevernote/evernoteconnection.cpp:383
 msgid "Error connecting to Evernote: Connection failure"
-msgstr "Ошибка при подключении к Evernote: ошибка соединения."
+msgstr "Ошибка при подключении к Evernote: ошибка соединения"
 
 #: src/libqtevernote/evernoteconnection.cpp:387
 msgid "Unknown Error connecting to Evernote"
@@ -584,7 +584,7 @@ msgstr "%1 %2"
 
 #: src/libqtevernote/note.cpp:369
 msgid "Done"
-msgstr "Выполнено"
+msgstr "Готово"
 
 #: src/libqtevernote/note.cpp:375
 msgid "No date"
