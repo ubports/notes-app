@@ -8,13 +8,16 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-05-28 22:28+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2018-11-23 04:40+0000\n"
+"Last-Translator: Louies <louies0623@gmail.com>\n"
+"Language-Team: Chinese (Hong Kong) <https://translate.ubports.com/projects/"
+"ubports/notes-app/zh_Hant_HK/>\n"
 "Language: zh_Hant_HK\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 3.1.1\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/Reminders.qml:559
 msgid "Notes"
@@ -145,14 +148,14 @@ msgstr ""
 #: src/app/qml/components/EditTagsDialog.qml:146
 #: src/app/qml/ui/NotebooksPage.qml:213 src/app/qml/ui/TagsPage.qml:147
 msgid "OK"
-msgstr ""
+msgstr "確定"
 
 #. TRANSLATORS: Button to close the edit mode
 #. TRANSLATORS: Button to close the note viewer
 #: src/app/qml/components/EditTagsDialog.qml:202
 #: src/app/qml/ui/EditNoteView.qml:604 src/app/qml/ui/NoteView.qml:150
 msgid "Close"
-msgstr ""
+msgstr "關閉"
 
 #. TRANSLATORS: Button that deletes a reminder
 #: src/app/qml/components/NotebooksDelegate.qml:36
@@ -160,7 +163,7 @@ msgstr ""
 #: src/app/qml/components/TagsDelegate.qml:34 src/app/qml/ui/NotesPage.qml:90
 #: src/app/qml/ui/SetReminderView.qml:76
 msgid "Delete"
-msgstr ""
+msgstr "刪除"
 
 #: src/app/qml/components/NotebooksDelegate.qml:97
 #, qt-format
@@ -173,17 +176,17 @@ msgstr ""
 
 #: src/app/qml/components/NotebooksDelegate.qml:116
 msgid "Private"
-msgstr ""
+msgstr "私人"
 
 #: src/app/qml/components/NotesDelegate.qml:73
 msgid "Reminder"
-msgstr ""
+msgstr "提醒"
 
 #. TRANSLATORS: Button to go from note viewer to note editor
 #: src/app/qml/components/NotesDelegate.qml:87 src/app/qml/ui/NoteView.qml:172
 #: src/app/qml/ui/NotesPage.qml:112
 msgid "Edit"
-msgstr ""
+msgstr "編輯"
 
 #: src/app/qml/components/PulldownListView.qml:40
 msgid "Release to refresh"
@@ -252,11 +255,11 @@ msgstr ""
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:57
 msgid "Yes"
-msgstr ""
+msgstr "是"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:66
 msgid "No"
-msgstr ""
+msgstr "否"
 
 #: src/app/qml/components/SortingDialog.qml:9
 msgid "Sort by"
@@ -373,16 +376,16 @@ msgstr ""
 #: src/app/qml/ui/RemindersPage.qml:36 src/app/qml/ui/SearchNotesPage.qml:60
 #: src/app/qml/ui/TagsPage.qml:52
 msgid "Search"
-msgstr ""
+msgstr "搜尋"
 
 #: src/app/qml/ui/NotebooksPage.qml:166
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #. TRANSLATORS: Button that saves a reminder
 #: src/app/qml/ui/NotebooksPage.qml:178 src/app/qml/ui/SetReminderView.qml:88
 msgid "Save"
-msgstr ""
+msgstr "儲存"
 
 #: src/app/qml/ui/NotebooksPage.qml:199
 msgid "Rename notebook"
@@ -522,11 +525,11 @@ msgstr ""
 #: src/libqtevernote/note.cpp:162 src/libqtevernote/note.cpp:196
 #: src/libqtevernote/note.cpp:381
 msgid "Today"
-msgstr ""
+msgstr "今天"
 
 #: src/libqtevernote/note.cpp:165 src/libqtevernote/note.cpp:199
 msgid "Yesterday"
-msgstr ""
+msgstr "昨天"
 
 #: src/libqtevernote/note.cpp:168 src/libqtevernote/note.cpp:202
 msgid "Last week"
@@ -544,7 +547,7 @@ msgstr ""
 
 #: src/libqtevernote/note.cpp:369
 msgid "Done"
-msgstr ""
+msgstr "已完成"
 
 #: src/libqtevernote/note.cpp:375
 msgid "No date"
@@ -568,7 +571,7 @@ msgstr ""
 
 #: src/libqtevernote/note.cpp:392
 msgid "Later"
-msgstr ""
+msgstr "稍後"
 
 #. TRANSLATORS: this is part of a longer string - "Last updated: today"
 #: src/libqtevernote/notebook.cpp:122
