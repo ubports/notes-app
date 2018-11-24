@@ -8,14 +8,17 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-05-28 22:28+0200\n"
-"PO-Revision-Date: 2016-03-10 11:20+0000\n"
-"Last-Translator: Esperanto <Unknown>\n"
-"Language-Team: Esperanto <eo@li.org>\n"
+"PO-Revision-Date: 2018-11-23 04:40+0000\n"
+"Last-Translator: Louies <louies0623@gmail.com>\n"
+"Language-Team: Esperanto <https://translate.ubports.com/projects/ubports/"
+"notes-app/eo/>\n"
+"Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.1.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:24+0000\n"
-"X-Generator: Launchpad (build 18335)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/Reminders.qml:559
 msgid "Notes"
@@ -380,7 +383,7 @@ msgstr ""
 
 #: src/app/qml/ui/NotebooksPage.qml:166
 msgid "Cancel"
-msgstr ""
+msgstr "Nuligi"
 
 #. TRANSLATORS: Button that saves a reminder
 #: src/app/qml/ui/NotebooksPage.qml:178 src/app/qml/ui/SetReminderView.qml:88
@@ -547,7 +550,7 @@ msgstr ""
 
 #: src/libqtevernote/note.cpp:369
 msgid "Done"
-msgstr ""
+msgstr "Fini"
 
 #: src/libqtevernote/note.cpp:375
 msgid "No date"
