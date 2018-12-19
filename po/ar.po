@@ -8,14 +8,18 @@ msgstr ""
 "Project-Id-Version: reminders-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-05-28 22:28+0200\n"
-"PO-Revision-Date: 2014-05-17 00:33+0000\n"
-"Last-Translator: Ibrahim Saed <ibraheem5000@gmail.com>\n"
-"Language-Team: Arabic <ar@li.org>\n"
+"PO-Revision-Date: 2018-12-23 00:00+0000\n"
+"Last-Translator: Hussain Hashem Aljafri <baddea14@gmail.com>\n"
+"Language-Team: Arabic <https://translate.ubports.com/projects/ubports/"
+"notes-app/ar/>\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Weblate 3.1.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:24+0000\n"
-"X-Generator: Launchpad (build 18335)\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/Reminders.qml:559
 msgid "Notes"
@@ -186,7 +190,7 @@ msgstr ""
 #: src/app/qml/components/NotesDelegate.qml:87 src/app/qml/ui/NoteView.qml:172
 #: src/app/qml/ui/NotesPage.qml:112
 msgid "Edit"
-msgstr "تعديل"
+msgstr "تحرير"
 
 #: src/app/qml/components/PulldownListView.qml:40
 msgid "Release to refresh"
@@ -255,11 +259,11 @@ msgstr ""
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:57
 msgid "Yes"
-msgstr ""
+msgstr "نعم"
 
 #: src/app/qml/components/ResolveConflictConfirmationDialog.qml:66
 msgid "No"
-msgstr ""
+msgstr "لا"
 
 #: src/app/qml/components/SortingDialog.qml:9
 msgid "Sort by"
@@ -380,7 +384,7 @@ msgstr "بحث"
 
 #: src/app/qml/ui/NotebooksPage.qml:166
 msgid "Cancel"
-msgstr "إلغاء"
+msgstr "إلغاء;الإلغاء"
 
 #. TRANSLATORS: Button that saves a reminder
 #: src/app/qml/ui/NotebooksPage.qml:178 src/app/qml/ui/SetReminderView.qml:88
