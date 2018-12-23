@@ -1,24 +1,20 @@
-# Esperanto translation for reminders-app
-# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
-# This file is distributed under the same license as the reminders-app package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Canonical Ltd.
+# This file is distributed under the same license as the  package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: reminders-app\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-05-28 22:28+0200\n"
-"PO-Revision-Date: 2018-12-17 02:54+0000\n"
-"Last-Translator: Colin Reeder <vpzomtrrfrt@gmail.com>\n"
-"Language-Team: Esperanto <https://translate.ubports.com/projects/ubports/"
-"notes-app/eo/>\n"
-"Language: eo\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.1.1\n"
-"X-Launchpad-Export-Date: 2017-04-05 07:24+0000\n"
 
 #: com.ubuntu.reminders.desktop.in.in.h:1 src/app/qml/Reminders.qml:559
 msgid "Notes"
@@ -74,8 +70,7 @@ msgid "Sync with Evernote"
 msgstr ""
 
 #: src/app/qml/Reminders.qml:714
-msgid ""
-"Notes can be stored on this device, or optionally synced with Evernote."
+msgid "Notes can be stored on this device, or optionally synced with Evernote."
 msgstr ""
 
 #: src/app/qml/Reminders.qml:715
@@ -140,8 +135,7 @@ msgid "Enter a tag name to attach it to the note."
 msgstr ""
 
 #: src/app/qml/components/EditTagsDialog.qml:33
-msgid ""
-"Enter a tag name or select one from the list to attach it to the note."
+msgid "Enter a tag name or select one from the list to attach it to the note."
 msgstr ""
 
 #: src/app/qml/components/EditTagsDialog.qml:61
@@ -166,7 +160,7 @@ msgstr ""
 #: src/app/qml/components/TagsDelegate.qml:34 src/app/qml/ui/NotesPage.qml:90
 #: src/app/qml/ui/SetReminderView.qml:76
 msgid "Delete"
-msgstr "Forigi"
+msgstr ""
 
 #: src/app/qml/components/NotebooksDelegate.qml:97
 #, qt-format
@@ -189,7 +183,7 @@ msgstr ""
 #: src/app/qml/components/NotesDelegate.qml:87 src/app/qml/ui/NoteView.qml:172
 #: src/app/qml/ui/NotesPage.qml:112
 msgid "Edit"
-msgstr "Redakti"
+msgstr ""
 
 #: src/app/qml/components/PulldownListView.qml:40
 msgid "Release to refresh"
@@ -383,7 +377,7 @@ msgstr ""
 
 #: src/app/qml/ui/NotebooksPage.qml:166
 msgid "Cancel"
-msgstr "Nuligi"
+msgstr ""
 
 #. TRANSLATORS: Button that saves a reminder
 #: src/app/qml/ui/NotebooksPage.qml:178 src/app/qml/ui/SetReminderView.qml:88
@@ -550,7 +544,7 @@ msgstr ""
 
 #: src/libqtevernote/note.cpp:369
 msgid "Done"
-msgstr "Fini"
+msgstr ""
 
 #: src/libqtevernote/note.cpp:375
 msgid "No date"
