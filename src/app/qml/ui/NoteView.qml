@@ -145,14 +145,13 @@ Item {
             height: units.gu(4)
 
             RtfButton {
-                iconName: "tick"
-                // TRANSLATORS: Button to close the note viewer
-                text: i18n.tr("Close")
+                iconName: "edit"
+                // TRANSLATORS: Button to go from note viewer to note editor
+                text: i18n.tr("Edit")
                 height: parent.height
                 iconColor: theme.palette.normal.positive
-                visible: root.canClose
                 onClicked: {
-                    pageStack.pop()
+                    root.editNote()
                 }
             }
 
@@ -166,16 +165,18 @@ Item {
 
             RtfSeparator {}
 
-            RtfButton {
-                iconName: "edit"
-                // TRANSLATORS: Button to go from note viewer to note editor
-                text: i18n.tr("Edit")
+	    RtfButton {
+                iconName: "tick"
+                // TRANSLATORS: Button to close the note viewer
+                text: i18n.tr("Close")
                 height: parent.height
                 iconColor: theme.palette.normal.positive
+                visible: root.canClose
                 onClicked: {
-                    root.editNote()
+                    pageStack.pop()
                 }
             }
+
         }
     }
 
